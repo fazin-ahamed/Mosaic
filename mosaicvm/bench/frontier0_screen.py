@@ -111,6 +111,20 @@ def build_accesses(routes, nlayers, ledger, chunks):
 
     eager verifies all navail positions in ONE sweep (you cannot know depth
     until you verify); staged runs a separate sweep per stage.
+
+    BOUNDARY ACCOUNTING (v4 fix): on FULL acceptance (depth == navail) the
+    cycle emits navail+1 tokens but the stage sweeps charge only navail
+    positions. The bonus token is emitted from the last verified position's
+    logits, but its hidden state / KV is NOT computed by that emission.
+    Before the next cycle can attend over it, a BOUNDARY FORWARD on the bonus
+    position is required. It is charged here as a single-position sweep
+    appended after the verification sweeps, tagged to the same cycle.
+
+    `cur` semantics: the position whose forward pass is still owed (the
+    previous cycle's correction/bonus token). For depth < navail the
+    correction position becomes the next cycle's `cur` and is charged there;
+    for full acceptance the bonus position is charged by the boundary forward
+    so the charged set stays contiguous.
     """
     accs, cyc_tag = [], []
     eager = chunks == [W]
@@ -121,12 +135,72 @@ def build_accesses(routes, nlayers, ledger, chunks):
         else:
             plan = stage_positions(chunks, rows_needed, navail)
         start = cur
+        n_charged_rows = 0
         for cnt in plan:
             for k in sweep(routes, nlayers, start, cnt):
                 accs.append(k)
                 cyc_tag.append(ci)
             start += cnt
+            n_charged_rows += cnt
+        # full acceptance: charge the boundary forward on the bonus position
+        if depth == navail:
+            boundary_pos = cur + navail
+            for k in sweep(routes, nlayers, boundary_pos, 1):
+                accs.append(k)
+                cyc_tag.append(ci)
+            n_charged_rows += 1
     return accs, cyc_tag
+
+
+def verify_boundary_accounting(routes, nlayers, ledger, chunks):
+    """Deterministic check: every position needed for subsequent attention has
+    a charged forward pass, and the charged set is contiguous from 0.
+
+    Reconstructs the charged position set under the same scheduling rules as
+    build_accesses (positions, not expert ids) and asserts:
+      1. the charged set is exactly range(0, max+1) (no interior gaps),
+      2. each cycle's next `cur` equals the previous charged end + 1.
+    Runs on the first two full-acceptance cycles explicitly (deterministic,
+    seed-independent) and over the whole ledger.
+    """
+    charged = []
+    for cur, depth, navail in ledger:
+        rows_needed = min(depth + 1, navail)
+        plan = ([navail] if chunks == [W]
+                else stage_positions(chunks, rows_needed, navail))
+        start = cur
+        for cnt in plan:
+            charged.extend(range(start, start + cnt))
+            start += cnt
+        if depth == navail:
+            charged.append(cur + navail)       # boundary forward
+    s = set(charged)
+    contiguous = s == set(range(max(charged) + 1)) if charged else True
+    # per-cycle cursor consistency
+    cursor_ok = True
+    pos = 0
+    for cur, depth, navail in ledger:
+        if cur != pos:
+            cursor_ok = False
+        pos = cur + depth + 1
+    # explicit two-cycle full-acceptance inspection
+    full_cycles = [(i, c) for i, c in enumerate(ledger) if c[1] == c[2]]
+    two_cycle_ok = True
+    detail = []
+    for i, (cur, depth, navail) in full_cycles[:2]:
+        boundary_pos = cur + navail
+        next_cur = cur + depth + 1
+        ok = (boundary_pos in s) and (next_cur == boundary_pos + 1)
+        two_cycle_ok = two_cycle_ok and ok
+        detail.append({"cycle": i, "charged_boundary_pos": boundary_pos,
+                       "next_cycle_cur": next_cur,
+                       "boundary_charged": boundary_pos in s,
+                       "cursor_is_next_after_boundary": next_cur == boundary_pos + 1})
+    return {"n_charged_positions": len(s), "max_charged": max(charged) if charged else -1,
+            "interior_gaps": sorted(set(range(max(charged) + 1)) - s) if charged else [],
+            "contiguous": contiguous, "cursor_consistent": cursor_ok,
+            "two_full_accept_cycles": detail, "two_cycle_check": two_cycle_ok,
+            "all_ok": contiguous and cursor_ok and two_cycle_ok}
 
 
 def lru_miss_by_cycle(accesses, cyc_tag, cap, ncyc):
@@ -207,36 +281,45 @@ def main():
     d = torch.load("artifacts/ek0c_routes.pt", weights_only=False)
     routes = d["routes"]
     nlayers = d["n_layers"]
+
     q = fit_q()
     ledger = build_ledger(routes, q)
     ncyc = len(ledger)
     emitted_total = sum(depth + 1 for _, depth, _ in ledger)
     accepted_total = sum(depth for _, depth, _ in ledger)
     full_accept = sum(1 for _, depth, navail in ledger if depth == navail)
-    positions_committed = sum(depth + 1 for _, depth, _ in ledger)
     cold_cut = ncyc // 3
 
+    # BOUNDARY ACCOUNTING CHECK (deterministic, runs before any result)
+    chk = verify_boundary_accounting(routes, nlayers, ledger, [W])
+    print("boundary accounting check:")
+    print(f"  charged positions={chk['n_charged_positions']} "
+          f"max={chk['max_charged']} contiguous={chk['contiguous']} "
+          f"cursor_ok={chk['cursor_consistent']} "
+          f"two_cycle={chk['two_cycle_check']}")
+    if chk["interior_gaps"]:
+        print(f"  interior gaps: {chk['interior_gaps']}")
+    print(f"  {chk['two_full_accept_cycles']}")
+    if not chk["all_ok"]:
+        raise SystemExit("boundary accounting check FAILED - refusing to emit "
+                         "results (demand would be undercounted)")
+    print("  ALL OK -> interior positions fully charged")
+
+    out = {"classification": "FRONTIER0_SCREEN_V4",
+           "n_positions": len(routes), "hit_q": q,
+           "mean_E_A": emitted_total/ncyc, "mean_depth": accepted_total/ncyc,
+           "cycles": ncyc, "emitted_tokens_total": emitted_total,
+           "full_accept_cycles": full_accept,
+           "boundary_check": chk,
+           "note": "canonical prefix_metrics (E_A=depth+1, depth may be 0); "
+                   "per-stage sweeps; one continuous LRU; mandatory+bypass "
+                   "Belady; full-acceptance boundary forward CHARGED (v4). "
+                   "real routes as speculative-candidate proxy (direction "
+                   "UNKNOWN). sim only.",
+           "by_store": {}}
     print(f"q(hit)={q:.4f}  cycles={ncyc}  mean_depth="
           f"{accepted_total/ncyc:.3f}  mean_E_A={emitted_total/ncyc:.3f}  "
           f"emitted={emitted_total}  full-accept_cycles={full_accept}")
-    print(f"cursor-committed positions={positions_committed} "
-          f"(free bonus emissions counted in E_A; last-position argmax, no "
-          f"extra forward)")
-
-    out = {"classification": "FRONTIER0_SCREEN_V3",
-           "n_positions": len(routes), "hit_q": q, "mean_E_A": emitted_total/ncyc,
-           "mean_depth": accepted_total/ncyc, "cycles": ncyc,
-           "emitted_tokens_total": emitted_total,
-           "full_accept_cycles": full_accept,
-           "note": "canonical prefix_metrics semantics (E_A=depth+1, depth may "
-                   "be 0); per-stage forward sweeps; one continuous LRU; "
-                   "mandatory+bypass Belady. real routes as speculative-"
-                   "candidate proxy (direction UNKNOWN). sim only.",
-           "by_store": {}}
-
-    print(f"\n{'store':>5} {'policy':>13} {'LRUmiss':>8} {'GB/tok':>7} "
-          f"{'coldGB':>7} {'laterGB':>7} {'BelMand':>8} {'BelByp':>7} "
-          f"{'LRU/Byp':>7} {'redEager':>8}")
     for gb in STORE_GB:
         cap = int(gb * 1e9 / BYTES)
         rec = {}

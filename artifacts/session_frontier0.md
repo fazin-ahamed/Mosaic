@@ -1,119 +1,110 @@
-# Session Report: FRONTIER-0 tier-1 screen (v3, canonical acceptance)
+# Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)
 
 **Date:** 2026-09-20
-**Status:** v3 reconciles the screen to the CANONICAL acceptance definition
-(`d1b_tail_robustness.prefix_metrics`) and fixes the four v2 defects found in
-review. Substantive result is unchanged and now defensible on the accepted-path
-proxy: **staged verification (Mosaic Frontier's mechanism) gives ~0% demand
-reduction** (0.1-0.5%), LRU is ~2.0× the offline optimal, bypass caching adds
-nothing here, and even optimal caching needs **~14.3 GB/s** exact expert storage
-for 30 tok/s. The one open caveat is the accepted-path proxy, whose error
-direction is unknown.
+**Status:** v4 fixes the last concrete accounting defect found in review: on
+FULL acceptance the cycle emits `navail+1` tokens but v3 charged only `navail`
+positions, leaving the bonus position's forward pass — its hidden state and KV
+entries — uncharged. Boundary forwards are now explicitly charged, a
+deterministic check proves the charged set is gap-free and cursor-consistent,
+and the gate refuses to emit results if it fails. Corrected demand is ~7% higher
+and the conclusions are reworded to match what the replay supports.
 
 ---
 
-## 1. Acceptance semantics reconciled (finding 1)
+## 1. The defect, confirmed and quantified
 
-Read the canonical evaluator, not a new definition:
-`prefix_metrics` sets `depth` = consecutive accepted draft decisions (**0..W**,
-excluding the exact root, stop at first miss) and **`E_A = depth + 1`**. The
-project mean **3.757 is E_A**, so mean `depth` = 2.757. v2 wrongly fit accepted
-drafts to 3.757 and floored `depth ≥ 1` (excluding immediate rejection).
+Reproduced the reviewer's numbers exactly: v3 charged **235 positions → 60,630
+accesses** (235×43×6) while the ledger emitted 255 tokens over 66 cycles with
+**20 full-acceptance cycles**. Each full acceptance advanced the cursor
+`navail+1` while charging `navail` sweeps, so 20 interior bonus positions were
+never processed:
 
-v3 draws `depth` (iid hit q=0.781, may be 0), emits `depth+1`, advances the
-cursor `depth+1`. Realized draw over the 256-position trace: 66 cycles, mean
-depth 2.864, **mean E_A 3.864** (finite-sample, slightly above the 3.757 target;
-honest realized value). The **+1 bonus is a free emission** (argmax of the last
-verified position's output — no extra forward pass), so full-accept cycles
-advancing navail+1 while accessing navail positions is correct, not a skipped
-forward. 20 full-accept cycles; committed positions reconcile to emitted tokens.
+$$
+20 \times 43 \times 6 = 5{,}160 \text{ accesses uncharged}.
+$$
 
-## 2. Real staged access order (finding 2)
+`prefix_metrics` scores emissions; it does not establish the runtime work between
+boundaries. A bonus token can be emitted from an already-computed logit, but
+**emitting it does not compute its hidden state or KV**. Before the next cycle
+attends over it, a boundary forward is required. v3 had no operation charging it.
 
-Each verification STAGE is now its own layer-major forward sweep over its
-positions; stages run in sequence:
-- eager = one sweep over all W positions (depth unknown until verified),
-- frontier1_2_3 = up to three sweeps (1, then 2, then 3 positions),
-- sequential = up to W single-position sweeps.
+## 2. The narrow fix (no architecture change)
 
-The cache persists across stages, so a staged policy re-traverses layers per
-stage rather than getting v2's advance-knowledge single batched order.
+- `cur` semantics made explicit: the position whose forward pass is still owed.
+- On **full acceptance** (`depth == navail`), a **boundary forward** on position
+  `cur + navail` is charged as a single-position sweep appended to the same
+  cycle. It uses the same cache and access ordering as any other forward.
+- Deterministic `verify_boundary_accounting()` runs **before any result**:
+  - charged set is contiguous from 0 — **no interior gaps**,
+  - each cycle's `cur` equals the previous charged end + 1 (cursor consistent),
+  - explicit two-cycle full-acceptance inspection proving the boundary position
+    is charged and the next `cur` is exactly boundary+1.
+- The script raises `SystemExit` if the check fails — it cannot silently emit
+  undercounted demand again.
 
-## 3. Continuous cache; interval binning (finding 3)
+## 3. Gate result (deterministic, runs first)
 
-ONE LRU runs over the whole stream; per-cycle misses are binned during that
-single simulation. Cold (first third) and later intervals are slices of the
-continuous run, not cold restarts.
+```
+charged positions=255 max=254 contiguous=True cursor_ok=True two_cycle=True
+ [{'cycle': 1, 'charged_boundary_pos': 10, 'next_cycle_cur': 11,
+   'boundary_charged': True, 'cursor_is_next_after_boundary': True},
+  {'cycle': 4, 'charged_boundary_pos': 20, 'next_cycle_cur': 21,
+   'boundary_charged': True, 'cursor_is_next_after_boundary': True}]
+ALL OK -> interior positions fully charged
+```
 
-## 4. Two oracles (finding 4)
+## 4. Corrected result (38 GB store, paired, per emitted token)
 
-On the same stream: mandatory-admission Belady AND bypass-capable Belady (may
-serve a miss from a staging buffer without admitting). Bypass is **not** claimed
-as a universal floor and its transient staging-buffer cost is noted.
-
-## 5. Result (38 GB store, paired, per emitted token)
-
-| policy | LRU miss | GB/tok | cold GB/tok | later GB/tok | Bel-mand | Bel-bypass | LRU/opt | vs eager |
+| policy | LRU miss | GB/tok | cold GB/tok | later GB/tok | Bel-mand | Bel-byp | LRU/opt | vs eager |
 |---|---|---|---|---|---|---|---|---|
-| eager6 | 15905 | 0.834 | 0.796 | 0.855 | 8103 | 8103 | 1.96× | 0% |
-| frontier2_4 | 15833 | 0.830 | 0.755 | 0.872 | 7888 | 7887 | 2.01× | 0.5% |
-| frontier1_2_3 | 15822 | 0.830 | 0.749 | 0.874 | 7878 | 7877 | 2.01× | 0.5% |
-| sequential | 15897 | 0.834 | 0.760 | 0.874 | 7844 | 7843 | 2.03× | 0.1% |
+| eager6 | 17118 | 0.898 | 0.895 | 0.899 | 8512 | 8512 | 2.01× | 0% |
+| frontier2_4 | 17371 | 0.911 | 0.882 | 0.927 | 8320 | 8319 | 2.09× | −1.5% |
+| frontier1_2_3 | 17250 | 0.904 | 0.864 | 0.927 | 8242 | 8241 | 2.09× | −0.8% |
+| sequential | 17284 | 0.906 | 0.872 | 0.925 | 8162 | 8161 | 2.12× | −1.0% |
 
-**Findings:**
-1. **Staging gives ~0% reduction (0.1-0.5%).** Mechanistic reason: the per-cycle
-   speculative over-fetch that staging avoids is a small fraction of total
-   demand, which is dominated by the committed-path working-set churn (89 GB
-   footprint ≫ 38 GB cache) that every policy must load. Deferring speculative
-   rows defers, it does not remove.
-2. **LRU is ~2.0× the offline optimal.** Residency policy is the only software
-   lever with headroom.
-3. **Bypass caching ≈ mandatory admission here** (differ by ≤1 miss). Bypass
-   does not help on this stream, so the ~2× LRU/optimal gap is the real headroom.
+Demand is **~7% higher** than v3 (0.904 vs 0.834 GB/tok best policy) because the
+5,160 uncharged accesses are now included. All conclusions hold, with limited
+wording:
 
-## 6. Conditional throughput (per emitted token; core 17.5 ms/cycle ÷ 3.864 = 4.53 ms/tok)
+- **Staging: negligible benefit in the current proxy replay** (−1.5% to −0.8%;
+  effectively zero, slightly negative). **No demonstrated runtime speedup.**
+- **Residency: ~2× miss-count headroom within the current replay** (LRU/optimal
+  2.0-2.1×). This is miss-count headroom, **not necessarily 2× end-to-end
+  speed**, and it is **not the only possible software improvement**.
+- **Belady (mandatory and bypass) is an optimal-cache figure for the admission
+  models implemented**, not a universal lower bound over every legal design.
+- **Bypass ≈ mandatory** again (≤1 miss difference) — bypass adds nothing here.
+
+## 5. Conditional throughput (recalculated after the fix)
+
+Core per emitted token: 17.5 ms/cycle ÷ 3.864 = 4.53 ms.
 
 | cache | GB/tok | @0.55 | @1.05 | @1.82 | @13.0 GB/s | 30 tok/s needs |
 |---|---|---|---|---|---|---|
-| LRU sequential | 0.834 | 0.7 | 1.3 | 2.2 | 14.6 | 28.9 GB/s |
-| Belady optimal | 0.411 | 1.3 | 2.5 | 4.3 | 27.7 | **14.3 GB/s** |
+| LRU best | 0.904 | 0.6 | 1.2 | 2.0 | 13.5 | 31.4 GB/s |
+| Belady optimal | 0.432 | 1.3 | 2.4 | 4.1 | 26.5 | **15.0 GB/s** |
 
-At the measured storage envelope (0.55-1.82 GB/s), even optimal caching yields
-1.3-4.3 tok/s. For 30 at optimal, storage must reach ~14.3 GB/s — above this
-NVMe and above PCIe Gen3 x16 H2D (12.84 GB/s). No such expert-storage tier
-exists on this box.
+The **~15.0 GB/s** figure is a **conditional estimate** (measured demand under
+the implemented admission models × measured core), not a measured hardware
+requirement. It moves from v3's 14.3 to 15.0 because the boundary forwards are
+now charged.
 
-## 7. What v3 establishes vs does not
+## 6. Status
 
-- **Establishes (on the accepted-path proxy, canonical acceptance, real staged
-  order):** Mosaic Frontier's staged-verification mechanism does not reduce
-  demand; the residency policy has ~2× headroom to optimal; bypass adds nothing;
-  even optimal caching needs ~14.3 GB/s storage for 30.
-- **Does NOT establish:** a universal impossibility. Belady@13 GB/s reaches
-  27.7 tok/s; if a ≥14.3 GB/s exact expert-storage tier existed AND near-optimal
-  online caching were realized AND the proxy holds, 30 is arithmetically
-  conceivable. None holds on this hardware today.
-- **Open caveat (unchanged):** window rows use accepted-path routes as a
-  speculative-candidate proxy; the demand-direction error vs real candidates is
-  **unknown** (withdrawn any "capture can only worsen" claim). A real
-  speculative capture is the only artifact that removes this caveat.
+> Exact-30 remains **unsupported**. This defect provided **no positive evidence**
+> that 30 is achievable. The corrected replay is now trustworthy: canonical
+> acceptance (E_A=depth+1, depth may be 0), every boundary forward charged and
+> proven, real per-stage access order, one shared ledger, one continuous LRU,
+> both mandatory-admission and bypass-capable oracles.
+>
+> Staging has negligible benefit in this proxy replay with no demonstrated
+> runtime speedup. Residency shows ~2× miss-count headroom within this replay.
+> The accepted-path proxy remains the one open measurement (direction vs real
+> speculative candidates unknown). The 15.0 GB/s figure is conditional and
+> requires this same accounting to be applied to any future capture.
 
-## 8. Recommendation
+Per the review: boundary accounting correction is **complete**; no expensive
+capture authorized yet; no further architecture expansion.
 
-Consistent with the review: **pause new architecture and expensive captures;
-this validated replay is the deliverable.** It now meets the stated invariants —
-explicit root/draft/bonus/next-cycle accounting reconciled to `prefix_metrics`,
-every committed source position accounted for (free bonus noted), real
-stage-by-stage access order, one shared ledger, persistent cache across
-intervals, and both mandatory-admission and bypass-capable oracles.
-
-Defensible status, restated exactly:
-> Mosaic Frontier has no demonstrated useful speedup (staging ~0%). 30 tok/s is
-> unsupported on this hardware; a universal maximum is NOT established. Measured
-> achieved baseline 0.151 tok/s (reference capture). Conditional bounds
-> (measured demand × LRU-or-optimal cache × measured storage) span ~0.7-4.3
-> tok/s; reaching 30 needs ~14.3 GB/s exact expert storage plus near-optimal
-> caching, neither available here. The residency-policy 2× gap is the only
-> software headroom; the accepted-path proxy is the only open measurement.
-
-Artifacts: frontier0_screen.py (v3), frontier0_screen.json.
+Artifacts: frontier0_screen.py (v4), frontier0_screen.json
+(includes the `boundary_check` record).

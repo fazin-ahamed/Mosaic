@@ -1,16 +1,16 @@
 # Graph Report - MosaicVM  (2026-09-21)
 
 ## Corpus Check
-- 764 files · ~4,384,148 words
+- 764 files · ~4,384,469 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 4251 nodes · 8309 edges · 303 communities (263 shown, 31 thin omitted)
+- 4259 nodes · 8322 edges · 295 communities (257 shown, 29 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 240 edges (avg confidence: 0.89)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `60182714`
+- Built from commit: `8051cd61`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -26,7 +26,7 @@
 - mxint.py
 - test_dspark_tree.py
 - Router
-- warmup_steady
+- true_p2_sweep.py
 - validate_exact_layer.py
 - floor_b_moe.py
 - test_exact_dsa_decode_parity.py
@@ -40,14 +40,14 @@
 - mxfp4_decode.py
 - d3_scale_watchdog.sh
 - ExactAttention
-- emit_tiles
+- fused_moe_mxint
 - launch
 - validate_exact_model.py
 - snapshot
 - dspark_wire.py
 - qpa_mma.py
 - stage1_train.py
-- d2_cpu_expert.py
+- fp4_source.py
 - pack_mxfp4
 - d3_dd1_hist_eval.py
 - d3_speccapture_killgate.py
@@ -59,25 +59,25 @@
 - validate_dsa_real_weights.py
 - MosaicVM Continuation Contract (AGENTS.md)
 - hc_split_sinkhorn
-- w4a16_gemm.py
+- w4a16_grouped.py
 - dsa_bench.py
 - d2e2b_per_case_ablation.py
-- fused_moe_mxint
+- pack_mxfp4_nk
 - C192WorkingSet
 - nanospark_b3s_rfix.py
 - recurrent_drafter.py
 - streaming_model.py
-- _allocate_mxint_experts
+- _allocate_packed4_experts
 - encoding_encoding_dsv4.py
 - d3_scale1000_author.py
 - _w8a8_block_fp8_matmul
 - expert_entropy.py
 - stage05_heads.py
-- cast_exact_attention
+- p2_exact_dsa.py
 - config.py
 - d3_scale_monitor.sh
 - build_kernel_module
-- transport.py
+- pack_w4
 - d2e2_hybrid_tail.py
 - d3_scale1000_train.py
 - frontier0_screen.py
@@ -93,7 +93,7 @@
 - d3_scale700_author.py
 - .__init__
 - cpu_expert_bench.py
-- main
+- resident_core.py
 - moe_ops.py
 - inference_model.py
 - dispatch_profile.py
@@ -102,21 +102,21 @@
 - branchpack_oracle.py
 - d3_capdev70_supervisor.sh
 - d3_scale1000_train_author.py
-- skinny_fp4.py
+- layout_assignments
 - d3_r2_teacher_audit.py
 - d3_safecapture_supervisor.sh
 - mlp
 - d3_scale1000_engine.sh
-- fp8_linear
+- fp8_core.py
 - p3_deadline_sim.py
 - core_classify.py
 - d2_tail_inventory.py
 - dspark_recursion_diag.py
-- validate_dsa_source.py
+- SourceTail
 - phase25_report.py
 - routing_coverage.py
 - tau_h_analysis.py
-- xsimt.py
+- capture_real_calls
 - d3_scale1000_orchestrate.sh
 - d3_scale_author.py
 - ff_ref_hiddens.py
@@ -143,12 +143,12 @@
 - StreamLinear
 - d3_scale700_engine.sh
 - d3_scale700_orchestrate.sh
-- pack_w4
+- w4a16_gemm
 - ek0_route_census.py
 - core_inventory.py
 - d3_capdev70_author.py
-- gu_pair.py
-- .prefill
+- fused_moe_qpa
+- vnni_v4_race.py
 - h0b_cpu_experts.py
 - Tensor
 - _sparse_attn_fused
@@ -158,14 +158,13 @@
 - d3_ofdm_finish.sh
 - d3_scale1000_finish.sh
 - d3_scale700_teacher.py
-- kernel_resources.py
+- _qpa_triton_kernel
 - lc0_entropy.py
 - link0_bandwidth.py
-- SourceTail
+- CensusLinear
 - Probability Mass for Trees; L42 Shows Information Exists
 - Completed this session
 - core/manifest.json
-- test_grouped_imma_parity.py
 - linear
 - Session Report: CAP-DEV70 — NEAR-MISS (E[A]=3.76, gate 4.0)
 - Recovery Exposure Is Exhausted as a Scaling Path
@@ -189,7 +188,6 @@
 - (ΔH=+9); SCALE1000 Authorized; Capability Gate Still Open
 - Session Report: LINK0 + LC0 + LC1 — Lossless Compression Rail CLOSED
 - source_corpus/manifest.json
-- hw_profile.py
 - cache/manifest.json
 - G2 Calibration — Source-vs-Source Envelope + §41 Localization
 - Session Report — A1 Parity Audit: OFF-BY-ONE ROLLOUT BUG FOUND AND FIXED
@@ -235,12 +233,10 @@
 - Session Report — SafeCapture Resume after Host-RAM OOM
 - Session Report: D3 SCALE1000 Teacher Generation Complete
 - SCALE700 Authorized; Corpus Hypothesis Confirmed)
-- Session Report: FRONTIER-0 tier-1 screen (v2, corrected)
+- Session Report: FRONTIER-0 tier-1 screen (v3, canonical acceptance)
 - Session Report — T1 Multi-State (WEAK) + Track H Hybrid (1.11s — WEAK)
 - Session Report — Track P: Recurrent Drafter R0-R2 Result
 - Session Report — All Four Tracks (E/S/D/M) + G2 v1 Freeze
-- dsa_attention.py
-- dsa_decode_attention
 - DATA/D3 readiness audit — 2026-09-07
 - d3_scale1000_teacher_aug/manifest.json
 - d3_scale700_teacher_aug/manifest.json
@@ -274,10 +270,8 @@
 - Session Report — DD-1 First-Decision Specialist: Val S1 = 9/21
 - d3_scale1000_train_bf16.py
 - d3_scale_teacher.py
-- prompts.py
 - cast_e2m1fn_to_e4m3fn
 - d3_multidomain_tranche1.source.py
-- d3_source_pilot.source.py
 - 116. First D3 decision
 - 111. D3 decision
 - D2 CPU real-expert correctness probe — 2026-09-07
@@ -286,8 +280,6 @@
 - Exact single-layer parity vs kit source — PASS (rung 1 of §43 ladder)
 - 110. D2 decision
 - 112. D1-B32 decision
-- capture_routes_local
-- PinnedExpertPool
 - Real-weight DSA numeric validation — PASS (authoritative bytes)
 - 136. Canonical NEXT
 - 14. Core GEMM
@@ -337,11 +329,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (303 total, 31 thin omitted)
+## Communities (295 total, 29 thin omitted)
 
 ### Community 0 - "dsa_layers.py"
-Cohesion: 0.08
-Nodes (40): act_quant_sim(), apply_rotary_emb(), _bits_to_f32(), compress_topk_idxs_static(), dequant_scale(), dequant_weight(), fp4_act_quant_sim(), hadamard() (+32 more)
+Cohesion: 0.07
+Nodes (43): act_quant_sim(), apply_rotary_emb(), _bits_to_f32(), compress_topk_idxs_static(), dequant_scale(), dequant_weight(), fp4_act_quant_sim(), get_freqs_table() (+35 more)
 
 ### Community 1 - "_synthetic_capture"
 Cohesion: 0.07
@@ -356,12 +348,12 @@ Cohesion: 0.18
 Nodes (12): apply_rotary(), precompute_freqs_cis(), Kit-exact YaRN rope (inference_model.py)., Kit-exact rotary on the last dim (complex pairs)., log(), main(), NanoSpark B1+B2: functional sensitivity + margin analysis (§36-37). B1 — Logit-…, log() (+4 more)
 
 ### Community 4 - "modal_app.py"
-Cohesion: 0.20
-Nodes (18): function, capture_routes(), compute_floor(), download_model(), dsa_proof(), golden_reference(), hw_profile(), phase01_report() (+10 more)
+Cohesion: 0.06
+Nodes (49): function, local_entrypoint, capture_routes(), capture_routes_local(), compute_floor(), download_model(), dsa_proof(), golden_reference() (+41 more)
 
 ### Community 5 - "V4Config"
-Cohesion: 0.06
-Nodes (37): V4Config, ExactAttentionAdapter, Bridge ExactAttention to the eager Attention interface ([b, t, d]).…, Reset decode position AND all session state (ring, compressed history,…, Attention, DenseMoELayer, ExpertMLP, HashMoELayer (+29 more)
+Cohesion: 0.07
+Nodes (30): V4Config, ExactAttentionAdapter, Bridge ExactAttention to the eager Attention interface ([b, t, d]).…, Reset decode position AND all session state (ring, compressed history,…, Attention, DenseMoELayer, ExpertMLP, HashMoELayer (+22 more)
 
 ### Community 6 - "tiny_causal.py"
 Cohesion: 0.07
@@ -372,20 +364,20 @@ Cohesion: 0.02
 Nodes (127): 100. No universal verifier-wall threshold, 101. Current strongest synthetic K32 point, 102. At E[A]=22, 103. At E[A]=16, 104. K-extension remains an escape path, 105. Why longer K may help, 106. Why longer K may hurt, 107. Closed branches remain (+119 more)
 
 ### Community 8 - "mxint.py"
-Cohesion: 0.05
-Nodes (100): library(), linear(), prepare_weights(), quantized_gemm(), CPU source-activation adapter for VNNI; historical integer kernels unchanged.…, self_check(), _load(), _p1_parity_check() (+92 more)
+Cohesion: 0.07
+Nodes (58): decode_e4m3(), float8_e4m3fn or uint8-viewed e4m3 -> fp32., _as_u8(), _cdiv(), decode_activation_int(), _dp4a_grouped_src(), _dp4a_src(), _get_fn() (+50 more)
 
 ### Community 9 - "test_dspark_tree.py"
 Cohesion: 0.10
 Nodes (26): accepted_prefix(), analyze(), d0_sampled(), d1_greedy(), d2_coverage(), d3_score_mass_surrogate(), _depth_stats(), DSpark analysis from full-stream draft records — POST-AUDIT semantics. Operates… (+18 more)
 
 ### Community 10 - "Router"
-Cohesion: 0.11
-Nodes (23): calibrate(), Calibrate mean AED k on router logits (no full-model forward)., build_capture_harness(), capture_one_prompt(), Generate n_positions consecutive tokens greedily, capturing routes. Returns…, Attach forward hooks to every Router/HashRouter module. Returns (hooks,…, log(), main() (+15 more)
+Cohesion: 0.13
+Nodes (20): calibrate(), Calibrate mean AED k on router logits (no full-model forward)., build_capture_harness(), capture_one_prompt(), Generate n_positions consecutive tokens greedily, capturing routes. Returns…, Attach forward hooks to every Router/HashRouter module. Returns (hooks,…, log(), main() (+12 more)
 
-### Community 11 - "warmup_steady"
-Cohesion: 0.08
-Nodes (69): build_block(), main(), Track P3: REAL C192 streaming implementation benchmark. Implements the roadmap…, main(), Track D: split fused_moe dispatch into GPU work vs launch/sync. Per…, alloc_workspace(), compute_layer(), decode_layer() (+61 more)
+### Community 11 - "true_p2_sweep.py"
+Cohesion: 0.10
+Nodes (42): Event, build_block(), main(), Track P3: REAL C192 streaming implementation benchmark. Implements the roadmap…, inference_mode, Process committed positions [0, S) as one batch -> h42 rows. Input [S, 4, 4096]…, Process one position p -> h42[p] (CPU tensor [4, 4096]). Input [4, 4096] ->…, alloc_workspace() (+34 more)
 
 ### Community 12 - "validate_exact_layer.py"
 Cohesion: 0.13
@@ -393,7 +385,7 @@ Nodes (16): build_args(), dq_fp8_arch(), dq_fp8_shared(), _fp4_gemm(), _get_expe
 
 ### Community 13 - "floor_b_moe.py"
 Cohesion: 0.06
-Nodes (62): _allocate_experts(), _allocate_mxfp4_experts(), _allocate_nk_experts(), _charge_pool(), _count_launches(), pack_pool(), Tensor, Floor B: one V4 MoE layer, distinct W4 experts resident. (+54 more)
+Nodes (68): _allocate_experts(), _allocate_mxfp4_experts(), _allocate_mxint_experts(), _allocate_nk_experts(), _charge_pool(), _count_launches(), pack_pool(), Tensor (+60 more)
 
 ### Community 14 - "test_exact_dsa_decode_parity.py"
 Cohesion: 0.11
@@ -420,8 +412,8 @@ Cohesion: 0.04
 Nodes (93): main(), Full CPU tail adapter comparison on captured states; not native certification., main(), Evaluate exported D3 trajectories through the pinned source tail; no timing…, score(), main(), prefix_metrics(), prompt_mean_ci() (+85 more)
 
 ### Community 20 - "compute_floor.py"
-Cohesion: 0.15
-Nodes (28): _bench(), evaluate(), _is_3060(), measure_d2d_bw(), measure_dense_attention(), measure_hyper_connection(), measure_routed_experts(), measure_router() (+20 more)
+Cohesion: 0.16
+Nodes (26): _bench(), evaluate(), _is_3060(), measure_d2d_bw(), measure_dense_attention(), measure_hyper_connection(), measure_routed_experts(), measure_router() (+18 more)
 
 ### Community 21 - "test_dspark_wire.py"
 Cohesion: 0.10
@@ -429,51 +421,51 @@ Nodes (17): dequant_fp4(), dequant_fp8(), MoEDQ, FP8 [out, in] + scale [out, in/
 
 ### Community 22 - "mxfp4_decode.py"
 Cohesion: 0.17
-Nodes (23): e8m0_to_fp32(), float8_e8m0fnu or uint8 -> fp32 power-of-two., decode_e4m3_device(), decode_weight_nk(), e2m1_lut_f32(), e4m3_lut_f32(), exhaustive_e2m1_table(), _fn() (+15 more)
+Nodes (22): decode_e2m1_nk(), packed [..., K/2] uint8 -> fp32 E2M1 values [..., K], no weight scale., decode_e4m3_device(), decode_weight_nk(), e2m1_lut_f32(), exhaustive_e2m1_table(), _fn(), Tensor (+14 more)
 
 ### Community 23 - "d3_scale_watchdog.sh"
 Cohesion: 0.60
 Nodes (5): count_captures(), newest_age(), recorder_running(), relaunch(), d3_scale_watchdog.sh script
 
 ### Community 24 - "ExactAttention"
-Cohesion: 0.07
-Nodes (29): _clone_weights(), _full_recompute(), main(), Tensor, §74 NEXT 1 — full-model exact-DSA decode soak (AGENTS §51–52). State-lifetime /…, Fresh-module full-prefix recompute of positions [0, upto)., Single-processing lifecycle: every position is consumed by the soak module…, soak_layer() (+21 more)
+Cohesion: 0.05
+Nodes (47): _clone_weights(), _full_recompute(), main(), Tensor, §74 NEXT 1 — full-model exact-DSA decode soak (AGENTS §51–52). State-lifetime /…, Fresh-module full-prefix recompute of positions [0, upto)., Single-processing lifecycle: every position is consumed by the soak module…, soak_layer() (+39 more)
 
-### Community 25 - "emit_tiles"
-Cohesion: 0.25
-Nodes (10): emit_tiles(), Tensor, counts [E] int32 -> (expert_index [Tcap], m_start [Tcap], n_tiles [1],…, One launch covering all experts. Empty experts (count=0) are skipped by the…, _stack(), w4a16_grouped_gemm(), parametrize, emit_tiles tile_rows correctness (Phase 2.8 Step 5). (+2 more)
+### Community 25 - "fused_moe_mxint"
+Cohesion: 0.10
+Nodes (42): main(), Track D: split fused_moe dispatch into GPU work vs launch/sync. Per…, Named compute floors and the 30 tok/s equation used by every Phase 2.5 JSON., main(), Track D: GU parameter race at the Exact-30 widths (N16-32). Sweeps…, _certify_window(), Track B (MoE owner identification) + Track D (WideVerify Stage 2, measured).…, run() (+34 more)
 
 ### Community 26 - "launch"
-Cohesion: 0.16
-Nodes (26): _kernel(), measure_shape(), _packed_bytes(), Tensor, Phase 2.7 read roofline: cold DRAM, expert reuse, L2 ceiling. Authoritative…, Read nbytes from buf, optionally rotating start by stride each iter., run(), _run_stream() (+18 more)
+Cohesion: 0.14
+Nodes (28): _kernel(), measure_shape(), _packed_bytes(), Tensor, Phase 2.7 read roofline: cold DRAM, expert reuse, L2 ceiling. Authoritative…, Read nbytes from buf, optionally rotating start by stride each iter., run(), _run_stream() (+20 more)
 
 ### Community 27 - "validate_exact_model.py"
 Cohesion: 0.15
 Nodes (19): arch_get(), build_args(), build_ours_layer(), build_src_layer(), dq_fp8_arch(), dq_fp8_shared(), _fp4_gemm(), _get_expert_weights() (+11 more)
 
 ### Community 28 - "snapshot"
-Cohesion: 0.09
-Nodes (33): _bench_component(), _load_layer(), Phase 2.11C/D: exact core execution + T_core(K,C) + VRAM census. Loads FP8/BF16…, Load one layer's core tensors, dequantizing FP8→BF16., run(), _bench(), Native five-token DSpark kill gate — RTX 3060 K1–K6 verifier cycle (roadmap…, run() (+25 more)
+Cohesion: 0.13
+Nodes (23): _bench_component(), _load_layer(), Phase 2.11C/D: exact core execution + T_core(K,C) + VRAM census. Loads FP8/BF16…, Load one layer's core tensors, dequantizing FP8→BF16., run(), _bench(), Native five-token DSpark kill gate — RTX 3060 K1–K6 verifier cycle (roadmap…, run() (+15 more)
 
 ### Community 29 - "dspark_wire.py"
 Cohesion: 0.14
 Nodes (19): log(), main(), DSpark recursive-speculation experiment (roadmap §41-42, decisive). QUESTION…, load_mtp_tensors(), log(), main(), DSpark Stage-2: wire the drafter from the OBSERVED Stage-1 interface. Runs on…, Extract all mtp.* tensors from the HF shards; organize per stage. (+11 more)
 
 ### Community 30 - "qpa_mma.py"
-Cohesion: 0.09
-Nodes (35): _as_u8(), _cdiv(), _gather(), inverse_prepack_qpa(), _ksplit_direct_src(), _prep_act(), prepack_expert_bank_qpa(), _prepack_nk_to_frag() (+27 more)
+Cohesion: 0.07
+Nodes (58): _occupancy(), Driver occupancy + resource introspection for KSplit variants., run(), _load_roofline(), _packed_bytes_nk(), Phase 2.7 kernel race: native XSIMT/QPA vs Triton prototypes vs grouped INT4.…, run(), _try_tinygemm() (+50 more)
 
 ### Community 31 - "stage1_train.py"
 Cohesion: 0.13
 Nodes (16): ArchA, ArchB, ArchC, full_eval(), get_src_hc(), load_head(), load_split(), main() (+8 more)
 
-### Community 32 - "d2_cpu_expert.py"
-Cohesion: 0.21
-Nodes (14): main(), Source L41/L42 expert matrix on CPU; reference evidence only, never D2 timing.…, run_expert(), signed_activation_check(), main(), D2-E1: CPU VNNI expert vs source GPU expert parity on REAL routed activations…, library(), linear() (+6 more)
+### Community 32 - "fp4_source.py"
+Cohesion: 0.09
+Nodes (40): library(), linear(), prepare_weights(), quantized_gemm(), CPU source-activation adapter for VNNI; historical integer kernels unchanged.…, self_check(), main(), Source L41/L42 expert matrix on CPU; reference evidence only, never D2 timing.… (+32 more)
 
 ### Community 33 - "pack_mxfp4"
-Cohesion: 0.13
-Nodes (24): dequant_mxfp4(), _f32_to_e2m1(), _floor_e8m0_scale(), load_expert_mxfp4(), load_expert_mxfp4_prefix(), pack_mxfp4(), _pack_uint4(), Tensor (+16 more)
+Cohesion: 0.05
+Nodes (60): exact_moe(), Exact-30 MoE: native grouped XSIMT+QPA. Requires exact_target()., dequant_mxfp4(), _f32_to_e2m1(), _floor_e8m0_scale(), load_expert_mxfp4(), load_expert_mxfp4_prefix(), pack_mxfp4() (+52 more)
 
 ### Community 34 - "d3_dd1_hist_eval.py"
 Cohesion: 0.14
@@ -515,25 +507,25 @@ Nodes (11): 1,048,576-Token Exact Context Target, MosaicVM Continuation Contract
 Cohesion: 0.47
 Nodes (3): hc_split_sinkhorn(), Kit-exact hc_split_sinkhorn (inference_kernel.py lines 391-425)., TestSinkhorn
 
-### Community 44 - "w4a16_gemm.py"
+### Community 44 - "w4a16_grouped.py"
 Cohesion: 0.12
-Nodes (27): _capture(), _pool(), CUDA Graphs for the MoE-only K-set. Eager stays if capture fails., run(), _backend_sequential(), constexpr, jit, Fused W4A16 GEMM: never materializes a [K, N] bf16 weight. pack_w4 stores two… (+19 more)
+Nodes (25): _capture(), _pool(), CUDA Graphs for the MoE-only K-set. Eager stays if capture fails., run(), emit_tiles(), _emit_tiles_kernel(), fused_moe_w4a16(), _n_experts() (+17 more)
 
 ### Community 45 - "dsa_bench.py"
-Cohesion: 0.33
-Nodes (5): eager_forward(), Tensor, §60-1: exact DSA attention vs eager stand-in — matched full pipelines. Both…, Eager attention block on the SAME module weights: identical q/kv projections,…, _rms()
+Cohesion: 0.10
+Nodes (15): eager_forward(), Tensor, §60-1: exact DSA attention vs eager stand-in — matched full pipelines. Both…, Eager attention block on the SAME module weights: identical q/kv projections,…, _rms(), load_exact_attention(), Load real weights from the core archive into ExactAttention. `get(name) ->…, ExpertLRU (+7 more)
 
 ### Community 46 - "d2e2b_per_case_ablation.py"
 Cohesion: 0.27
 Nodes (6): main(), D2-E2b: per-case delta ablation (roadmap S45/S46, closure of the 4 E1 ULP-…, Pass-through GPU reference except at the target call, where the VNNI output is…, SubstitutingLinear, VNNICompute, xhash()
 
-### Community 47 - "fused_moe_mxint"
-Cohesion: 0.09
-Nodes (38): exact_moe(), exact_moe_mxint(), Exact-30 production MoE entry point. Gated on ``MOSAICVM_EXACT_TARGET=1``.…, Exact-30 MoE: native grouped XSIMT+QPA. Requires exact_target()., MXINT fused MoE. Gated on exact_target(); QPA remains the Exact default., layout_assignments(), Tensor, GPU-side MoE assignment layout. Expert ids never leave the device. (+30 more)
+### Community 47 - "pack_mxfp4_nk"
+Cohesion: 0.14
+Nodes (27): pack_mxfp4_nk(), w_nk [N, K] -> packed uint8 [N, K/2], scale float8_e8m0fnu [N, K/32]. FLOOR…, _imma_direct_src(), mxint_imma_gemm(), prepack_expert_bank_mxint(), prepack_expert_bank_mxint_packed4(), x [M,K] bf16, packed [N,K/2], scale [N,K/32] -> [M,N] bf16. M>=4., Build an MXINTExpertBank from NK packed tensors (concat or split gate/up). (+19 more)
 
 ### Community 48 - "C192WorkingSet"
-Cohesion: 0.23
-Nodes (7): C192WorkingSet, Tensor, Slot-mapped VRAM expert cache over mutable bank tensors., Evict the LRU-oldest NON-PINNED resident expert. Invariant: self.lru keys ==…, Pin the demand set; async-load misses (best-effort when the cache is saturated…, Block until all needed residents' transfers completed., Expert ids -> slot ids. One D2H + dict map + one H2D per call. Defensive: any…
+Cohesion: 0.16
+Nodes (9): C192WorkingSet, PinnedExpertPool, Tensor, Slot-mapped VRAM expert cache over mutable bank tensors., Evict the LRU-oldest NON-PINNED resident expert. Invariant: self.lru keys ==…, Pin the demand set; async-load misses (best-effort when the cache is saturated…, Block until all needed residents' transfers completed., Expert ids -> slot ids. One D2H + dict map + one H2D per call. Defensive: any… (+1 more)
 
 ### Community 49 - "nanospark_b3s_rfix.py"
 Cohesion: 0.17
@@ -544,16 +536,16 @@ Cohesion: 0.17
 Nodes (12): evaluate(), head_logits(), load_head(), load_split(), main(), no_grad, Track P: recurrent target-feature drafter (R0/R1/R2). Design: z_0 =…, H [N, K, 4096] -> logits [N, K, V] via frozen head, chunked over flattened… (+4 more)
 
 ### Community 51 - "streaming_model.py"
-Cohesion: 0.05
-Nodes (48): _try_load_checkpoint_experts(), Capture or replay golden MoE routes. Never fabricate from weights+token-ids., run(), inspect_checkpoint_expert_layout(), If MOSAICVM_MODEL_ROOT is set, inspect one expert w1.weight + .scale. Does not…, load_exact_attention(), Load real weights from the core archive into ExactAttention. `get(name) ->…, dequant_fp4() (+40 more)
-
-### Community 52 - "_allocate_mxint_experts"
 Cohesion: 0.07
-Nodes (64): _allocate_mxint_experts(), 256 distinct experts as an MXINTExpertBank, generated in chunks of 32., Named compute floors and the 30 tok/s equation used by every Phase 2.5 JSON., compute_layer_fused(), compute_layer with all 8 core GEMMs fused-decoded from FP8., hot8_partial_from_full(), main(), NEXT 1: hybrid-bank sweep — production-fit K56 MoE timing. VRAM budget: core… (+56 more)
+Nodes (40): _try_load_checkpoint_experts(), Capture or replay golden MoE routes. Never fabricate from weights+token-ids., run(), dequant_fp4(), dequant_fp8(), fit_linear_weight(), maybe_unpack_fp4(), Tensor (+32 more)
+
+### Community 52 - "_allocate_packed4_experts"
+Cohesion: 0.11
+Nodes (33): compute_layer_fused(), compute_layer with all 8 core GEMMs fused-decoded from FP8., hot8_partial_from_full(), main(), NEXT 1: hybrid-bank sweep — production-fit K56 MoE timing. VRAM budget: core…, Compact partial hot8 bank holding only hot experts (tensors sliced)., ids [K,6] -> per-assignment rows: (tok_idx, ids[N,1], wts[N,1])., split_window() (+25 more)
 
 ### Community 53 - "encoding_encoding_dsv4.py"
-Cohesion: 0.10
-Nodes (34): Any, decode_dsml_to_arguments(), _drop_thinking_messages(), encode_arguments_to_dsml(), encode_messages(), find_last_user_index(), merge_tool_messages(), parse_message_from_completion_text() (+26 more)
+Cohesion: 0.07
+Nodes (45): Any, inspect(), install_deps(), load_model(), log(), main(), Phase 2.13P-D: actual DSpark/MTP drafter measurement (K_CHAIN, eta_draft). Runs…, Stage-1 inspection: enumerate every possible MTP/DSpark surface. Produces the… (+37 more)
 
 ### Community 54 - "d3_scale1000_author.py"
 Cohesion: 0.39
@@ -571,21 +563,21 @@ Nodes (12): _duplicate_tile_rate(), _get_range(), _nibble_entropy(), Phase 2.12W
 Cohesion: 0.23
 Nodes (11): load(), main(), G2 calibration: kit-source (Blackwell) vs kit-source (RTX 3060). Compares the…, build_model(), eval_head(), load_split(), Track S Stage-0.5 (roadmap §47-53): trained deep-exit heads. Phase 1 (record):…, X: [N, 4, 4096] fp32 (GPU). Returns top-k accuracy dict. (+3 more)
 
-### Community 58 - "cast_exact_attention"
-Cohesion: 0.13
-Nodes (20): cast_exact_attention(), Enforce the source dtype scheme after any module-level .to() cast: bf16 GEMM…, parametrize, skipif, _quantize_checkpoint_representable(), BF16-storage DSA residency mode — bitwise equivalence (AGENTS §54–57). The DSA…, test_bf16_storage_bitwise_identical(), _to_bf16_storage() (+12 more)
+### Community 58 - "p2_exact_dsa.py"
+Cohesion: 0.15
+Nodes (28): compute_layer(), Identical op sequence to core_timing.py per-layer components., main(), §86 NEXT 0 — memory-accounting audit (AGENTS §54–56). FINAL FORM. Resolves the…, smi_used_free(), stage(), build_dsa_modules(), certify() (+20 more)
 
 ### Community 59 - "config.py"
 Cohesion: 0.08
-Nodes (29): Path, Authoritative V4 config loader. The checkpoint's config.json on the volume…, Exact contract part 1: config values match the V4-0731 source semantics.…, validate_exact_v4_config(), grouped_expert_forward(), HashRouter, Hash-routed layers: no bias, real gate-projection scores, literal normalize.…, Dispatch each token to its selected experts (V4-0731 source semantics). FP32… (+21 more)
+Nodes (34): exact_moe_mxint(), Exact-30 production MoE entry point. Gated on ``MOSAICVM_EXACT_TARGET=1``.…, MXINT fused MoE. Gated on exact_target(); QPA remains the Exact default., Authoritative V4 config loader. The checkpoint's config.json on the volume…, Exact contract part 1: config values match the V4-0731 source semantics.…, validate_exact_v4_config(), grouped_expert_forward(), HashRouter (+26 more)
 
 ### Community 61 - "build_kernel_module"
-Cohesion: 0.15
-Nodes (14): Pinned source L41/L42 replay; correctness harness, not production timing., main(), Track D1-R: exact L41/L42 tail replay from true h40 states. THE decisive…, capture_real_calls(), main(), D2-P: adapter-inclusive CPU VNNI expert-path timing (roadmap S38). v2 —…, Load the kit model, run val prompts, capture routed expert calls (prefix,…, main() (+6 more)
+Cohesion: 0.16
+Nodes (14): capture_span(), main(), prompt_splits(), Stage-1 dataset recorder: batched one-state multi-token data. Runs the kit…, Pinned source L41/L42 replay; correctness harness, not production timing., main(), Track D1-R: exact L41/L42 tail replay from true h40 states. THE decisive…, main() (+6 more)
 
-### Community 62 - "transport.py"
-Cohesion: 0.43
-Nodes (6): _bench_component(), _bench_h2d(), _bench_nvme(), Phase 2.12W-A: real transport measurement on the target machine. Measures…, Sequential read benchmark., run()
+### Community 62 - "pack_w4"
+Cohesion: 0.25
+Nodes (14): _backend_sequential(), pack_gate_up(), pack_w4(), Tensor, x [M, H], expert_ids [M] -> y [M, H]. Unique-expert loop, one w4a16_gemm per…, w_bf16 [K, N] -> packed uint8 [K, N/2] (low nibble first) and scale fp16 [K,…, Concatenate gate and up along N, then pack_w4. N_out = 2 * MOE_INTER., w4a16_grouped_moe_sequential() (+6 more)
 
 ### Community 63 - "d2e2_hybrid_tail.py"
 Cohesion: 0.32
@@ -596,8 +588,8 @@ Cohesion: 0.12
 Nodes (29): build_inram(), build_mmap(), main(), norm_inram(), norm_mmap(), Equivalence harness: prove FP32 mmap path == in-RAM FP32 path. Builds the…, main(), mem_available_gb() (+21 more)
 
 ### Community 65 - "frontier0_screen.py"
-Cohesion: 0.21
-Nodes (13): access_stream(), belady_misses(), build_ledger(), fit_p(), lru_misses(), main(), FRONTIER-0 tier-1 screen (v2, corrected). Fixes five methodology bugs found in…, offline optimal (Belady) miss count on a fixed access list. (+5 more)
+Cohesion: 0.16
+Nodes (19): belady_bypass(), belady_mandatory(), build_accesses(), build_ledger(), draw_depth(), fit_q(), lru_miss_by_cycle(), main() (+11 more)
 
 ### Community 66 - "d3_scale_orchestrate.sh"
 Cohesion: 0.33
@@ -624,8 +616,8 @@ Cohesion: 0.60
 Nodes (4): log(), main(), NanoSpark evidence phase (roadmap §43-48, §66 items 2-5). Phase A — capture…, _save()
 
 ### Community 72 - "vnni_bench.py"
-Cohesion: 0.23
-Nodes (10): e4m3_decode(), main(), make_inputs(), Track V: exact VNNI packed-FP4 expert kernel — parity + benchmark. Parity:…, fp32 reference with the SAME scale structure: y[m,n] = sum_wb sW[n,wb] *…, reference(), main(), make_inputs() (+2 more)
+Cohesion: 0.43
+Nodes (6): e4m3_decode(), main(), make_inputs(), Track V: exact VNNI packed-FP4 expert kernel — parity + benchmark. Parity:…, fp32 reference with the SAME scale structure: y[m,n] = sum_wb sW[n,wb] *…, reference()
 
 ### Community 73 - "fetch_core.py"
 Cohesion: 0.39
@@ -636,16 +628,16 @@ Cohesion: 0.33
 Nodes (8): _belady(), _block_sequence(), _bytes_for(), _load_corpus(), Phase 2.12A: golden-route residency oracle (byte-aware Belady). Simulates…, Byte-aware Belady VRAM cache + strict-hierarchy RAM warm tier. granularity…, Group positions into verification blocks of width K; each block step is (layer…, run()
 
 ### Community 76 - ".__init__"
-Cohesion: 0.14
+Cohesion: 0.13
 Nodes (11): Linear, DSparkConfidenceHead, DSparkMarkovHead, ModelArgs, ParallelEmbedding, ParallelHead, Temporarily override torch default dtype, restoring it on exit (even if an…, Model hyperparameters. Field names match the config JSON keys. (+3 more)
 
 ### Community 77 - "cpu_expert_bench.py"
 Cohesion: 0.29
 Nodes (7): cpu_expert(), e8m0_to_scale(), main(), Track C: exact CPU expert kernel benchmark (Dual-Rail economics). Source-class…, e8m0 byte -> 2^(b-127) exactly., x_q: int8-viewed e4m3 codes [rows, 4096]; x_s: [rows, 32] pow2. p_gu: uint8…, ndarray
 
-### Community 78 - "main"
-Cohesion: 0.23
-Nodes (11): inspect(), install_deps(), load_model(), log(), main(), Phase 2.13P-D: actual DSpark/MTP drafter measurement (K_CHAIN, eta_draft). Runs…, Stage-1 inspection: enumerate every possible MTP/DSpark surface. Produces the…, generate() (+3 more)
+### Community 78 - "resident_core.py"
+Cohesion: 0.21
+Nodes (9): Path, load_resident_core(), _pack_linear(), _pack_o_lora_a(), Resident compressed core: W4 attention/shared/lm_head on GPU, embeddings in…, Load resident core, report budget, 1-token random forward shape check., o_lora_a is consumed via grouped einsum, not Linear.forward., Instantiate V4Model with W4-packed core tensors charged through budget(). If… (+1 more)
 
 ### Community 79 - "moe_ops.py"
 Cohesion: 0.25
@@ -656,8 +648,8 @@ Cohesion: 0.13
 Nodes (17): apply_rotary_emb(), Attention, Compressor, DSparkAttention, get_compress_topk_idxs(), get_dspark_topk_idxs(), get_window_topk_idxs(), Indexer (+9 more)
 
 ### Community 81 - "dispatch_profile.py"
-Cohesion: 0.15
-Nodes (15): Event, amdahl(), _event_ms(), _LaunchCounter, _make_ids(), _pack_pool(), _profiled_sequential_moe(), _profiler_stats() (+7 more)
+Cohesion: 0.20
+Nodes (12): amdahl(), _event_ms(), _LaunchCounter, _make_ids(), _pack_pool(), _profiled_sequential_moe(), _profiler_stats(), Tensor (+4 more)
 
 ### Community 82 - "test_aec.py"
 Cohesion: 0.27
@@ -679,9 +671,9 @@ Nodes (9): count_val(), dump_on_death(), launch_epoch(), newest_age(), next_cats
 Cohesion: 0.46
 Nodes (7): collect_blocked(), _load_prompts(), main(), _norm(), Path, Author SCALE1000 train additions (roadmap §15–§20). 301 new training prompts,…, re_stem()
 
-### Community 87 - "skinny_fp4.py"
-Cohesion: 0.16
-Nodes (20): fused_moe_skinny(), _grouped_skinny_gemm(), last_launch_count(), _lut_tensor(), pack_gate_up_mxfp4(), constexpr, jit, Tensor (+12 more)
+### Community 87 - "layout_assignments"
+Cohesion: 0.32
+Nodes (6): layout_assignments(), Tensor, GPU-side MoE assignment layout. Expert ids never leave the device., expert_ids [A] int64, A = k*top_k. Returns: sorted_ids [A] expert ids sorted…, test_layout_assignments_counts_and_segments(), test_routed_reduce_bitwise()
 
 ### Community 88 - "d3_r2_teacher_audit.py"
 Cohesion: 0.67
@@ -699,9 +691,9 @@ Nodes (5): mlp(), Tensor, log(), main(), Real >=256-position route capture on th
 Cohesion: 0.52
 Nodes (6): count(), launch_phase(), newest_age(), recorder_age(), recorder_running(), d3_scale1000_engine.sh script
 
-### Community 92 - "fp8_linear"
-Cohesion: 0.14
-Nodes (21): _decode_parity_check(), _dequant_block(), dequant_kernel(), _e8m0_to_f32(), fp8_linear(), _fused_fp8_linear(), constexpr, jit (+13 more)
+### Community 92 - "fp8_core.py"
+Cohesion: 0.13
+Nodes (25): _decode_parity_check(), _dequant_block(), dequant_kernel(), _e8m0_to_f32(), fp8_linear(), _fused_fp8_linear(), constexpr, jit (+17 more)
 
 ### Community 93 - "p3_deadline_sim.py"
 Cohesion: 0.47
@@ -731,9 +723,9 @@ Nodes (4): _coverage(), Routing coverage: expert concentration statistics from s
 Cohesion: 0.60
 Nodes (4): hid_map(), main(), Track E: prefix-conditioned hidden envelope tau_h(s). Compares the 3060-kit…, rel()
 
-### Community 101 - "xsimt.py"
-Cohesion: 0.15
-Nodes (17): _as_fp8_uint8(), _cdiv(), inverse_prepack_xsimt(), _invqpa_c(), prepack_expert_bank(), prepack_xsimt(), _prequant(), constexpr (+9 more)
+### Community 101 - "capture_real_calls"
+Cohesion: 0.50
+Nodes (4): capture_real_calls(), main(), D2-P: adapter-inclusive CPU VNNI expert-path timing (roadmap S38). v2 —…, Load the kit model, run val prompts, capture routed expert calls (prefix,…
 
 ### Community 102 - "d3_scale1000_orchestrate.sh"
 Cohesion: 0.33
@@ -811,9 +803,9 @@ Nodes (6): count(), launch_phase(), newest_age(), recorder_age(), recorder_runni
 Cohesion: 0.33
 Nodes (5): MALLOC_ARENA_MAX, OMP_NUM_THREADS, PYTORCH_CUDA_ALLOC_CONF, SCG_CACHE_CAP, d3_scale700_orchestrate.sh script
 
-### Community 135 - "pack_w4"
+### Community 135 - "w4a16_gemm"
 Cohesion: 0.15
-Nodes (22): _packed_bytes_mxfp4(), _packed_bytes_w4(), Skinny MXFP4 kernel race: skinny_mxfp4 vs grouped_blockm16 (INT4) baseline.…, run(), _try_tinygemm(), dequant_w4(), pack_gate_up(), pack_w4() (+14 more)
+Nodes (19): _packed_bytes_mxfp4(), _packed_bytes_w4(), Skinny MXFP4 kernel race: skinny_mxfp4 vs grouped_blockm16 (INT4) baseline.…, run(), _try_tinygemm(), dequant_w4(), constexpr, jit (+11 more)
 
 ### Community 136 - "ek0_route_census.py"
 Cohesion: 0.31
@@ -827,9 +819,13 @@ Nodes (6): bf16_bytes(), fp8_e4m3_block128_bytes(), inventory(), mxfp4_bytes(), 
 Cohesion: 0.46
 Nodes (7): collect_blocked(), _load_prompts(), main(), _norm(), Path, Author CAP-DEV70 — fresh capability-promotion holdout. 70 prompts, 10 per…, re_stem()
 
-### Community 139 - "gu_pair.py"
-Cohesion: 0.20
-Nodes (13): concat_gate_up(), pair_gate_up(), _perm(), Tensor, Source-preserving gate/up output-row pairing. Permute output rows: g0..15,…, n must be even; n/2 output rows per matrix, n total after concat., Permute output rows: g0..15, u0..15, g16..31, u16..31, ... packed_* [N, K/2],…, Bit-exact inverse of pair_gate_up. packed [2N,K/2] -> (g, sg, u, su). (+5 more)
+### Community 139 - "fused_moe_qpa"
+Cohesion: 0.09
+Nodes (33): _load(), _p1_parity_check(), Phase 2.9R go/no-go. One precedence-ordered verdict line., Tiny E=8 fixture: fused_moe_mxint (Hot8) vs fused_moe_qpa numeric parity., run(), concat_gate_up(), pair_gate_up(), _perm() (+25 more)
+
+### Community 140 - "vnni_v4_race.py"
+Cohesion: 0.60
+Nodes (4): main(), make_inputs(), Track V: v4 four-arm race — parity + M=1..8 benchmark. Arms: v3 (int8 hsum),…, reference()
 
 ### Community 141 - "h0b_cpu_experts.py"
 Cohesion: 0.43
@@ -867,9 +863,9 @@ Nodes (5): MALLOC_ARENA_MAX, OMP_NUM_THREADS, PYTORCH_CUDA_ALLOC_CONF, SCG_CACHE
 Cohesion: 0.53
 Nodes (5): main(), Path, SCALE700 teacher generator: gold-only SourceTail replay for the 490 new…, sha(), topk_pack()
 
-### Community 150 - "kernel_resources.py"
-Cohesion: 0.18
-Nodes (16): _occupancy(), Driver occupancy + resource introspection for KSplit variants., run(), function_attributes(), cuFuncGetAttribute over the standard CUfunction_attribute set. Returns dict., _get_fn(), _ksplit_grouped_src(), kind in {{'gu','down'}}. GU reads 544-B macro-tiles; Down reads two 272-B… (+8 more)
+### Community 150 - "_qpa_triton_kernel"
+Cohesion: 0.67
+Nodes (3): constexpr, jit, _qpa_triton_kernel()
 
 ### Community 151 - "lc0_entropy.py"
 Cohesion: 0.60
@@ -879,9 +875,9 @@ Nodes (4): entropy_bits(), main(), nibble_hist(), LC0 — real lossless compress
 Cohesion: 0.67
 Nodes (3): bench(), main(), LINK0 — measured PCIe H2D bandwidth at relevant transfer sizes. RTX 3060 is…
 
-### Community 153 - "SourceTail"
-Cohesion: 0.17
-Nodes (6): inference_mode, SourceTail, CensusLinear, main(), D2-COMPLETE-TAIL (roadmap S44-S46): complete L41/L42 draft-tail wall time at K…, Wraps an expert linear; counts calls/rows; optionally runs on CPU via VNNI.
+### Community 153 - "CensusLinear"
+Cohesion: 0.29
+Nodes (4): CensusLinear, main(), D2-COMPLETE-TAIL (roadmap S44-S46): complete L41/L42 draft-tail wall time at K…, Wraps an expert linear; counts calls/rows; optionally runs on CPU via VNNI.
 
 ### Community 154 - "Probability Mass for Trees; L42 Shows Information Exists"
 Cohesion: 0.13
@@ -894,10 +890,6 @@ Nodes (13): 1. DTR-R1 negative frozen (step 1), 2. DEV21 relabeled LEGACY-DEV (s
 ### Community 156 - "core/manifest.json"
 Cohesion: 0.14
 Nodes (13): method, n_tensors, out_sha256, phase, repo, revision, selection_rule, verification (+5 more)
-
-### Community 157 - "test_grouped_imma_parity.py"
-Cohesion: 0.23
-Nodes (13): _banks(), _check(), _exact_target(), fixture, parametrize, Permanent regression coverage for GROUPED_IMMA_TILE_BUG (AGENTS §10). The 2.9R…, Some sibling modules scrub this env var; set it per-test, not at import., Single expert, top-1, weight=1 — the original bug ladder (M>=4 IMMA). (+5 more)
 
 ### Community 158 - "linear"
 Cohesion: 0.18
@@ -936,7 +928,7 @@ Cohesion: 0.17
 Nodes (11): 1. Attention e8m0 scale tensors are noise-like, 2. Literal NaNs in bf16 `compressor.wgate`, 3. `hc_head_*` fp32 tensors are non-credible, Body, Filing checklist (per MosaicVM roadmap §10), Loader behavior, Minimal reproducer (verification only, no model run needed), Question (+3 more)
 
 ### Community 167 - "Expert"
-Cohesion: 0.17
+Cohesion: 0.18
 Nodes (6): Expert, Gate, MoE, MoE gating: computes expert routing scores and selects top-k experts. Supports…, Single MoE expert: SwiGLU FFN (w1, w2, w3). Computation in float32 for…, Mixture-of-Experts: gate routes each token to top-k routed experts + 1 shared…
 
 ### Community 168 - "g2_calib_3060_cert32/manifest.json"
@@ -990,10 +982,6 @@ Nodes (10): 1. Baseline (reproduced), 2. LINK0 — measured PCIe H2D (Gen3 x16),
 ### Community 180 - "source_corpus/manifest.json"
 Cohesion: 0.18
 Nodes (10): arithmetic_class, core_archive_sha_prefix, done, generator, hardware, n_gen, prompts, revision (+2 more)
-
-### Community 181 - "hw_profile.py"
-Cohesion: 0.31
-Nodes (10): cpu_gemm(), host_device_bandwidth(), power_clocks(), ram_profile(), Hardware profiler: emits one JSON profile for the current GPU + host. Measures…, Sequential + 4KB random reads from a file on the mounted volume., run(), _time_gpu() (+2 more)
 
 ### Community 182 - "cache/manifest.json"
 Cohesion: 0.20
@@ -1175,9 +1163,9 @@ Nodes (7): 1. Execution Summary, 2. Audit Results (audit.json), 3. Independent R
 Cohesion: 0.25
 Nodes (7): Artifacts, Consequences, Full numbers (SCALE-DEV70), Observations (scoped, not acted on), Predeclared verdict (S27–§30), SCALE700 Authorized; Corpus Hypothesis Confirmed), Session Report — SCALE210: PASS (ΔH=+5 on Fresh Holdout;
 
-### Community 227 - "Session Report: FRONTIER-0 tier-1 screen (v2, corrected)"
-Cohesion: 0.25
-Nodes (7): 1. Bugs fixed vs v1, 2. Corrected result (38 GB store, paired, per emitted token), 3. Conditional throughput (corrected, per emitted token), 4. What this does and does not establish, 5. Open items (unchanged by this correction), 6. Recommendation, Session Report: FRONTIER-0 tier-1 screen (v2, corrected)
+### Community 227 - "Session Report: FRONTIER-0 tier-1 screen (v3, canonical acceptance)"
+Cohesion: 0.20
+Nodes (9): 1. Acceptance semantics reconciled (finding 1), 2. Real staged access order (finding 2), 3. Continuous cache; interval binning (finding 3), 4. Two oracles (finding 4), 5. Result (38 GB store, paired, per emitted token), 6. Conditional throughput (per emitted token; core 17.5 ms/cycle ÷ 3.864 = 4.53 ms/tok), 7. What v3 establishes vs does not, 8. Recommendation (+1 more)
 
 ### Community 228 - "Session Report — T1 Multi-State (WEAK) + Track H Hybrid (1.11s — WEAK)"
 Cohesion: 0.25
@@ -1190,14 +1178,6 @@ Nodes (7): Artifacts, Honest caveats before escalation, Interpretation per the p
 ### Community 230 - "Session Report — All Four Tracks (E/S/D/M) + G2 v1 Freeze"
 Cohesion: 0.25
 Nodes (7): Roadmap corrections applied, Session Report — All Four Tracks (E/S/D/M) + G2 v1 Freeze, Status vs roadmap, Track D — routed-expert decomposition (`routed_expert_decomposition.json`, a5e7dd19), Track E — τ_h(s) frozen, G2 v1 spec written, Track M — VRAM census (`vram_census.json`, db5d9b0d), Track S — early-exit Stage-0 (`early_exit_scan.json`, c10b15e4)
-
-### Community 231 - "dsa_attention.py"
-Cohesion: 0.32
-Nodes (7): _dsa_attend_kernel(), _dsa_select_kernel(), constexpr, jit, Decode-time top-k sparse attention (DSA) Triton kernel. Doc §7: never…, Stage 1: per-head running top-k. Grid: (heads // HEAD_GROUP, batch). Never…, Stage 2: gather top-k KV per head and compute attention output.
-
-### Community 232 - "dsa_decode_attention"
-Cohesion: 0.32
-Nodes (6): dsa_decode_attention(), Public API. q: [H, index_dim] bf16 queries for one decoding token (batch=1).…, Plain PyTorch reference implementing the same top-k sparse attention., reference_topk_attention(), skipif, test_dsa_parity()
 
 ### Community 233 - "DATA/D3 readiness audit — 2026-09-07"
 Cohesion: 0.29
@@ -1331,10 +1311,6 @@ Nodes (5): build_union(), emit_rows(), label_tensors(), main(), SCALE1000 traine
 Cohesion: 0.53
 Nodes (5): main(), Path, SCALE210 teacher generator: gold-only SourceTail replay for the 126 new…, sha(), topk_pack()
 
-### Community 266 - "prompts.py"
-Cohesion: 0.33
-Nodes (4): Golden prompts shared by quality sweeps. Do not fork this list., Path, Static top-k quality sweep vs k=6 golden. Remote H100 run lives in…, write_blocked_stub()
-
 ### Community 267 - "cast_e2m1fn_to_e4m3fn"
 Cohesion: 0.40
 Nodes (5): cast_e2m1fn_to_e4m3fn(), main(), Tensor, Casts a tensor from e2m1fn to e4m3fn losslessly., Converts and saves model checkpoint files into a specified format. Args:…
@@ -1342,10 +1318,6 @@ Nodes (5): cast_e2m1fn_to_e4m3fn(), main(), Tensor, Casts a tensor from e2m1fn t
 ### Community 268 - "d3_multidomain_tranche1.source.py"
 Cohesion: 0.60
 Nodes (4): capture_span(), main(), prompt_splits(), Full four-stream state recorder with explicit teacher provenance. Default:…
-
-### Community 269 - "d3_source_pilot.source.py"
-Cohesion: 0.60
-Nodes (4): capture_span(), main(), prompt_splits(), Stage-1 dataset recorder: batched one-state multi-token data. Runs the kit…
 
 ### Community 270 - "116. First D3 decision"
 Cohesion: 0.40
@@ -1379,10 +1351,6 @@ Nodes (4): 110. D2 decision, Cheap tail, Expensive tail, Moderate tail
 Cohesion: 0.50
 Nodes (4): 112. D1-B32 decision, K32 acceptance remains near ceiling, Long-horizon collapse, Top1 drops but Top-k stays strong
 
-### Community 278 - "capture_routes_local"
-Cohesion: 0.50
-Nodes (4): local_entrypoint, capture_routes_local(), main(), Dispatch capture_routes on Modal and persist the payload locally.
-
 ### Community 281 - "136. Canonical NEXT"
 Cohesion: 0.67
 Nodes (3): 136. Canonical NEXT, The most important interpretation, Where Exact-30 stands now
@@ -1392,24 +1360,24 @@ Cohesion: 0.67
 Nodes (3): 14. Core GEMM, M ≤ 80, M > 80
 
 ## Knowledge Gaps
-- **1156 isolated node(s):** `phase`, `repo`, `revision`, `method`, `selection_rule` (+1151 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2179 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **31 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **1158 isolated node(s):** `phase`, `repo`, `revision`, `method`, `selection_rule` (+1153 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 2183 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **29 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `main()` connect `dspark_wire.py` to `DSparkStage`, `test_dspark_tree.py`, `precompute_freqs_cis`, `Tensor`?**
-  _High betweenness centrality (0.046) - this node is a cross-community bridge._
-- **Why does `act_quant_ref()` connect `mxint.py` to `d2_cpu_expert.py`, `xsimt.py`, `warmup_steady`, `floor_b_moe.py`, `fused_moe_mxint`, `validate_exact_model.py`, `qpa_mma.py`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `Transformer` connect `Tensor` to `inference_model.py`, `.__init__`, `main`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `act_quant_ref()` connect `fp4_source.py` to `mxint.py`, `true_p2_sweep.py`, `fused_moe_qpa`, `floor_b_moe.py`, `pack_mxfp4_nk`, `fused_moe_mxint`, `validate_exact_model.py`, `qpa_mma.py`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `build_kernel_module()` connect `build_kernel_module` to `fp4_source.py`, `SourceTail`, `inference_kernel.py`, `d1b32_v2_seven_domain.source.py`, `capture_real_calls`, `ek0b_residency.py`, `d3_multidomain_tranche1.source.py`, `stage1_record.py`, `load_captures`, `stage05_heads.py`?**
+  _High betweenness centrality (0.044) - this node is a cross-community bridge._
 - **Are the 19 inferred relationships involving `V4Config` (e.g. with `Compressor` and `ExactAttention`) actually correct?**
   _`V4Config` has 19 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `phase`, `repo`, `revision` to the rest of the system?**
-  _1156 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _1158 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `dsa_layers.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.08078431372549019 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07005649717514124 - nodes in this community are weakly interconnected._
 - **Should `_synthetic_capture` be split into smaller, more focused modules?**
   _Cohesion score 0.06715063520871144 - nodes in this community are weakly interconnected._
