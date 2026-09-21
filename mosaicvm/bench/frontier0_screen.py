@@ -1,27 +1,30 @@
-"""FRONTIER-0 tier-1 screen (v2, corrected).
+"""FRONTIER-0 tier-1 screen (v3, canonical acceptance + real staged order).
 
-Fixes five methodology bugs found in review of v1:
-  1. SHARED acceptance ledger: one acceptance sequence is drawn once and
-     replayed identically across every policy, so all policies see the same
-     cycles, positions, and acceptances (paired comparison).
-  2. Explicit token accounting: `a` = accepted draft tokens (truncated-geometric
-     fit to mean 3.757). Emitted tokens/cycle = a + 1 (a accepted drafts + 1
-     correction/bonus). Verification must cover positions up to the first
-     rejection = min(a+1, W) rows. Results are reported PER EMITTED TOKEN.
-  3. Real chronological cache: a layer-major access stream (for layer: for row:
-     for expert) is replayed through an LRU of fixed capacity. EVERY load
-     (speculative included) occupies capacity and can evict; there is no
-     "commit only accepted rows" shortcut. Hits/misses are counted on the
-     actual access order, not set-collapsed per window.
-  4. No unproven lower-bound claim: window rows reuse accepted-path routes as a
-     proxy for speculative candidates. The demand DIRECTION vs real candidates
-     is UNKNOWN (a rejected candidate may hit resident OR colder experts).
-  5. LRU is not optimal: an offline Belady lower bound is computed on the SAME
-     request stream, so the gap between LRU and the best legal residency policy
-     is explicit.
+Corrects v2 defects found in review, reconciled against the CANONICAL
+acceptance definition in d1b_tail_robustness.prefix_metrics:
 
-This is a demand+cache SIMULATION on real routes. It is NOT latency, NOT
-achieved throughput, and NOT a proof that every residency policy fails.
+  depth = consecutive accepted draft decisions (0..W), excluding the exact
+          root, stopping at first miss.  depth CAN be 0 (immediate rejection).
+  E_A   = depth + 1   (the accepted drafts + 1 correction/bonus emission).
+  Canonical mean E_A = 3.757  ->  mean depth = 2.757.
+
+Fixes vs v2:
+  1. Token semantics reconciled to the evaluator: draw depth (mean 2.757, may
+     be 0), emit depth+1, advance cursor depth+1. Report per EMITTED token.
+     The +1 bonus is a FREE emission (argmax of the last verified position's
+     output); no extra forward pass. Free bonuses are counted and reconciled.
+  2. Real staged access order: each verification STAGE is its own layer-major
+     forward sweep over its positions; stages run in sequence; eager is one
+     sweep over all W positions; sequential is W single-position sweeps.
+  3. ONE continuous LRU across the whole run (no per-interval reset); interval
+     stats come from binning misses by cycle within that single simulation.
+  4. Two offline oracles on the same stream: mandatory-admission Belady AND
+     bypass-capable Belady (may serve a miss via staging buffer without
+     admitting). Neither is claimed as a universal floor; the bypass model's
+     transient staging-buffer cost is noted, not free.
+
+SIMULATION only: real routes as a speculative-candidate proxy (demand direction
+vs true candidates UNKNOWN), no latency, no achieved throughput.
 """
 from __future__ import annotations
 
@@ -35,86 +38,126 @@ import torch
 BYTES = 13369344
 W = 6
 STORE_GB = [30, 35, 38]
-EA = 3.757
+EA = 3.757            # canonical mean E_A = mean(depth)+1
+MEAN_DEPTH = EA - 1.0  # 2.757
 SEED = 20260920
 
 
-def fit_p():
-    """continue prob p s.t. sum_{i=0..W-1} p^i == EA (mean accepted drafts)."""
+def fit_q():
+    """iid hit prob q s.t. mean depth = sum_{d=1..W} q^d == MEAN_DEPTH."""
     lo, hi = 0.0, 1.0
-    for _ in range(90):
-        p = (lo + hi) / 2
-        if sum(p ** i for i in range(W)) < EA:
-            lo = p
+    for _ in range(100):
+        q = (lo + hi) / 2
+        if sum(q ** d for d in range(1, W + 1)) < MEAN_DEPTH:
+            lo = q
         else:
-            hi = p
+            hi = q
     return (lo + hi) / 2
 
 
-def build_ledger(routes, p):
-    """One shared sequence of (cur, a, navail); a = accepted drafts (1..W).
+def draw_depth(rng, q, navail):
+    """depth in 0..navail; each draft accepted w.p. q, stop at first miss."""
+    depth = 0
+    while depth < navail and rng.random() < q:
+        depth += 1
+    return depth
 
-    Advances the committed prefix by a+1 (a accepted + 1 correction) per cycle.
-    Identical for every policy.
-    """
+
+def build_ledger(routes, q):
+    """shared (cur, depth, navail); cursor advances depth+1 (drafts+bonus)."""
     rng = random.Random(SEED)
     ledger = []
     cur = 0
     n = len(routes)
     while cur < n - 1:
-        navail = min(W, n - cur)
-        a = 1
-        while a < navail and rng.random() < p:
-            a += 1
-        ledger.append((cur, a, navail))
-        cur += a + 1              # a accepted drafts + 1 correction/bonus
+        navail = min(W, n - 1 - cur)      # positions verifiable ahead of cur
+        if navail < 1:
+            break
+        depth = draw_depth(rng, q, navail)
+        ledger.append((cur, depth, navail))
+        cur += depth + 1                  # depth accepted + 1 correction/bonus
     return ledger
 
 
-def rows_loaded(chunks, rows_needed, navail):
-    """staged policy stops once cumulative rows cover rows_needed."""
-    n = 0
+def stage_positions(chunks, rows_needed, navail):
+    """list of per-stage position counts under a staged policy.
+
+    Stages accumulate until cumulative >= rows_needed (the position that
+    reveals the first rejection = depth+1), capped at navail.
+    """
+    stages = []
+    cum = 0
     for c in chunks:
-        n = min(n + c, navail)
-        if n >= rows_needed:
+        take = min(c, navail - cum)
+        if take <= 0:
             break
-    return n
+        stages.append(take)
+        cum += take
+        if cum >= rows_needed:
+            break
+    return stages          # e.g. sequential -> [1,1,...]; eager -> [navail]
 
 
-def access_stream(routes, nlayers, cur, nload):
-    """layer-major chronological access order over nload verification rows."""
+def sweep(routes, nlayers, start, count):
+    """layer-major access order for one forward sweep over `count` positions."""
     for layer in range(nlayers):
-        for pos in range(cur, cur + nload):
+        for pos in range(start, start + count):
             for e in routes[pos].get(layer, []):
                 yield layer * 256 + e
 
 
-def lru_misses(accesses, cap):
+def build_accesses(routes, nlayers, ledger, chunks):
+    """full chronological access stream + per-access cycle tag for a policy.
+
+    eager verifies all navail positions in ONE sweep (you cannot know depth
+    until you verify); staged runs a separate sweep per stage.
+    """
+    accs, cyc_tag = [], []
+    eager = chunks == [W]
+    for ci, (cur, depth, navail) in enumerate(ledger):
+        rows_needed = min(depth + 1, navail)
+        if eager:
+            plan = [navail]                    # one batched sweep over all W
+        else:
+            plan = stage_positions(chunks, rows_needed, navail)
+        start = cur
+        for cnt in plan:
+            for k in sweep(routes, nlayers, start, cnt):
+                accs.append(k)
+                cyc_tag.append(ci)
+            start += cnt
+    return accs, cyc_tag
+
+
+def lru_miss_by_cycle(accesses, cyc_tag, cap, ncyc):
     od = OrderedDict()
-    miss = 0
-    for k in accesses:
+    per = [0] * ncyc
+    total = 0
+    for k, ci in zip(accesses, cyc_tag):
         if k in od:
             od.move_to_end(k)
         else:
-            miss += 1
+            total += 1
+            per[ci] += 1
             od[k] = 1
             if len(od) > cap:
                 od.popitem(last=False)
-    return miss
+    return total, per
 
 
-def belady_misses(accesses, cap):
-    """offline optimal (Belady) miss count on a fixed access list."""
-    accesses = list(accesses)
+def _next_use(accesses):
     n = len(accesses)
-    # next-use index for each position
     nxt = [0] * n
     last = {}
     for i in range(n - 1, -1, -1):
-        k = accesses[i]
-        nxt[i] = last.get(k, n)   # n == "never again"
-        last[k] = i
-    cache = {}                    # key -> next-use of its most recent access
+        nxt[i] = last.get(accesses[i], n)
+        last[accesses[i]] = i
+    return nxt
+
+
+def belady_mandatory(accesses, cap):
+    nxt = _next_use(accesses)
+    cache = {}
     miss = 0
     for i, k in enumerate(accesses):
         if k in cache:
@@ -122,10 +165,33 @@ def belady_misses(accesses, cap):
         else:
             miss += 1
             if len(cache) >= cap:
-                # evict farthest next use
                 ev = max(cache, key=lambda x: cache[x])
                 del cache[ev]
             cache[k] = nxt[i]
+    return miss
+
+
+def belady_bypass(accesses, cap):
+    """optimal bypassing: on a full-cache miss, admit only if k is reused
+    sooner than the farthest cached item; else serve via staging buffer and
+    do not pollute the cache. Reduces future misses at a transient buffer cost.
+    """
+    nxt = _next_use(accesses)
+    cache = {}
+    miss = 0
+    for i, k in enumerate(accesses):
+        if k in cache:
+            cache[k] = nxt[i]
+            continue
+        miss += 1
+        if len(cache) < cap:
+            cache[k] = nxt[i]
+        else:
+            far = max(cache, key=lambda x: cache[x])
+            if cache[far] > nxt[i]:
+                del cache[far]
+                cache[k] = nxt[i]
+            # else: bypass (no admission)
     return miss
 
 
@@ -141,61 +207,63 @@ def main():
     d = torch.load("artifacts/ek0c_routes.pt", weights_only=False)
     routes = d["routes"]
     nlayers = d["n_layers"]
-    p = fit_p()
-    ledger = build_ledger(routes, p)
+    q = fit_q()
+    ledger = build_ledger(routes, q)
     ncyc = len(ledger)
-    emitted_total = sum(a + 1 for _, a, _ in ledger)
-    cold_cut = ncyc // 3          # first third = cold warmup interval
+    emitted_total = sum(depth + 1 for _, depth, _ in ledger)
+    accepted_total = sum(depth for _, depth, _ in ledger)
+    full_accept = sum(1 for _, depth, navail in ledger if depth == navail)
+    positions_committed = sum(depth + 1 for _, depth, _ in ledger)
+    cold_cut = ncyc // 3
 
-    out = {"classification": "FRONTIER0_SCREEN_V2", "n_positions": len(routes),
-           "accept_p": p, "EA": EA, "cycles": ncyc,
+    print(f"q(hit)={q:.4f}  cycles={ncyc}  mean_depth="
+          f"{accepted_total/ncyc:.3f}  mean_E_A={emitted_total/ncyc:.3f}  "
+          f"emitted={emitted_total}  full-accept_cycles={full_accept}")
+    print(f"cursor-committed positions={positions_committed} "
+          f"(free bonus emissions counted in E_A; last-position argmax, no "
+          f"extra forward)")
+
+    out = {"classification": "FRONTIER0_SCREEN_V3",
+           "n_positions": len(routes), "hit_q": q, "mean_E_A": emitted_total/ncyc,
+           "mean_depth": accepted_total/ncyc, "cycles": ncyc,
            "emitted_tokens_total": emitted_total,
-           "note": "shared ledger; chronological all-loads LRU + Belady lower "
-                   "bound; accepted-path routes as speculative-candidate proxy "
-                   "(demand direction vs real candidates UNKNOWN). demand+cache "
-                   "sim only.",
+           "full_accept_cycles": full_accept,
+           "note": "canonical prefix_metrics semantics (E_A=depth+1, depth may "
+                   "be 0); per-stage forward sweeps; one continuous LRU; "
+                   "mandatory+bypass Belady. real routes as speculative-"
+                   "candidate proxy (direction UNKNOWN). sim only.",
            "by_store": {}}
 
-    print(f"cycles={ncyc} emitted_tokens={emitted_total} "
-          f"(mean {emitted_total/ncyc:.2f}/cyc)")
-    print(f"{'store':>5} {'policy':>13} {'LRUmiss':>8} {'GB/tok':>7} "
-          f"{'cold':>6} {'later':>6} {'Belady':>7} {'LRU/Bel':>7}")
+    print(f"\n{'store':>5} {'policy':>13} {'LRUmiss':>8} {'GB/tok':>7} "
+          f"{'coldGB':>7} {'laterGB':>7} {'BelMand':>8} {'BelByp':>7} "
+          f"{'LRU/Byp':>7} {'redEager':>8}")
     for gb in STORE_GB:
         cap = int(gb * 1e9 / BYTES)
         rec = {}
         for name, chunks in POLICIES.items():
-            # build the full chronological access stream for this policy
-            full = []
-            cold_acc, later_acc = [], []
-            cold_emit = later_emit = 0
-            for ci, (cur, a, navail) in enumerate(ledger):
-                rows_needed = min(a + 1, navail)
-                nload = rows_loaded(chunks, rows_needed, navail)
-                accs = list(access_stream(routes, nlayers, cur, nload))
-                full.extend(accs)
-                if ci < cold_cut:
-                    cold_acc.extend(accs); cold_emit += a + 1
-                else:
-                    later_acc.extend(accs); later_emit += a + 1
-            lru_m = lru_misses(full, cap)
-            bel_m = belady_misses(full, cap)
-            # per-interval LRU misses (fresh cache each interval for labelling)
-            cold_m = lru_misses(cold_acc, cap)
-            later_m = lru_misses(later_acc, cap)
-            gb_tok = lru_m * BYTES / 1e9 / emitted_total
+            accs, tags = build_accesses(routes, nlayers, ledger, chunks)
+            lru_m, per = lru_miss_by_cycle(accs, tags, cap, ncyc)
+            bmand = belady_mandatory(accs, cap)
+            bbyp = belady_bypass(accs, cap)
+            cold_m = sum(per[:cold_cut])
+            later_m = sum(per[cold_cut:])
+            cold_emit = sum(dep + 1 for _, dep, _ in ledger[:cold_cut])
+            later_emit = sum(dep + 1 for _, dep, _ in ledger[cold_cut:])
             rec[name] = {
                 "lru_miss_total": lru_m,
-                "belady_miss_total": bel_m,
-                "lru_over_belady": round(lru_m / bel_m, 3) if bel_m else None,
-                "GB_per_emitted_token": round(gb_tok, 4),
+                "belady_mandatory": bmand,
+                "belady_bypass": bbyp,
+                "lru_over_bypass": round(lru_m / bbyp, 3) if bbyp else None,
+                "GB_per_emitted_token": round(lru_m * BYTES / 1e9 / emitted_total, 4),
                 "cold_GB_per_emit": round(cold_m * BYTES / 1e9 / max(cold_emit, 1), 4),
                 "later_GB_per_emit": round(later_m * BYTES / 1e9 / max(later_emit, 1), 4),
-                "accesses": len(full),
+                "accesses": len(accs),
             }
             r = rec[name]
             print(f"{gb:>5} {name:>13} {lru_m:>8} {r['GB_per_emitted_token']:>7} "
-                  f"{r['cold_GB_per_emit']:>6} {r['later_GB_per_emit']:>6} "
-                  f"{bel_m:>7} {r['lru_over_belady']:>7}")
+                  f"{r['cold_GB_per_emit']:>7} {r['later_GB_per_emit']:>7} "
+                  f"{bmand:>8} {bbyp:>7} {r['lru_over_bypass']:>7}", end="")
+            print()
         base = rec["eager6"]["lru_miss_total"]
         for name in rec:
             rec[name]["reduction_vs_eager_pct"] = round(
@@ -204,11 +272,12 @@ def main():
 
     Path("artifacts/frontier0_screen.json").write_text(json.dumps(out, indent=1))
     print("\nwrote artifacts/frontier0_screen.json")
-    print("38GB paired (shared ledger) reduction vs eager, GB/emitted-token, "
-          "LRU/Belady:")
+    print("38GB (paired, per emitted token):")
     for n, v in out["by_store"]["38"].items():
-        print(f"  {n:>13}: {v['reduction_vs_eager_pct']:>5}%  "
-              f"{v['GB_per_emitted_token']} GB/tok  LRU/Bel={v['lru_over_belady']}")
+        print(f"  {n:>13}: {v['reduction_vs_eager_pct']:>5}% vs eager  "
+              f"{v['GB_per_emitted_token']} GB/tok  "
+              f"LRU {v['lru_miss_total']} / BelMand {v['belady_mandatory']} / "
+              f"BelByp {v['belady_bypass']}")
 
 
 if __name__ == "__main__":

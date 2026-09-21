@@ -1,114 +1,119 @@
-# Session Report: FRONTIER-0 tier-1 screen (v2, corrected)
+# Session Report: FRONTIER-0 tier-1 screen (v3, canonical acceptance)
 
 **Date:** 2026-09-20
-**Status:** The v1 screen had five methodology bugs (flagged in code review) that
-inflated Mosaic Frontier's apparent benefit. The corrected v2 screen — shared
-acceptance ledger, chronological all-loads cache, per-emitted-token accounting,
-and an offline Belady lower bound — shows **staged verification gives ~0% demand
-reduction on real routes**, and that the real lever is the residency policy
-(LRU is ~2× worse than optimal), not staging. Even optimal caching plus the best
-plausible storage on this box falls ~7× short of 30 tok/s. This is strong
-negative evidence for Frontier specifically; it is NOT a universal impossibility
-proof.
+**Status:** v3 reconciles the screen to the CANONICAL acceptance definition
+(`d1b_tail_robustness.prefix_metrics`) and fixes the four v2 defects found in
+review. Substantive result is unchanged and now defensible on the accepted-path
+proxy: **staged verification (Mosaic Frontier's mechanism) gives ~0% demand
+reduction** (0.1-0.5%), LRU is ~2.0× the offline optimal, bypass caching adds
+nothing here, and even optimal caching needs **~14.3 GB/s** exact expert storage
+for 30 tok/s. The one open caveat is the accepted-path proxy, whose error
+direction is unknown.
 
 ---
 
-## 1. Bugs fixed vs v1
+## 1. Acceptance semantics reconciled (finding 1)
 
-1. **Shared acceptance ledger.** v1 advanced one RNG across policies, so eager
-   ran 80 cycles, staged 60, sequential 71 — not a paired comparison. v2 draws
-   one acceptance sequence and replays it identically across all policies
-   (51 cycles, 257 emitted tokens, for every policy).
-2. **Per-emitted-token reporting.** v1's headline GB/cycle was a whole-run
-   average mislabelled "warm." v2 reports **GB per emitted token** with cold
-   (first third) and later intervals separated explicitly.
-3. **Chronological all-loads cache.** v1 counted misses at window start and only
-   committed accepted rows — speculative loads never occupied capacity or
-   evicted. v2 replays a layer-major access stream (for layer: for row: for
-   expert) through one LRU; EVERY load counts and can evict.
-4. **No unproven lower-bound claim.** Window rows still use accepted-path routes
-   as a proxy for speculative candidates, but the demand DIRECTION vs real
-   candidates is **UNKNOWN** — a rejected candidate may select resident OR
-   colder experts. The prior "new capture can only worsen the result" claim is
-   **withdrawn**.
-5. **Belady lower bound.** v1 implied LRU demand was the floor. v2 computes the
-   offline optimal (Belady) miss count on the same request stream, exposing the
-   LRU-to-optimal gap.
+Read the canonical evaluator, not a new definition:
+`prefix_metrics` sets `depth` = consecutive accepted draft decisions (**0..W**,
+excluding the exact root, stop at first miss) and **`E_A = depth + 1`**. The
+project mean **3.757 is E_A**, so mean `depth` = 2.757. v2 wrongly fit accepted
+drafts to 3.757 and floored `depth ≥ 1` (excluding immediate rejection).
 
-## 2. Corrected result (38 GB store, paired, per emitted token)
+v3 draws `depth` (iid hit q=0.781, may be 0), emits `depth+1`, advances the
+cursor `depth+1`. Realized draw over the 256-position trace: 66 cycles, mean
+depth 2.864, **mean E_A 3.864** (finite-sample, slightly above the 3.757 target;
+honest realized value). The **+1 bonus is a free emission** (argmax of the last
+verified position's output — no extra forward pass), so full-accept cycles
+advancing navail+1 while accessing navail positions is correct, not a skipped
+forward. 20 full-accept cycles; committed positions reconcile to emitted tokens.
 
-| policy | LRU miss | GB/tok | cold GB/tok | later GB/tok | Belady miss | LRU/Belady | vs eager |
-|---|---|---|---|---|---|---|---|
-| eager6 | 15917 | 0.828 | 0.793 | 0.964 | 8002 | 1.99× | 0% |
-| frontier2_4 | 16000 | 0.832 | 0.767 | 0.962 | 7977 | 2.01× | −0.5% |
-| frontier1_2_3 | 15988 | 0.832 | 0.768 | 0.963 | 7941 | 2.01× | −0.4% |
-| sequential | 15848 | 0.824 | 0.764 | 0.956 | 7887 | 2.01× | +0.4% |
+## 2. Real staged access order (finding 2)
 
-**Two corrected findings:**
-1. **Staged verification (Mosaic Frontier's core mechanism) gives ~0% demand
-   reduction** (−0.5% to +0.4%) under correct paired chronological accounting.
-   v1's 8-24% was an artifact of the bugs. Deferring speculative rows does not
-   eliminate their loads — the experts are needed anyway as the prefix advances,
-   and within-layer reuse already shares them.
-2. **LRU is ~2.0× the Belady optimal.** A better residency policy — not staging
-   — is the real lever, with ~2× headroom.
+Each verification STAGE is now its own layer-major forward sweep over its
+positions; stages run in sequence:
+- eager = one sweep over all W positions (depth unknown until verified),
+- frontier1_2_3 = up to three sweeps (1, then 2, then 3 positions),
+- sequential = up to W single-position sweeps.
 
-## 3. Conditional throughput (corrected, per emitted token)
+The cache persists across stages, so a staged policy re-traverses layers per
+stage rather than getting v2's advance-knowledge single batched order.
 
-Core per emitted token: 17.5 ms/cycle ÷ 5.04 emitted/cycle = 3.47 ms.
+## 3. Continuous cache; interval binning (finding 3)
 
-| policy / cache | GB/tok | @0.55 | @1.05 | @1.82 | @13.0 GB/s |
-|---|---|---|---|---|---|
-| LRU sequential | 0.824 | 0.7 | 1.3 | 2.2 | 15.0 tok/s |
-| Belady optimal | 0.410 | 1.3 | 2.5 | 4.4 | 28.5 tok/s |
+ONE LRU runs over the whole stream; per-cycle misses are binned during that
+single simulation. Cold (first third) and later intervals are slices of the
+continuous run, not cold restarts.
 
-- At the **measured storage envelope (0.55-1.82 GB/s)**, even optimal caching
-  yields **1.3-4.4 tok/s**.
-- **For 30 tok/s at Belady optimal, storage must reach ~13.7 GB/s** — above this
-  NVMe (0.55-1.82) and essentially at PCIe Gen3 x16 H2D (12.84 GB/s). No such
-  expert-storage tier exists on this box.
+## 4. Two oracles (finding 4)
 
-## 4. What this does and does not establish
+On the same stream: mandatory-admission Belady AND bypass-capable Belady (may
+serve a miss from a staging buffer without admitting). Bypass is **not** claimed
+as a universal floor and its transient staging-buffer cost is noted.
 
-- **Establishes:** Mosaic Frontier's staged-verification mechanism does not
-  reduce demand on real routes; the residency policy has ~2× headroom to
-  optimal; and even optimal caching plus best plausible storage is ~7× short of
-  30 at the measured storage speeds.
+## 5. Result (38 GB store, paired, per emitted token)
+
+| policy | LRU miss | GB/tok | cold GB/tok | later GB/tok | Bel-mand | Bel-bypass | LRU/opt | vs eager |
+|---|---|---|---|---|---|---|---|---|
+| eager6 | 15905 | 0.834 | 0.796 | 0.855 | 8103 | 8103 | 1.96× | 0% |
+| frontier2_4 | 15833 | 0.830 | 0.755 | 0.872 | 7888 | 7887 | 2.01× | 0.5% |
+| frontier1_2_3 | 15822 | 0.830 | 0.749 | 0.874 | 7878 | 7877 | 2.01× | 0.5% |
+| sequential | 15897 | 0.834 | 0.760 | 0.874 | 7844 | 7843 | 2.03× | 0.1% |
+
+**Findings:**
+1. **Staging gives ~0% reduction (0.1-0.5%).** Mechanistic reason: the per-cycle
+   speculative over-fetch that staging avoids is a small fraction of total
+   demand, which is dominated by the committed-path working-set churn (89 GB
+   footprint ≫ 38 GB cache) that every policy must load. Deferring speculative
+   rows defers, it does not remove.
+2. **LRU is ~2.0× the offline optimal.** Residency policy is the only software
+   lever with headroom.
+3. **Bypass caching ≈ mandatory admission here** (differ by ≤1 miss). Bypass
+   does not help on this stream, so the ~2× LRU/optimal gap is the real headroom.
+
+## 6. Conditional throughput (per emitted token; core 17.5 ms/cycle ÷ 3.864 = 4.53 ms/tok)
+
+| cache | GB/tok | @0.55 | @1.05 | @1.82 | @13.0 GB/s | 30 tok/s needs |
+|---|---|---|---|---|---|---|
+| LRU sequential | 0.834 | 0.7 | 1.3 | 2.2 | 14.6 | 28.9 GB/s |
+| Belady optimal | 0.411 | 1.3 | 2.5 | 4.3 | 27.7 | **14.3 GB/s** |
+
+At the measured storage envelope (0.55-1.82 GB/s), even optimal caching yields
+1.3-4.3 tok/s. For 30 at optimal, storage must reach ~14.3 GB/s — above this
+NVMe and above PCIe Gen3 x16 H2D (12.84 GB/s). No such expert-storage tier
+exists on this box.
+
+## 7. What v3 establishes vs does not
+
+- **Establishes (on the accepted-path proxy, canonical acceptance, real staged
+  order):** Mosaic Frontier's staged-verification mechanism does not reduce
+  demand; the residency policy has ~2× headroom to optimal; bypass adds nothing;
+  even optimal caching needs ~14.3 GB/s storage for 30.
 - **Does NOT establish:** a universal impossibility. Belady@13 GB/s reaches
-  28.5 tok/s — so if a ≥13.7 GB/s exact expert-storage tier existed AND
-  near-optimal caching were realized AND the accepted-path proxy holds, 30 is
-  arithmetically conceivable. None of those three holds on this hardware today.
-- **LRU is not a lower bound.** The Belady comparison is the correct floor for a
-  fixed request stream; it is still ~7× short at measured storage.
+  27.7 tok/s; if a ≥14.3 GB/s exact expert-storage tier existed AND near-optimal
+  online caching were realized AND the proxy holds, 30 is arithmetically
+  conceivable. None holds on this hardware today.
+- **Open caveat (unchanged):** window rows use accepted-path routes as a
+  speculative-candidate proxy; the demand-direction error vs real candidates is
+  **unknown** (withdrawn any "capture can only worsen" claim). A real
+  speculative capture is the only artifact that removes this caveat.
 
-## 5. Open items (unchanged by this correction)
+## 8. Recommendation
 
-- **Real speculative candidate routes with rejected branches** — the trace is
-  accepted-path only; direction of the proxy error is unknown, so a real capture
-  could move demand either way. This is the one artifact that would remove the
-  proxy caveat.
-- **Exact packed-VNNI kernel** — unbuilt; only a bf16→fp32 reference exists.
-- **Near-optimal online residency policy** — the 2× LRU/Belady gap is real
-  headroom, but closing it plus a 13.7 GB/s tier is what 30 would require.
-
-## 6. Recommendation
-
-The corrected screen makes the case for Mosaic Frontier's *scheduling* mechanism
-**weaker**, not stronger: staging is ~neutral. The residency policy is the only
-software lever with headroom (2×), and even the offline optimal needs ~13.7 GB/s
-storage — hardware this box lacks. Combined with the earlier rails, no measured
-or optimal-cache configuration reaches 30 tok/s here.
+Consistent with the review: **pause new architecture and expensive captures;
+this validated replay is the deliverable.** It now meets the stated invariants —
+explicit root/draft/bonus/next-cycle accounting reconciled to `prefix_metrics`,
+every committed source position accounted for (free bonus noted), real
+stage-by-stage access order, one shared ledger, persistent cache across
+intervals, and both mandatory-admission and bypass-capable oracles.
 
 Defensible status, restated exactly:
-> 30 tok/s is unsupported on this hardware; a universal maximum is NOT
-> established. The measured achieved baseline is 0.151 tok/s (reference capture).
-> Conditional bounds (measured demand × measured/optimal cache × measured
-> storage) span ~0.7-4.4 tok/s; reaching 30 requires ~13.7 GB/s exact expert
-> storage plus near-optimal caching, none available on this box.
+> Mosaic Frontier has no demonstrated useful speedup (staging ~0%). 30 tok/s is
+> unsupported on this hardware; a universal maximum is NOT established. Measured
+> achieved baseline 0.151 tok/s (reference capture). Conditional bounds
+> (measured demand × LRU-or-optimal cache × measured storage) span ~0.7-4.3
+> tok/s; reaching 30 needs ~14.3 GB/s exact expert storage plus near-optimal
+> caching, neither available here. The residency-policy 2× gap is the only
+> software headroom; the accepted-path proxy is the only open measurement.
 
-No new VNNI / grouped-GEMM / scheduler build is justified. The one experiment
-that would add information is a real speculative-candidate capture — worth it
-only if the residency-policy headroom is separately shown to matter.
-
-Artifacts: frontier0_screen.py (v2), frontier0_screen.json,
-h0a_compressed_replay.json, h0a_longtrace.json, ek0c_routes.pt.
+Artifacts: frontier0_screen.py (v3), frontier0_screen.json.
