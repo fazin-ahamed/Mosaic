@@ -1,0 +1,15 @@
+{
+ "classification": "RESULT_CACHE_CENSUS",
+ "scope": "real captured h40 trajectories replayed through the source's own L41/L42 exact path",
+ "n_prompts": 4,
+ "total_expert_ops": 5151,
+ "distinct_effective_inputs": 1260,
+ "repeated_inputs": 0,
+ "pct_of_distinct_repeated": 0.0,
+ "extra_executions_repeatable": 0,
+ "avoidable_weight_GB": 0.0,
+ "total_weight_read_GB": 5.2848,
+ "avoided_pct": 0.0,
+ "note": "generous upper bound (unlimited capacity, free lookups). effective input = quantized operand + scale + route weight + expert + op + revision. similar activations and repeated expert IDs do NOT qualify.",
+ "verdict": "REJECT: negligible exact-input repetition"
+}

@@ -35287,19 +35287,19 @@
       "node_kind": "heading",
       "norm_label": "2. the narrow fix (no architecture change)",
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L31"
+      "source_location": "L22"
     },
     {
-      "id": "artifacts_session_frontier0_3_gate_result_deterministic_runs_first",
-      "label": "3. Gate result (deterministic, runs first)",
+      "id": "artifacts_session_frontier0_3_gate_result_deterministic_runs_first_all_policies",
+      "label": "3. Gate result (deterministic, runs first, all policies)",
       "_origin": "ast",
       "community": 227,
       "community_name": "Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "3. gate result (deterministic, runs first)",
+      "norm_label": "3. gate result (deterministic, runs first, all policies)",
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L45"
+      "source_location": "L43"
     },
     {
       "id": "artifacts_session_frontier0_4_corrected_result_38_gb_store_paired_per_emitted_token",
@@ -35311,7 +35311,7 @@
       "node_kind": "heading",
       "norm_label": "4. corrected result (38 gb store, paired, per emitted token)",
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L56"
+      "source_location": "L53"
     },
     {
       "id": "artifacts_session_frontier0_5_conditional_throughput_recalculated_after_the_fix",
@@ -35323,19 +35323,19 @@
       "node_kind": "heading",
       "norm_label": "5. conditional throughput (recalculated after the fix)",
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L78"
+      "source_location": "L77"
     },
     {
-      "id": "artifacts_session_frontier0_6_status",
-      "label": "6. Status",
+      "id": "artifacts_session_frontier0_6_decision_review_accepted",
+      "label": "6. Decision (review accepted)",
       "_origin": "ast",
       "community": 227,
       "community_name": "Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "6. status",
+      "norm_label": "6. decision (review accepted)",
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L92"
+      "source_location": "L91"
     },
     {
       "id": "artifacts_session_frontier0_session_report_frontier_0_tier_1_screen_v4_boundary_accounting_corrected",
@@ -60420,7 +60420,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "mosaicvm/bench/frontier0_screen.py",
-      "source_location": "L294",
+      "source_location": "L298",
       "weight": 1.0
     },
     {
@@ -60432,7 +60432,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "mosaicvm/bench/frontier0_screen.py",
-      "source_location": "L327",
+      "source_location": "L340",
       "weight": 1.0
     },
     {
@@ -60444,7 +60444,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "mosaicvm/bench/frontier0_screen.py",
-      "source_location": "L328",
+      "source_location": "L341",
       "weight": 1.0
     },
     {
@@ -60456,7 +60456,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "mosaicvm/bench/frontier0_screen.py",
-      "source_location": "L329",
+      "source_location": "L342",
       "weight": 1.0
     },
     {
@@ -60468,7 +60468,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "mosaicvm/bench/frontier0_screen.py",
-      "source_location": "L330",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -115085,18 +115085,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L31",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
       "source": "artifacts_session_frontier0_session_report_frontier_0_tier_1_screen_v4_boundary_accounting_corrected",
-      "target": "artifacts_session_frontier0_3_gate_result_deterministic_runs_first",
+      "target": "artifacts_session_frontier0_3_gate_result_deterministic_runs_first_all_policies",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L45",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -115107,7 +115107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L56",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -115118,18 +115118,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L78",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
       "source": "artifacts_session_frontier0_session_report_frontier_0_tier_1_screen_v4_boundary_accounting_corrected",
-      "target": "artifacts_session_frontier0_6_status",
+      "target": "artifacts_session_frontier0_6_decision_review_accepted",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "artifacts/session_frontier0.md",
-      "source_location": "L92",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -146351,5 +146351,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bff23c93e9a780f95835293cadacaf903a2bfe15"
+  "built_at_commit": "1f5cef9deedbe435ec8523ccc97953a1f452bd6e"
 }

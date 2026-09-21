@@ -1776,9 +1776,9 @@
     "semantic_hash": ""
   },
   "mosaicvm/bench/frontier0_screen.py": {
-    "mtime": 1790000528.7031045,
-    "seen": 1790000836.487711,
-    "ast_hash": "173a207eb012d3bfefa98b1f18f35ecb",
+    "mtime": 1790001247.1933203,
+    "seen": 1790001747.7501879,
+    "ast_hash": "e8111d8039df2884682c35c20c4a4745",
     "semantic_hash": ""
   },
   "mosaicvm/bench/h0a_capacity.py": {
@@ -3372,9 +3372,9 @@
     "semantic_hash": ""
   },
   "artifacts/frontier0_screen.json": {
-    "mtime": 1790000592.0141532,
-    "seen": 1790000836.4830644,
-    "ast_hash": "1db9635ee87557d434658a62926dd0c9",
+    "mtime": 1790001328.78931,
+    "seen": 1790001747.7458005,
+    "ast_hash": "956626f9af0c8b55d7b835fd86c32c85",
     "semantic_hash": ""
   },
   "artifacts/g2_calib_3060/manifest.json": {
@@ -4428,9 +4428,9 @@
     "semantic_hash": ""
   },
   "artifacts/session_frontier0.md": {
-    "mtime": 1790000781.2352543,
-    "seen": 1790000836.4938607,
-    "ast_hash": "8e3f7b4875d3ed6ad7b1da1d8ba77bf7",
+    "mtime": 1790001705.2315552,
+    "seen": 1790001747.7550335,
+    "ast_hash": "a921431704bf3f591c147ef31153a859",
     "semantic_hash": ""
   },
   "artifacts/session_g2_certified_report.md": {

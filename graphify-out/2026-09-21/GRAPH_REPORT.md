@@ -1,7 +1,7 @@
 # Graph Report - MosaicVM  (2026-09-21)
 
 ## Corpus Check
-- 764 files · ~4,384,867 words
+- 764 files · ~4,385,172 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `bff23c93`
+- Built from commit: `1f5cef9d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1180,7 +1180,7 @@ Nodes (7): Artifacts, Consequences, Full numbers (SCALE-DEV70), Observations (sc
 
 ### Community 227 - "Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)"
 Cohesion: 0.25
-Nodes (7): 1. The defect, confirmed and quantified, 2. The narrow fix (no architecture change), 3. Gate result (deterministic, runs first), 4. Corrected result (38 GB store, paired, per emitted token), 5. Conditional throughput (recalculated after the fix), 6. Status, Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)
+Nodes (7): 1. The defect, confirmed and quantified, 2. The narrow fix (no architecture change), 3. Gate result (deterministic, runs first, all policies), 4. Corrected result (38 GB store, paired, per emitted token), 5. Conditional throughput (recalculated after the fix), 6. Decision (review accepted), Session Report: FRONTIER-0 tier-1 screen (v4, boundary accounting corrected)
 
 ### Community 228 - "Session Report — T1 Multi-State (WEAK) + Track H Hybrid (1.11s — WEAK)"
 Cohesion: 0.25
