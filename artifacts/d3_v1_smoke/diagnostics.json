@@ -1,0 +1,221 @@
+{
+  "classification": "D3_V1_TOKEN_CONDITIONED_DELTA_STUDENT",
+  "student_pass": false,
+  "production_certified": false,
+  "source_tail_acceptance": null,
+  "architecture": "DeltaNet hidden=512 depth=3 rank=full",
+  "training": "teacher-forced one-step; per-dim standardized delta MSE; final-epoch export (no metric selection)",
+  "train_prompts": [
+    "agent_01",
+    "coding_01",
+    "convo_01",
+    "json_01",
+    "longform_01",
+    "math_01",
+    "retrieval_01"
+  ],
+  "val_prompts": [
+    "agent_13",
+    "coding_13",
+    "convo_13",
+    "json_13",
+    "longform_13",
+    "math_13",
+    "retrieval_13"
+  ],
+  "train_transitions": 224,
+  "val_transitions": 224,
+  "loss_history": [
+    {
+      "step": 50,
+      "train_mse": 0.6483721137046814,
+      "val_step_rel_l2": 1.0449379682540894
+    },
+    {
+      "step": 100,
+      "train_mse": 0.31371620297431946,
+      "val_step_rel_l2": 1.0511082410812378
+    },
+    {
+      "step": 150,
+      "train_mse": 0.1491774171590805,
+      "val_step_rel_l2": 1.0575587749481201
+    },
+    {
+      "step": 200,
+      "train_mse": 0.07923233509063721,
+      "val_step_rel_l2": 1.0608116388320923
+    },
+    {
+      "step": 250,
+      "train_mse": 0.04797065258026123,
+      "val_step_rel_l2": 1.0626713037490845
+    },
+    {
+      "step": 300,
+      "train_mse": 0.03275533393025398,
+      "val_step_rel_l2": 1.0638437271118164
+    },
+    {
+      "step": 350,
+      "train_mse": 0.024778973311185837,
+      "val_step_rel_l2": 1.0645040273666382
+    },
+    {
+      "step": 400,
+      "train_mse": 0.02041180059313774,
+      "val_step_rel_l2": 1.064888596534729
+    },
+    {
+      "step": 450,
+      "train_mse": 0.01801994815468788,
+      "val_step_rel_l2": 1.0651177167892456
+    },
+    {
+      "step": 500,
+      "train_mse": 0.0167950801551342,
+      "val_step_rel_l2": 1.0652412176132202
+    },
+    {
+      "step": 550,
+      "train_mse": 0.016271663829684258,
+      "val_step_rel_l2": 1.0652943849563599
+    },
+    {
+      "step": 600,
+      "train_mse": 0.016100194305181503,
+      "val_step_rel_l2": 1.0653120279312134
+    }
+  ],
+  "per_prompt": [
+    {
+      "category": "agent_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0567981004714966,
+          "cos_mean": 0.5015432834625244
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9070730805397034,
+          "cos_mean": 0.6321151256561279
+        },
+        "tf_chain": {
+          "rel_l2_mean": 56.007102966308594,
+          "cos_mean": 0.08976192027330399
+        }
+      }
+    },
+    {
+      "category": "coding_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.2166589498519897,
+          "cos_mean": 0.3539360761642456
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9986229538917542,
+          "cos_mean": 0.5598292946815491
+        },
+        "tf_chain": {
+          "rel_l2_mean": 25.616867065429688,
+          "cos_mean": 0.07096828520298004
+        }
+      }
+    },
+    {
+      "category": "convo_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0603923797607422,
+          "cos_mean": 0.3643171489238739
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9399245381355286,
+          "cos_mean": 0.5860169529914856
+        },
+        "tf_chain": {
+          "rel_l2_mean": 27.338655471801758,
+          "cos_mean": 0.082216776907444
+        }
+      }
+    },
+    {
+      "category": "json_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.2846406698226929,
+          "cos_mean": 0.4228914976119995
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9551042318344116,
+          "cos_mean": 0.6108616590499878
+        },
+        "tf_chain": {
+          "rel_l2_mean": 130.921142578125,
+          "cos_mean": 0.06709066033363342
+        }
+      }
+    },
+    {
+      "category": "longform_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0706020593643188,
+          "cos_mean": 0.4159471094608307
+        },
+        "one_step": {
+          "rel_l2_mean": 0.8725011944770813,
+          "cos_mean": 0.64306640625
+        },
+        "tf_chain": {
+          "rel_l2_mean": 15.802721977233887,
+          "cos_mean": 0.17883658409118652
+        }
+      }
+    },
+    {
+      "category": "math_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.3133289813995361,
+          "cos_mean": 0.3051541745662689
+        },
+        "one_step": {
+          "rel_l2_mean": 1.0106655359268188,
+          "cos_mean": 0.5580918192863464
+        },
+        "tf_chain": {
+          "rel_l2_mean": 87.58673095703125,
+          "cos_mean": 0.059265926480293274
+        }
+      }
+    },
+    {
+      "category": "retrieval_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0686628818511963,
+          "cos_mean": 0.3768344819545746
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9150726795196533,
+          "cos_mean": 0.6137228012084961
+        },
+        "tf_chain": {
+          "rel_l2_mean": 71.67556762695312,
+          "cos_mean": 0.06845474243164062
+        }
+      }
+    }
+  ],
+  "platform": "Linux-7.1.13-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "torch": "2.13.0+cu130",
+  "script_sha256": "938c9585dc77f4198f46b26cbd2607ba3318238b51473b7bbf64485015605dd9"
+}

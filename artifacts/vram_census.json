@@ -1,0 +1,34 @@
+{
+ "classification": "FULL_VRAM_CENSUS_3060_12GB",
+ "resolution_of_7.79_vs_7.0": {
+  "7.79_GB_historical": "fp8 core codes (43x132.1MB=5.68) + small bf16 + embed bf16 (1.06) + head bf16 (1.06) = 7.80 computed \u2014 historical figure was core-INCLUSIVE-of-embed",
+  "7.0_GB_executable": "fp8_core.load_core_resident (core + head, NO embed \u2014 embed handled by caller) = the TRUE P2 sweep's after_bank_free 7.02",
+  "verdict": "both correct for their scope; canonical production core accounting = 7.80 GB with embed+head GPU-resident"
+ },
+ "components_gb": {
+  "fp8_core_codes_43L": 5.68,
+  "small_bf16": 0.02,
+  "embed_bf16": 1.06,
+  "lm_head_bf16": 1.06,
+  "expert_bank_packed4_256": 3.42,
+  "expert_bank_packed4_128": 1.71,
+  "expert_bank_mixedA_hist": 4.53,
+  "workspace_db_bf16": 0.53,
+  "dsa_kv_win128_comp1024": 0.05,
+  "hc_fp32_intermediates_N112": 0.35,
+  "cuda_runtime_reserve": 0.6,
+  "activations_N32": 0.05
+ },
+ "totals": {
+  "core+bank128+ws+kv+hc+reserve": 11.09,
+  "core+bank256_packed4+rest": 12.8,
+  "usable_vram": 11.63
+ },
+ "conclusions": [
+  "TRUE P2 co-residency (bank128 hot subset) = 11.09 GB \u2014 matches measured full_resident 10.01 + DSA/HC/reserve heads",
+  "full 256-expert bank + full core does NOT fit: production P3 requires hot-subset bank + RAM warm tier (expected per \u00a787)",
+  "proposer budget at full target residency ~ 0 GB on GPU; options: CPU embed/head (-2.1 GB) -> ~2.1 GB proposer, or smaller hot bank",
+  "proposer architectures must be sized for <= ~2 GB VRAM unless target residency is reduced"
+ ],
+ "source": "computed from core.safetensors (9.43 GB bf16-serving on disk incl. wo_a bf16 1.44 GB serving-format) + measured TRUE P2 residency points"
+}

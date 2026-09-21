@@ -1,0 +1,225 @@
+{
+  "classification": "D3_V1_TOKEN_CONDITIONED_DELTA_STUDENT",
+  "student_pass": false,
+  "production_certified": false,
+  "source_tail_acceptance": null,
+  "architecture": "DeltaNet hidden=512 depth=3 rank=full",
+  "training": "teacher-forced one-step; per-dim standardized delta MSE; final-epoch export (no metric selection)",
+  "train_prompts": [
+    "agent_01",
+    "coding_01",
+    "convo_01",
+    "json_01",
+    "longform_01",
+    "math_01",
+    "retrieval_01"
+  ],
+  "val_prompts": [
+    "agent_13",
+    "coding_13",
+    "convo_13",
+    "json_13",
+    "longform_13",
+    "math_13",
+    "retrieval_13"
+  ],
+  "train_transitions": 224,
+  "val_transitions": 224,
+  "loss_history": [
+    {
+      "step": 50,
+      "train_mse": 0.6496910452842712,
+      "val_step_rel_l2": 1.0447930097579956
+    },
+    {
+      "step": 100,
+      "train_mse": 0.3245905339717865,
+      "val_step_rel_l2": 1.0507932901382446
+    },
+    {
+      "step": 150,
+      "train_mse": 0.16665494441986084,
+      "val_step_rel_l2": 1.0570191144943237
+    },
+    {
+      "step": 200,
+      "train_mse": 0.1002354547381401,
+      "val_step_rel_l2": 1.0599546432495117
+    },
+    {
+      "step": 250,
+      "train_mse": 0.07130305469036102,
+      "val_step_rel_l2": 1.0614176988601685
+    },
+    {
+      "step": 300,
+      "train_mse": 0.05867687240242958,
+      "val_step_rel_l2": 1.0621016025543213
+    },
+    {
+      "step": 350,
+      "train_mse": 0.05392998456954956,
+      "val_step_rel_l2": 1.0623655319213867
+    },
+    {
+      "step": 400,
+      "train_mse": 0.052793342620134354,
+      "val_step_rel_l2": 1.0624274015426636
+    },
+    {
+      "round": 1,
+      "mixed_mse": 0.12114988267421722
+    },
+    {
+      "round": 2,
+      "mixed_mse": 0.10819853097200394
+    },
+    {
+      "round": 3,
+      "mixed_mse": 0.09825797379016876
+    },
+    {
+      "round": 4,
+      "mixed_mse": 0.0889003649353981
+    },
+    {
+      "round": 5,
+      "mixed_mse": 0.07923732697963715
+    },
+    {
+      "round": 6,
+      "mixed_mse": 0.06832855939865112
+    }
+  ],
+  "per_prompt": [
+    {
+      "category": "agent_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0567981004714966,
+          "cos_mean": 0.5015432834625244
+        },
+        "one_step": {
+          "rel_l2_mean": 0.888395369052887,
+          "cos_mean": 0.6409560441970825
+        },
+        "tf_chain": {
+          "rel_l2_mean": 2.6177573204040527,
+          "cos_mean": 0.23434646427631378
+        }
+      }
+    },
+    {
+      "category": "coding_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.2166589498519897,
+          "cos_mean": 0.3539360761642456
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9891379475593567,
+          "cos_mean": 0.5635356903076172
+        },
+        "tf_chain": {
+          "rel_l2_mean": 3.306666851043701,
+          "cos_mean": 0.16153819859027863
+        }
+      }
+    },
+    {
+      "category": "convo_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0603923797607422,
+          "cos_mean": 0.3643171489238739
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9194445610046387,
+          "cos_mean": 0.5949743986129761
+        },
+        "tf_chain": {
+          "rel_l2_mean": 2.443995952606201,
+          "cos_mean": 0.17966237664222717
+        }
+      }
+    },
+    {
+      "category": "json_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.2846406698226929,
+          "cos_mean": 0.4228914976119995
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9645498394966125,
+          "cos_mean": 0.6069350242614746
+        },
+        "tf_chain": {
+          "rel_l2_mean": 3.748974323272705,
+          "cos_mean": 0.1910335123538971
+        }
+      }
+    },
+    {
+      "category": "longform_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0706020593643188,
+          "cos_mean": 0.4159471094608307
+        },
+        "one_step": {
+          "rel_l2_mean": 0.8515974283218384,
+          "cos_mean": 0.6524786949157715
+        },
+        "tf_chain": {
+          "rel_l2_mean": 2.210538148880005,
+          "cos_mean": 0.22484451532363892
+        }
+      }
+    },
+    {
+      "category": "math_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.3133289813995361,
+          "cos_mean": 0.3051541745662689
+        },
+        "one_step": {
+          "rel_l2_mean": 1.0062875747680664,
+          "cos_mean": 0.5607499480247498
+        },
+        "tf_chain": {
+          "rel_l2_mean": 4.343843936920166,
+          "cos_mean": 0.1714882105588913
+        }
+      }
+    },
+    {
+      "category": "retrieval_13",
+      "K": 32,
+      "state_diagnostics": {
+        "hold": {
+          "rel_l2_mean": 1.0686628818511963,
+          "cos_mean": 0.3768344819545746
+        },
+        "one_step": {
+          "rel_l2_mean": 0.9056246876716614,
+          "cos_mean": 0.6176221370697021
+        },
+        "tf_chain": {
+          "rel_l2_mean": 3.171682357788086,
+          "cos_mean": 0.1558646261692047
+        }
+      }
+    }
+  ],
+  "platform": "Linux-7.1.13-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "torch": "2.13.0+cu130",
+  "script_sha256": "d3cecf80c2cda586b5f78bfd1acc1e91b0067b3a673a35a036263f72201e3be5"
+}

@@ -1,0 +1,155 @@
+{
+ "classification": "EK0C_LONGSTREAM",
+ "n_positions": 256,
+ "adjacent_reuse": 0.285,
+ "abs_max_cold": 103,
+ "by_cap": {
+  "2": {
+   "lru": {
+    "mean_miss": 1004.0,
+    "p90_miss": 1103,
+    "max_miss": 1154,
+    "mean_cold_GB": 13.423,
+    "mean_move_ms": 1058.0,
+    "mean_tput_UB": 3.58,
+    "min_tput_UB": 3.1
+   },
+   "hot": {
+    "mean_miss": 884.5,
+    "p90_miss": 980,
+    "max_miss": 1038,
+    "mean_cold_GB": 11.825,
+    "mean_move_ms": 934.2,
+    "mean_tput_UB": 4.06,
+    "min_tput_UB": 3.44
+   },
+   "belady": {
+    "mean_miss": 858.3,
+    "p90_miss": 955,
+    "max_miss": 1005,
+    "mean_cold_GB": 11.476,
+    "mean_move_ms": 907.1,
+    "mean_tput_UB": 4.18,
+    "min_tput_UB": 3.55
+   }
+  },
+  "4": {
+   "lru": {
+    "mean_miss": 1004.0,
+    "p90_miss": 1103,
+    "max_miss": 1154,
+    "mean_cold_GB": 13.423,
+    "mean_move_ms": 1058.0,
+    "mean_tput_UB": 3.58,
+    "min_tput_UB": 3.1
+   },
+   "hot": {
+    "mean_miss": 795.9,
+    "p90_miss": 891,
+    "max_miss": 952,
+    "mean_cold_GB": 10.64,
+    "mean_move_ms": 842.3,
+    "mean_tput_UB": 4.51,
+    "min_tput_UB": 3.74
+   },
+   "belady": {
+    "mean_miss": 710.7,
+    "p90_miss": 809,
+    "max_miss": 855,
+    "mean_cold_GB": 9.502,
+    "mean_move_ms": 754.1,
+    "mean_tput_UB": 5.06,
+    "min_tput_UB": 4.16
+   }
+  },
+  "6": {
+   "lru": {
+    "mean_miss": 1004.0,
+    "p90_miss": 1103,
+    "max_miss": 1154,
+    "mean_cold_GB": 13.423,
+    "mean_move_ms": 1058.0,
+    "mean_tput_UB": 3.58,
+    "min_tput_UB": 3.1
+   },
+   "hot": {
+    "mean_miss": 722.7,
+    "p90_miss": 815,
+    "max_miss": 875,
+    "mean_cold_GB": 9.662,
+    "mean_move_ms": 766.5,
+    "mean_tput_UB": 4.97,
+    "min_tput_UB": 4.06
+   },
+   "belady": {
+    "mean_miss": 567.5,
+    "p90_miss": 661,
+    "max_miss": 809,
+    "mean_cold_GB": 7.587,
+    "mean_move_ms": 605.6,
+    "mean_tput_UB": 6.36,
+    "min_tput_UB": 4.39
+   }
+  },
+  "8": {
+   "lru": {
+    "mean_miss": 1004.0,
+    "p90_miss": 1103,
+    "max_miss": 1154,
+    "mean_cold_GB": 13.423,
+    "mean_move_ms": 1058.0,
+    "mean_tput_UB": 3.58,
+    "min_tput_UB": 3.1
+   },
+   "hot": {
+    "mean_miss": 659.9,
+    "p90_miss": 749,
+    "max_miss": 844,
+    "mean_cold_GB": 8.823,
+    "mean_move_ms": 701.4,
+    "mean_tput_UB": 5.45,
+    "min_tput_UB": 4.21
+   },
+   "belady": {
+    "mean_miss": 457.9,
+    "p90_miss": 527,
+    "max_miss": 809,
+    "mean_cold_GB": 6.121,
+    "mean_move_ms": 492.0,
+    "mean_tput_UB": 7.86,
+    "min_tput_UB": 4.39
+   }
+  },
+  "10": {
+   "lru": {
+    "mean_miss": 999.4,
+    "p90_miss": 1103,
+    "max_miss": 1154,
+    "mean_cold_GB": 13.361,
+    "mean_move_ms": 1053.3,
+    "mean_tput_UB": 3.61,
+    "min_tput_UB": 3.1
+   },
+   "hot": {
+    "mean_miss": 605.2,
+    "p90_miss": 688,
+    "max_miss": 817,
+    "mean_cold_GB": 8.091,
+    "mean_move_ms": 644.7,
+    "mean_tput_UB": 5.95,
+    "min_tput_UB": 4.35
+   },
+   "belady": {
+    "mean_miss": 396.7,
+    "p90_miss": 471,
+    "max_miss": 809,
+    "mean_cold_GB": 5.303,
+    "mean_move_ms": 428.6,
+    "mean_tput_UB": 9.08,
+    "min_tput_UB": 4.39
+   }
+  }
+ },
+ "best_oracle_10GB_mean_miss": 396.7,
+ "verdict": "GPU_ONLY_FINAL_CLOSED"
+}

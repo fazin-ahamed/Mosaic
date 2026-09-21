@@ -1,0 +1,110 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 74,
+    "sm_clock_mhz": 1912,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.035,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 100,
+    "ts": 1787932261.9303074
+  },
+  "decode_parity": {
+    "nan_aware_equal": true,
+    "max_abs_diff_finite": NaN,
+    "ff_scale_blocks_total": 375,
+    "ff_scale_blocks_with_nonzero_codes": 375,
+    "ff_note": "0xFF e8m0 scales decode as inf (helper) vs NaN (torch native). Source runtime semantics unverified; coherent generation on sandbox implies no NaN poisoning. Must be pinned against the source runtime before SOURCE_EXACT signoff. Does not affect 2.11C2 timing."
+  },
+  "vram": {
+    "fp8_codes_gb": 5.681184768,
+    "scales_gb": 0.000346752,
+    "small_bf16_gb": 0.226344776,
+    "lm_head_bf16_gb": 1.05906176,
+    "resident_total_gb": 7.011104256,
+    "double_workspace_gb": 0.531038208,
+    "peak_run_gb": 7.576745472,
+    "usable_12gb": 11.6,
+    "expert_cache_headroom_gb": 4.023254528,
+    "note": "Expert-cache headroom is provisional: KV/context state, CUDA graphs, and DSpark state are NOT yet subtracted (Phase 2.11E census)."
+  },
+  "variants": {
+    "K32": {
+      "fused": 0.1585259017944336
+    },
+    "K40": {
+      "fused": 0.2023069610595703
+    },
+    "K48": {
+      "fused": 0.20874700164794924
+    },
+    "K56": {
+      "fused": 0.21499755096435547
+    }
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 70,
+    "sm_clock_mhz": 1912,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.039,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 100,
+    "ts": 1787932275.456296
+  },
+  "thermal_label": "UNKNOWN",
+  "gate_k56_fused": {
+    "t_ms": 214.99755096435547,
+    "gate": "FP8_CORE_EXECUTION_MISS",
+    "bf16_ceiling_ms": 102.4,
+    "ratio_vs_ceiling": 2.099585458636284,
+    "workspace_decode_reference": {
+      "sync_ms": 184.6,
+      "async_ms": 183.9,
+      "gate": "WEAK (superseded by fused)"
+    }
+  },
+  "followup_probes": {
+    "summary": "Fused in-GEMM FP8-decode triton GEMM: 3 layout variants benched per-shape at K=56 vs cuBLAS BF16 (pre-decoded weights).",
+    "v2_strided_w_load": {
+      "per_layer_ms": 2.93,
+      "note": "W [BK,BN] load + dot(x,wf); fastest despite strided theory"
+    },
+    "v3_operand_swap": {
+      "per_layer_ms": 5.65,
+      "note": "coalesced W load, transposed store kills it"
+    },
+    "v4_single_mtile": {
+      "per_layer_ms": 3.73,
+      "note": "BM=64 single m-tile, coalesced OT store, BN=64 nw=4; best of swap family"
+    },
+    "cublas_reference_per_layer_ms": 1.33,
+    "conclusion": "On SM86 + triton 3.0, in-register E4M3-decode GEMM is 2.2-2.8x slower than cuBLAS on pre-decoded BF16. The fused-register-decode race branch is CLOSED for this stack.",
+    "next_race_candidate": "INT8 IMMA core GEMMs via MXINT techniques: every E4M3 value = 4-bit int (1..15) x pow2; E8M0 block scales fold exactly. Repo-proven 1.76x P0 gain on experts (mxint.py). Requires activation int8 quantization exactness proof for core (q_W=2W-style). Distinct phase, not a patch.",
+    "gate_status": "K56 workspace-decode async 183.9 ms STEADY = WEAK (gate <=130 not met). Fused 215.0 ms (MISS). Core INT8 IMMA is the remaining \u00a710 race option."
+  },
+  "track_a_v5": {
+    "summary": "v5 fused-decode GEMM: split-K two-pass reduce + config sweep (BN/BK/SPLIT/warps).",
+    "best_per_layer_ms": 2.91,
+    "v2_reference_ms": 2.93,
+    "cublas_reference_ms": 1.33,
+    "ratio_vs_cublas": 2.19,
+    "correctness": "NaN/inf-aware parity vs f32 exact = 0.4967 max-abs (cuBLAS bf16 itself = 0.6795; v5 closer to exact)",
+    "split_k_effect": "small-N shapes fixed: wq_a 3.62x->2.6x cuBLAS, wkv 6.7x->3.9x; big shapes unchanged (wq_b 2.5x, wo_b 2.0x)",
+    "best_configs": "BN=64, BK=64, SPLIT 2-4, num_warps=4 uniformly",
+    "full_core_projection_ms": 173.25,
+    "gate_analysis": "Full core ~173 ms (vs workspace-decode 183.9). Gate <=130 requires GEMM <=1.9 ms/layer (1.43x cuBLAS); wall after v1-v5 = ~2.2x cuBLAS on SM86/triton3. Remaining Track A headroom: (a) non-GEMM 1.04 ms/layer \u2014 attention einsum 0.94 ms eager -> SDPA + fused norms/router/hc via torch.compile could recover ~0.5-0.6 ms/layer; (b) marginal GEMM tuning. Combined optimistic floor ~155-165 ms.",
+    "strategic_note": "Track A remaining gap (~50 ms to gate) has 10x less Exact-30 leverage than Track B owner work: MoE gu kernel has 12.5x bytes-floor headroom on a 1605 ms block vs core at 173 ms total. Track B first; Track A (a) is the next core move.",
+    "split1_bug": "wrapper never wrote OT for SPLIT=1; floored at SPLIT>=2 (best configs use 2-4)."
+  },
+  "track_a_nonGEMM_probe": {
+    "results": {
+      "cluster_compile": "norms/router/hc cluster eager 0.118 -> compiled 0.043 ms (2.74x), BITWISE identical (maxdiff 0). Safe, free.",
+      "wo_a_bmm": "bmm == einsum time (1.02x), bitwise. No gain.",
+      "attn_sdpa": "1.33x faster (0.965 -> 0.725 ms) BUT maxdiff 5.62 vs einsum \u2014 NOT parity-safe. Also the softmax einsum is itself a timing approximation of DSA top-k attention; real parity requires the DSA kernel. Flag: adopt SDPA-shaped timing only after exact-attention work."
+    },
+    "projection": "Safe savings (cluster compile) 3.2 ms + SDPA-if-validated 10 ms => 173 -> 159-170 ms. Gate 130 NOT reached; remaining gap is the GEMM wall (2.91 vs required 1.9 ms/layer).",
+    "status": "SOURCE-FP8 CORE: VIABLE band (159-173 ms). The 130 ms gate requires the GEMM side (fuse decode into MMA epilogue / persistent kernel), not non-GEMM trims."
+  }
+}

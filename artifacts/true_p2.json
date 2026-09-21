@@ -1,0 +1,94 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "config": "FP8-resident workspace core + packed4 all-IMMA c0 (exact post-fix), synthetic perfect residency",
+  "rows": {
+    "56": {
+      "block_s": 1.170981689453125,
+      "route_authority": "real_golden",
+      "E_A": 28.27332751941323,
+      "raw_per_s": 47.82312183391464,
+      "R_oracle_per_s": 24.144978332340543
+    },
+    "63": {
+      "block_s": 1.2503634033203126,
+      "route_authority": "real_golden",
+      "E_A": 31.0,
+      "raw_per_s": 50.38535183667795,
+      "R_oracle_per_s": 24.792792173603434
+    },
+    "96": {
+      "block_s": 1.4807705078125,
+      "route_authority": "per_layer_bootstrap",
+      "E_A": 44.053962691718816,
+      "raw_per_s": 64.83111291959621,
+      "R_oracle_per_s": 29.750702393984383
+    }
+  },
+  "thermal": {
+    "label": "UNKNOWN",
+    "start": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 71,
+      "sm_clock_mhz": 1912,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.039,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 100,
+      "ts": 1787941724.1137588
+    },
+    "end": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 75,
+      "sm_clock_mhz": 1897,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.038,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 99,
+      "ts": 1787941748.5919125
+    }
+  },
+  "interpretation": {
+    "first": "First whole-target block measurement with VALID numerics (fixed all-IMMA, packed4, FP8-resident workspace core, 43 interleaved layers, 10.44 GB resident \u2014 fits).",
+    "rows": {
+      "56": {
+        "block_s": 1.170981689453125,
+        "route_authority": "real_golden",
+        "E_A": 28.27332751941323,
+        "raw_per_s": 47.82312183391464,
+        "R_oracle_per_s": 24.144978332340543
+      },
+      "63": {
+        "block_s": 1.2503634033203126,
+        "route_authority": "real_golden",
+        "E_A": 31.0,
+        "raw_per_s": 50.38535183667795,
+        "R_oracle_per_s": 24.792792173603434
+      },
+      "96": {
+        "block_s": 1.4807705078125,
+        "route_authority": "per_layer_bootstrap",
+        "E_A": 44.053962691718816,
+        "raw_per_s": 64.83111291959621,
+        "R_oracle_per_s": 29.750702393984383
+      }
+    },
+    "gap_analysis": {
+      "k56_sum_of_parts": "hot8-MoE 0.6491 + workspace-core 0.1839 = 0.833 s -> R_oracle 33.9/s",
+      "k56_measured": "1.171 s -> 24.1/s",
+      "decomposition": "MoE-in-block ~= 1.171-0.184 = 0.987 s ~ packed4-c0 cost: ~52% slower than hot8-c0 (0.649 s). Plus interleave overhead (casts/residual ops/launches).",
+      "root_tension": "BANK-CORE VRAM TRADEOFF: hot8 bank (6.5 GB) + FP8 core (7.0 GB) = 13.5 GB > 11.6 usable \u2014 cannot co-reside. packed4 (3.3 GB) co-resides but pays ~50% MoE time. This is the first measured P3-residency-shape constraint."
+    },
+    "paths_to_30": [
+      "hybrid bank: hot8 for a hot-expert subset + packed4 for the tail (MXINTHybridBank exists) \u2014 tune split under VRAM",
+      "Track A core 173->130 ms (-53 ms per block)",
+      "N96+ width: bootstrap R_oracle with packed4 reaches 29.8/s at N96 already",
+      "trim interleave overhead (cast/residual ops in block_step are naive)"
+    ],
+    "p2_gate_status": "P2_VIABLE range at K56 (24.1/s) with packed4-in-block; hot8 sum-of-parts shows 33.9/s is reachable with bank hybridization. NOT yet P2_MINIMUM(30) as a whole block.",
+    "caveats": [
+      "thermal UNKNOWN (idle-gap artifact, clocks stable)",
+      "K96 route authority = bootstrap",
+      "core = workspace-decode path (183.9ms), not the 173ms fused projection"
+    ]
+  }
+}

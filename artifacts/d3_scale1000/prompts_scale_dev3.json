@@ -1,0 +1,432 @@
+{
+ "classification": "STAGE1_SCALE_DEV3",
+ "purpose": "SCALE-DEV3 fresh holdout for SCALE1000; val-only; no train additions",
+ "splits": {
+  "train": [],
+  "val": [
+   "math_127",
+   "math_128",
+   "math_129",
+   "math_130",
+   "math_131",
+   "math_132",
+   "math_133",
+   "math_134",
+   "math_135",
+   "math_136",
+   "json_127",
+   "json_128",
+   "json_129",
+   "json_130",
+   "json_131",
+   "json_132",
+   "json_133",
+   "json_134",
+   "json_135",
+   "json_136",
+   "retrieval_127",
+   "retrieval_128",
+   "retrieval_129",
+   "retrieval_130",
+   "retrieval_131",
+   "retrieval_132",
+   "retrieval_133",
+   "retrieval_134",
+   "retrieval_135",
+   "retrieval_136",
+   "agent_127",
+   "agent_128",
+   "agent_129",
+   "agent_130",
+   "agent_131",
+   "agent_132",
+   "agent_133",
+   "agent_134",
+   "agent_135",
+   "agent_136",
+   "coding_127",
+   "coding_128",
+   "coding_129",
+   "coding_130",
+   "coding_131",
+   "coding_132",
+   "coding_133",
+   "coding_134",
+   "coding_135",
+   "coding_136",
+   "longform_127",
+   "longform_128",
+   "longform_129",
+   "longform_130",
+   "longform_131",
+   "longform_132",
+   "longform_133",
+   "longform_134",
+   "longform_135",
+   "longform_136",
+   "convo_127",
+   "convo_128",
+   "convo_129",
+   "convo_130",
+   "convo_131",
+   "convo_132",
+   "convo_133",
+   "convo_134",
+   "convo_135",
+   "convo_136"
+  ]
+ },
+ "prompts": [
+  {
+   "category": "math_127",
+   "prompt": "How many distinct 5-card hands can be dealt from a 52-card deck?",
+   "domain": "math"
+  },
+  {
+   "category": "math_128",
+   "prompt": "A clock's minute hand is on 12. How many degrees does it travel in 18 minutes?",
+   "domain": "math"
+  },
+  {
+   "category": "math_129",
+   "prompt": "What is the remainder when 2 to the power of 15 is divided by 7?",
+   "domain": "math"
+  },
+  {
+   "category": "math_130",
+   "prompt": "A sphere has radius 6. What is its surface area in terms of pi?",
+   "domain": "math"
+  },
+  {
+   "category": "math_131",
+   "prompt": "If the mean of five numbers is 12 and four of them are 8, 10, 14, and 16, what is the fifth?",
+   "domain": "math"
+  },
+  {
+   "category": "math_132",
+   "prompt": "Convert 3 hours and 27 minutes into seconds.",
+   "domain": "math"
+  },
+  {
+   "category": "math_133",
+   "prompt": "A ladder 13 meters long leans against a wall with its base 5 meters from the wall. How high does it reach?",
+   "domain": "math"
+  },
+  {
+   "category": "math_134",
+   "prompt": "What is the 12th triangular number?",
+   "domain": "math"
+  },
+  {
+   "category": "math_135",
+   "prompt": "A store marks an item up 25 percent from 80 dollars, then takes 10 percent off the marked price. What is the final price?",
+   "domain": "math"
+  },
+  {
+   "category": "math_136",
+   "prompt": "Solve for n: the sum of the first n odd numbers equals 121.",
+   "domain": "math"
+  },
+  {
+   "category": "json_127",
+   "prompt": "Output JSON for a shipping carton with tracking number, origin warehouse, destination postal code, and kilogram weight.",
+   "domain": "json"
+  },
+  {
+   "category": "json_128",
+   "prompt": "Create JSON for a museum exhibit with accession number, artist, medium, and year acquired.",
+   "domain": "json"
+  },
+  {
+   "category": "json_129",
+   "prompt": "Return JSON for a bus route with route id, stop names array, weekday start time, and fare in cents.",
+   "domain": "json"
+  },
+  {
+   "category": "json_130",
+   "prompt": "Generate JSON for a laboratory sample with barcode, collected-at timestamp, technician id, and storage temperature.",
+   "domain": "json"
+  },
+  {
+   "category": "json_131",
+   "prompt": "Write JSON for a chess game with white player, black player, PGN moves array, and result string.",
+   "domain": "json"
+  },
+  {
+   "category": "json_132",
+   "prompt": "Produce JSON for a parking citation with ticket number, license plate, violation code, and issued-at datetime.",
+   "domain": "json"
+  },
+  {
+   "category": "json_133",
+   "prompt": "Output JSON for a radio station with call sign, frequency megahertz, city of license, and format.",
+   "domain": "json"
+  },
+  {
+   "category": "json_134",
+   "prompt": "Create JSON for a hiking trail with trail name, length kilometers, elevation gain meters, and difficulty.",
+   "domain": "json"
+  },
+  {
+   "category": "json_135",
+   "prompt": "Return JSON for a vaccine lot with lot number, manufacturer, expiration date, and doses remaining.",
+   "domain": "json"
+  },
+  {
+   "category": "json_136",
+   "prompt": "Generate JSON for a telescope observation with target name, right ascension, declination, and exposure seconds.",
+   "domain": "json"
+  },
+  {
+   "category": "retrieval_127",
+   "prompt": "According to the harbor master's log, which berth was assigned to the arriving ferry?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_128",
+   "prompt": "What moisture threshold does the grain silo inspection sheet list for safe storage?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_129",
+   "prompt": "Who countersigned the night-shift handover in the ward nursing notes?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_130",
+   "prompt": "Which fuse rating does the substation switching order specify for feeder B?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_131",
+   "prompt": "When does the concert hall house-manager brief say the lobby doors open?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_132",
+   "prompt": "How many spare rails does the track-maintenance work order allocate to milepost 14?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_133",
+   "prompt": "Why was the orchard frost-protection protocol activated according to the agronomy diary?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_134",
+   "prompt": "What visitor-capacity limit is printed on the observatory public-night flyer?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_135",
+   "prompt": "Which reagent lot failed the titration check in the quality-control worksheet?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_136",
+   "prompt": "Where does the lighthouse keepers' standing order say to store the spare lamp?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "agent_127",
+   "prompt": "Print the inode number of kernel.img.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_128",
+   "prompt": "Compute the SHA-256 digest of firmware.bin and write it to firmware.sha256.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_129",
+   "prompt": "List every empty subdirectory under the folder named scratch.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_130",
+   "prompt": "Change the owner of secrets.env to the user named deploy.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_131",
+   "prompt": "Show which process currently has the file lock.sock open.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_132",
+   "prompt": "Create a 50-megabyte sparse file called scratch.img.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_133",
+   "prompt": "Compare byte-for-byte the files gold.wav and candidate.wav and print whether they match.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_134",
+   "prompt": "Set the modification time of snapshot.raw to midnight UTC on 1 January 2020.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_135",
+   "prompt": "Extract only the files ending in .po from locale.tgz into a folder named translations.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_136",
+   "prompt": "Count how many hard links point at the inode of canonical.dat.",
+   "domain": "agent"
+  },
+  {
+   "category": "coding_127",
+   "prompt": "Write a function that returns the longest palindromic substring of a string.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_128",
+   "prompt": "Write a function that evaluates a postfix arithmetic expression given as a list of tokens.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_129",
+   "prompt": "Write a function that inserts a value into a max-heap represented as an array and restores the heap property.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_130",
+   "prompt": "Write a function that converts an integer to its Roman-numeral representation for values 1 through 3999.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_131",
+   "prompt": "Write a function that finds a peak element in an unsorted list, defined as an element not smaller than its neighbors.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_132",
+   "prompt": "Write a function that serializes a binary tree to a string using preorder with null markers and deserializes it back.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_133",
+   "prompt": "Write a function that computes the minimum number of coins of given denominations needed to make a target amount.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_134",
+   "prompt": "Write a function that returns the next permutation of a list of integers in lexicographic order.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_135",
+   "prompt": "Write a function that detects whether a directed graph given as an adjacency list contains a cycle.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_136",
+   "prompt": "Write a function that compresses a string with run-length encoding and expands the encoded form back to the original.",
+   "domain": "coding"
+  },
+  {
+   "category": "longform_127",
+   "prompt": "Explain how a seismograph records ground motion during an earthquake.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_128",
+   "prompt": "Describe how a blast furnace turns iron ore into pig iron.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_129",
+   "prompt": "Explain how a radio telescope forms an image of a distant source.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_130",
+   "prompt": "Describe how a beehive super is harvested without destroying the colony.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_131",
+   "prompt": "Explain how a catalytic converter reduces exhaust pollutants.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_132",
+   "prompt": "Describe how a tide mill captured energy from rising and falling water.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_133",
+   "prompt": "Explain how a vacuum flask keeps its contents hot or cold.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_134",
+   "prompt": "Describe how a papermaking Fourdrinier machine forms a continuous sheet.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_135",
+   "prompt": "Explain how a gyrocompass finds true north without a magnetic needle.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_136",
+   "prompt": "Describe how a municipal composting windrow is turned and monitored.",
+   "domain": "longform"
+  },
+  {
+   "category": "convo_127",
+   "prompt": "How do I tell a roommate I need the shared bathroom first on work mornings?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_128",
+   "prompt": "What should I check before lending a neighbor my spare folding chairs?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_129",
+   "prompt": "How can I keep a long train delay from ruining a tight connection?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_130",
+   "prompt": "What is a fair way to rotate who chooses the family movie night?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_131",
+   "prompt": "How do I ask a dentist to explain a treatment plan in plain language?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_132",
+   "prompt": "What should I do if I find a wallet with no ID on a park bench?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_133",
+   "prompt": "How can I practice a speech without annoying people in the next room?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_134",
+   "prompt": "What is a considerate way to cancel a standing weekly game night?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_135",
+   "prompt": "How do I choose a raincoat that will actually keep me dry in wind?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_136",
+   "prompt": "What should I say when a shop clerk has already started wrapping the wrong size?",
+   "domain": "convo"
+  }
+ ],
+ "author_note": "IDs 127-136; 10 structurally distinct tasks/domain; frozen before SCALE1000 train"
+}

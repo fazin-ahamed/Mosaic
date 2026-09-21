@@ -1,0 +1,153 @@
+{
+ "classification": "TAU_H_PREFIX_CONDITIONED_ENVELOPE",
+ "pair": "G1 Blackwell kit corpus vs 3060-kit run, certification prompts, 32 tokens (both sides source-class kit; neither is MosaicVM)",
+ "prefixes": [
+  {
+   "category": "agent_tool_use",
+   "prefix": 2,
+   "n": 32
+  },
+  {
+   "category": "coding",
+   "prefix": 32,
+   "n": 32
+  },
+  {
+   "category": "general_conversation",
+   "prefix": 5,
+   "n": 32
+  },
+  {
+   "category": "long_context_retrieval",
+   "prefix": 2,
+   "n": 32
+  },
+  {
+   "category": "long_generation",
+   "prefix": 9,
+   "n": 32
+  },
+  {
+   "category": "math_reasoning",
+   "prefix": 32,
+   "n": 32
+  },
+  {
+   "category": "structured_json",
+   "prefix": 27,
+   "n": 32
+  }
+ ],
+ "tau_h_by_bucket": {
+  "0-1": {
+   "n": 602,
+   "p50": 0.0989,
+   "p90": 0.1583,
+   "p99": 0.244,
+   "max": 0.345,
+   "tau_h_frozen": 0.244
+  },
+  "2-3": {
+   "n": 430,
+   "p50": 0.091,
+   "p90": 0.1582,
+   "p99": 0.2356,
+   "max": 0.2528,
+   "tau_h_frozen": 0.244
+  },
+  "4-7": {
+   "n": 731,
+   "p50": 0.0958,
+   "p90": 0.1746,
+   "p99": 0.4302,
+   "max": 1.9101,
+   "tau_h_frozen": 0.4302
+  },
+  "8-15": {
+   "n": 1075,
+   "p50": 0.0988,
+   "p90": 0.1813,
+   "p99": 0.303,
+   "max": 0.3463,
+   "tau_h_frozen": 0.4302
+  },
+  "16-23": {
+   "n": 1032,
+   "p50": 0.1104,
+   "p90": 0.2409,
+   "p99": 0.4859,
+   "max": 0.7392,
+   "tau_h_frozen": 0.4859
+  },
+  "24-31": {
+   "n": 731,
+   "p50": 0.1117,
+   "p90": 0.2386,
+   "p99": 0.5279,
+   "max": 0.5898,
+   "tau_h_frozen": 0.5279
+  }
+ },
+ "monotone_envelope_tau_h": {
+  "0-1": 0.244,
+  "2-3": 0.244,
+  "4-7": 0.4302,
+  "8-15": 0.4302,
+  "16-23": 0.4859,
+  "24-31": 0.5279
+ },
+ "mosaicvm_vs_envelope": {
+  "0-1": {
+   "n": 430,
+   "p50": 0.1095,
+   "p99": 0.2733,
+   "max": 0.3494,
+   "inside_tau_h": false
+  },
+  "2-3": {
+   "n": 258,
+   "p50": 0.1144,
+   "p99": 0.2526,
+   "max": 0.3037,
+   "inside_tau_h": false
+  },
+  "4-7": {
+   "n": 430,
+   "p50": 0.1206,
+   "p99": 0.4843,
+   "max": 0.6081,
+   "inside_tau_h": false
+  },
+  "8-15": {
+   "n": 688,
+   "p50": 0.1097,
+   "p99": 0.2309,
+   "max": 0.2825,
+   "inside_tau_h": true
+  },
+  "16-23": {
+   "n": 344,
+   "p50": 0.1122,
+   "p99": 0.2837,
+   "max": 0.3377,
+   "inside_tau_h": true
+  },
+  "24-31": {
+   "n": 86,
+   "p50": 0.1067,
+   "p99": 0.2746,
+   "max": 0.3172,
+   "inside_tau_h": true
+  }
+ },
+ "disjoint_calibration_crosscheck": {
+  "disjoint_calib_rel_l2": {
+   "p50": 0.100234,
+   "p90": 0.166091,
+   "p99": 0.251686,
+   "max": 0.436517,
+   "n": 4859
+  },
+  "note": "steps 0-10 only; compare p50/p90 against the same step range in this run"
+ }
+}

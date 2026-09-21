@@ -1,0 +1,66 @@
+{
+ "classification": "SCALE1000_PREFIX_AUDIT",
+ "tokenizer": "DeepSeek-V4-Flash-0731 snapshot 7872f01b",
+ "add_special_tokens": true,
+ "formula": "R_prefix = sum over trie nodes with count>=2 of (count-1) / total_prompt_tokens",
+ "sets": {
+  "scale1000_371": {
+   "n": 371,
+   "total_prompt_tokens": 6342,
+   "mean_len": 17.09,
+   "min_len": 9,
+   "max_len": 37,
+   "trie_nodes_excl_root": 5235,
+   "R_prefix": 0.1746,
+   "shared_token_occurrences": 1107,
+   "per_domain_R": {
+    "math": 0.0747,
+    "json": 0.1724,
+    "retrieval": 0.121,
+    "agent": 0.1029,
+    "coding": 0.2399,
+    "longform": 0.235,
+    "convo": 0.2771
+   }
+  },
+  "scale1000_val70": {
+   "n": 70,
+   "total_prompt_tokens": 1194,
+   "mean_len": 17.06,
+   "min_len": 9,
+   "max_len": 32,
+   "trie_nodes_excl_root": 1080,
+   "R_prefix": 0.0955,
+   "shared_token_occurrences": 114,
+   "per_domain_R": {
+    "math": 0.0303,
+    "json": 0.0766,
+    "retrieval": 0.0128,
+    "agent": 0.0,
+    "coding": 0.1845,
+    "longform": 0.189,
+    "convo": 0.1333
+   }
+  },
+  "scale1000_train301": {
+   "n": 301,
+   "total_prompt_tokens": 5148,
+   "mean_len": 17.1,
+   "min_len": 9,
+   "max_len": 37,
+   "trie_nodes_excl_root": 4306,
+   "R_prefix": 0.1636,
+   "shared_token_occurrences": 842,
+   "per_domain_R": {
+    "math": 0.0643,
+    "json": 0.167,
+    "retrieval": 0.1065,
+    "agent": 0.0803,
+    "coding": 0.2381,
+    "longform": 0.2329,
+    "convo": 0.2493
+   }
+  }
+ },
+ "verdict": "BUILD_RADIX"
+}

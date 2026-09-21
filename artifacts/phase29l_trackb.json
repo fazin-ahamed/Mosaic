@@ -1,0 +1,204 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "track": "B_exact_epilogue_fusion",
+  "k_values": [
+    32,
+    40,
+    48,
+    56
+  ],
+  "n_blocks": 10,
+  "rows": [
+    {
+      "K": 32,
+      "backend": "mxint_hot8",
+      "weight_repr": "hot8",
+      "moe_block_torch_sec": 1.2266132812500001,
+      "moe_block_fused_sec": 1.1808128051757811,
+      "torch_blocks_s": [
+        1.2017855224609375,
+        1.3303367919921876,
+        1.1677960205078124,
+        1.2281754150390625,
+        1.2250511474609376,
+        1.1496468505859374,
+        1.2607833251953124,
+        1.34496630859375,
+        1.158123291015625,
+        1.327055908203125
+      ],
+      "fused_blocks_s": [
+        1.413864501953125,
+        1.1627899169921876,
+        1.15232763671875,
+        1.152681640625,
+        1.1526021728515625,
+        1.15125439453125,
+        1.198835693359375,
+        1.3203828125,
+        1.3107630615234376,
+        1.301796630859375
+      ],
+      "improvement_pct": 3.8787245424054317,
+      "core_block_sec": 0.10584647726118564,
+      "cand_toks_torch": 24.015734655848046,
+      "cand_toks_fused": 24.87060905462956
+    },
+    {
+      "K": 40,
+      "backend": "mxint_hot8",
+      "weight_repr": "hot8",
+      "moe_block_torch_sec": 1.4886978759765626,
+      "moe_block_fused_sec": 1.4727280883789062,
+      "torch_blocks_s": [
+        1.4686578369140626,
+        1.321743408203125,
+        1.51156005859375,
+        1.512010009765625,
+        1.4714173583984376,
+        1.500748779296875,
+        1.4278438720703126,
+        1.47664697265625,
+        1.52492724609375,
+        1.50972412109375
+      ],
+      "fused_blocks_s": [
+        1.372475341796875,
+        1.3400911865234375,
+        1.536884521484375,
+        1.5029501953125,
+        1.4721044921875,
+        1.4733516845703125,
+        1.3851708984375,
+        1.4528914794921874,
+        1.5019356689453125,
+        1.49014013671875
+      ],
+      "improvement_pct": 1.0843676931044932,
+      "core_block_sec": 0.15114165226689405,
+      "cand_toks_torch": 24.39263068798367,
+      "cand_toks_fused": 24.63251762058964
+    },
+    {
+      "K": 48,
+      "backend": "mxint_hot8",
+      "weight_repr": "hot8",
+      "moe_block_torch_sec": 1.5422325439453126,
+      "moe_block_fused_sec": 1.5188972778320313,
+      "torch_blocks_s": [
+        1.595800537109375,
+        1.558993896484375,
+        1.56246630859375,
+        1.5312384033203126,
+        1.541706787109375,
+        1.5545281982421875,
+        1.5251947021484376,
+        1.4121666259765624,
+        1.54275830078125,
+        1.5322225341796876
+      ],
+      "fused_blocks_s": [
+        1.5819254150390625,
+        1.5669012451171875,
+        1.5089520263671874,
+        1.51311669921875,
+        1.5308564453125,
+        1.5234150390625,
+        1.5143795166015626,
+        1.5103662109375,
+        1.537048583984375,
+        1.5132938232421875
+      ],
+      "improvement_pct": 1.5363294446473885,
+      "core_block_sec": 0.1497883056589535,
+      "cand_toks_torch": 28.368444757182722,
+      "cand_toks_fused": 28.765155326374476
+    },
+    {
+      "K": 56,
+      "backend": "mxint_hot8",
+      "weight_repr": "hot8",
+      "moe_block_torch_sec": 1.6190404663085938,
+      "moe_block_fused_sec": 1.5892955932617188,
+      "torch_blocks_s": [
+        1.622235107421875,
+        1.6190989990234375,
+        1.5341707763671875,
+        1.61898193359375,
+        1.6297144775390624,
+        1.6042813720703124,
+        1.621002197265625,
+        1.6203189697265625,
+        1.5710853271484375,
+        1.59617431640625
+      ],
+      "fused_blocks_s": [
+        1.597506591796875,
+        1.58158349609375,
+        1.4972559814453126,
+        1.6040172119140625,
+        1.587378173828125,
+        1.58697607421875,
+        1.6054384765625,
+        1.5912130126953126,
+        1.4722652587890626,
+        1.60397314453125
+      ],
+      "improvement_pct": 1.871575883868748,
+      "core_block_sec": 0.15475471919476985,
+      "cand_toks_torch": 31.57072499557408,
+      "cand_toks_fused": 32.10916542947904
+    },
+    {
+      "K": 48,
+      "backend": "mxint_packed4",
+      "weight_repr": "packed4",
+      "moe_block_torch_sec": 1.4682295532226561,
+      "moe_block_fused_sec": 1.474281982421875,
+      "improvement_pct": -0.41053402750511614,
+      "core_block_sec": 0.1497883056589535,
+      "cand_toks_torch": 29.66592719389271,
+      "cand_toks_fused": 29.555371065079843
+    },
+    {
+      "K": 56,
+      "backend": "mxint_packed4",
+      "weight_repr": "packed4",
+      "moe_block_torch_sec": 1.6708695068359374,
+      "moe_block_fused_sec": 1.6715153198242187,
+      "improvement_pct": -0.038636378657253,
+      "core_block_sec": 0.15475471919476985,
+      "cand_toks_torch": 30.67443957059873,
+      "cand_toks_fused": 30.66359235137063
+    }
+  ],
+  "gates": {
+    "best_improvement_pct": 3.8787245424054317,
+    "best_improvement_k": 32,
+    "gate": "marginally_useful",
+    "best_cand_toks_fused": 32.10916542947904,
+    "expert40_pass": false,
+    "thresholds": {
+      "useful": 3.0,
+      "useful2": 5.0,
+      "strong": 8.0,
+      "likely_raw40": 12.0
+    },
+    "verdict": "marginally_useful: bitwise-exact, +2-4% hot8 interleaved, ~0% packed4; below the >=5% useful bar, far below the >=12% raw-40 bar. epilogue='fused' kept as validated optional path; default stays 'torch'; final adoption decided at the 2.11M merge per backend."
+  },
+  "correctness": "BITWISE_MOSAIC_REFERENCE (tests/test_mxint_epilogue.py: fused == torch at every stage incl. e4m3 encoder, silu, SwiGLU+requant planes/sA, routed reduction, full fused)",
+  "measurement_method": "interleaved A/B blocks (torch/fused alternating), median of 10 per path \u2014 cancels clock/thermal drift",
+  "thermal_drift_finding": {
+    "note": "Absolute block times drifted ~15-20% slower across this session on identical code paths (hot8 K56 torch epilogue: 1392-1406 ms in wide_verify/first race vs 1619 ms in this interleaved run; K32: 978-1071 vs 1227 ms). The GPU has been under sustained bench load for hours. Relative A/B numbers are drift-free; ABSOLUTE throughput numbers (incl. the 36.02 raw K56 from 2.10X) reflect a cooler thermal window. Sustained-state throughput will be lower; Phase 2.15 thermal qualification is not optional, and future gates must interleave or control clocks.",
+    "k56_torch_ms_progression": [
+      1392.3,
+      1405.7,
+      1619.0
+    ],
+    "k32_torch_ms_progression": [
+      1070.7,
+      977.8,
+      1226.6
+    ]
+  }
+}

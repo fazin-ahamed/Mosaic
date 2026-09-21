@@ -1,0 +1,20 @@
+{
+  "verdict": "MXINT USEFUL",
+  "source_semantics": "validated",
+  "mxint_vs_qpa": {
+    "dp4a_gbs": 44.67713833040182,
+    "imma_gbs": 100.78740583618773,
+    "qpa_w8_gbs": 62.46590895012732,
+    "ratio": 1.6134785762367794,
+    "lut": "skipped_mxint_ge_1.5"
+  },
+  "ratio": 1.6134785762367794,
+  "lut": "skipped_mxint_ge_1.5",
+  "s3_mxint_k8_mid_sec": null,
+  "r1_ok": false,
+  "r3_ok": false,
+  "r1_gbs": 24.281650175253684,
+  "r3_gbs_m8": 62.46590895012732,
+  "cold_dram_gbs": 295.2072195024158,
+  "mxint_complete": true
+}

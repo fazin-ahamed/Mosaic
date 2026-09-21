@@ -1,0 +1,2812 @@
+{
+ "classification": "STAGE1_SCALE700_CORPUS",
+ "purpose": "SCALE-DEV2 holdout + SCALE700 train additions",
+ "splits": {
+  "train": [
+   "math_057",
+   "math_058",
+   "math_059",
+   "math_060",
+   "math_061",
+   "math_062",
+   "math_063",
+   "math_064",
+   "math_065",
+   "math_066",
+   "math_067",
+   "math_068",
+   "math_069",
+   "math_070",
+   "math_071",
+   "math_072",
+   "math_073",
+   "math_074",
+   "math_075",
+   "math_076",
+   "math_077",
+   "math_078",
+   "math_079",
+   "math_080",
+   "math_081",
+   "math_082",
+   "math_083",
+   "math_084",
+   "math_085",
+   "math_086",
+   "math_087",
+   "math_088",
+   "math_089",
+   "math_090",
+   "math_091",
+   "math_092",
+   "math_093",
+   "math_094",
+   "math_095",
+   "math_096",
+   "math_097",
+   "math_098",
+   "math_099",
+   "math_100",
+   "math_101",
+   "math_102",
+   "math_103",
+   "math_104",
+   "math_105",
+   "math_106",
+   "math_107",
+   "math_108",
+   "math_109",
+   "math_110",
+   "math_111",
+   "math_112",
+   "math_113",
+   "math_114",
+   "math_115",
+   "math_116",
+   "math_117",
+   "math_118",
+   "math_119",
+   "math_120",
+   "math_121",
+   "math_122",
+   "math_123",
+   "math_124",
+   "math_125",
+   "math_126",
+   "json_057",
+   "json_058",
+   "json_059",
+   "json_060",
+   "json_061",
+   "json_062",
+   "json_063",
+   "json_064",
+   "json_065",
+   "json_066",
+   "json_067",
+   "json_068",
+   "json_069",
+   "json_070",
+   "json_071",
+   "json_072",
+   "json_073",
+   "json_074",
+   "json_075",
+   "json_076",
+   "json_077",
+   "json_078",
+   "json_079",
+   "json_080",
+   "json_081",
+   "json_082",
+   "json_083",
+   "json_084",
+   "json_085",
+   "json_086",
+   "json_087",
+   "json_088",
+   "json_089",
+   "json_090",
+   "json_091",
+   "json_092",
+   "json_093",
+   "json_094",
+   "json_095",
+   "json_096",
+   "json_097",
+   "json_098",
+   "json_099",
+   "json_100",
+   "json_101",
+   "json_102",
+   "json_103",
+   "json_104",
+   "json_105",
+   "json_106",
+   "json_107",
+   "json_108",
+   "json_109",
+   "json_110",
+   "json_111",
+   "json_112",
+   "json_113",
+   "json_114",
+   "json_115",
+   "json_116",
+   "json_117",
+   "json_118",
+   "json_119",
+   "json_120",
+   "json_121",
+   "json_122",
+   "json_123",
+   "json_124",
+   "json_125",
+   "json_126",
+   "retrieval_057",
+   "retrieval_058",
+   "retrieval_059",
+   "retrieval_060",
+   "retrieval_061",
+   "retrieval_062",
+   "retrieval_063",
+   "retrieval_064",
+   "retrieval_065",
+   "retrieval_066",
+   "retrieval_067",
+   "retrieval_068",
+   "retrieval_069",
+   "retrieval_070",
+   "retrieval_071",
+   "retrieval_072",
+   "retrieval_073",
+   "retrieval_074",
+   "retrieval_075",
+   "retrieval_076",
+   "retrieval_077",
+   "retrieval_078",
+   "retrieval_079",
+   "retrieval_080",
+   "retrieval_081",
+   "retrieval_082",
+   "retrieval_083",
+   "retrieval_084",
+   "retrieval_085",
+   "retrieval_086",
+   "retrieval_087",
+   "retrieval_088",
+   "retrieval_089",
+   "retrieval_090",
+   "retrieval_091",
+   "retrieval_092",
+   "retrieval_093",
+   "retrieval_094",
+   "retrieval_095",
+   "retrieval_096",
+   "retrieval_097",
+   "retrieval_098",
+   "retrieval_099",
+   "retrieval_100",
+   "retrieval_101",
+   "retrieval_102",
+   "retrieval_103",
+   "retrieval_104",
+   "retrieval_105",
+   "retrieval_106",
+   "retrieval_107",
+   "retrieval_108",
+   "retrieval_109",
+   "retrieval_110",
+   "retrieval_111",
+   "retrieval_112",
+   "retrieval_113",
+   "retrieval_114",
+   "retrieval_115",
+   "retrieval_116",
+   "retrieval_117",
+   "retrieval_118",
+   "retrieval_119",
+   "retrieval_120",
+   "retrieval_121",
+   "retrieval_122",
+   "retrieval_123",
+   "retrieval_124",
+   "retrieval_125",
+   "retrieval_126",
+   "agent_057",
+   "agent_058",
+   "agent_059",
+   "agent_060",
+   "agent_061",
+   "agent_062",
+   "agent_063",
+   "agent_064",
+   "agent_065",
+   "agent_066",
+   "agent_067",
+   "agent_068",
+   "agent_069",
+   "agent_070",
+   "agent_071",
+   "agent_072",
+   "agent_073",
+   "agent_074",
+   "agent_075",
+   "agent_076",
+   "agent_077",
+   "agent_078",
+   "agent_079",
+   "agent_080",
+   "agent_081",
+   "agent_082",
+   "agent_083",
+   "agent_084",
+   "agent_085",
+   "agent_086",
+   "agent_087",
+   "agent_088",
+   "agent_089",
+   "agent_090",
+   "agent_091",
+   "agent_092",
+   "agent_093",
+   "agent_094",
+   "agent_095",
+   "agent_096",
+   "agent_097",
+   "agent_098",
+   "agent_099",
+   "agent_100",
+   "agent_101",
+   "agent_102",
+   "agent_103",
+   "agent_104",
+   "agent_105",
+   "agent_106",
+   "agent_107",
+   "agent_108",
+   "agent_109",
+   "agent_110",
+   "agent_111",
+   "agent_112",
+   "agent_113",
+   "agent_114",
+   "agent_115",
+   "agent_116",
+   "agent_117",
+   "agent_118",
+   "agent_119",
+   "agent_120",
+   "agent_121",
+   "agent_122",
+   "agent_123",
+   "agent_124",
+   "agent_125",
+   "agent_126",
+   "coding_057",
+   "coding_058",
+   "coding_059",
+   "coding_060",
+   "coding_061",
+   "coding_062",
+   "coding_063",
+   "coding_064",
+   "coding_065",
+   "coding_066",
+   "coding_067",
+   "coding_068",
+   "coding_069",
+   "coding_070",
+   "coding_071",
+   "coding_072",
+   "coding_073",
+   "coding_074",
+   "coding_075",
+   "coding_076",
+   "coding_077",
+   "coding_078",
+   "coding_079",
+   "coding_080",
+   "coding_081",
+   "coding_082",
+   "coding_083",
+   "coding_084",
+   "coding_085",
+   "coding_086",
+   "coding_087",
+   "coding_088",
+   "coding_089",
+   "coding_090",
+   "coding_091",
+   "coding_092",
+   "coding_093",
+   "coding_094",
+   "coding_095",
+   "coding_096",
+   "coding_097",
+   "coding_098",
+   "coding_099",
+   "coding_100",
+   "coding_101",
+   "coding_102",
+   "coding_103",
+   "coding_104",
+   "coding_105",
+   "coding_106",
+   "coding_107",
+   "coding_108",
+   "coding_109",
+   "coding_110",
+   "coding_111",
+   "coding_112",
+   "coding_113",
+   "coding_114",
+   "coding_115",
+   "coding_116",
+   "coding_117",
+   "coding_118",
+   "coding_119",
+   "coding_120",
+   "coding_121",
+   "coding_122",
+   "coding_123",
+   "coding_124",
+   "coding_125",
+   "coding_126",
+   "longform_057",
+   "longform_058",
+   "longform_059",
+   "longform_060",
+   "longform_061",
+   "longform_062",
+   "longform_063",
+   "longform_064",
+   "longform_065",
+   "longform_066",
+   "longform_067",
+   "longform_068",
+   "longform_069",
+   "longform_070",
+   "longform_071",
+   "longform_072",
+   "longform_073",
+   "longform_074",
+   "longform_075",
+   "longform_076",
+   "longform_077",
+   "longform_078",
+   "longform_079",
+   "longform_080",
+   "longform_081",
+   "longform_082",
+   "longform_083",
+   "longform_084",
+   "longform_085",
+   "longform_086",
+   "longform_087",
+   "longform_088",
+   "longform_089",
+   "longform_090",
+   "longform_091",
+   "longform_092",
+   "longform_093",
+   "longform_094",
+   "longform_095",
+   "longform_096",
+   "longform_097",
+   "longform_098",
+   "longform_099",
+   "longform_100",
+   "longform_101",
+   "longform_102",
+   "longform_103",
+   "longform_104",
+   "longform_105",
+   "longform_106",
+   "longform_107",
+   "longform_108",
+   "longform_109",
+   "longform_110",
+   "longform_111",
+   "longform_112",
+   "longform_113",
+   "longform_114",
+   "longform_115",
+   "longform_116",
+   "longform_117",
+   "longform_118",
+   "longform_119",
+   "longform_120",
+   "longform_121",
+   "longform_122",
+   "longform_123",
+   "longform_124",
+   "longform_125",
+   "longform_126",
+   "convo_057",
+   "convo_058",
+   "convo_059",
+   "convo_060",
+   "convo_061",
+   "convo_062",
+   "convo_063",
+   "convo_064",
+   "convo_065",
+   "convo_066",
+   "convo_067",
+   "convo_068",
+   "convo_069",
+   "convo_070",
+   "convo_071",
+   "convo_072",
+   "convo_073",
+   "convo_074",
+   "convo_075",
+   "convo_076",
+   "convo_077",
+   "convo_078",
+   "convo_079",
+   "convo_080",
+   "convo_081",
+   "convo_082",
+   "convo_083",
+   "convo_084",
+   "convo_085",
+   "convo_086",
+   "convo_087",
+   "convo_088",
+   "convo_089",
+   "convo_090",
+   "convo_091",
+   "convo_092",
+   "convo_093",
+   "convo_094",
+   "convo_095",
+   "convo_096",
+   "convo_097",
+   "convo_098",
+   "convo_099",
+   "convo_100",
+   "convo_101",
+   "convo_102",
+   "convo_103",
+   "convo_104",
+   "convo_105",
+   "convo_106",
+   "convo_107",
+   "convo_108",
+   "convo_109",
+   "convo_110",
+   "convo_111",
+   "convo_112",
+   "convo_113",
+   "convo_114",
+   "convo_115",
+   "convo_116",
+   "convo_117",
+   "convo_118",
+   "convo_119",
+   "convo_120",
+   "convo_121",
+   "convo_122",
+   "convo_123",
+   "convo_124",
+   "convo_125",
+   "convo_126"
+  ],
+  "val": [
+   "math_047",
+   "math_048",
+   "math_049",
+   "math_050",
+   "math_051",
+   "math_052",
+   "math_053",
+   "math_054",
+   "math_055",
+   "math_056",
+   "json_047",
+   "json_048",
+   "json_049",
+   "json_050",
+   "json_051",
+   "json_052",
+   "json_053",
+   "json_054",
+   "json_055",
+   "json_056",
+   "retrieval_047",
+   "retrieval_048",
+   "retrieval_049",
+   "retrieval_050",
+   "retrieval_051",
+   "retrieval_052",
+   "retrieval_053",
+   "retrieval_054",
+   "retrieval_055",
+   "retrieval_056",
+   "agent_047",
+   "agent_048",
+   "agent_049",
+   "agent_050",
+   "agent_051",
+   "agent_052",
+   "agent_053",
+   "agent_054",
+   "agent_055",
+   "agent_056",
+   "coding_047",
+   "coding_048",
+   "coding_049",
+   "coding_050",
+   "coding_051",
+   "coding_052",
+   "coding_053",
+   "coding_054",
+   "coding_055",
+   "coding_056",
+   "longform_047",
+   "longform_048",
+   "longform_049",
+   "longform_050",
+   "longform_051",
+   "longform_052",
+   "longform_053",
+   "longform_054",
+   "longform_055",
+   "longform_056",
+   "convo_047",
+   "convo_048",
+   "convo_049",
+   "convo_050",
+   "convo_051",
+   "convo_052",
+   "convo_053",
+   "convo_054",
+   "convo_055",
+   "convo_056"
+  ]
+ },
+ "prompts": [
+  {
+   "category": "math_047",
+   "prompt": "What is 91 times 17?"
+  },
+  {
+   "category": "math_048",
+   "prompt": "What is 168 divided by 14?"
+  },
+  {
+   "category": "math_049",
+   "prompt": "What is 25 percent of 180?"
+  },
+  {
+   "category": "math_050",
+   "prompt": "Solve for x: 7x + 34 = 125."
+  },
+  {
+   "category": "math_051",
+   "prompt": "A train travels 450 kilometers in 6 hours. What is its average speed?"
+  },
+  {
+   "category": "math_052",
+   "prompt": "A jacket costs 50 dollars and is discounted by 20 percent. What is the sale price?"
+  },
+  {
+   "category": "math_053",
+   "prompt": "What is the area of a rectangle with length 23 and width 6?"
+  },
+  {
+   "category": "math_054",
+   "prompt": "What is the next number in the sequence 5, 20, 80?"
+  },
+  {
+   "category": "math_055",
+   "prompt": "Convert 12 minutes to seconds."
+  },
+  {
+   "category": "math_056",
+   "prompt": "A recipe needs 5 over 8 cup of sugar per batch. How much for 3 batches?"
+  },
+  {
+   "category": "json_047",
+   "prompt": "Output JSON for a monitor with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_048",
+   "prompt": "Create JSON for a keyboard with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_049",
+   "prompt": "Return JSON for a printer with id, title, category, and tags array."
+  },
+  {
+   "category": "json_050",
+   "prompt": "Generate JSON for a tablet with owner, address, size, and features array."
+  },
+  {
+   "category": "json_051",
+   "prompt": "Output JSON for a camera with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_052",
+   "prompt": "Create JSON for a speaker with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_053",
+   "prompt": "Return JSON for a headphones with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_054",
+   "prompt": "Generate JSON for a smartwatch with id, title, category, and tags array."
+  },
+  {
+   "category": "json_055",
+   "prompt": "Output JSON for a television with owner, address, size, and features array."
+  },
+  {
+   "category": "json_056",
+   "prompt": "Create JSON for a bicycle with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "retrieval_047",
+   "prompt": "According to the quarterly report, what was the revenue growth in the latest update?"
+  },
+  {
+   "category": "retrieval_048",
+   "prompt": "According to the annual review, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_049",
+   "prompt": "According to the user manual, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_050",
+   "prompt": "According to the safety handbook, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_051",
+   "prompt": "According to the meeting notes, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_052",
+   "prompt": "According to the project charter, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_053",
+   "prompt": "According to the policy document, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_054",
+   "prompt": "According to the vendor proposal, what eligibility rules are listed?"
+  },
+  {
+   "category": "retrieval_055",
+   "prompt": "According to the compliance audit, what was the revenue growth in the latest update?"
+  },
+  {
+   "category": "retrieval_056",
+   "prompt": "According to the research summary, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "agent_047",
+   "prompt": "Show the first 20 lines of records.csv."
+  },
+  {
+   "category": "agent_048",
+   "prompt": "Count the lines in archive.tar.gz and print the total."
+  },
+  {
+   "category": "agent_049",
+   "prompt": "Compress notes.md into a zip archive."
+  },
+  {
+   "category": "agent_050",
+   "prompt": "Display the file type and size of config.yaml."
+  },
+  {
+   "category": "agent_051",
+   "prompt": "Make backup.db read-only for everyone."
+  },
+  {
+   "category": "agent_052",
+   "prompt": "Find all references to error inside index.html."
+  },
+  {
+   "category": "agent_053",
+   "prompt": "Move output.log into a folder called processed."
+  },
+  {
+   "category": "agent_054",
+   "prompt": "Show the last modified timestamp of server.pid."
+  },
+  {
+   "category": "agent_055",
+   "prompt": "Create a backup copy of data.json with a dated suffix."
+  },
+  {
+   "category": "agent_056",
+   "prompt": "Print the first and last line of report.pdf."
+  },
+  {
+   "category": "coding_047",
+   "prompt": "Write a function that capitalizes the first letter of every word in a sentence."
+  },
+  {
+   "category": "coding_048",
+   "prompt": "Write a function that finds the second smallest number in a list."
+  },
+  {
+   "category": "coding_049",
+   "prompt": "Write a function that checks if two strings are anagrams."
+  },
+  {
+   "category": "coding_050",
+   "prompt": "Write a function that converts a temperature from Celsius to Fahrenheit."
+  },
+  {
+   "category": "coding_051",
+   "prompt": "Write a function that returns the most frequent element in a list."
+  },
+  {
+   "category": "coding_052",
+   "prompt": "Write a function that sums only the even numbers in a list."
+  },
+  {
+   "category": "coding_053",
+   "prompt": "Write a function that rotates a list by k positions."
+  },
+  {
+   "category": "coding_054",
+   "prompt": "Write a function that checks if a number is prime."
+  },
+  {
+   "category": "coding_055",
+   "prompt": "Write a function that formats a duration in seconds as hours, minutes and seconds."
+  },
+  {
+   "category": "coding_056",
+   "prompt": "Write a function that finds all indices of a value in a list."
+  },
+  {
+   "category": "longform_047",
+   "prompt": "Explain how a solar panel converts sunlight into electricity."
+  },
+  {
+   "category": "longform_048",
+   "prompt": "Describe how blood circulates through the human heart."
+  },
+  {
+   "category": "longform_049",
+   "prompt": "Explain how a bicycle brake stops the wheel."
+  },
+  {
+   "category": "longform_050",
+   "prompt": "Describe how vaccines prevented smallpox."
+  },
+  {
+   "category": "longform_051",
+   "prompt": "Explain how a microwave heats food."
+  },
+  {
+   "category": "longform_052",
+   "prompt": "Describe how rain forms in clouds."
+  },
+  {
+   "category": "longform_053",
+   "prompt": "Explain how an elevator moves between floors safely."
+  },
+  {
+   "category": "longform_054",
+   "prompt": "Describe how bees make honey from nectar."
+  },
+  {
+   "category": "longform_055",
+   "prompt": "Explain how a zipper opens and closes."
+  },
+  {
+   "category": "longform_056",
+   "prompt": "Describe how the immune system fights a cold."
+  },
+  {
+   "category": "convo_047",
+   "prompt": "How do I choose between buying and renting a home?"
+  },
+  {
+   "category": "convo_048",
+   "prompt": "What should I say when I disagree with my boss in a meeting?"
+  },
+  {
+   "category": "convo_049",
+   "prompt": "How can I make my commute less exhausting?"
+  },
+  {
+   "category": "convo_050",
+   "prompt": "What are good questions to ask at a job interview?"
+  },
+  {
+   "category": "convo_051",
+   "prompt": "How do I help a friend who is stressed about exams?"
+  },
+  {
+   "category": "convo_052",
+   "prompt": "What should I pack for a week-long beach vacation?"
+  },
+  {
+   "category": "convo_053",
+   "prompt": "How do I start a conversation at a wedding where I know nobody?"
+  },
+  {
+   "category": "convo_054",
+   "prompt": "What is a considerate way to ask a neighbor to quiet their dog?"
+  },
+  {
+   "category": "convo_055",
+   "prompt": "How can I keep houseplants alive when I travel often?"
+  },
+  {
+   "category": "convo_056",
+   "prompt": "What should I write in a card for a retiring colleague?"
+  },
+  {
+   "category": "math_057",
+   "prompt": "What is 68 times 53?"
+  },
+  {
+   "category": "math_058",
+   "prompt": "What is 112 divided by 14?"
+  },
+  {
+   "category": "math_059",
+   "prompt": "What is 75 percent of 320?"
+  },
+  {
+   "category": "math_060",
+   "prompt": "Solve for x: 5x + 14 = 39."
+  },
+  {
+   "category": "math_061",
+   "prompt": "A train travels 360 kilometers in 6 hours. What is its average speed?"
+  },
+  {
+   "category": "math_062",
+   "prompt": "A jacket costs 120 dollars and is discounted by 10 percent. What is the sale price?"
+  },
+  {
+   "category": "math_063",
+   "prompt": "What is the area of a rectangle with length 12 and width 8?"
+  },
+  {
+   "category": "math_064",
+   "prompt": "What is the next number in the sequence 4, 8, 16?"
+  },
+  {
+   "category": "math_065",
+   "prompt": "Convert 6 liters to milliliters."
+  },
+  {
+   "category": "math_066",
+   "prompt": "A recipe needs 3 over 5 cup of sugar per batch. How much for 9 batches?"
+  },
+  {
+   "category": "math_067",
+   "prompt": "What is 56 times 21?"
+  },
+  {
+   "category": "math_068",
+   "prompt": "What is 224 divided by 16?"
+  },
+  {
+   "category": "math_069",
+   "prompt": "What is 45 percent of 480?"
+  },
+  {
+   "category": "math_070",
+   "prompt": "Solve for x: 3x + 37 = 73."
+  },
+  {
+   "category": "math_071",
+   "prompt": "A train travels 160 kilometers in 2 hours. What is its average speed?"
+  },
+  {
+   "category": "math_072",
+   "prompt": "A jacket costs 50 dollars and is discounted by 15 percent. What is the sale price?"
+  },
+  {
+   "category": "math_073",
+   "prompt": "What is the area of a rectangle with length 22 and width 10?"
+  },
+  {
+   "category": "math_074",
+   "prompt": "What is the next number in the sequence 6, 30, 150?"
+  },
+  {
+   "category": "math_075",
+   "prompt": "Convert 3 megabytes to kilobytes."
+  },
+  {
+   "category": "math_076",
+   "prompt": "A recipe needs 3 over 5 cup of sugar per batch. How much for 6 batches?"
+  },
+  {
+   "category": "math_077",
+   "prompt": "What is 76 times 77?"
+  },
+  {
+   "category": "math_078",
+   "prompt": "What is 15 divided by 5?"
+  },
+  {
+   "category": "math_079",
+   "prompt": "What is 35 percent of 240?"
+  },
+  {
+   "category": "math_080",
+   "prompt": "Solve for x: 4x + 14 = 38."
+  },
+  {
+   "category": "math_081",
+   "prompt": "A train travels 375 kilometers in 5 hours. What is its average speed?"
+  },
+  {
+   "category": "math_082",
+   "prompt": "A jacket costs 60 dollars and is discounted by 15 percent. What is the sale price?"
+  },
+  {
+   "category": "math_083",
+   "prompt": "What is the area of a rectangle with length 11 and width 18?"
+  },
+  {
+   "category": "math_084",
+   "prompt": "What is the next number in the sequence 7, 21, 63?"
+  },
+  {
+   "category": "math_085",
+   "prompt": "Convert 15 hours to minutes."
+  },
+  {
+   "category": "math_086",
+   "prompt": "A recipe needs 3 over 5 cup of sugar per batch. How much for 8 batches?"
+  },
+  {
+   "category": "math_087",
+   "prompt": "What is 15 times 69?"
+  },
+  {
+   "category": "math_088",
+   "prompt": "What is 12 divided by 6?"
+  },
+  {
+   "category": "math_089",
+   "prompt": "What is 60 percent of 150?"
+  },
+  {
+   "category": "math_090",
+   "prompt": "Solve for x: 5x + 18 = 38."
+  },
+  {
+   "category": "math_091",
+   "prompt": "A train travels 300 kilometers in 4 hours. What is its average speed?"
+  },
+  {
+   "category": "math_092",
+   "prompt": "A jacket costs 120 dollars and is discounted by 30 percent. What is the sale price?"
+  },
+  {
+   "category": "math_093",
+   "prompt": "What is the area of a rectangle with length 15 and width 17?"
+  },
+  {
+   "category": "math_094",
+   "prompt": "What is the next number in the sequence 5, 15, 45?"
+  },
+  {
+   "category": "math_095",
+   "prompt": "Convert 3 meters to centimeters."
+  },
+  {
+   "category": "math_096",
+   "prompt": "A recipe needs 3 over 4 cup of sugar per batch. How much for 7 batches?"
+  },
+  {
+   "category": "math_097",
+   "prompt": "What is 68 times 98?"
+  },
+  {
+   "category": "math_098",
+   "prompt": "What is 30 divided by 15?"
+  },
+  {
+   "category": "math_099",
+   "prompt": "What is 10 percent of 60?"
+  },
+  {
+   "category": "math_100",
+   "prompt": "Solve for x: 5x + 9 = 64."
+  },
+  {
+   "category": "math_101",
+   "prompt": "A train travels 120 kilometers in 3 hours. What is its average speed?"
+  },
+  {
+   "category": "math_102",
+   "prompt": "A jacket costs 90 dollars and is discounted by 10 percent. What is the sale price?"
+  },
+  {
+   "category": "math_103",
+   "prompt": "What is the area of a rectangle with length 6 and width 18?"
+  },
+  {
+   "category": "math_104",
+   "prompt": "What is the next number in the sequence 2, 6, 18?"
+  },
+  {
+   "category": "math_105",
+   "prompt": "Convert 7 megabytes to kilobytes."
+  },
+  {
+   "category": "math_106",
+   "prompt": "A recipe needs 1 over 3 cup of sugar per batch. How much for 9 batches?"
+  },
+  {
+   "category": "math_107",
+   "prompt": "What is 87 times 84?"
+  },
+  {
+   "category": "math_108",
+   "prompt": "What is 48 divided by 4?"
+  },
+  {
+   "category": "math_109",
+   "prompt": "What is 75 percent of 60?"
+  },
+  {
+   "category": "math_110",
+   "prompt": "Solve for x: 9x + 30 = 120."
+  },
+  {
+   "category": "math_111",
+   "prompt": "A train travels 80 kilometers in 2 hours. What is its average speed?"
+  },
+  {
+   "category": "math_112",
+   "prompt": "A jacket costs 70 dollars and is discounted by 25 percent. What is the sale price?"
+  },
+  {
+   "category": "math_113",
+   "prompt": "What is the area of a rectangle with length 18 and width 4?"
+  },
+  {
+   "category": "math_114",
+   "prompt": "What is the next number in the sequence 4, 12, 36?"
+  },
+  {
+   "category": "math_115",
+   "prompt": "Convert 4 megabytes to kilobytes."
+  },
+  {
+   "category": "math_116",
+   "prompt": "A recipe needs 3 over 5 cup of sugar per batch. How much for 3 batches?"
+  },
+  {
+   "category": "math_117",
+   "prompt": "What is 29 times 64?"
+  },
+  {
+   "category": "math_118",
+   "prompt": "What is 99 divided by 9?"
+  },
+  {
+   "category": "math_119",
+   "prompt": "What is 20 percent of 360?"
+  },
+  {
+   "category": "math_120",
+   "prompt": "Solve for x: 8x + 36 = 132."
+  },
+  {
+   "category": "math_121",
+   "prompt": "A train travels 360 kilometers in 3 hours. What is its average speed?"
+  },
+  {
+   "category": "math_122",
+   "prompt": "A jacket costs 50 dollars and is discounted by 30 percent. What is the sale price?"
+  },
+  {
+   "category": "math_123",
+   "prompt": "What is the area of a rectangle with length 12 and width 14?"
+  },
+  {
+   "category": "math_124",
+   "prompt": "What is the next number in the sequence 6, 12, 24?"
+  },
+  {
+   "category": "math_125",
+   "prompt": "Convert 25 hours to minutes."
+  },
+  {
+   "category": "math_126",
+   "prompt": "A recipe needs 5 over 8 cup of sugar per batch. How much for 8 batches?"
+  },
+  {
+   "category": "json_057",
+   "prompt": "Create JSON for a truck with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_058",
+   "prompt": "Generate JSON for a boat with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_059",
+   "prompt": "Create JSON for a house with id, title, category, and tags array."
+  },
+  {
+   "category": "json_060",
+   "prompt": "Generate JSON for a apartment with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_061",
+   "prompt": "Create JSON for a office with owner, address, size, and features array."
+  },
+  {
+   "category": "json_062",
+   "prompt": "Generate JSON for a hotel with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_063",
+   "prompt": "Create JSON for a cafe with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_064",
+   "prompt": "Generate JSON for a library with id, title, category, and tags array."
+  },
+  {
+   "category": "json_065",
+   "prompt": "Create JSON for a museum with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_066",
+   "prompt": "Generate JSON for a park with owner, address, size, and features array."
+  },
+  {
+   "category": "json_067",
+   "prompt": "Create JSON for a school with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_068",
+   "prompt": "Generate JSON for a clinic with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_069",
+   "prompt": "Create JSON for a pharmacy with id, title, category, and tags array."
+  },
+  {
+   "category": "json_070",
+   "prompt": "Generate JSON for a bank with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_071",
+   "prompt": "Create JSON for a store with owner, address, size, and features array."
+  },
+  {
+   "category": "json_072",
+   "prompt": "Generate JSON for a gym with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_073",
+   "prompt": "Create JSON for a stadium with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_074",
+   "prompt": "Generate JSON for a theater with id, title, category, and tags array."
+  },
+  {
+   "category": "json_075",
+   "prompt": "Create JSON for a cinema with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_076",
+   "prompt": "Generate JSON for a farm with owner, address, size, and features array."
+  },
+  {
+   "category": "json_077",
+   "prompt": "Create JSON for a factory with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_078",
+   "prompt": "Generate JSON for a airport with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_079",
+   "prompt": "Create JSON for a bridge with id, title, category, and tags array."
+  },
+  {
+   "category": "json_080",
+   "prompt": "Generate JSON for a tower with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_081",
+   "prompt": "Create JSON for a garden with owner, address, size, and features array."
+  },
+  {
+   "category": "json_082",
+   "prompt": "Generate JSON for a bakery with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_083",
+   "prompt": "Create JSON for a bookstore with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_084",
+   "prompt": "Generate JSON for a barbershop with id, title, category, and tags array."
+  },
+  {
+   "category": "json_085",
+   "prompt": "Create JSON for a workshop with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_086",
+   "prompt": "Generate JSON for a warehouse with owner, address, size, and features array."
+  },
+  {
+   "category": "json_087",
+   "prompt": "Create JSON for a observatory with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_088",
+   "prompt": "Generate JSON for a greenhouse with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_089",
+   "prompt": "Create JSON for a aquarium with id, title, category, and tags array."
+  },
+  {
+   "category": "json_090",
+   "prompt": "Generate JSON for a windmill with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_091",
+   "prompt": "Create JSON for a lighthouse with owner, address, size, and features array."
+  },
+  {
+   "category": "json_092",
+   "prompt": "Generate JSON for a campground with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_093",
+   "prompt": "Create JSON for a marketplace with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_094",
+   "prompt": "Generate JSON for a monastery with id, title, category, and tags array."
+  },
+  {
+   "category": "json_095",
+   "prompt": "Create JSON for a vineyard with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_096",
+   "prompt": "Generate JSON for a orchard with owner, address, size, and features array."
+  },
+  {
+   "category": "json_097",
+   "prompt": "Create JSON for a hatchery with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_098",
+   "prompt": "Generate JSON for a apiary with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_099",
+   "prompt": "Create JSON for a planetarium with id, title, category, and tags array."
+  },
+  {
+   "category": "json_100",
+   "prompt": "Generate JSON for a amphitheater with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_101",
+   "prompt": "Create JSON for a boardwalk with owner, address, size, and features array."
+  },
+  {
+   "category": "json_102",
+   "prompt": "Generate JSON for a marina with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_103",
+   "prompt": "Create JSON for a observatory deck with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_104",
+   "prompt": "Generate JSON for a reservoir with id, title, category, and tags array."
+  },
+  {
+   "category": "json_105",
+   "prompt": "Create JSON for a quarry with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_106",
+   "prompt": "Generate JSON for a foundry with owner, address, size, and features array."
+  },
+  {
+   "category": "json_107",
+   "prompt": "Create JSON for a mill with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_108",
+   "prompt": "Generate JSON for a kiln with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_109",
+   "prompt": "Create JSON for a forge with id, title, category, and tags array."
+  },
+  {
+   "category": "json_110",
+   "prompt": "Generate JSON for a brewery with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_111",
+   "prompt": "Create JSON for a distillery with owner, address, size, and features array."
+  },
+  {
+   "category": "json_112",
+   "prompt": "Generate JSON for a roastery with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_113",
+   "prompt": "Create JSON for a creamery with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_114",
+   "prompt": "Generate JSON for a smokery with id, title, category, and tags array."
+  },
+  {
+   "category": "json_115",
+   "prompt": "Create JSON for a cannery with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_116",
+   "prompt": "Generate JSON for a bindery with owner, address, size, and features array."
+  },
+  {
+   "category": "json_117",
+   "prompt": "Create JSON for a print shop with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_118",
+   "prompt": "Generate JSON for a dye house with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_119",
+   "prompt": "Create JSON for a loom house with id, title, category, and tags array."
+  },
+  {
+   "category": "json_120",
+   "prompt": "Generate JSON for a glasshouse with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_121",
+   "prompt": "Create JSON for a boathouse with owner, address, size, and features array."
+  },
+  {
+   "category": "json_122",
+   "prompt": "Generate JSON for a gatehouse with name, location, capacity, and rating."
+  },
+  {
+   "category": "json_123",
+   "prompt": "Create JSON for a clubhouse with type, color, weight, and dimensions object."
+  },
+  {
+   "category": "json_124",
+   "prompt": "Generate JSON for a firehouse with id, title, category, and tags array."
+  },
+  {
+   "category": "json_125",
+   "prompt": "Create JSON for a courthouse with brand, model, price, and warranty years."
+  },
+  {
+   "category": "json_126",
+   "prompt": "Generate JSON for a clocktower with owner, address, size, and features array."
+  },
+  {
+   "category": "retrieval_057",
+   "prompt": "According to the incident report, what was the revenue growth in the latest update?"
+  },
+  {
+   "category": "retrieval_058",
+   "prompt": "According to the weather advisory, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_059",
+   "prompt": "According to the course syllabus, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_060",
+   "prompt": "According to the product warranty, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_061",
+   "prompt": "According to the service contract, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_062",
+   "prompt": "According to the release changelog, what was the attrition rate in the latest update?"
+  },
+  {
+   "category": "retrieval_063",
+   "prompt": "According to the inventory log, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_064",
+   "prompt": "According to the onboarding guide, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_065",
+   "prompt": "According to the maintenance schedule, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_066",
+   "prompt": "According to the budget summary, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_067",
+   "prompt": "According to the press release, what was the throughput limit in the latest update?"
+  },
+  {
+   "category": "retrieval_068",
+   "prompt": "According to the grant application, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_069",
+   "prompt": "According to the inspection certificate, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_070",
+   "prompt": "According to the evacuation plan, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_071",
+   "prompt": "According to the style guide, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_072",
+   "prompt": "According to the data retention policy, what was the attrition rate in the latest update?"
+  },
+  {
+   "category": "retrieval_073",
+   "prompt": "According to the recruitment brief, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_074",
+   "prompt": "According to the lease agreement, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_075",
+   "prompt": "According to the incident report, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_076",
+   "prompt": "According to the weather advisory, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_077",
+   "prompt": "According to the course syllabus, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_078",
+   "prompt": "According to the product warranty, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_079",
+   "prompt": "According to the service contract, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_080",
+   "prompt": "According to the release changelog, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_081",
+   "prompt": "According to the inventory log, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_082",
+   "prompt": "According to the onboarding guide, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_083",
+   "prompt": "According to the maintenance schedule, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_084",
+   "prompt": "According to the budget summary, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_085",
+   "prompt": "According to the press release, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_086",
+   "prompt": "According to the grant application, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_087",
+   "prompt": "According to the inspection certificate, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_088",
+   "prompt": "According to the evacuation plan, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_089",
+   "prompt": "According to the style guide, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_090",
+   "prompt": "According to the data retention policy, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_091",
+   "prompt": "According to the recruitment brief, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_092",
+   "prompt": "According to the lease agreement, who is responsible for the pilot phase?"
+  },
+  {
+   "category": "retrieval_093",
+   "prompt": "According to the incident report, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_094",
+   "prompt": "According to the weather advisory, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_095",
+   "prompt": "According to the course syllabus, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_096",
+   "prompt": "According to the product warranty, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_097",
+   "prompt": "According to the service contract, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_098",
+   "prompt": "According to the release changelog, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_099",
+   "prompt": "According to the inventory log, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_100",
+   "prompt": "According to the onboarding guide, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_101",
+   "prompt": "According to the maintenance schedule, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_102",
+   "prompt": "According to the budget summary, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_103",
+   "prompt": "According to the press release, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_104",
+   "prompt": "According to the grant application, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_105",
+   "prompt": "According to the inspection certificate, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_106",
+   "prompt": "According to the evacuation plan, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_107",
+   "prompt": "According to the style guide, when is the submission deadline?"
+  },
+  {
+   "category": "retrieval_108",
+   "prompt": "According to the data retention policy, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_109",
+   "prompt": "According to the recruitment brief, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_110",
+   "prompt": "According to the lease agreement, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_111",
+   "prompt": "According to the incident report, what eligibility rules are listed?"
+  },
+  {
+   "category": "retrieval_112",
+   "prompt": "According to the weather advisory, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_113",
+   "prompt": "According to the course syllabus, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_114",
+   "prompt": "According to the product warranty, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_115",
+   "prompt": "According to the service contract, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_116",
+   "prompt": "According to the release changelog, what eligibility rules are listed?"
+  },
+  {
+   "category": "retrieval_117",
+   "prompt": "According to the inventory log, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_118",
+   "prompt": "According to the onboarding guide, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_119",
+   "prompt": "According to the maintenance schedule, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_120",
+   "prompt": "According to the budget summary, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_121",
+   "prompt": "According to the press release, what eligibility rules are listed?"
+  },
+  {
+   "category": "retrieval_122",
+   "prompt": "According to the grant application, how much funding was approved?"
+  },
+  {
+   "category": "retrieval_123",
+   "prompt": "According to the inspection certificate, which team exceeded its targets?"
+  },
+  {
+   "category": "retrieval_124",
+   "prompt": "According to the evacuation plan, why was the timeline extended?"
+  },
+  {
+   "category": "retrieval_125",
+   "prompt": "According to the style guide, how is the escalation procedure described?"
+  },
+  {
+   "category": "retrieval_126",
+   "prompt": "According to the data retention policy, what eligibility rules are listed?"
+  },
+  {
+   "category": "agent_057",
+   "prompt": "Check whether records.csv contains any empty lines."
+  },
+  {
+   "category": "agent_058",
+   "prompt": "Check whether archive.tar.gz contains any empty lines."
+  },
+  {
+   "category": "agent_059",
+   "prompt": "Check whether notes.md contains any empty lines."
+  },
+  {
+   "category": "agent_060",
+   "prompt": "Check whether config.yaml contains any empty lines."
+  },
+  {
+   "category": "agent_061",
+   "prompt": "Check whether backup.db contains any empty lines."
+  },
+  {
+   "category": "agent_062",
+   "prompt": "Check whether index.html contains any empty lines."
+  },
+  {
+   "category": "agent_063",
+   "prompt": "Check whether output.log contains any empty lines."
+  },
+  {
+   "category": "agent_064",
+   "prompt": "Check whether server.pid contains any empty lines."
+  },
+  {
+   "category": "agent_065",
+   "prompt": "Check whether data.json contains any empty lines."
+  },
+  {
+   "category": "agent_066",
+   "prompt": "Check whether report.pdf contains any empty lines."
+  },
+  {
+   "category": "agent_067",
+   "prompt": "Check whether metrics.txt contains any empty lines."
+  },
+  {
+   "category": "agent_068",
+   "prompt": "Check whether queue.tmp contains any empty lines."
+  },
+  {
+   "category": "agent_069",
+   "prompt": "Check whether session.bin contains any empty lines."
+  },
+  {
+   "category": "agent_070",
+   "prompt": "Check whether manifest.xml contains any empty lines."
+  },
+  {
+   "category": "agent_071",
+   "prompt": "Convert records.csv to uppercase and save the result."
+  },
+  {
+   "category": "agent_072",
+   "prompt": "Convert archive.tar.gz to uppercase and save the result."
+  },
+  {
+   "category": "agent_073",
+   "prompt": "Convert notes.md to uppercase and save the result."
+  },
+  {
+   "category": "agent_074",
+   "prompt": "Convert config.yaml to uppercase and save the result."
+  },
+  {
+   "category": "agent_075",
+   "prompt": "Convert backup.db to uppercase and save the result."
+  },
+  {
+   "category": "agent_076",
+   "prompt": "Convert index.html to uppercase and save the result."
+  },
+  {
+   "category": "agent_077",
+   "prompt": "Convert output.log to uppercase and save the result."
+  },
+  {
+   "category": "agent_078",
+   "prompt": "Convert server.pid to uppercase and save the result."
+  },
+  {
+   "category": "agent_079",
+   "prompt": "Convert data.json to uppercase and save the result."
+  },
+  {
+   "category": "agent_080",
+   "prompt": "Convert report.pdf to uppercase and save the result."
+  },
+  {
+   "category": "agent_081",
+   "prompt": "Convert metrics.txt to uppercase and save the result."
+  },
+  {
+   "category": "agent_082",
+   "prompt": "Convert queue.tmp to uppercase and save the result."
+  },
+  {
+   "category": "agent_083",
+   "prompt": "Convert session.bin to uppercase and save the result."
+  },
+  {
+   "category": "agent_084",
+   "prompt": "Convert manifest.xml to uppercase and save the result."
+  },
+  {
+   "category": "agent_085",
+   "prompt": "List the permissions of records.csv in octal form."
+  },
+  {
+   "category": "agent_086",
+   "prompt": "List the permissions of archive.tar.gz in octal form."
+  },
+  {
+   "category": "agent_087",
+   "prompt": "List the permissions of notes.md in octal form."
+  },
+  {
+   "category": "agent_088",
+   "prompt": "List the permissions of config.yaml in octal form."
+  },
+  {
+   "category": "agent_089",
+   "prompt": "List the permissions of backup.db in octal form."
+  },
+  {
+   "category": "agent_090",
+   "prompt": "List the permissions of index.html in octal form."
+  },
+  {
+   "category": "agent_091",
+   "prompt": "List the permissions of output.log in octal form."
+  },
+  {
+   "category": "agent_092",
+   "prompt": "List the permissions of server.pid in octal form."
+  },
+  {
+   "category": "agent_093",
+   "prompt": "List the permissions of data.json in octal form."
+  },
+  {
+   "category": "agent_094",
+   "prompt": "List the permissions of report.pdf in octal form."
+  },
+  {
+   "category": "agent_095",
+   "prompt": "List the permissions of metrics.txt in octal form."
+  },
+  {
+   "category": "agent_096",
+   "prompt": "List the permissions of queue.tmp in octal form."
+  },
+  {
+   "category": "agent_097",
+   "prompt": "List the permissions of session.bin in octal form."
+  },
+  {
+   "category": "agent_098",
+   "prompt": "List the permissions of manifest.xml in octal form."
+  },
+  {
+   "category": "agent_099",
+   "prompt": "Append the current date to the end of records.csv."
+  },
+  {
+   "category": "agent_100",
+   "prompt": "Append the current date to the end of archive.tar.gz."
+  },
+  {
+   "category": "agent_101",
+   "prompt": "Append the current date to the end of notes.md."
+  },
+  {
+   "category": "agent_102",
+   "prompt": "Append the current date to the end of config.yaml."
+  },
+  {
+   "category": "agent_103",
+   "prompt": "Append the current date to the end of backup.db."
+  },
+  {
+   "category": "agent_104",
+   "prompt": "Append the current date to the end of index.html."
+  },
+  {
+   "category": "agent_105",
+   "prompt": "Append the current date to the end of output.log."
+  },
+  {
+   "category": "agent_106",
+   "prompt": "Append the current date to the end of server.pid."
+  },
+  {
+   "category": "agent_107",
+   "prompt": "Append the current date to the end of data.json."
+  },
+  {
+   "category": "agent_108",
+   "prompt": "Append the current date to the end of report.pdf."
+  },
+  {
+   "category": "agent_109",
+   "prompt": "Append the current date to the end of metrics.txt."
+  },
+  {
+   "category": "agent_110",
+   "prompt": "Append the current date to the end of queue.tmp."
+  },
+  {
+   "category": "agent_111",
+   "prompt": "Append the current date to the end of session.bin."
+  },
+  {
+   "category": "agent_112",
+   "prompt": "Append the current date to the end of manifest.xml."
+  },
+  {
+   "category": "agent_113",
+   "prompt": "Verify that records.csv is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_114",
+   "prompt": "Verify that archive.tar.gz is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_115",
+   "prompt": "Verify that notes.md is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_116",
+   "prompt": "Verify that config.yaml is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_117",
+   "prompt": "Verify that backup.db is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_118",
+   "prompt": "Verify that index.html is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_119",
+   "prompt": "Verify that output.log is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_120",
+   "prompt": "Verify that server.pid is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_121",
+   "prompt": "Verify that data.json is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_122",
+   "prompt": "Verify that report.pdf is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_123",
+   "prompt": "Verify that metrics.txt is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_124",
+   "prompt": "Verify that queue.tmp is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_125",
+   "prompt": "Verify that session.bin is a valid file and not a symlink."
+  },
+  {
+   "category": "agent_126",
+   "prompt": "Verify that manifest.xml is a valid file and not a symlink."
+  },
+  {
+   "category": "coding_057",
+   "prompt": "Write a function that merges two sorted lists into one sorted list."
+  },
+  {
+   "category": "coding_058",
+   "prompt": "Write a function that removes all punctuation from a string."
+  },
+  {
+   "category": "coding_059",
+   "prompt": "Write a function that computes the average of a list ignoring outliers."
+  },
+  {
+   "category": "coding_060",
+   "prompt": "Write a function that checks if a year is a century year."
+  },
+  {
+   "category": "coding_061",
+   "prompt": "Write a function that generates the first n square numbers."
+  },
+  {
+   "category": "coding_062",
+   "prompt": "Write a function that counts the vowels at even positions in a string."
+  },
+  {
+   "category": "coding_063",
+   "prompt": "Write a function that replaces spaces with underscores in a filename."
+  },
+  {
+   "category": "coding_064",
+   "prompt": "Write a function that checks if a list is sorted."
+  },
+  {
+   "category": "coding_065",
+   "prompt": "Write a function that interleaves two lists of equal length."
+  },
+  {
+   "category": "coding_066",
+   "prompt": "Write a function that returns the shortest string in a list."
+  },
+  {
+   "category": "coding_067",
+   "prompt": "Write a function that computes the dot product of two vectors."
+  },
+  {
+   "category": "coding_068",
+   "prompt": "Write a function that finds the longest word in a sentence."
+  },
+  {
+   "category": "coding_069",
+   "prompt": "Write a function that converts a decimal number to binary."
+  },
+  {
+   "category": "coding_070",
+   "prompt": "Write a function that counts occurrences of each character in a string."
+  },
+  {
+   "category": "coding_071",
+   "prompt": "Write a function that removes duplicate adjacent characters from a string."
+  },
+  {
+   "category": "coding_072",
+   "prompt": "Write a function that calculates compound interest over n years."
+  },
+  {
+   "category": "coding_073",
+   "prompt": "Write a function that checks if a string contains balanced parentheses."
+  },
+  {
+   "category": "coding_074",
+   "prompt": "Write a function that returns the union of two lists without duplicates."
+  },
+  {
+   "category": "coding_075",
+   "prompt": "Write a function that finds the difference between two lists."
+  },
+  {
+   "category": "coding_076",
+   "prompt": "Write a function that truncates a string to a maximum length with an ellipsis."
+  },
+  {
+   "category": "coding_077",
+   "prompt": "Write a function that generates a random password of a given length."
+  },
+  {
+   "category": "coding_078",
+   "prompt": "Write a function that checks if a sentence is a pangram."
+  },
+  {
+   "category": "coding_079",
+   "prompt": "Write a function that computes the median of a list of numbers."
+  },
+  {
+   "category": "coding_080",
+   "prompt": "Write a function that reverses the order of words in a sentence."
+  },
+  {
+   "category": "coding_081",
+   "prompt": "Write a function that finds the longest run of identical characters."
+  },
+  {
+   "category": "coding_082",
+   "prompt": "Write a function that converts a list of tuples into a dictionary."
+  },
+  {
+   "category": "coding_083",
+   "prompt": "Write a function that rounds a price to the nearest five cents."
+  },
+  {
+   "category": "coding_084",
+   "prompt": "Write a function that checks if two rectangles overlap."
+  },
+  {
+   "category": "coding_085",
+   "prompt": "Write a function that returns the day of the year for a given date."
+  },
+  {
+   "category": "coding_086",
+   "prompt": "Write a function that normalizes a list of numbers to the range zero to one."
+  },
+  {
+   "category": "coding_087",
+   "prompt": "Write a function that counts the number of syllables in a word."
+  },
+  {
+   "category": "coding_088",
+   "prompt": "Write a function that finds all permutations of a three-element list."
+  },
+  {
+   "category": "coding_089",
+   "prompt": "Write a function that checks if a number is a perfect square."
+  },
+  {
+   "category": "coding_090",
+   "prompt": "Write a function that removes every nth element from a list."
+  },
+  {
+   "category": "coding_091",
+   "prompt": "Write a function that finds the most common word in a paragraph."
+  },
+  {
+   "category": "coding_092",
+   "prompt": "Write a function that converts hours and minutes into total minutes."
+  },
+  {
+   "category": "coding_093",
+   "prompt": "Write a function that checks if a string follows a valid date format."
+  },
+  {
+   "category": "coding_094",
+   "prompt": "Write a function that computes the sum of digits of an integer."
+  },
+  {
+   "category": "coding_095",
+   "prompt": "Write a function that swaps the case of every letter in a string."
+  },
+  {
+   "category": "coding_096",
+   "prompt": "Write a function that finds the intersection of three sets."
+  },
+  {
+   "category": "coding_097",
+   "prompt": "Write a function that pads a number with leading zeros to a fixed width."
+  },
+  {
+   "category": "coding_098",
+   "prompt": "Write a function that checks if a list contains a palindrome."
+  },
+  {
+   "category": "coding_099",
+   "prompt": "Write a function that calculates the distance between two points."
+  },
+  {
+   "category": "coding_100",
+   "prompt": "Write a function that groups a list of words by their first letter."
+  },
+  {
+   "category": "coding_101",
+   "prompt": "Write a function that returns the nth row of a multiplication table."
+  },
+  {
+   "category": "coding_102",
+   "prompt": "Write a function that checks if a word appears twice in a sentence."
+  },
+  {
+   "category": "coding_103",
+   "prompt": "Write a function that converts seconds into a readable uptime string."
+  },
+  {
+   "category": "coding_104",
+   "prompt": "Write a function that finds the first non-repeating character in a string."
+  },
+  {
+   "category": "coding_105",
+   "prompt": "Write a function that builds an acronym from a phrase."
+  },
+  {
+   "category": "coding_106",
+   "prompt": "Write a function that determines the season from a month number."
+  },
+  {
+   "category": "coding_107",
+   "prompt": "Write a function that counts how many numbers in a list are above a threshold."
+  },
+  {
+   "category": "coding_108",
+   "prompt": "Write a function that replaces every occurrence of a substring with another."
+  },
+  {
+   "category": "coding_109",
+   "prompt": "Write a function that computes the factorial of a number iteratively."
+  },
+  {
+   "category": "coding_110",
+   "prompt": "Write a function that finds the key with the maximum value in a dictionary."
+  },
+  {
+   "category": "coding_111",
+   "prompt": "Write a function that checks whether all elements in a list are unique."
+  },
+  {
+   "category": "coding_112",
+   "prompt": "Write a function that converts a snake_case identifier to camelCase."
+  },
+  {
+   "category": "coding_113",
+   "prompt": "Write a function that returns the elements at even indices of a list."
+  },
+  {
+   "category": "coding_114",
+   "prompt": "Write a function that estimates the reading time of a text in minutes."
+  },
+  {
+   "category": "coding_115",
+   "prompt": "Write a function that validates a credit card number length."
+  },
+  {
+   "category": "coding_116",
+   "prompt": "Write a function that finds the smallest missing positive integer in a list."
+  },
+  {
+   "category": "coding_117",
+   "prompt": "Write a function that repeats a string n times with a separator."
+  },
+  {
+   "category": "coding_118",
+   "prompt": "Write a function that computes the angle between clock hands at a given time."
+  },
+  {
+   "category": "coding_119",
+   "prompt": "Write a function that extracts all numbers from a string of mixed text."
+  },
+  {
+   "category": "coding_120",
+   "prompt": "Write a function that checks if one string is a rotation of another."
+  },
+  {
+   "category": "coding_121",
+   "prompt": "Write a function that computes the body mass index from weight and height."
+  },
+  {
+   "category": "coding_122",
+   "prompt": "Write a function that returns a list of running totals from a list of numbers."
+  },
+  {
+   "category": "coding_123",
+   "prompt": "Write a function that masks all but the last four digits of a number sequence."
+  },
+  {
+   "category": "coding_124",
+   "prompt": "Write a function that finds the longest increasing run in a list."
+  },
+  {
+   "category": "coding_125",
+   "prompt": "Write a function that formats a name as surname, first name."
+  },
+  {
+   "category": "coding_126",
+   "prompt": "Write a function that checks if a triangle is valid from three side lengths."
+  },
+  {
+   "category": "longform_057",
+   "prompt": "Explain how a dam generates hydroelectric power."
+  },
+  {
+   "category": "longform_058",
+   "prompt": "Describe how bread rises in the oven."
+  },
+  {
+   "category": "longform_059",
+   "prompt": "Explain how a refrigerator compressor works."
+  },
+  {
+   "category": "longform_060",
+   "prompt": "Describe how volcanoes erupt."
+  },
+  {
+   "category": "longform_061",
+   "prompt": "Explain how a toilet flush mechanism operates."
+  },
+  {
+   "category": "longform_062",
+   "prompt": "Describe how photosynthesis produces oxygen."
+  },
+  {
+   "category": "longform_063",
+   "prompt": "Explain how a mechanical watch keeps time."
+  },
+  {
+   "category": "longform_064",
+   "prompt": "Describe how tides follow the moon."
+  },
+  {
+   "category": "longform_065",
+   "prompt": "Explain how a washing machine spins clothes dry."
+  },
+  {
+   "category": "longform_066",
+   "prompt": "Describe how a seed grows into a tree."
+  },
+  {
+   "category": "longform_067",
+   "prompt": "Explain how sound travels through air."
+  },
+  {
+   "category": "longform_068",
+   "prompt": "Describe how a rocket escapes gravity."
+  },
+  {
+   "category": "longform_069",
+   "prompt": "Explain how a thermostat maintains temperature."
+  },
+  {
+   "category": "longform_070",
+   "prompt": "Describe how spiders spin webs."
+  },
+  {
+   "category": "longform_071",
+   "prompt": "Explain how a camera aperture controls light."
+  },
+  {
+   "category": "longform_072",
+   "prompt": "Describe how glaciers carve valleys."
+  },
+  {
+   "category": "longform_073",
+   "prompt": "Explain how an air conditioner cools a room."
+  },
+  {
+   "category": "longform_074",
+   "prompt": "Describe how the digestive system breaks down food."
+  },
+  {
+   "category": "longform_075",
+   "prompt": "Explain how a lighthouse beam is visible far away."
+  },
+  {
+   "category": "longform_076",
+   "prompt": "Describe how ant colonies find food."
+  },
+  {
+   "category": "longform_077",
+   "prompt": "Explain how a lock and key mechanism works."
+  },
+  {
+   "category": "longform_078",
+   "prompt": "Describe how lightning strikes form."
+  },
+  {
+   "category": "longform_079",
+   "prompt": "Explain how a steam engine converted heat to motion."
+  },
+  {
+   "category": "longform_080",
+   "prompt": "Describe how kidneys filter blood."
+  },
+  {
+   "category": "longform_081",
+   "prompt": "Explain how a parachute slows a fall."
+  },
+  {
+   "category": "longform_082",
+   "prompt": "Describe how coral polyps build reefs."
+  },
+  {
+   "category": "longform_083",
+   "prompt": "Explain how a hydraulic press multiplies force."
+  },
+  {
+   "category": "longform_084",
+   "prompt": "Describe how migratory birds navigate."
+  },
+  {
+   "category": "longform_085",
+   "prompt": "Explain how a battery stores chemical energy."
+  },
+  {
+   "category": "longform_086",
+   "prompt": "Describe how waves erode a coastline."
+  },
+  {
+   "category": "longform_087",
+   "prompt": "Explain how a printing press mass-produces pages."
+  },
+  {
+   "category": "longform_088",
+   "prompt": "Describe how muscles contract during exercise."
+  },
+  {
+   "category": "longform_089",
+   "prompt": "Explain how a windmill pumps water."
+  },
+  {
+   "category": "longform_090",
+   "prompt": "Describe how fog forms on a cold morning."
+  },
+  {
+   "category": "longform_091",
+   "prompt": "Explain how a subway signaling system prevents collisions."
+  },
+  {
+   "category": "longform_092",
+   "prompt": "Describe how trees transport water upward."
+  },
+  {
+   "category": "longform_093",
+   "prompt": "Explain how a smoke detector senses fire."
+  },
+  {
+   "category": "longform_094",
+   "prompt": "Describe how penguins survive Antarctic winters."
+  },
+  {
+   "category": "longform_095",
+   "prompt": "Explain how a sailboat moves against the wind."
+  },
+  {
+   "category": "longform_096",
+   "prompt": "Describe how cheese is cultured from milk."
+  },
+  {
+   "category": "longform_097",
+   "prompt": "Explain how an escalator keeps its steps level."
+  },
+  {
+   "category": "longform_098",
+   "prompt": "Describe how earthquakes reshape coastlines."
+  },
+  {
+   "category": "longform_099",
+   "prompt": "Explain how a hearing aid amplifies sound."
+  },
+  {
+   "category": "longform_100",
+   "prompt": "Describe how cacti conserve water in deserts."
+  },
+  {
+   "category": "longform_101",
+   "prompt": "Explain how a fire extinguisher stops combustion."
+  },
+  {
+   "category": "longform_102",
+   "prompt": "Describe how the eye focuses on near and far objects."
+  },
+  {
+   "category": "longform_103",
+   "prompt": "Explain how a water tower supplies a town."
+  },
+  {
+   "category": "longform_104",
+   "prompt": "Describe how salmon find their spawning stream."
+  },
+  {
+   "category": "longform_105",
+   "prompt": "Explain how a helicopter rotor generates lift."
+  },
+  {
+   "category": "longform_106",
+   "prompt": "Describe how yogurt forms from milk cultures."
+  },
+  {
+   "category": "longform_107",
+   "prompt": "Explain how a compass needle finds north."
+  },
+  {
+   "category": "longform_108",
+   "prompt": "Describe how avalanches build up and release."
+  },
+  {
+   "category": "longform_109",
+   "prompt": "Explain how a sewing machine stitches fabric."
+  },
+  {
+   "category": "longform_110",
+   "prompt": "Describe how moths navigate by moonlight."
+  },
+  {
+   "category": "longform_111",
+   "prompt": "Explain how a sump pump keeps a basement dry."
+  },
+  {
+   "category": "longform_112",
+   "prompt": "Describe how dunes shift across a desert."
+  },
+  {
+   "category": "longform_113",
+   "prompt": "Explain how a guitar string produces different pitches."
+  },
+  {
+   "category": "longform_114",
+   "prompt": "Describe how owls hunt in total darkness."
+  },
+  {
+   "category": "longform_115",
+   "prompt": "Explain how a diving bell works underwater."
+  },
+  {
+   "category": "longform_116",
+   "prompt": "Describe how frost patterns form on windows."
+  },
+  {
+   "category": "longform_117",
+   "prompt": "Explain how a Ferris wheel stays balanced."
+  },
+  {
+   "category": "longform_118",
+   "prompt": "Describe how termites build mounds with ventilation."
+  },
+  {
+   "category": "longform_119",
+   "prompt": "Explain how a metronome keeps a steady beat."
+  },
+  {
+   "category": "longform_120",
+   "prompt": "Describe how hot springs heat themselves."
+  },
+  {
+   "category": "longform_121",
+   "prompt": "Explain how a turntable reads grooves into music."
+  },
+  {
+   "category": "longform_122",
+   "prompt": "Describe how octopuses change their skin color."
+  },
+  {
+   "category": "longform_123",
+   "prompt": "Explain how a grain silo protects its contents."
+  },
+  {
+   "category": "longform_124",
+   "prompt": "Describe how fireflies synchronize their flashes."
+  },
+  {
+   "category": "longform_125",
+   "prompt": "Explain how a canal lock raises and lowers boats."
+  },
+  {
+   "category": "longform_126",
+   "prompt": "Describe how spiders rebuild damaged webs."
+  },
+  {
+   "category": "convo_057",
+   "prompt": "How do I decide how much to spend on a wedding gift?"
+  },
+  {
+   "category": "convo_058",
+   "prompt": "What are some ways to enjoy a weekend without spending money?"
+  },
+  {
+   "category": "convo_059",
+   "prompt": "How should I react when someone takes credit for my idea?"
+  },
+  {
+   "category": "convo_060",
+   "prompt": "What can I do to make mornings smoother with kids?"
+  },
+  {
+   "category": "convo_061",
+   "prompt": "How do I ask a friend to repay a loan without damaging the friendship?"
+  },
+  {
+   "category": "convo_062",
+   "prompt": "What are tips for taking care of a new pair of shoes?"
+  },
+  {
+   "category": "convo_063",
+   "prompt": "How can I be more patient in traffic?"
+  },
+  {
+   "category": "convo_064",
+   "prompt": "What is the best way to learn the rules of a new sport?"
+  },
+  {
+   "category": "convo_065",
+   "prompt": "How do I choose a book I will actually finish?"
+  },
+  {
+   "category": "convo_066",
+   "prompt": "What should I consider before adopting a second cat?"
+  },
+  {
+   "category": "convo_067",
+   "prompt": "How can I support a friend running their first marathon?"
+  },
+  {
+   "category": "convo_068",
+   "prompt": "What is a polite way to leave a party early?"
+  },
+  {
+   "category": "convo_069",
+   "prompt": "How do I handle receiving a gift I do not like?"
+  },
+  {
+   "category": "convo_070",
+   "prompt": "What are some ideas for a memorable anniversary on a budget?"
+  },
+  {
+   "category": "convo_071",
+   "prompt": "How can I keep in touch with friends in other time zones?"
+  },
+  {
+   "category": "convo_072",
+   "prompt": "What should I do when I forget someone's name mid-conversation?"
+  },
+  {
+   "category": "convo_073",
+   "prompt": "How do I set up a workspace that helps me focus?"
+  },
+  {
+   "category": "convo_074",
+   "prompt": "What is a good way to break a long phone habit?"
+  },
+  {
+   "category": "convo_075",
+   "prompt": "How should I prepare for hosting dinner guests with dietary restrictions?"
+  },
+  {
+   "category": "convo_076",
+   "prompt": "What can I say to comfort someone after a job loss?"
+  },
+  {
+   "category": "convo_077",
+   "prompt": "How do I politely decline to be a bridesmaid?"
+  },
+  {
+   "category": "convo_078",
+   "prompt": "What are strategies for splitting bills fairly among roommates?"
+  },
+  {
+   "category": "convo_079",
+   "prompt": "How can I encourage a shy child to join group activities?"
+  },
+  {
+   "category": "convo_080",
+   "prompt": "What should I pack for a first camping trip?"
+  },
+  {
+   "category": "convo_081",
+   "prompt": "How do I stay calm when giving a presentation?"
+  },
+  {
+   "category": "convo_082",
+   "prompt": "What is a thoughtful way to celebrate a coworker's promotion?"
+  },
+  {
+   "category": "convo_083",
+   "prompt": "How can I make a small apartment feel bigger?"
+  },
+  {
+   "category": "convo_084",
+   "prompt": "What should I say to a friend moving abroad?"
+  },
+  {
+   "category": "convo_085",
+   "prompt": "How do I choose a reliable used car seller?"
+  },
+  {
+   "category": "convo_086",
+   "prompt": "What are good habits before going to sleep?"
+  },
+  {
+   "category": "convo_087",
+   "prompt": "How can I make video calls less tiring?"
+  },
+  {
+   "category": "convo_088",
+   "prompt": "What is the best way to store winter clothes?"
+  },
+  {
+   "category": "convo_089",
+   "prompt": "How should I handle a dispute with a neighbor about parking?"
+  },
+  {
+   "category": "convo_090",
+   "prompt": "What can I do to be a better listener in arguments?"
+  },
+  {
+   "category": "convo_091",
+   "prompt": "How do I plan a surprise party without being caught?"
+  },
+  {
+   "category": "convo_092",
+   "prompt": "What are some ways to practice a language daily?"
+  },
+  {
+   "category": "convo_093",
+   "prompt": "How should I respond to a vague apology?"
+  },
+  {
+   "category": "convo_094",
+   "prompt": "What is a fair way to divide household chores with a partner?"
+  },
+  {
+   "category": "convo_095",
+   "prompt": "How can I keep my phone battery healthy for years?"
+  },
+  {
+   "category": "convo_096",
+   "prompt": "What should I bring to a potluck I cannot cook for?"
+  },
+  {
+   "category": "convo_097",
+   "prompt": "How do I choose a podcast worth my commute time?"
+  },
+  {
+   "category": "convo_098",
+   "prompt": "What is a kind way to tell a friend their advice did not help?"
+  },
+  {
+   "category": "convo_099",
+   "prompt": "How can I prepare my home for a new puppy?"
+  },
+  {
+   "category": "convo_100",
+   "prompt": "What should I do when two friends expect me to take sides?"
+  },
+  {
+   "category": "convo_101",
+   "prompt": "How do I make time for exercise with a busy schedule?"
+  },
+  {
+   "category": "convo_102",
+   "prompt": "What are tips for photographing a child's first steps?"
+  },
+  {
+   "category": "convo_103",
+   "prompt": "How should I greet new neighbors who just moved in?"
+  },
+  {
+   "category": "convo_104",
+   "prompt": "What can I say at a funeral when I knew the person briefly?"
+  },
+  {
+   "category": "convo_105",
+   "prompt": "How do I decide whether to repair or replace an appliance?"
+  },
+  {
+   "category": "convo_106",
+   "prompt": "What is a good routine for watering plants while away?"
+  },
+  {
+   "category": "convo_107",
+   "prompt": "How can I politely ask houseguests to tidy up?"
+  },
+  {
+   "category": "convo_108",
+   "prompt": "What should I write in a first message to an old friend?"
+  },
+  {
+   "category": "convo_109",
+   "prompt": "How do I choose a hobby I will stick with?"
+  },
+  {
+   "category": "convo_110",
+   "prompt": "What are ways to celebrate small wins at work?"
+  },
+  {
+   "category": "convo_111",
+   "prompt": "How can I help my parents use their new phone?"
+  },
+  {
+   "category": "convo_112",
+   "prompt": "What is the best way to back up family photos?"
+  },
+  {
+   "category": "convo_113",
+   "prompt": "How should I handle a coworker who talks over me?"
+  },
+  {
+   "category": "convo_114",
+   "prompt": "What can I do to enjoy cooking for one person?"
+  },
+  {
+   "category": "convo_115",
+   "prompt": "How do I pick a movie everyone in the family will like?"
+  },
+  {
+   "category": "convo_116",
+   "prompt": "What should I say when asked about my salary expectations?"
+  },
+  {
+   "category": "convo_117",
+   "prompt": "How can I make a hospital visit more comforting?"
+  },
+  {
+   "category": "convo_118",
+   "prompt": "What is a sensible way to handle junk mail?"
+  },
+  {
+   "category": "convo_119",
+   "prompt": "How do I prepare for my first long-haul flight?"
+  },
+  {
+   "category": "convo_120",
+   "prompt": "What are good icebreakers for a team that just formed?"
+  },
+  {
+   "category": "convo_121",
+   "prompt": "How should I thank a mentor at the end of a program?"
+  },
+  {
+   "category": "convo_122",
+   "prompt": "What can I do to make laundry day less of a chore?"
+  },
+  {
+   "category": "convo_123",
+   "prompt": "How do I choose between two apartments I like equally?"
+  },
+  {
+   "category": "convo_124",
+   "prompt": "What is a respectful way to change the subject?"
+  },
+  {
+   "category": "convo_125",
+   "prompt": "How can I keep my bicycle from being stolen in the city?"
+  },
+  {
+   "category": "convo_126",
+   "prompt": "How can I keep my workspace tidy without obsessing?"
+  }
+ ]
+}

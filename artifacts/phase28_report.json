@@ -1,0 +1,31 @@
+{
+  "verdict": "KERNEL PERFORMANCE MISS",
+  "source_semantics": "validated",
+  "kernel_numeric": "bitwise_mosaic",
+  "golden_greedy": "unavailable",
+  "kernel_path_complete": true,
+  "s3_block_median_sec": 0.635774552822113,
+  "s3_block_p90_sec": 0.690855085849762,
+  "s3_route_authority": "synthetic_distinct_interim",
+  "ksplit_metrics": {
+    "bf16_bitwise_frac": 1.0,
+    "max_bf16_ulp": 0,
+    "max_abs": 0.0,
+    "max_rel": 0.0,
+    "nan_inf_mismatches": 0
+  },
+  "launch_census": {
+    "total_cuda_launches": 307,
+    "custom_qpa_launches": 2,
+    "custom_xsimt_launches": 2,
+    "layout_launches": 4,
+    "epilogue_launches": 299
+  },
+  "r1_ok": false,
+  "r3_ok": false,
+  "r1_gbs": 23.14032064816527,
+  "r3_gbs_m4": 62.51077342445188,
+  "r3_gbs_m8": 61.50421794467558,
+  "cold_dram_gbs": 283.21522095735054,
+  "NO_QUALITY_LOSS_VERIFIED": false
+}

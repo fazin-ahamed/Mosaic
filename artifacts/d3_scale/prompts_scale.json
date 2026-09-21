@@ -1,0 +1,992 @@
+{
+ "classification": "STAGE1_SCALE_CORPUS",
+ "purpose": "SCALE210 train extension + SCALE-DEV70",
+ "splits": {
+  "train": [
+   "coding_19",
+   "coding_20",
+   "coding_21",
+   "coding_22",
+   "coding_23",
+   "coding_24",
+   "coding_25",
+   "coding_26",
+   "coding_27",
+   "coding_28",
+   "coding_29",
+   "coding_30",
+   "coding_31",
+   "coding_32",
+   "coding_33",
+   "coding_34",
+   "coding_35",
+   "coding_36",
+   "math_19",
+   "math_20",
+   "math_21",
+   "math_22",
+   "math_23",
+   "math_24",
+   "math_25",
+   "math_26",
+   "math_27",
+   "math_28",
+   "math_29",
+   "math_30",
+   "math_31",
+   "math_32",
+   "math_33",
+   "math_34",
+   "math_35",
+   "math_36",
+   "agent_19",
+   "agent_20",
+   "agent_21",
+   "agent_22",
+   "agent_23",
+   "agent_24",
+   "agent_25",
+   "agent_26",
+   "agent_27",
+   "agent_28",
+   "agent_29",
+   "agent_30",
+   "agent_31",
+   "agent_32",
+   "agent_33",
+   "agent_34",
+   "agent_35",
+   "agent_36",
+   "convo_19",
+   "convo_20",
+   "convo_21",
+   "convo_22",
+   "convo_23",
+   "convo_24",
+   "convo_25",
+   "convo_26",
+   "convo_27",
+   "convo_28",
+   "convo_29",
+   "convo_30",
+   "convo_31",
+   "convo_32",
+   "convo_33",
+   "convo_34",
+   "convo_35",
+   "convo_36",
+   "retrieval_19",
+   "retrieval_20",
+   "retrieval_21",
+   "retrieval_22",
+   "retrieval_23",
+   "retrieval_24",
+   "retrieval_25",
+   "retrieval_26",
+   "retrieval_27",
+   "retrieval_28",
+   "retrieval_29",
+   "retrieval_30",
+   "retrieval_31",
+   "retrieval_32",
+   "retrieval_33",
+   "retrieval_34",
+   "retrieval_35",
+   "retrieval_36",
+   "longform_19",
+   "longform_20",
+   "longform_21",
+   "longform_22",
+   "longform_23",
+   "longform_24",
+   "longform_25",
+   "longform_26",
+   "longform_27",
+   "longform_28",
+   "longform_29",
+   "longform_30",
+   "longform_31",
+   "longform_32",
+   "longform_33",
+   "longform_34",
+   "longform_35",
+   "longform_36",
+   "json_19",
+   "json_20",
+   "json_21",
+   "json_22",
+   "json_23",
+   "json_24",
+   "json_25",
+   "json_26",
+   "json_27",
+   "json_28",
+   "json_29",
+   "json_30",
+   "json_31",
+   "json_32",
+   "json_33",
+   "json_34",
+   "json_35",
+   "json_36"
+  ],
+  "val": [
+   "coding_37",
+   "coding_38",
+   "coding_39",
+   "coding_40",
+   "coding_41",
+   "coding_42",
+   "coding_43",
+   "coding_44",
+   "coding_45",
+   "coding_46",
+   "math_37",
+   "math_38",
+   "math_39",
+   "math_40",
+   "math_41",
+   "math_42",
+   "math_43",
+   "math_44",
+   "math_45",
+   "math_46",
+   "agent_37",
+   "agent_38",
+   "agent_39",
+   "agent_40",
+   "agent_41",
+   "agent_42",
+   "agent_43",
+   "agent_44",
+   "agent_45",
+   "agent_46",
+   "convo_37",
+   "convo_38",
+   "convo_39",
+   "convo_40",
+   "convo_41",
+   "convo_42",
+   "convo_43",
+   "convo_44",
+   "convo_45",
+   "convo_46",
+   "retrieval_37",
+   "retrieval_38",
+   "retrieval_39",
+   "retrieval_40",
+   "retrieval_41",
+   "retrieval_42",
+   "retrieval_43",
+   "retrieval_44",
+   "retrieval_45",
+   "retrieval_46",
+   "longform_37",
+   "longform_38",
+   "longform_39",
+   "longform_40",
+   "longform_41",
+   "longform_42",
+   "longform_43",
+   "longform_44",
+   "longform_45",
+   "longform_46",
+   "json_37",
+   "json_38",
+   "json_39",
+   "json_40",
+   "json_41",
+   "json_42",
+   "json_43",
+   "json_44",
+   "json_45",
+   "json_46"
+  ]
+ },
+ "prompts": [
+  {
+   "category": "coding_19",
+   "prompt": "Write a function that checks if a string is a palindrome ignoring punctuation."
+  },
+  {
+   "category": "coding_20",
+   "prompt": "How do I merge two dictionaries in Python without losing keys?"
+  },
+  {
+   "category": "coding_21",
+   "prompt": "Write a SQL query that finds the second-highest salary in an employees table."
+  },
+  {
+   "category": "coding_22",
+   "prompt": "Explain what a race condition is and give a small example."
+  },
+  {
+   "category": "coding_23",
+   "prompt": "Write a function that returns the nth Fibonacci number using iteration."
+  },
+  {
+   "category": "coding_24",
+   "prompt": "How do I split a string into words while stripping punctuation?"
+  },
+  {
+   "category": "coding_25",
+   "prompt": "Write a regular expression that matches a valid IPv4 address."
+  },
+  {
+   "category": "coding_26",
+   "prompt": "Explain the difference between shallow copy and deep copy."
+  },
+  {
+   "category": "coding_27",
+   "prompt": "Write a function that finds the longest common prefix of a list of strings."
+  },
+  {
+   "category": "coding_28",
+   "prompt": "How do I read a CSV file line by line in Python without loading it all into memory?"
+  },
+  {
+   "category": "coding_29",
+   "prompt": "Write a bash script that renames all .txt files in a folder to .md."
+  },
+  {
+   "category": "coding_30",
+   "prompt": "Explain what Big-O notation measures with two examples."
+  },
+  {
+   "category": "coding_31",
+   "prompt": "Write a function that counts word frequencies in a sentence."
+  },
+  {
+   "category": "coding_32",
+   "prompt": "How do I safely parse an integer from user input in Python?"
+  },
+  {
+   "category": "coding_33",
+   "prompt": "Write a class representing a bank account with deposit and withdraw methods."
+  },
+  {
+   "category": "coding_34",
+   "prompt": "Explain the difference between HTTP GET and POST requests."
+  },
+  {
+   "category": "coding_35",
+   "prompt": "Write a function that removes all vowels from a string."
+  },
+  {
+   "category": "coding_36",
+   "prompt": "How do I sort a list of dictionaries by a specific key in Python?"
+  },
+  {
+   "category": "coding_37",
+   "prompt": "Write a function that validates an email address format."
+  },
+  {
+   "category": "coding_38",
+   "prompt": "Explain what a hash collision is and how it is usually handled."
+  },
+  {
+   "category": "coding_39",
+   "prompt": "Write a function that computes the Greatest Common Divisor recursively."
+  },
+  {
+   "category": "coding_40",
+   "prompt": "How do I use a context manager to open two files at once in Python?"
+  },
+  {
+   "category": "coding_41",
+   "prompt": "Write a function that finds the first duplicate element in a list."
+  },
+  {
+   "category": "coding_42",
+   "prompt": "Explain the difference between compiled and interpreted languages."
+  },
+  {
+   "category": "coding_43",
+   "prompt": "Write a function that checks whether a year is a leap year."
+  },
+  {
+   "category": "coding_44",
+   "prompt": "How do I reverse the key-value pairs of a dictionary in Python?"
+  },
+  {
+   "category": "coding_45",
+   "prompt": "Write a small function that shuffles a list without using the built-in shuffle."
+  },
+  {
+   "category": "coding_46",
+   "prompt": "Explain what dependency injection is with a one-sentence example."
+  },
+  {
+   "category": "math_19",
+   "prompt": "What is 23 times 17?"
+  },
+  {
+   "category": "math_20",
+   "prompt": "A train travels 240 kilometers in 3 hours. What is its average speed?"
+  },
+  {
+   "category": "math_21",
+   "prompt": "Solve for x: 4x + 12 = 48."
+  },
+  {
+   "category": "math_22",
+   "prompt": "What is 15 percent of 320?"
+  },
+  {
+   "category": "math_23",
+   "prompt": "A shirt costs 45 dollars and is discounted by 20 percent. What is the sale price?"
+  },
+  {
+   "category": "math_24",
+   "prompt": "Simplify the fraction 84 over 126."
+  },
+  {
+   "category": "math_25",
+   "prompt": "What is the area of a circle with radius 7? Use pi approximately 3.14."
+  },
+  {
+   "category": "math_26",
+   "prompt": "A car uses 8 liters of fuel per 100 kilometers. How much fuel for 350 kilometers?"
+  },
+  {
+   "category": "math_27",
+   "prompt": "Solve for y: 3y - 7 = 2y + 5."
+  },
+  {
+   "category": "math_28",
+   "prompt": "What is the square root of 784?"
+  },
+  {
+   "category": "math_29",
+   "prompt": "A classroom has 30 students and 60 percent are girls. How many boys are there?"
+  },
+  {
+   "category": "math_30",
+   "prompt": "What is 2 to the power of 12?"
+  },
+  {
+   "category": "math_31",
+   "prompt": "A recipe calls for 2 and a half cups of flour for 4 servings. How much for 10 servings?"
+  },
+  {
+   "category": "math_32",
+   "prompt": "What is the perimeter of a rectangle with length 15 and width 8?"
+  },
+  {
+   "category": "math_33",
+   "prompt": "Solve for z: z divided by 6 equals 14."
+  },
+  {
+   "category": "math_34",
+   "prompt": "What is 9 factorial divided by 7 factorial?"
+  },
+  {
+   "category": "math_35",
+   "prompt": "A phone battery drops from 80 percent to 20 percent in 5 hours. What is the drain rate per hour?"
+  },
+  {
+   "category": "math_36",
+   "prompt": "What is the next number in the sequence 2, 6, 18, 54?"
+  },
+  {
+   "category": "math_37",
+   "prompt": "Convert 3.75 kilometers to meters."
+  },
+  {
+   "category": "math_38",
+   "prompt": "What is the volume of a cube with edge length 4?"
+  },
+  {
+   "category": "math_39",
+   "prompt": "Solve for x: 7x minus 21 equals 0."
+  },
+  {
+   "category": "math_40",
+   "prompt": "A worker earns 18 dollars per hour and works 37 hours. What is the gross pay?"
+  },
+  {
+   "category": "math_41",
+   "prompt": "What is 0.625 as a fraction in simplest form?"
+  },
+  {
+   "category": "math_42",
+   "prompt": "A tank holds 500 liters and is three quarters full. How many liters are in it?"
+  },
+  {
+   "category": "math_43",
+   "prompt": "What is the sum of the interior angles of a triangle in degrees?"
+  },
+  {
+   "category": "math_44",
+   "prompt": "If 5 notebooks cost 12 dollars, what do 8 notebooks cost at the same rate?"
+  },
+  {
+   "category": "math_45",
+   "prompt": "What is 121 divided by 11 plus 13?"
+  },
+  {
+   "category": "math_46",
+   "prompt": "A ladder leans against a wall forming a right triangle with legs 9 and 12. How long is the ladder?"
+  },
+  {
+   "category": "agent_19",
+   "prompt": "List all files in the current directory sorted by size."
+  },
+  {
+   "category": "agent_20",
+   "prompt": "Show me the first 15 lines of a file named config.yaml."
+  },
+  {
+   "category": "agent_21",
+   "prompt": "Find all files modified in the last 24 hours."
+  },
+  {
+   "category": "agent_22",
+   "prompt": "Create an empty file called notes.txt and then show its permissions."
+  },
+  {
+   "category": "agent_23",
+   "prompt": "Show me how much free disk space is available."
+  },
+  {
+   "category": "agent_24",
+   "prompt": "Kill the process listening on port 3000."
+  },
+  {
+   "category": "agent_25",
+   "prompt": "Copy a file called report.pdf to a backup folder."
+  },
+  {
+   "category": "agent_26",
+   "prompt": "Show the current working directory and then change to the home directory."
+  },
+  {
+   "category": "agent_27",
+   "prompt": "Search for the word error inside all log files in this folder."
+  },
+  {
+   "category": "agent_28",
+   "prompt": "Display the last 10 commands you executed."
+  },
+  {
+   "category": "agent_29",
+   "prompt": "Create a compressed archive of the documents folder."
+  },
+  {
+   "category": "agent_30",
+   "prompt": "Show me the environment variables containing the word PATH."
+  },
+  {
+   "category": "agent_31",
+   "prompt": "Rename all files with extension .jpeg to .jpg in the current folder."
+  },
+  {
+   "category": "agent_32",
+   "prompt": "Print the number of lines, words, and characters in readme.md."
+  },
+  {
+   "category": "agent_33",
+   "prompt": "Show the date from 30 days ago in year-month-day format."
+  },
+  {
+   "category": "agent_34",
+   "prompt": "Download a file from a URL and save it as latest.tar.gz."
+  },
+  {
+   "category": "agent_35",
+   "prompt": "List all running processes sorted by memory usage."
+  },
+  {
+   "category": "agent_36",
+   "prompt": "Create a new user group called developers."
+  },
+  {
+   "category": "agent_37",
+   "prompt": "Show the differences between two files called old.txt and new.txt."
+  },
+  {
+   "category": "agent_38",
+   "prompt": "Display the contents of a file with line numbers."
+  },
+  {
+   "category": "agent_39",
+   "prompt": "Find and delete all empty directories under the current folder."
+  },
+  {
+   "category": "agent_40",
+   "prompt": "Show me the current system uptime and load average."
+  },
+  {
+   "category": "agent_41",
+   "prompt": "Set the file permissions of script.sh to executable for the owner only."
+  },
+  {
+   "category": "agent_42",
+   "prompt": "Show the largest 5 files anywhere under /var/log."
+  },
+  {
+   "category": "agent_43",
+   "prompt": "Schedule a task to run a cleanup script every day at 3 AM."
+  },
+  {
+   "category": "agent_44",
+   "prompt": "Display the last 5 login events on this machine."
+  },
+  {
+   "category": "agent_45",
+   "prompt": "Find all symbolic links in the current directory tree."
+  },
+  {
+   "category": "agent_46",
+   "prompt": "Print a recursive listing of the src folder but exclude hidden files."
+  },
+  {
+   "category": "convo_19",
+   "prompt": "What should I pack for a weekend trip to the mountains?"
+  },
+  {
+   "category": "convo_20",
+   "prompt": "How do I tell my roommate their music is too loud without offending them?"
+  },
+  {
+   "category": "convo_21",
+   "prompt": "What are some thoughtful gift ideas for a friend who loves cooking?"
+  },
+  {
+   "category": "convo_22",
+   "prompt": "How can I stay focused while working from home?"
+  },
+  {
+   "category": "convo_23",
+   "prompt": "What is a good way to end a phone call politely when you are busy?"
+  },
+  {
+   "category": "convo_24",
+   "prompt": "How do I ask my manager for feedback without seeming insecure?"
+  },
+  {
+   "category": "convo_25",
+   "prompt": "What are some fun indoor activities for a rainy Sunday?"
+  },
+  {
+   "category": "convo_26",
+   "prompt": "How should I respond when someone gives me a compliment?"
+  },
+  {
+   "category": "convo_27",
+   "prompt": "What is the best way to break the ice at a networking event?"
+  },
+  {
+   "category": "convo_28",
+   "prompt": "How can I help a friend who is moving to a new city?"
+  },
+  {
+   "category": "convo_29",
+   "prompt": "What are some strategies for saving money on groceries?"
+  },
+  {
+   "category": "convo_30",
+   "prompt": "How do I decide between two job offers?"
+  },
+  {
+   "category": "convo_31",
+   "prompt": "What should I say to a colleague who just lost a family member?"
+  },
+  {
+   "category": "convo_32",
+   "prompt": "How can I make my morning routine less stressful?"
+  },
+  {
+   "category": "convo_33",
+   "prompt": "What are some ways to celebrate a birthday on a small budget?"
+  },
+  {
+   "category": "convo_34",
+   "prompt": "How do I politely ask guests to leave after a dinner party?"
+  },
+  {
+   "category": "convo_35",
+   "prompt": "What is a good way to learn someone's name and actually remember it?"
+  },
+  {
+   "category": "convo_36",
+   "prompt": "How can I support a partner who had a rough day at work?"
+  },
+  {
+   "category": "convo_37",
+   "prompt": "What are some conversation starters for a long car ride?"
+  },
+  {
+   "category": "convo_38",
+   "prompt": "How do I set boundaries with a friend who calls too late at night?"
+  },
+  {
+   "category": "convo_39",
+   "prompt": "What should I consider before adopting a rescue dog?"
+  },
+  {
+   "category": "convo_40",
+   "prompt": "How can I make new friends after moving to a new town?"
+  },
+  {
+   "category": "convo_41",
+   "prompt": "What is a kind way to tell someone they have food in their teeth?"
+  },
+  {
+   "category": "convo_42",
+   "prompt": "How do I prepare for a first dinner with my partner's parents?"
+  },
+  {
+   "category": "convo_43",
+   "prompt": "What should I keep in mind when shopping for a used bicycle?"
+  },
+  {
+   "category": "convo_44",
+   "prompt": "How can I wind down effectively at the end of a stressful day?"
+  },
+  {
+   "category": "convo_45",
+   "prompt": "What should I write in a thank-you card for a teacher?"
+  },
+  {
+   "category": "convo_46",
+   "prompt": "How do I gracefully handle being double-booked for two events?"
+  },
+  {
+   "category": "retrieval_19",
+   "prompt": "According to the quarterly report, which region had the highest sales growth?"
+  },
+  {
+   "category": "retrieval_20",
+   "prompt": "What does the user manual say about resetting the device to factory settings?"
+  },
+  {
+   "category": "retrieval_21",
+   "prompt": "According to the meeting notes, who was assigned to lead the design review?"
+  },
+  {
+   "category": "retrieval_22",
+   "prompt": "What budget figure did the finance summary approve for the marketing campaign?"
+  },
+  {
+   "category": "retrieval_23",
+   "prompt": "According to the email thread, when is the client presentation scheduled?"
+  },
+  {
+   "category": "retrieval_24",
+   "prompt": "What does the policy document state about remote work eligibility?"
+  },
+  {
+   "category": "retrieval_25",
+   "prompt": "According to the audit, which two departments exceeded their travel budgets?"
+  },
+  {
+   "category": "retrieval_26",
+   "prompt": "What safety procedure does the training handbook describe for chemical spills?"
+  },
+  {
+   "category": "retrieval_27",
+   "prompt": "According to the project plan, what are the three main deliverables for phase two?"
+  },
+  {
+   "category": "retrieval_28",
+   "prompt": "What did the customer feedback survey identify as the top complaint?"
+  },
+  {
+   "category": "retrieval_29",
+   "prompt": "According to the release notes, which bugs were fixed in version 2.4?"
+  },
+  {
+   "category": "retrieval_30",
+   "prompt": "What does the contract specify as the notice period for termination?"
+  },
+  {
+   "category": "retrieval_31",
+   "prompt": "According to the inventory log, how many units of item 4021 remain in stock?"
+  },
+  {
+   "category": "retrieval_32",
+   "prompt": "What does the research summary conclude about the new battery chemistry?"
+  },
+  {
+   "category": "retrieval_33",
+   "prompt": "According to the onboarding guide, which forms must new hires submit in week one?"
+  },
+  {
+   "category": "retrieval_34",
+   "prompt": "What attendance threshold does the course syllabus set for passing?"
+  },
+  {
+   "category": "retrieval_35",
+   "prompt": "According to the incident report, what time was the outage first detected?"
+  },
+  {
+   "category": "retrieval_36",
+   "prompt": "What does the vendor proposal include that the competitor's does not?"
+  },
+  {
+   "category": "retrieval_37",
+   "prompt": "According to the committee charter, how often are elections held?"
+  },
+  {
+   "category": "retrieval_38",
+   "prompt": "What staffing change did the organization chart show for the support team?"
+  },
+  {
+   "category": "retrieval_39",
+   "prompt": "According to the recipe, at what temperature should the oven be preheated?"
+  },
+  {
+   "category": "retrieval_40",
+   "prompt": "What does the warranty cover according to the product documentation?"
+  },
+  {
+   "category": "retrieval_41",
+   "prompt": "According to the weather advisory, which roads are closed due to flooding?"
+  },
+  {
+   "category": "retrieval_42",
+   "prompt": "What login issue does the IT bulletin describe and how is it resolved?"
+  },
+  {
+   "category": "retrieval_43",
+   "prompt": "According to the annual review, what was the employee retention rate?"
+  },
+  {
+   "category": "retrieval_44",
+   "prompt": "What does the leasing agreement say about pets in the building?"
+  },
+  {
+   "category": "retrieval_45",
+   "prompt": "According to the changelog, which feature was deprecated last quarter?"
+  },
+  {
+   "category": "retrieval_46",
+   "prompt": "What are the eligibility criteria listed in the scholarship announcement?"
+  },
+  {
+   "category": "longform_19",
+   "prompt": "Explain how a refrigerator keeps food cold."
+  },
+  {
+   "category": "longform_20",
+   "prompt": "Describe how an earthquake is measured and classified."
+  },
+  {
+   "category": "longform_21",
+   "prompt": "Explain how vaccines train the immune system."
+  },
+  {
+   "category": "longform_22",
+   "prompt": "Describe the life cycle of a star from formation to collapse."
+  },
+  {
+   "category": "longform_23",
+   "prompt": "Explain how GPS determines your location."
+  },
+  {
+   "category": "longform_24",
+   "prompt": "Describe how a jury trial proceeds from selection to verdict."
+  },
+  {
+   "category": "longform_25",
+   "prompt": "Explain how wifi transmits data through the air."
+  },
+  {
+   "category": "longform_26",
+   "prompt": "Describe the process of refining crude oil into gasoline."
+  },
+  {
+   "category": "longform_27",
+   "prompt": "Explain how credit scores are calculated and used."
+  },
+  {
+   "category": "longform_28",
+   "prompt": "Describe how a bee colony organizes its labor."
+  },
+  {
+   "category": "longform_29",
+   "prompt": "Explain why the sky is blue during the day and red at sunset."
+  },
+  {
+   "category": "longform_30",
+   "prompt": "Describe how a bill becomes law in a national legislature."
+  },
+  {
+   "category": "longform_31",
+   "prompt": "Explain how noise-cancelling headphones work."
+  },
+  {
+   "category": "longform_32",
+   "prompt": "Describe how a package travels from an online order to your front door."
+  },
+  {
+   "category": "longform_33",
+   "prompt": "Explain how databases index data for fast lookups."
+  },
+  {
+   "category": "longform_34",
+   "prompt": "Describe how coral reefs form over centuries."
+  },
+  {
+   "category": "longform_35",
+   "prompt": "Explain what causes inflation in an economy."
+  },
+  {
+   "category": "longform_36",
+   "prompt": "Describe how a wind turbine converts wind into electricity."
+  },
+  {
+   "category": "longform_37",
+   "prompt": "Explain how sleep cycles progress through the night."
+  },
+  {
+   "category": "longform_38",
+   "prompt": "Describe the process of chocolate from cacao bean to bar."
+  },
+  {
+   "category": "longform_39",
+   "prompt": "Explain how search engines rank web pages."
+  },
+  {
+   "category": "longform_40",
+   "prompt": "Describe how antibodies recognize viruses."
+  },
+  {
+   "category": "longform_41",
+   "prompt": "Explain how a submarine controls its depth."
+  },
+  {
+   "category": "longform_42",
+   "prompt": "Describe the migration patterns of arctic terns."
+  },
+  {
+   "category": "longform_43",
+   "prompt": "Explain how fiber optic cables carry information."
+  },
+  {
+   "category": "longform_44",
+   "prompt": "Describe how an airport handles an arriving international flight."
+  },
+  {
+   "category": "longform_45",
+   "prompt": "Explain why leaves change color in autumn."
+  },
+  {
+   "category": "longform_46",
+   "prompt": "Describe how a library catalogues and retrieves books."
+  },
+  {
+   "category": "json_19",
+   "prompt": "Output JSON for a laptop with brand, model, price, and specs object."
+  },
+  {
+   "category": "json_20",
+   "prompt": "Create JSON for a restaurant with name, cuisine, rating, and menu array."
+  },
+  {
+   "category": "json_21",
+   "prompt": "Return JSON for a student with id, name, major, and enrolled courses array."
+  },
+  {
+   "category": "json_22",
+   "prompt": "Output JSON for a playlist with title, owner, and songs array of objects."
+  },
+  {
+   "category": "json_23",
+   "prompt": "Create JSON for an apartment with rooms count, area, rent, and amenities array."
+  },
+  {
+   "category": "json_24",
+   "prompt": "Return JSON for a flight with airline, number, departure, arrival, and stops."
+  },
+  {
+   "category": "json_25",
+   "prompt": "Output JSON for a movie with title, director, year, runtime, and cast array."
+  },
+  {
+   "category": "json_26",
+   "prompt": "Create JSON for an order with order id, customer, items array, and total."
+  },
+  {
+   "category": "json_27",
+   "prompt": "Return JSON for a bookshelf with location and books array of titles."
+  },
+  {
+   "category": "json_28",
+   "prompt": "Output JSON for a gym with name, opening hours, and equipment list."
+  },
+  {
+   "category": "json_29",
+   "prompt": "Create JSON for a hospital with departments array and bed capacity."
+  },
+  {
+   "category": "json_30",
+   "prompt": "Return JSON for a recipe with name, ingredients array, and step count."
+  },
+  {
+   "category": "json_31",
+   "prompt": "Output JSON for a car with make, model, year, color, and mileage."
+  },
+  {
+   "category": "json_32",
+   "prompt": "Create JSON for a conference with name, dates, venue, and speakers array."
+  },
+  {
+   "category": "json_33",
+   "prompt": "Return JSON for an inventory item with sku, name, quantity, and warehouse."
+  },
+  {
+   "category": "json_34",
+   "prompt": "Output JSON for a team with name, sport, founded year, and roster array."
+  },
+  {
+   "category": "json_35",
+   "prompt": "Create JSON for a subscription with plan, price, renewal date, and features array."
+  },
+  {
+   "category": "json_36",
+   "prompt": "Return JSON for a weather report with city, temperature, humidity, and forecast array."
+  },
+  {
+   "category": "json_37",
+   "prompt": "Output JSON for a job posting with title, company, salary range, and requirements array."
+  },
+  {
+   "category": "json_38",
+   "prompt": "Create JSON for a course with code, title, credits, and prerequisites array."
+  },
+  {
+   "category": "json_39",
+   "prompt": "Return JSON for a plant with species, height, water needs, and sunlight."
+  },
+  {
+   "category": "json_40",
+   "prompt": "Output JSON for a bank transaction with id, amount, timestamp, and status."
+  },
+  {
+   "category": "json_41",
+   "prompt": "Create JSON for a museum with name, city, exhibits array, and ticket price."
+  },
+  {
+   "category": "json_42",
+   "prompt": "Return JSON for a podcast with title, host, episode count, and topics array."
+  },
+  {
+   "category": "json_43",
+   "prompt": "Output JSON for a sensor reading with device id, timestamp, value, and unit."
+  },
+  {
+   "category": "json_44",
+   "prompt": "Create JSON for a delivery with tracking number, status, and history array."
+  },
+  {
+   "category": "json_45",
+   "prompt": "Return JSON for a hotel with name, stars, room types array, and address."
+  },
+  {
+   "category": "json_46",
+   "prompt": "Output JSON for a review with author, rating, date, and comment text."
+  }
+ ]
+}

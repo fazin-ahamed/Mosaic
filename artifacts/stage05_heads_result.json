@@ -1,0 +1,47 @@
+{
+ "classification": "STAGE05_TRAINED_EXIT_HEADS",
+ "architecture": "hc_head-form mixing (65,541 params) + frozen lm_head (bf16 GPU); CE on next token; Adam 3e-3, 400 steps, batch 64; best-of-val",
+ "splits": "7 train / 7 val / 7 held-out prompts (disjoint)",
+ "results": [
+  {
+   "exit": 38,
+   "raw": {
+    "top1": 0.3437500298023224,
+    "top4": 0.5089285969734192,
+    "top8": 0.598214328289032,
+    "top16": 0.7098214626312256
+   },
+   "trained": {
+    "top1": 0.3526785969734192,
+    "top4": 0.5133928656578064,
+    "top8": 0.5803571939468384,
+    "top16": 0.6830357313156128
+   },
+   "val_top1": 0.375,
+   "d2_trained": 0.1582,
+   "d4_trained": 0.0357,
+   "trials": 196,
+   "params": 65541
+  },
+  {
+   "exit": 40,
+   "raw": {
+    "top1": 0.4776785969734192,
+    "top4": 0.723214328289032,
+    "top8": 0.848214328289032,
+    "top16": 0.8928571939468384
+   },
+   "trained": {
+    "top1": 0.4464285969734192,
+    "top4": 0.7142857313156128,
+    "top8": 0.8348214626312256,
+    "top16": 0.8883929252624512
+   },
+   "val_top1": 0.5848,
+   "d2_trained": 0.2092,
+   "d4_trained": 0.051,
+   "trials": 196,
+   "params": 65541
+  }
+ ]
+}

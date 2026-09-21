@@ -1,0 +1,44 @@
+{
+ "state_dict_bitwise_equal": true,
+ "raw_z_bitwise_equal": {
+  "torch_equal_all": true,
+  "n_inputs": 21
+ },
+ "raw_z_shape": [
+  1,
+  4096
+ ],
+ "frozen_state_immutability": {
+  "ws1_artifact_keys": [
+   "Q",
+   "basis",
+   "basis_sha256",
+   "hist1_ckpt",
+   "hist1_ckpt_sha256",
+   "lam_kl",
+   "rank",
+   "seed"
+  ],
+  "ws1_contains_only_Q_and_refs": true,
+  "hist1_sha_now": "5818d7327fed962f7968833be694a05dd6647d15eb58c6b73bce6db71d76311b",
+  "hist1_sha_at_ws1_save": "5818d7327fed962f7968833be694a05dd6647d15eb58c6b73bce6db71d76311b",
+  "hist1_unchanged": true,
+  "basis_sha_now": "5952f2a60c6cfedfa54d304101aa368efdca722a61af21acec0a3d1a72e5405d",
+  "basis_sha_at_ws1_save": "5952f2a60c6cfedfa54d304101aa368efdca722a61af21acec0a3d1a72e5405d",
+  "basis_unchanged": true,
+  "hist1_matches_ws1_eval_record": true,
+  "basis_matches_ws1_eval_record": true
+ },
+ "behavioral_replay": {
+  "note": "rounded-margin/hit agreement \u2014 NOT the bitwise gate; bitwise results are above",
+  "S1": "10/21",
+  "all_hits_match_frozen_telemetry": true,
+  "max_abs_margin_delta": 4.9389648437703215e-05
+ },
+ "verdict": {
+  "bitwise_trunk_identity": "PASS",
+  "frozen_state_immutability": "PASS",
+  "behavioral_replay": "PASS",
+  "overall_S16": "PASS"
+ }
+}

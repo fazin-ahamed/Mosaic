@@ -1,0 +1,51 @@
+{
+ "classification": "TRACK_H_REAL_HYBRID_BLOCK",
+ "N": 32,
+ "f_cpu": 0.68,
+ "n_cpu_expert_objects": 1812,
+ "n_gpu_expert_objects": 854,
+ "trial0": {
+  "gpu_s": 0.5452,
+  "cpu_s": 1.1805,
+  "wall_s": 1.1809
+ },
+ "trial1": {
+  "gpu_s": 0.6476,
+  "cpu_s": 1.1312,
+  "wall_s": 1.1342
+ },
+ "trial2": {
+  "gpu_s": 0.6383,
+  "cpu_s": 1.1102,
+  "wall_s": 1.1132
+ },
+ "trial3": {
+  "gpu_s": 0.6814,
+  "cpu_s": 1.0389,
+  "wall_s": 1.0391
+ },
+ "trial4": {
+  "gpu_s": 0.6623,
+  "cpu_s": 1.0067,
+  "wall_s": 1.0098
+ },
+ "trial5": {
+  "gpu_s": 0.6632,
+  "cpu_s": 1.0635,
+  "wall_s": 1.0664
+ },
+ "accounting": {
+  "expert_flops_block_total": 420000000000.0,
+  "expert_bytes_block_total": 34100000000.0,
+  "cpu_expert_flops": 273602838528,
+  "cpu_fraction": 0.68,
+  "gpu_expert_fraction": 0.31999999999999995,
+  "cpu_effective_tflops_eq": 0.2464,
+  "gpu_block_time_median_s": 0.6623,
+  "cpu_block_time_median_s": 1.1102,
+  "wall_median_s": 1.1132,
+  "overlap_efficiency": 0.612,
+  "h2d_note": "GPU bank is 48-slot resident (no H2D in timed region for the GPU rail; H2D for the gpu-assigned expert share would be additional in production \u2014 this is the CPU-rail isolation measurement)",
+  "verdict": "NEEDS ANOTHER GAIN"
+ }
+}

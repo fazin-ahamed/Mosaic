@@ -1,0 +1,162 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "profile": "DISPLAY_ATTACHED",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 56,
+    "sm_clock_mhz": 255,
+    "mem_clock_mhz": 405,
+    "power_w": 0.047,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 10,
+    "ts": 1788035112.9457119
+  },
+  "classification": {
+    "core_terms": "MEASURED_RT3060",
+    "moe_term": "RECONSTRUCTED_FROM_FLOOR_B_MOE_K8_ANCHOR",
+    "drafter": "UNMEASURED_BLACKWELL_ONLY",
+    "movement_scheduler": "UNMEASURED"
+  },
+  "kill_gates": {
+    "perfect_native_ms": 200.0,
+    "d1_native_ms": 97.8,
+    "tokens_per_block": {
+      "perfect": 6.0,
+      "d1_measured": 2.933
+    }
+  },
+  "K": {
+    "1": {
+      "attn_proj_ms": 0.26618999982019886,
+      "attn_core_ms": 0.26360600168118253,
+      "attn_out_ms": 0.42802099778782576,
+      "shared_ms": 0.19587699352996424,
+      "router_ms": 0.06837699766037986,
+      "norms_ms": 0.015197998436633497,
+      "hc_attn_ms": 0.07042499782983214,
+      "hc_ffn_ms": 0.06930300150997937,
+      "per_layer_ms": 1.4073929851292633,
+      "core_43layers_ms": 60.51789836055832,
+      "lm_head_ms": 3.179273000569083,
+      "core_total_ms_MEASURED": 63.6971713611274,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 657.0041324206977
+    },
+    "2": {
+      "attn_proj_ms": 0.32195300445891917,
+      "attn_core_ms": 0.5681680049747229,
+      "attn_out_ms": 0.5103400035295635,
+      "shared_ms": 0.22283899306785315,
+      "router_ms": 0.07553999603260309,
+      "norms_ms": 0.011786993127316236,
+      "hc_attn_ms": 0.04076999903190881,
+      "hc_ffn_ms": 0.04022999928565696,
+      "per_layer_ms": 1.8152009797631763,
+      "core_43layers_ms": 78.05364212981658,
+      "lm_head_ms": 3.164060995914042,
+      "core_total_ms_MEASURED": 81.21770312573062,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 674.5246641853009
+    },
+    "3": {
+      "attn_proj_ms": 0.3235850017517805,
+      "attn_core_ms": 0.5675829961546697,
+      "attn_out_ms": 0.5114699961268343,
+      "shared_ms": 0.22477300080936402,
+      "router_ms": 0.07654799992451444,
+      "norms_ms": 0.012057003914378583,
+      "hc_attn_ms": 0.04097900091437623,
+      "hc_ffn_ms": 0.040915998397395015,
+      "per_layer_ms": 1.82202500582207,
+      "core_43layers_ms": 78.34707525034901,
+      "lm_head_ms": 3.1720059996587224,
+      "core_total_ms_MEASURED": 81.51908125000773,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 674.826042309578
+    },
+    "4": {
+      "attn_proj_ms": 0.3241279991925694,
+      "attn_core_ms": 0.5805900000268593,
+      "attn_out_ms": 0.5112720027682371,
+      "shared_ms": 0.22452399571193382,
+      "router_ms": 0.07622799603268504,
+      "norms_ms": 0.011848002031911165,
+      "hc_attn_ms": 0.04081000224687159,
+      "hc_ffn_ms": 0.038064994441810995,
+      "per_layer_ms": 1.8311609965167008,
+      "core_43layers_ms": 78.73992285021814,
+      "lm_head_ms": 3.6949490022379905,
+      "core_total_ms_MEASURED": 82.43487185245613,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 675.7418329120264
+    },
+    "5": {
+      "attn_proj_ms": 0.3150569973513484,
+      "attn_core_ms": 0.532818005012814,
+      "attn_out_ms": 0.5071269988548011,
+      "shared_ms": 0.2186740020988509,
+      "router_ms": 0.07250199996633455,
+      "norms_ms": 0.011670003004837781,
+      "hc_attn_ms": 0.04059299681102857,
+      "hc_ffn_ms": 0.0400200005969964,
+      "per_layer_ms": 1.7618010097066872,
+      "core_43layers_ms": 75.75744341738755,
+      "lm_head_ms": 3.6415220019989647,
+      "core_total_ms_MEASURED": 79.39896541938651,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 672.7059264789568
+    },
+    "6": {
+      "attn_proj_ms": 0.3167329996358603,
+      "attn_core_ms": 0.5618080031126738,
+      "attn_out_ms": 0.5104360025143251,
+      "shared_ms": 0.21915099932812154,
+      "router_ms": 0.07312199886655435,
+      "norms_ms": 0.011569005437195301,
+      "hc_attn_ms": 0.0401639990741387,
+      "hc_ffn_ms": 0.03983599890489131,
+      "per_layer_ms": 1.795957017748151,
+      "core_43layers_ms": 77.22615176317049,
+      "lm_head_ms": 3.5949839948443696,
+      "core_total_ms_MEASURED": 80.82113575801486,
+      "moe_43layers_ms_RECONSTRUCTED": 593.3069610595703,
+      "verify_total_ms": 674.1280968175852
+    }
+  },
+  "kill_gate": {
+    "verify_K5_ms": 672.7059264789568,
+    "perfect_native": {
+      "tokens": 6.0,
+      "required_cycle_ms": 200.0,
+      "verify_only_ms": 672.7059264789568,
+      "verdict": "FAIL",
+      "note": "verify term alone; drafter + movement + runtime still unmeasured and additive"
+    },
+    "d1_native": {
+      "tokens": 2.933,
+      "required_cycle_ms": 97.8,
+      "verify_only_ms": 672.7059264789568,
+      "verdict": "FAIL",
+      "implied_rate_if_verify_only": 4.36
+    },
+    "moe_anchor_sensitivity": {
+      "exact_k8_mid_ms_per_layer": 13.8,
+      "optimistic_budget_ms_per_layer": 4.16,
+      "K5_verify_ms_at_optimistic_moe": 258.4,
+      "note": "kill verdict holds under BOTH anchors; optimistic MoE still gives >200 ms verify-only, before drafter+movement+runtime"
+    },
+    "decision_tree": "roadmap \u00a768: Case A CLOSED under current exact-target architecture -> Case B/C: recursive speculation, else NanoSpark"
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 61,
+    "sm_clock_mhz": 1942,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.044,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 97,
+    "ts": 1788035114.1380215
+  },
+  "thermal_label": "UNKNOWN",
+  "measurement_correction": "2026-08-30: attn_proj double-count fixed (1x, was 2x); hc_attn/hc_ffn terms added"
+}

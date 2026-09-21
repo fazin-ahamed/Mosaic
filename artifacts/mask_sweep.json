@@ -1,0 +1,97 @@
+{
+  "grid": [
+    {
+      "n_gu": 0,
+      "n_dn": 0,
+      "hot8_mb": 0.0,
+      "moe_block_s": 0.9439427185058594,
+      "R_oracle_prodcore": 25.31016097031094
+    },
+    {
+      "n_gu": 85,
+      "n_dn": 0,
+      "hot8_mb": 1426.3000000000002,
+      "moe_block_s": 0.8702491760253906,
+      "R_oracle_prodcore": 27.09803242568002
+    },
+    {
+      "n_gu": 68,
+      "n_dn": 34,
+      "hot8_mb": 1426.3,
+      "moe_block_s": 0.8714648132324219,
+      "R_oracle_prodcore": 27.066493425000765
+    },
+    {
+      "n_gu": 60,
+      "n_dn": 51,
+      "hot8_mb": 1434.69,
+      "moe_block_s": 0.8729132995605469,
+      "R_oracle_prodcore": 27.02900901238944
+    },
+    {
+      "n_gu": 51,
+      "n_dn": 69,
+      "hot8_mb": 1434.69,
+      "moe_block_s": 0.8689382019042968,
+      "R_oracle_prodcore": 27.13212736449472
+    },
+    {
+      "n_gu": 34,
+      "n_dn": 103,
+      "hot8_mb": 1434.69,
+      "moe_block_s": 0.8713758544921875,
+      "R_oracle_prodcore": 27.068798917939244
+    },
+    {
+      "n_gu": 0,
+      "n_dn": 171,
+      "hot8_mb": 1434.69,
+      "moe_block_s": 0.8834710693359376,
+      "R_oracle_prodcore": 26.758896500374192
+    }
+  ],
+  "budget_mb": 1440.0,
+  "thermal": {
+    "start": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 70,
+      "sm_clock_mhz": 1905,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.041,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 100,
+      "ts": 1787945853.8371387
+    },
+    "end": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 76,
+      "sm_clock_mhz": 1897,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.037,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 99,
+      "ts": 1787945922.2609982
+    }
+  },
+  "interpretation": {
+    "verdict": "FLAT FRONTIER: all masked allocations land 0.869-0.884 s; best 0.8689 (gu=51/dn=69). The F=G=0.43 -> 0.744s projection is FALSIFIED. Mixed-A (0.8479 s, full-down-h8) beats every partial-mask config.",
+    "sanity": "gu=0/dn=0 = 0.9439 s matches the pure-packed4 reference (0.9545): sweep infrastructure correct.",
+    "why_flat": "At K56 mean M~4, expert tiles are launch/occupancy-bound; switching weight representation for an expert subset reduces weight-read time only, recovering just ~28% of the hot8-p4 gap (1.9 of 6.9 ms/layer). Same root cause as the two-call hybrid failure, now confirmed at the allocation level.",
+    "recovery_math": "hot8-full 15.17 ms/layer; p4 22.1; best masked ~20.2; Mixed-A 19.7. Masked recovers (22.1-20.2)/(22.1-15.17) = 28%.",
+    "gate_status": "N56 compute-only budget 0.769 s NOT reachable via hot8 allocation under the VRAM constraint. Production-fit floor under the current architecture is Mixed-A 0.8479 s.",
+    "n56_final_state": "R_oracle(N56, production-fit) = 27.7-28.1/s (P2 MINIMUM band is 30-33; N56 MISSES even at the production-fit optimum).",
+    "width_projection_production_fit": {
+      "note": "COMPUTED PROJECTION using v3 corpus-limited hot8 scaling x production-fit factor (0.8689/0.6491=1.34), not measured",
+      "N63": "moe ~0.945s -> R ~30.1/s (real-route authority possible: measure)",
+      "N80": "moe ~1.062s -> R ~30.7/s (corpus-limited)",
+      "N96": "moe ~1.163s -> R ~33.0/s (corpus-limited)",
+      "implication": "Exact-30 compute feasibility moves to N80-96 with production-fit memory; measure Mixed-A at N63 (real golden) and N80-128 (bootstrap) next."
+    },
+    "next_actions": [
+      "Measure Mixed-A banks at N63 real golden (corpus max) \u2014 the last REAL point",
+      "Measure Mixed-A bootstrap N80-128 \u2014 production-fit wide frontier",
+      "Core GEMM race (159-170ms): every 10ms core = 10ms MoE budget",
+      "TRUE P2 at best production-fit config regardless: N56 Mixed-A is P2 MINIMUM-miss (27.7/s); wider N may cross"
+    ]
+  }
+}

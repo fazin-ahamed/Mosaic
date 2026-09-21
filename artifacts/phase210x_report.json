@@ -1,0 +1,154 @@
+{
+  "verdict": "WIDEVERIFY X STRONG \u2014 RAW 35+ AT K56",
+  "next_focus": "2.9L continues for headroom/residency (objective: 35-45 at practical widths), 2.11 core, 2.12A oracle; major-kernel urgency reduced",
+  "best_wide_candidate_toks": 36.191393950527484,
+  "best_wide_k": 56,
+  "k_hw": 56,
+  "crossed_30_wide": true,
+  "crossed_35_wide": true,
+  "plateau": false,
+  "improvements_pct": {
+    "1->2": 40.561602730456215,
+    "2->4": 35.986994222344705,
+    "4->5": 20.461684234263977,
+    "5->7": 18.884908946072642,
+    "7->8": 1.3639464430007742,
+    "8->12": 26.37516449588404,
+    "12->16": 2.7804837726463694,
+    "16->24": 20.61663986625748,
+    "24->32": 12.895148339927754,
+    "32->40": 12.625230127830655,
+    "40->48": 12.422242350157898,
+    "48->56": 5.096537501264642
+  },
+  "merged_curve": [
+    {
+      "K": 1,
+      "candidate_toks": 5.541799715441299,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 2,
+      "candidate_toks": 7.789642500136152,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 4,
+      "candidate_toks": 10.592900696601456,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 5,
+      "candidate_toks": 12.760386588389196,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 7,
+      "candidate_toks": 15.170173976773361,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 8,
+      "candidate_toks": 15.37708702512659,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 12,
+      "candidate_toks": 19.43281902267897,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 16,
+      "candidate_toks": 19.973145402172296,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 24,
+      "candidate_toks": 24.090936859702122,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 32,
+      "candidate_toks": 27.197498904239044,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 40,
+      "candidate_toks": 30.63124572991344,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    },
+    {
+      "K": 48,
+      "candidate_toks": 34.43633330935568,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    },
+    {
+      "K": 56,
+      "candidate_toks": 36.191393950527484,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    }
+  ],
+  "stage2_status": "unavailable_modal_spend_limit",
+  "stage2_note": "K64/80/96 requires a 160-position Modal recapture; the Modal workspace exceeded its spend limit, so the width ceiling is recorded as >= 56 with >56 unknown. The 48->56 increment measured 8.93% (first run) and 4.88% (rerun), straddling the 5% recapture threshold; stage 2 is blocked externally either way.",
+  "p2_raw30_wide_pass": true,
+  "expert_kernel_objective": "headroom_35_45",
+  "moe_gain_targets_at_k_hw": {
+    "30": {
+      "allowed_moe_block_s": 1.711911947471897,
+      "required_moe_gain": 0.8134615013039308,
+      "already_met": true
+    },
+    "35": {
+      "allowed_moe_block_s": 1.4452452808052303,
+      "required_moe_gain": 0.9635557931832449,
+      "already_met": true
+    },
+    "40": {
+      "allowed_moe_block_s": 1.2452452808052301,
+      "required_moe_gain": 1.118313383199594,
+      "already_met": false
+    },
+    "45": {
+      "allowed_moe_block_s": 1.0896897252496747,
+      "required_moe_gain": 1.277955027585079,
+      "already_met": false
+    }
+  },
+  "r_k_tail": [
+    {
+      "K": 40,
+      "r_k": 0.29583333333333334,
+      "mean_m": 3.380281690140845,
+      "p90_m": 7.0
+    },
+    {
+      "K": 48,
+      "r_k": 0.2743055555555556,
+      "mean_m": 3.6455696202531644,
+      "p90_m": 8.0
+    },
+    {
+      "K": 56,
+      "r_k": 0.25595238095238093,
+      "mean_m": 3.9069767441860463,
+      "p90_m": 8.0
+    }
+  ],
+  "k_chain": null,
+  "width_gap": null,
+  "base_wideverify_best": 5.541799715441299,
+  "bad_status_rows": 0
+}

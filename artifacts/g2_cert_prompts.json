@@ -1,0 +1,13 @@
+{
+  "classification": "G2_FINAL_DISJOINT_CERTIFICATION_SET (held-out; frozen before certification run)",
+  "note": "disjoint from G1 corpus, the 14-prompt calibration set, and all Stage-0.5 prompts",
+  "prompts": [
+    {"category": "coding", "prompt": "Given a list of dictionaries each with keys 'name' and 'score', return them sorted by score descending, breaking ties alphabetically by name."},
+    {"category": "math_reasoning", "prompt": "A train travels 60 km in 45 minutes. At the same speed, how long will a 140 km trip take?"},
+    {"category": "agent_tool_use", "prompt": "Find all files under the current directory modified in the last 24 hours and print their sizes in human-readable form."},
+    {"category": "general_conversation", "prompt": "My houseplants keep getting yellow leaves even though I water them regularly. What might be going wrong?"},
+    {"category": "long_context_retrieval", "prompt": "From the document, identify the two risks rated 'high' and state which mitigation the team proposed for each."},
+    {"category": "long_generation", "prompt": "Write a step-by-step explanation of how a refrigerator keeps food cold, written for someone with no science background."},
+    {"category": "structured_json", "prompt": "Output a JSON array of two song objects, each with title (string), artist (string), durationSeconds (number), and explicit (boolean)."}
+  ]
+}

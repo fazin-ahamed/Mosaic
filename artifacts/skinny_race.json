@@ -1,0 +1,381 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "gates": {
+    "s1_m1_gbs_req": 100.0,
+    "s1_m1_gbs_obs": 37.968940189932276,
+    "s1_pass": false,
+    "s2_m1_ratio_req": 2.0,
+    "s2_m1_ratio_obs": 0.9358750860977724,
+    "s2_pass": false
+  },
+  "rows": [
+    {
+      "M": 1,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.0002347417640686035,
+      "us": 245.57376861572268,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 37.968940189932276,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 1,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.00021968896865844726,
+      "us": 219.68896865844727,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 39.37727075158432,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 1,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 2,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00029814720153808593,
+      "us": 298.14720153808594,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 29.894280254921153,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 2,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.00020365312576293946,
+      "us": 203.65312576293945,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 42.47787490416341,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 2,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 3,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00038617088317871096,
+      "us": 386.17088317871094,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 23.080186487999196,
+      "parity_max_abs": 0.03125
+    },
+    {
+      "M": 3,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.0002128486442565918,
+      "us": 212.8486442565918,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 40.64273949319314,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 3,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 4,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.0004942233657836914,
+      "us": 494.22336578369146,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 18.034145321856233,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 4,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.0002150604820251465,
+      "us": 215.06048202514648,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 40.224740122122896,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 4,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 5,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.0005835776138305664,
+      "us": 583.5776138305664,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 15.272854524861426,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 5,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.00020281343460083008,
+      "us": 202.81343460083008,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 42.653742426018724,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 5,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 8,
+      "shape": "gate_up",
+      "backend": "skinny_mxfp4",
+      "sec": 0.0008284365081787109,
+      "us": 828.4365081787109,
+      "bytes_w": 8912896,
+      "packed_weight_gbs": 10.758695339965998,
+      "parity_max_abs": 0.0078125
+    },
+    {
+      "M": 8,
+      "shape": "gate_up",
+      "backend": "grouped_blockm16",
+      "sec": 0.00018616319656372072,
+      "us": 186.1631965637207,
+      "bytes_w": 8650752,
+      "packed_weight_gbs": 46.46864772242447,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 8,
+      "shape": "gate_up",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 1,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00010911104202270508,
+      "us": 109.11104202270508,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 40.84323563762365,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 1,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 9.732159614562988e-05,
+      "us": 97.32159614562987,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 44.4441539319557,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 1,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 2,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00015755264282226564,
+      "us": 157.55264282226565,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 28.28545380243032,
+      "parity_max_abs": 0.0
+    },
+    {
+      "M": 2,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 9.732031822204589e-05,
+      "us": 97.3203182220459,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 44.444737532929445,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 2,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 3,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00021748735427856445,
+      "us": 217.48735427856445,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 20.490607441442528,
+      "parity_max_abs": 0.0
+    },
+    {
+      "M": 3,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 0.00010309632301330567,
+      "us": 103.09632301330566,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 41.95470675944247,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 3,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 4,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00022933504104614259,
+      "us": 229.33504104614258,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 19.43204134732884,
+      "parity_max_abs": 2.384185791015625e-07
+    },
+    {
+      "M": 4,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 9.771007537841797e-05,
+      "us": 97.71007537841797,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 44.26745126588431,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 4,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 5,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00027523136138916016,
+      "us": 275.23136138916016,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 16.191643196135843,
+      "parity_max_abs": 0.0
+    },
+    {
+      "M": 5,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 9.768959999084473e-05,
+      "us": 97.68959999084473,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 44.27672956389795,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 5,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    },
+    {
+      "M": 8,
+      "shape": "down",
+      "backend": "skinny_mxfp4",
+      "sec": 0.00040481281280517576,
+      "us": 404.8128128051758,
+      "bytes_w": 4456448,
+      "packed_weight_gbs": 11.008663409437967,
+      "parity_max_abs": 0.001953125
+    },
+    {
+      "M": 8,
+      "shape": "down",
+      "backend": "grouped_blockm16",
+      "sec": 9.754624366760254e-05,
+      "us": 97.54624366760254,
+      "bytes_w": 4325376,
+      "packed_weight_gbs": 44.34179971849149,
+      "parity_max_abs": 0.015625
+    },
+    {
+      "M": 8,
+      "shape": "down",
+      "backend": "tinygemm",
+      "status": "skipped_no_tinygemm"
+    }
+  ],
+  "autotune_sweep": [
+    {
+      "BLOCK_N": 64,
+      "BLOCK_K": 32,
+      "sec": 0.00023490560054779052,
+      "gbs": 37.94245849913957
+    },
+    {
+      "BLOCK_N": 64,
+      "BLOCK_K": 64,
+      "sec": 0.00021930398941040038,
+      "gbs": 40.64174128324047
+    },
+    {
+      "BLOCK_N": 64,
+      "BLOCK_K": 128,
+      "sec": 0.0002128880023956299,
+      "gbs": 41.866596049110946
+    },
+    {
+      "BLOCK_N": 128,
+      "BLOCK_K": 32,
+      "sec": 0.00041277441978454586,
+      "gbs": 21.592655874005533
+    },
+    {
+      "BLOCK_N": 128,
+      "BLOCK_K": 64,
+      "sec": 0.00021683199405670168,
+      "gbs": 41.105077868117895
+    },
+    {
+      "BLOCK_N": 128,
+      "BLOCK_K": 128,
+      "sec": 0.00044283041954040525,
+      "gbs": 20.127108723132242
+    },
+    {
+      "BLOCK_N": 256,
+      "BLOCK_K": 32,
+      "sec": 0.0003964992046356201,
+      "gbs": 22.478975735123825
+    },
+    {
+      "BLOCK_N": 256,
+      "BLOCK_K": 64,
+      "sec": 0.0010593791961669922,
+      "gbs": 8.413319831320381
+    },
+    {
+      "BLOCK_N": 256,
+      "BLOCK_K": 128,
+      "sec": 0.007594534301757813,
+      "gbs": 1.1735934878768064
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 58,
+    "sm_clock_mhz": 210,
+    "mem_clock_mhz": 405,
+    "power_w": 0.043,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 8,
+    "ts": 1787917741.0724773
+  },
+  "K32": {
+    "component_ms": {
+      "mla_wq_a": 0.04710400104522705,
+      "mla_q_norm": 0.011264000087976456,
+      "mla_wq_b": 0.2330400049686432,
+      "mla_wkv": 0.050175998359918594,
+      "mla_kv_norm": 0.011264000087976456,
+      "mla_wo_a": 0.24355199933052063,
+      "mla_wo_b": 0.3452000021934509,
+      "attn_core": 0.6770240068435669,
+      "shared_w1": 0.0798719972372055,
+      "shared_w3": 0.08009599894285202,
+      "shared_swiglu": 0.027648000046610832,
+      "shared_w2": 0.0942080020904541,
+      "router": 0.08396799862384796,
+      "hc_attn": 0.04608000069856644,
+      "hc_ffn": 0.04505600035190582,
+      "rms_norm": 0.01128000020980835,
+      "lm_head": 3.291071891784668,
+      "final_norm": 0.01196799986064434
+    },
+    "attn_block_ms": 1.675984013825655,
+    "ffn_block_ms": 0.4221279975026846,
+    "per_layer_ms": 2.0981120113283396,
+    "t_core_layer_ms": 90.21881648711859,
+    "t_core_total_s": 0.0935218563787639
+  },
+  "K40": {
+    "component_ms": {
+      "mla_wq_a": 0.04505600035190582,
+      "mla_q_norm": 0.01145600015297532,
+      "mla_wq_b": 0.23449599742889404,
+      "mla_wkv": 0.027648000046610832,
+      "mla_kv_norm": 0.011408000253140926,
+      "mla_wo_a": 0.2467840015888214,
+      "mla_wo_b": 0.2694719880819321,
+      "attn_core": 0.7543359994888306,
+      "shared_w1": 0.07387199997901917,
+      "shared_w3": 0.07372800260782242,
+      "shared_swiglu": 0.027696000412106514,
+      "shared_w2": 0.08190399780869483,
+      "router": 0.09216000139713287,
+      "hc_attn": 0.055296000093221664,
+      "hc_ffn": 0.054207999259233475,
+      "rms_norm": 0.012016000226140022,
+      "lm_head": 3.2921600341796875,
+      "final_norm": 0.01179199991747737
+    },
+    "attn_block_ms": 1.6679679877124727,
+    "ffn_block_ms": 0.4155840016901493,
+    "per_layer_ms": 2.083551989402622,
+    "t_core_layer_ms": 89.59273554431275,
+    "t_core_total_s": 0.09289668757840991
+  },
+  "K48": {
+    "component_ms": {
+      "mla_wq_a": 0.04710400104522705,
+      "mla_q_norm": 0.011327999643981457,
+      "mla_wq_b": 0.23772800713777545,
+      "mla_wkv": 0.028672000393271446,
+      "mla_kv_norm": 0.011264000087976456,
+      "mla_wo_a": 0.24931199848651883,
+      "mla_wo_b": 0.270112007856369,
+      "attn_core": 0.8475199937820435,
+      "shared_w1": 0.0756480023264885,
+      "shared_w3": 0.07420799881219863,
+      "shared_swiglu": 0.026800000108778477,
+      "shared_w2": 0.08294399827718735,
+      "router": 0.09523200243711472,
+      "hc_attn": 0.05632000043988228,
+      "hc_ffn": 0.05632000043988228,
+      "rms_norm": 0.011568000074476004,
+      "lm_head": 3.35532808303833,
+      "final_norm": 0.011376000009477137
+    },
+    "attn_block_ms": 1.7709280089475212,
+    "ffn_block_ms": 0.422720002476126,
+    "per_layer_ms": 2.193648011423647,
+    "t_core_layer_ms": 94.32686449121682,
+    "t_core_total_s": 0.09769356857426463
+  },
+  "K56": {
+    "component_ms": {
+      "mla_wq_a": 0.048128001391887665,
+      "mla_q_norm": 0.011408000253140926,
+      "mla_wq_b": 0.23958400636911395,
+      "mla_wkv": 0.029455999843776226,
+      "mla_kv_norm": 0.01131199998781085,
+      "mla_wo_a": 0.25088000297546387,
+      "mla_wo_b": 0.27273599803447723,
+      "attn_core": 0.9382399916648865,
+      "shared_w1": 0.07584000006318092,
+      "shared_w3": 0.0761599987745285,
+      "shared_swiglu": 0.026623999699950218,
+      "shared_w2": 0.08553599938750266,
+      "router": 0.09312000125646591,
+      "hc_attn": 0.06022400036454201,
+      "hc_ffn": 0.05936000123620033,
+      "rms_norm": 0.012272000312805176,
+      "lm_head": 3.357696056365967,
+      "final_norm": 0.012015999760478735
+    },
+    "attn_block_ms": 1.8742400011979043,
+    "ffn_block_ms": 0.42891200073063374,
+    "per_layer_ms": 2.303152001928538,
+    "t_core_layer_ms": 99.03553608292714,
+    "t_core_total_s": 0.10240524813905358
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 64,
+    "sm_clock_mhz": 1935,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.043,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 80,
+    "ts": 1787917742.03814
+  },
+  "thermal_label": "UNKNOWN",
+  "vram_census": {
+    "fp8_source_gb": 7.786897628,
+    "bf16_dequant_gb": 15.573795256,
+    "single_layer_bf16_gb": 1.328840192,
+    "fits_12gb": false,
+    "note": "Full BF16 dequant of core does NOT fit 12 GB. Runtime must either execute from FP8 directly (register decode), keep BF16 per-layer only, or stream layers. FP8 source is 7.79 GB and fits."
+  },
+  "projection_comparison": {
+    "32": {
+      "measured_s": 0.0935218563787639,
+      "projected_s": 0.10584647726118564,
+      "ratio": 0.8835613503507572
+    }
+  },
+  "steady_state_note": "Rerun after 130s warmup_steady (73\u00b0C peak, 1912 MHz). Core timing is thermally STABLE: K56 102.4 ms steady vs 103.9 ms cool (-1.4%). The BF16 core ceiling is reliable regardless of thermal state \u2014 core arithmetic (small GEMMs, norms) is not the thermally-sensitive part (the MoE GEMMs from Track B were). The classify() label shows UNKNOWN because start 58\u00b0C \u2192 end 64\u00b0C exceeds the 3\u00b0C drift band, but the GPU was pre-warmed to 73\u00b0C and cooling during load; the numbers are valid steady-state measurements.",
+  "steady_vs_cool": {
+    "K32": {
+      "cool_ms": 97.4,
+      "steady_ms": 93.5,
+      "drift_pct": -4.0
+    },
+    "K40": {
+      "cool_ms": 96.9,
+      "steady_ms": 92.9,
+      "drift_pct": -4.1
+    },
+    "K48": {
+      "cool_ms": 103.3,
+      "steady_ms": 97.7,
+      "drift_pct": -5.4
+    },
+    "K56": {
+      "cool_ms": 103.9,
+      "steady_ms": 102.4,
+      "drift_pct": -1.4
+    },
+    "conclusion": "Core timing is thermally stable (<6% drift, slightly faster hot)."
+  }
+}

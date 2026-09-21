@@ -1,0 +1,213 @@
+{
+ "classification": "G2_V1_CERTIFICATION_RESULT",
+ "spec": "g2_spec_v1 FROZEN thresholds (tau_h(s) guarded, tau_w 0.075, tau_margin 1.72, tau_dlogit 1.43, tau_r 0.275)",
+ "reference_side": "kit inference/model.py + torch shims on RTX 3060 (same hardware as MosaicVM \u2014 deviation note: sandbox unavailable; cross-hardware-calibrated envelope is an upper bound for this pairing)",
+ "prompts": "disjoint held-out certification set (g2_cert_prompts.json)",
+ "results": [
+  {
+   "category": "agent_tool_use",
+   "prefix": 23,
+   "n": 32,
+   "first_div": 23,
+   "ref_token": 14258,
+   "mos_token": 362,
+   "ref_margin_top12": 0.056,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "14258": [
+     26.843631744384766,
+     26.4836
+    ],
+    "362": [
+     26.787630081176758,
+     26.6647
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.3748,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 989,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "coding",
+   "prefix": 2,
+   "n": 32,
+   "first_div": 2,
+   "ref_token": 6362,
+   "mos_token": 23914,
+   "ref_margin_top12": 0.0321,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "6362": [
+     27.421340942382812,
+     26.9546
+    ],
+    "23914": [
+     27.389266967773438,
+     27.3563
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.1214,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 86,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "general_conversation",
+   "prefix": 11,
+   "n": 32,
+   "first_div": 11,
+   "ref_token": 782,
+   "mos_token": 270,
+   "ref_margin_top12": 0.3731,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "782": [
+     31.47528648376465,
+     30.974
+    ],
+    "270": [
+     31.102235794067383,
+     31.3822
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.3004,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 473,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "long_context_retrieval",
+   "prefix": 0,
+   "n": 32,
+   "first_div": 0,
+   "ref_token": 5715,
+   "mos_token": 343,
+   "ref_margin_top12": 0.0908,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "5715": [
+     22.690006256103516,
+     23.1058
+    ],
+    "343": [
+     22.59918975830078,
+     23.1662
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.0,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 0,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "long_generation",
+   "prefix": 3,
+   "n": 32,
+   "first_div": 3,
+   "ref_token": 304,
+   "mos_token": 305,
+   "ref_margin_top12": 0.0145,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "304": [
+     27.91584587097168,
+     27.6005
+    ],
+    "305": [
+     27.901309967041016,
+     27.8562
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.1434,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 129,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "math_reasoning",
+   "prefix": 5,
+   "n": 32,
+   "first_div": 5,
+   "ref_token": 10606,
+   "mos_token": 20584,
+   "ref_margin_top12": 0.0215,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "20584": [
+     29.872783660888672,
+     30.2808
+    ],
+    "10606": [
+     29.89432144165039,
+     29.7572
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.2447,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 215,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  },
+  {
+   "category": "structured_json",
+   "prefix": 3,
+   "n": 32,
+   "first_div": 3,
+   "ref_token": 5657,
+   "mos_token": 1117,
+   "ref_margin_top12": 0.592,
+   "near_tie": true,
+   "pair_ok": true,
+   "pair_logits": {
+    "5657": [
+     29.22402000427246,
+     29.025
+    ],
+    "1117": [
+     28.63197135925293,
+     29.0681
+    ]
+   },
+   "both_in_ref_top16": true,
+   "hidden_worst_rel_l2": 0.2268,
+   "hidden_viol_steps": 0,
+   "hidden_ok": true,
+   "hidden_n": 129,
+   "hash_exact": true,
+   "route_violations": [],
+   "verdict": "G2_PASS_FLIP"
+  }
+ ],
+ "verdict": "PASS",
+ "equivalence_2_of_2": true
+}

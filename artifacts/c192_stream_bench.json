@@ -1,0 +1,54 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "classification": "C256_FULL_RESIDENCY_CPU_HEAD_BENCH",
+ "capacity": 256,
+ "imma_k": 4,
+ "rows": {
+  "N16_reactive_jit": {
+   "block_ms_median": 594.7,
+   "h2d_wait_ms_median": 0.0,
+   "moved_gb_median": 0.0,
+   "static_bank_reference_ms": 427.7
+  },
+  "N16_oracle_1layer": {
+   "block_ms_median": 599.7,
+   "h2d_wait_ms_median": 0.0,
+   "moved_gb_median": 0.0,
+   "static_bank_reference_ms": 427.7
+  },
+  "N32_reactive_jit": {
+   "block_ms_median": 919.4,
+   "h2d_wait_ms_median": 0.0,
+   "moved_gb_median": 0.0,
+   "static_bank_reference_ms": 599.7
+  },
+  "N32_oracle_1layer": {
+   "block_ms_median": 915.6,
+   "h2d_wait_ms_median": 0.0,
+   "moved_gb_median": 0.0,
+   "static_bank_reference_ms": 599.7
+  }
+ },
+ "thermal": {
+  "start": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 46,
+   "sm_clock_mhz": 210,
+   "mem_clock_mhz": 405,
+   "power_w": 0.048,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 9,
+   "ts": 1788576883.4879732
+  },
+  "end": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 68,
+   "sm_clock_mhz": 1927,
+   "mem_clock_mhz": 7301,
+   "power_w": 0.041,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 95,
+   "ts": 1788577042.167833
+  }
+ }
+}

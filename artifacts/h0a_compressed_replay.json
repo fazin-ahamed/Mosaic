@@ -1,0 +1,67 @@
+{
+ "classification": "H0A_COMPRESSED_REPLAY",
+ "n_cycles": 63,
+ "note": "single-session long trace; time-windowed",
+ "cases": {
+  "30GB_x1.0": {
+   "eff_GB": 30.0,
+   "slots": 2243,
+   "miss_all": 172.2,
+   "miss_first_half": 199.9,
+   "miss_second_half": 145.3,
+   "cold_GB_per_cycle": 2.302,
+   "tputUB_nvme0.55": 0.89,
+   "tputUB_nvme1.36": 2.2
+  },
+  "30GB_x1.091": {
+   "eff_GB": 32.7,
+   "slots": 2448,
+   "miss_all": 154.5,
+   "miss_first_half": 187.8,
+   "miss_second_half": 122.2,
+   "cold_GB_per_cycle": 1.893,
+   "tputUB_nvme0.55": 1.09,
+   "tputUB_nvme1.36": 2.67
+  },
+  "35GB_x1.0": {
+   "eff_GB": 35.0,
+   "slots": 2617,
+   "miss_all": 143.5,
+   "miss_first_half": 182.3,
+   "miss_second_half": 105.9,
+   "cold_GB_per_cycle": 1.919,
+   "tputUB_nvme0.55": 1.07,
+   "tputUB_nvme1.36": 2.63
+  },
+  "35GB_x1.091": {
+   "eff_GB": 38.2,
+   "slots": 2856,
+   "miss_all": 130.9,
+   "miss_first_half": 176.4,
+   "miss_second_half": 86.8,
+   "cold_GB_per_cycle": 1.604,
+   "tputUB_nvme0.55": 1.28,
+   "tputUB_nvme1.36": 3.14
+  },
+  "38GB_x1.0": {
+   "eff_GB": 38.0,
+   "slots": 2842,
+   "miss_all": 131.6,
+   "miss_first_half": 176.4,
+   "miss_second_half": 88.1,
+   "cold_GB_per_cycle": 1.759,
+   "tputUB_nvme0.55": 1.17,
+   "tputUB_nvme1.36": 2.87
+  },
+  "38GB_x1.091": {
+   "eff_GB": 41.5,
+   "slots": 3100,
+   "miss_all": 122.3,
+   "miss_first_half": 176.4,
+   "miss_second_half": 69.9,
+   "cold_GB_per_cycle": 1.499,
+   "tputUB_nvme0.55": 1.37,
+   "tputUB_nvme1.36": 3.36
+  }
+ }
+}

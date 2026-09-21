@@ -1,0 +1,114 @@
+{
+ "classification": "D3_SELECTIVE_DEPTH",
+ "n_prompts": 70,
+ "by_mode": {
+  "d2": {
+   "2": {
+    "mean_EA": 2.2429,
+    "delta_EA": 0.0429,
+    "S2": 0.4143,
+    "S3": 0.0857,
+    "S4": 0.0714,
+    "trim20": 2.0952,
+    "mean_nodes": 5.0,
+    "GainPerNode_incremental": 0.0214
+   },
+   "4": {
+    "mean_EA": 2.3286,
+    "delta_EA": 0.1286,
+    "S2": 0.4857,
+    "S3": 0.1,
+    "S4": 0.0714,
+    "trim20": 2.2143,
+    "mean_nodes": 9.0,
+    "GainPerNode_incremental": 0.0214
+   },
+   "8": {
+    "mean_EA": 2.3571,
+    "delta_EA": 0.1571,
+    "S2": 0.5143,
+    "S3": 0.1,
+    "S4": 0.0714,
+    "trim20": 2.2619,
+    "mean_nodes": 17.0,
+    "GainPerNode_incremental": 0.0112
+   }
+  },
+  "d3": {
+   "2": {
+    "mean_EA": 2.3571,
+    "delta_EA": 0.1571,
+    "S2": 0.3857,
+    "S3": 0.1571,
+    "S4": 0.1143,
+    "trim20": 2.0476,
+    "mean_nodes": 4.0,
+    "GainPerNode_incremental": 0.1571
+   },
+   "4": {
+    "mean_EA": 2.3857,
+    "delta_EA": 0.1857,
+    "S2": 0.3857,
+    "S3": 0.1714,
+    "S4": 0.1286,
+    "trim20": 2.0476,
+    "mean_nodes": 6.0,
+    "GainPerNode_incremental": 0.0619
+   },
+   "8": {
+    "mean_EA": 2.6714,
+    "delta_EA": 0.4714,
+    "S2": 0.3857,
+    "S3": 0.2429,
+    "S4": 0.1857,
+    "trim20": 2.119,
+    "mean_nodes": 10.0,
+    "GainPerNode_incremental": 0.0673
+   }
+  },
+  "d2d3": {
+   "2": {
+    "mean_EA": 2.3429,
+    "delta_EA": 0.1429,
+    "S2": 0.4143,
+    "S3": 0.1286,
+    "S4": 0.1,
+    "trim20": 2.0952,
+    "mean_nodes": 7.0,
+    "GainPerNode_incremental": 0.0357
+   },
+   "4": {
+    "mean_EA": 2.4571,
+    "delta_EA": 0.2571,
+    "S2": 0.4571,
+    "S3": 0.1714,
+    "S4": 0.1286,
+    "trim20": 2.1667,
+    "mean_nodes": 21.0,
+    "GainPerNode_incremental": 0.0143
+   },
+   "8": {
+    "mean_EA": 2.7714,
+    "delta_EA": 0.5714,
+    "S2": 0.4714,
+    "S3": 0.2571,
+    "S4": 0.1857,
+    "trim20": 2.2857,
+    "mean_nodes": 73.0,
+    "GainPerNode_incremental": 0.0082
+   }
+  }
+ },
+ "baseline_B1_EA": 2.2,
+ "attribution_d2d3_B8": {
+  "ROOT_MISS": 25,
+  "S3_HIT": 18,
+  "TOKEN_NOT_EXPANDED": 2,
+  "PREFIX_LOST": 5,
+  "UNRANKABLE": 19,
+  "CHILD_PRUNED": 1
+ },
+ "attribution_branchable_d3_misses": 17,
+ "dominant_failure": "ROOT_MISS",
+ "abp2_pointer": "root branching / better root"
+}

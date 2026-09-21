@@ -1,0 +1,144 @@
+{
+ "classification": "D3_DD1_VAL_BOUNDARY_EVAL",
+ "state_field": "h40",
+ "n_val": 21,
+ "S1": 0.4286,
+ "Top_k": {
+  "1": 0.4286,
+  "2": 0.5238,
+  "4": 0.8095,
+  "8": 0.8095,
+  "16": 0.8095
+ },
+ "per_prompt": [
+  {
+   "cat": "agent_13",
+   "hit": false,
+   "pred": 3608,
+   "true": 9405
+  },
+  {
+   "cat": "agent_14",
+   "hit": false,
+   "pred": 19,
+   "true": 1124
+  },
+  {
+   "cat": "agent_15",
+   "hit": false,
+   "pred": 270,
+   "true": 260
+  },
+  {
+   "cat": "coding_13",
+   "hit": false,
+   "pred": 201,
+   "true": 2511
+  },
+  {
+   "cat": "coding_14",
+   "hit": false,
+   "pred": 361,
+   "true": 223
+  },
+  {
+   "cat": "coding_15",
+   "hit": false,
+   "pred": 5238,
+   "true": 16178
+  },
+  {
+   "cat": "convo_13",
+   "hit": true,
+   "pred": 361,
+   "true": 361
+  },
+  {
+   "cat": "convo_14",
+   "hit": true,
+   "pred": 361,
+   "true": 361
+  },
+  {
+   "cat": "convo_15",
+   "hit": true,
+   "pred": 361,
+   "true": 361
+  },
+  {
+   "cat": "json_13",
+   "hit": true,
+   "pred": 26639,
+   "true": 26639
+  },
+  {
+   "cat": "json_14",
+   "hit": false,
+   "pred": 5238,
+   "true": 26639
+  },
+  {
+   "cat": "json_15",
+   "hit": true,
+   "pred": 270,
+   "true": 270
+  },
+  {
+   "cat": "longform_13",
+   "hit": true,
+   "pred": 270,
+   "true": 270
+  },
+  {
+   "cat": "longform_14",
+   "hit": false,
+   "pred": 270,
+   "true": 6744
+  },
+  {
+   "cat": "longform_15",
+   "hit": false,
+   "pred": 22,
+   "true": 23
+  },
+  {
+   "cat": "math_13",
+   "hit": false,
+   "pred": 223,
+   "true": 361
+  },
+  {
+   "cat": "math_14",
+   "hit": true,
+   "pred": 361,
+   "true": 361
+  },
+  {
+   "cat": "math_15",
+   "hit": true,
+   "pred": 782,
+   "true": 782
+  },
+  {
+   "cat": "retrieval_13",
+   "hit": false,
+   "pred": 361,
+   "true": 1445
+  },
+  {
+   "cat": "retrieval_14",
+   "hit": false,
+   "pred": 361,
+   "true": 223
+  },
+  {
+   "cat": "retrieval_15",
+   "hit": true,
+   "pred": 528,
+   "true": 528
+  }
+ ],
+ "checkpoint": "/home/fazinahamed/Documents/MosaicVM/artifacts/d3_dd1/dd1_h40/dd1.pt",
+ "checkpoint_sha256": "9f7d2d9cf5a7fafa08b77542e043013e86d2b04e001bbddb181c4997a1a6aff5",
+ "note": "single-position boundary ranking; NOT a chained drafter Top-k"
+}

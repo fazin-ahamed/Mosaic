@@ -1,0 +1,117 @@
+{
+ "classification": "CAP_DEV70_OVERLAP_AUDIT",
+ "n": 70,
+ "ids": [
+  "math_300",
+  "math_301",
+  "math_302",
+  "math_303",
+  "math_304",
+  "math_305",
+  "math_306",
+  "math_307",
+  "math_308",
+  "math_309",
+  "json_300",
+  "json_301",
+  "json_302",
+  "json_303",
+  "json_304",
+  "json_305",
+  "json_306",
+  "json_307",
+  "json_308",
+  "json_309",
+  "retrieval_300",
+  "retrieval_301",
+  "retrieval_302",
+  "retrieval_303",
+  "retrieval_304",
+  "retrieval_305",
+  "retrieval_306",
+  "retrieval_307",
+  "retrieval_308",
+  "retrieval_309",
+  "agent_300",
+  "agent_301",
+  "agent_302",
+  "agent_303",
+  "agent_304",
+  "agent_305",
+  "agent_306",
+  "agent_307",
+  "agent_308",
+  "agent_309",
+  "coding_300",
+  "coding_301",
+  "coding_302",
+  "coding_303",
+  "coding_304",
+  "coding_305",
+  "coding_306",
+  "coding_307",
+  "coding_308",
+  "coding_309",
+  "longform_300",
+  "longform_301",
+  "longform_302",
+  "longform_303",
+  "longform_304",
+  "longform_305",
+  "longform_306",
+  "longform_307",
+  "longform_308",
+  "longform_309",
+  "convo_300",
+  "convo_301",
+  "convo_302",
+  "convo_303",
+  "convo_304",
+  "convo_305",
+  "convo_306",
+  "convo_307",
+  "convo_308",
+  "convo_309"
+ ],
+ "blocked_sources": {
+  "artifacts/stage1_prompts.json": {
+   "n_ids": 126,
+   "n_texts": 126
+  },
+  "artifacts/stage05_prompts.json": {
+   "n_ids": 21,
+   "n_texts": 21
+  },
+  "artifacts/d3_scale/prompts_scale.json": {
+   "n_ids": 196,
+   "n_texts": 196
+  },
+  "artifacts/d3_scale700/prompts_scale700.json": {
+   "n_ids": 560,
+   "n_texts": 560
+  },
+  "artifacts/d3_scale1000/prompts_scale1000.json": {
+   "n_ids": 371,
+   "n_texts": 371
+  },
+  "artifacts/d3_scale1000/prompts_scale_dev3.json": {
+   "n_ids": 70,
+   "n_texts": 70
+  },
+  "artifacts/routes_overlap_corpus_3060.json": {
+   "n_protected": 7
+  },
+  "artifacts/g2_cert_prompts.json": {
+   "n_protected": 14
+  },
+  "artifacts/g2_calibration_prompts.json": {
+   "n_protected": 28
+  }
+ },
+ "id_overlap": [],
+ "text_overlap": [],
+ "protected_overlap": [],
+ "all_empty_required": true,
+ "manifest_sha256": "97a654f3a47702ba170e8657ff4cb8013bb46d17ad052f943612162fbe28395c",
+ "author_sha256": "a4c6dfbf352cdb7075de29e7f8231e0394ab6d2a4e63ad4126205c5eba5edd79"
+}

@@ -1,0 +1,71 @@
+{
+ "level": "P1",
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "thermal": "UNKNOWN",
+ "widths": [
+  32,
+  56,
+  80,
+  112
+ ],
+ "comparison": "matched full attention modules, identical bf16 projections; only attention mechanism differs (eager dense 1024-KV vs exact DSA)",
+ "layers": {
+  "0": {
+   "ratio": 0,
+   "exact_ms_N32": 1.69,
+   "eager_ms_N32": 2.108,
+   "ratio_N32": 0.8,
+   "finite_frac_N32": 0.0,
+   "exact_ms_N56": 1.817,
+   "eager_ms_N56": 2.547,
+   "ratio_N56": 0.71,
+   "finite_frac_N56": 0.0,
+   "exact_ms_N80": 2.526,
+   "eager_ms_N80": 3.596,
+   "ratio_N80": 0.7,
+   "finite_frac_N80": 0.0,
+   "exact_ms_N112": 3.195,
+   "eager_ms_N112": 4.497,
+   "ratio_N112": 0.71,
+   "finite_frac_N112": 0.0
+  },
+  "2": {
+   "ratio": 4,
+   "exact_ms_N32": 2.854,
+   "eager_ms_N32": 1.983,
+   "ratio_N32": 1.44,
+   "finite_frac_N32": 0.0,
+   "exact_ms_N56": 3.178,
+   "eager_ms_N56": 2.425,
+   "ratio_N56": 1.31,
+   "finite_frac_N56": 0.0,
+   "exact_ms_N80": 4.225,
+   "eager_ms_N80": 3.612,
+   "ratio_N80": 1.17,
+   "finite_frac_N80": 0.0,
+   "exact_ms_N112": 5.379,
+   "eager_ms_N112": 4.52,
+   "ratio_N112": 1.19,
+   "finite_frac_N112": 0.0
+  },
+  "3": {
+   "ratio": 128,
+   "exact_ms_N32": 1.689,
+   "eager_ms_N32": 1.983,
+   "ratio_N32": 0.85,
+   "finite_frac_N32": 0.0,
+   "exact_ms_N56": 1.877,
+   "eager_ms_N56": 2.449,
+   "ratio_N56": 0.77,
+   "finite_frac_N56": 0.0,
+   "exact_ms_N80": 2.874,
+   "eager_ms_N80": 3.617,
+   "ratio_N80": 0.79,
+   "finite_frac_N80": 0.0,
+   "exact_ms_N112": 3.485,
+   "eager_ms_N112": 4.52,
+   "ratio_N112": 0.77,
+   "finite_frac_N112": 0.0
+  }
+ }
+}

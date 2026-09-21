@@ -1,0 +1,49 @@
+{
+  "verdict": "MXINT P1 USEFUL",
+  "next_phase": "2.10 WideVerify",
+  "lut": "not_now",
+  "source_semantics": "validated",
+  "p0_ratio": 1.6134785762367794,
+  "integrated": {
+    "qpa_k8_mid_sec": 0.015223500061035157,
+    "hot8_k8_mid_sec": 0.00980511016845703,
+    "packed4_k8_mid_sec": 0.012263297271728514,
+    "hybrid_k8_mid_sec": null,
+    "hot8_ratio": 1.5526087723123243,
+    "packed4_ratio": 1.2413871835375807
+  },
+  "hot8_p1_k8_mid_sec": 0.00980511016845703,
+  "hot8_status": "ok",
+  "s3_mxint_block_median_sec": 0.4117420017719269,
+  "s3_mxint_block_p90_sec": 0.4176672697067261,
+  "stage_times_k8_hot8": {
+    "layout_sec": 0.000659712016582489,
+    "act_quant_sec": 0.00019833600521087646,
+    "decode_int_sec": 6.969600170850754e-05,
+    "gu_sec": 0.006024127960205078,
+    "swiglu_sec": 2.5599999353289605e-05,
+    "down_quant_sec": 4.300799965858459e-05,
+    "down_sec": 0.0022108159065246584,
+    "reduction_sec": 6.963200122117996e-05,
+    "total_sec": 0.009300927890464664
+  },
+  "act_quant_fuse": "skipped_integrated_ge_1.5",
+  "packed4_much_slower": false,
+  "p1_parity_vs_qpa_fused": {
+    "max_abs": 0.0,
+    "nan_inf_mismatches": 0,
+    "shape": [
+      4,
+      128
+    ]
+  },
+  "launch_census": {
+    "total_cuda_launches": 319,
+    "custom_qpa_launches": 0,
+    "custom_xsimt_launches": 0,
+    "custom_mxint_launches": 4,
+    "layout_launches": 4,
+    "epilogue_launches": 311
+  },
+  "bad_status_rows": 0
+}

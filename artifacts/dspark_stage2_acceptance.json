@@ -1,0 +1,868 @@
+{
+ "phase": "DSpark-stage2-acceptance",
+ "model_revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+ "classification": "BLACKWELL_SANDBOX_ONLY",
+ "numerics_deviations": [
+  "FP8 weights dequant to bf16 (value-exact; accumulation differs)",
+  "FP4 experts dequant per-call (value-exact)",
+  "drafter KV stored bf16 (source stores FP8)",
+  "no activation FP8 quant in drafter (source act_quant skipped)",
+  "drafter sampling T=1.0 gumbel-max (source default)"
+ ],
+ "interpretation": [
+  "kit semantics: forward_spec(input_ids=token at position start_pos, main_hidden of that token, start_pos); proposals cover start_pos+1 .. start_pos+block_size",
+  "chain verification: greedy argmax equality, first-mismatch stop, bonus token emitted",
+  "drafter ring KV filled densely: intermediate committed tokens get forward_spec KV fills between blocks",
+  "verification uses transformers target with KV cache + crop rollback"
+ ],
+ "per_prompt": {
+  "coding": {
+   "n_blocks": 30,
+   "E[A]": 2.433,
+   "accepted_hist": {
+    "0": 8,
+    "1": 6,
+    "2": 1,
+    "3": 4,
+    "4": 2,
+    "5": 9
+   },
+   "rejections": [
+    {
+     "depth": 4,
+     "draft": 1354,
+     "target": 855
+    },
+    {
+     "depth": 2,
+     "draft": 2606,
+     "target": 8593
+    },
+    {
+     "depth": 2,
+     "draft": 19,
+     "target": 18
+    },
+    {
+     "depth": 4,
+     "draft": 11493,
+     "target": 1354
+    },
+    {
+     "depth": 5,
+     "draft": 10150,
+     "target": 55155
+    },
+    {
+     "depth": 4,
+     "draft": 10720,
+     "target": 2337
+    },
+    {
+     "depth": 1,
+     "draft": 344,
+     "target": 2019
+    },
+    {
+     "depth": 1,
+     "draft": 2329,
+     "target": 6623
+    },
+    {
+     "depth": 1,
+     "draft": 31957,
+     "target": 78157
+    },
+    {
+     "depth": 1,
+     "draft": 16,
+     "target": 304
+    },
+    {
+     "depth": 1,
+     "draft": 23917,
+     "target": 9352
+    },
+    {
+     "depth": 4,
+     "draft": 10276,
+     "target": 16
+    },
+    {
+     "depth": 2,
+     "draft": 50494,
+     "target": 3811
+    },
+    {
+     "depth": 1,
+     "draft": 2352,
+     "target": 4599
+    },
+    {
+     "depth": 2,
+     "draft": 313,
+     "target": 1082
+    },
+    {
+     "depth": 1,
+     "draft": 3608,
+     "target": 313
+    },
+    {
+     "depth": 2,
+     "draft": 305,
+     "target": 20465
+    },
+    {
+     "depth": 3,
+     "draft": 469,
+     "target": 305
+    },
+    {
+     "depth": 2,
+     "draft": 313,
+     "target": 1990
+    },
+    {
+     "depth": 1,
+     "draft": 418,
+     "target": 5231
+    }
+   ],
+   "n_rejections": 21,
+   "mean_confidence": 1.3812,
+   "elapsed_s": 511.5,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "agent_tool_use": {
+   "n_blocks": 30,
+   "E[A]": 1.167,
+   "accepted_hist": {
+    "0": 14,
+    "1": 7,
+    "2": 4,
+    "3": 1,
+    "4": 3,
+    "5": 1
+   },
+   "rejections": [
+    {
+     "depth": 1,
+     "draft": 539,
+     "target": 6948
+    },
+    {
+     "depth": 2,
+     "draft": 1529,
+     "target": 4256
+    },
+    {
+     "depth": 1,
+     "draft": 305,
+     "target": 304
+    },
+    {
+     "depth": 1,
+     "draft": 270,
+     "target": 3287
+    },
+    {
+     "depth": 1,
+     "draft": 418,
+     "target": 270
+    },
+    {
+     "depth": 5,
+     "draft": 33213,
+     "target": 455
+    },
+    {
+     "depth": 1,
+     "draft": 3417,
+     "target": 3967
+    },
+    {
+     "depth": 1,
+     "draft": 4869,
+     "target": 734
+    },
+    {
+     "depth": 5,
+     "draft": 24265,
+     "target": 3085
+    },
+    {
+     "depth": 2,
+     "draft": 295,
+     "target": 270
+    },
+    {
+     "depth": 2,
+     "draft": 5169,
+     "target": 295
+    },
+    {
+     "depth": 3,
+     "draft": 14939,
+     "target": 11859
+    },
+    {
+     "depth": 1,
+     "draft": 3955,
+     "target": 1718
+    },
+    {
+     "depth": 1,
+     "draft": 19995,
+     "target": 82
+    },
+    {
+     "depth": 1,
+     "draft": 48902,
+     "target": 1018
+    },
+    {
+     "depth": 1,
+     "draft": 1718,
+     "target": 361
+    },
+    {
+     "depth": 4,
+     "draft": 775,
+     "target": 361
+    },
+    {
+     "depth": 3,
+     "draft": 1312,
+     "target": 20422
+    },
+    {
+     "depth": 2,
+     "draft": 29616,
+     "target": 6756
+    },
+    {
+     "depth": 1,
+     "draft": 14,
+     "target": 26921
+    }
+   ],
+   "n_rejections": 29,
+   "mean_confidence": -0.1533,
+   "elapsed_s": 495.8,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "math_reasoning": {
+   "n_blocks": 30,
+   "E[A]": 2.033,
+   "accepted_hist": {
+    "0": 11,
+    "1": 3,
+    "2": 5,
+    "3": 3,
+    "4": 1,
+    "5": 7
+   },
+   "rejections": [
+    {
+     "depth": 1,
+     "draft": 20424,
+     "target": 15832
+    },
+    {
+     "depth": 1,
+     "draft": 1527,
+     "target": 29764
+    },
+    {
+     "depth": 4,
+     "draft": 344,
+     "target": 438
+    },
+    {
+     "depth": 1,
+     "draft": 260,
+     "target": 280
+    },
+    {
+     "depth": 1,
+     "draft": 5618,
+     "target": 65887
+    },
+    {
+     "depth": 4,
+     "draft": 14,
+     "target": 16
+    },
+    {
+     "depth": 2,
+     "draft": 223,
+     "target": 280
+    },
+    {
+     "depth": 1,
+     "draft": 9,
+     "target": 64
+    },
+    {
+     "depth": 5,
+     "draft": 64,
+     "target": 344
+    },
+    {
+     "depth": 2,
+     "draft": 14,
+     "target": 16
+    },
+    {
+     "depth": 3,
+     "draft": 343,
+     "target": 223
+    },
+    {
+     "depth": 4,
+     "draft": 16,
+     "target": 14
+    },
+    {
+     "depth": 3,
+     "draft": 16,
+     "target": 2918
+    },
+    {
+     "depth": 2,
+     "draft": 65887,
+     "target": 305
+    },
+    {
+     "depth": 3,
+     "draft": 295,
+     "target": 43370
+    },
+    {
+     "depth": 1,
+     "draft": 3737,
+     "target": 16
+    },
+    {
+     "depth": 1,
+     "draft": 7794,
+     "target": 8427
+    },
+    {
+     "depth": 1,
+     "draft": 14,
+     "target": 29764
+    },
+    {
+     "depth": 1,
+     "draft": 74173,
+     "target": 1162
+    },
+    {
+     "depth": 1,
+     "draft": 769,
+     "target": 344
+    }
+   ],
+   "n_rejections": 23,
+   "mean_confidence": 0.9484,
+   "elapsed_s": 492.9,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "general_conversation": {
+   "n_blocks": 30,
+   "E[A]": 0.833,
+   "accepted_hist": {
+    "0": 15,
+    "1": 9,
+    "2": 4,
+    "3": 1,
+    "4": 0,
+    "5": 1
+   },
+   "rejections": [
+    {
+     "depth": 1,
+     "draft": 509,
+     "target": 418
+    },
+    {
+     "depth": 1,
+     "draft": 552,
+     "target": 270
+    },
+    {
+     "depth": 1,
+     "draft": 6218,
+     "target": 16325
+    },
+    {
+     "depth": 3,
+     "draft": 295,
+     "target": 27005
+    },
+    {
+     "depth": 3,
+     "draft": 2038,
+     "target": 2137
+    },
+    {
+     "depth": 4,
+     "draft": 643,
+     "target": 16
+    },
+    {
+     "depth": 1,
+     "draft": 17902,
+     "target": 9737
+    },
+    {
+     "depth": 3,
+     "draft": 7891,
+     "target": 7217
+    },
+    {
+     "depth": 1,
+     "draft": 538,
+     "target": 38707
+    },
+    {
+     "depth": 2,
+     "draft": 270,
+     "target": 36963
+    },
+    {
+     "depth": 2,
+     "draft": 3667,
+     "target": 294
+    },
+    {
+     "depth": 1,
+     "draft": 270,
+     "target": 16325
+    },
+    {
+     "depth": 2,
+     "draft": 260,
+     "target": 17902
+    },
+    {
+     "depth": 1,
+     "draft": 304,
+     "target": 93755
+    },
+    {
+     "depth": 2,
+     "draft": 270,
+     "target": 1783
+    },
+    {
+     "depth": 2,
+     "draft": 418,
+     "target": 295
+    },
+    {
+     "depth": 2,
+     "draft": 3988,
+     "target": 15106
+    },
+    {
+     "depth": 2,
+     "draft": 46218,
+     "target": 5057
+    },
+    {
+     "depth": 1,
+     "draft": 1625,
+     "target": 566
+    },
+    {
+     "depth": 1,
+     "draft": 4189,
+     "target": 14
+    }
+   ],
+   "n_rejections": 29,
+   "mean_confidence": -0.4915,
+   "elapsed_s": 493.2,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "long_context_retrieval": {
+   "n_blocks": 30,
+   "E[A]": 0.8,
+   "accepted_hist": {
+    "0": 16,
+    "1": 6,
+    "2": 6,
+    "3": 2,
+    "4": 0,
+    "5": 0
+   },
+   "rejections": [
+    {
+     "depth": 2,
+     "draft": 6409,
+     "target": 39627
+    },
+    {
+     "depth": 1,
+     "draft": 7723,
+     "target": 270
+    },
+    {
+     "depth": 3,
+     "draft": 5949,
+     "target": 10888
+    },
+    {
+     "depth": 1,
+     "draft": 362,
+     "target": 538
+    },
+    {
+     "depth": 1,
+     "draft": 270,
+     "target": 260
+    },
+    {
+     "depth": 4,
+     "draft": 8003,
+     "target": 3287
+    },
+    {
+     "depth": 1,
+     "draft": 30610,
+     "target": 260
+    },
+    {
+     "depth": 1,
+     "draft": 2910,
+     "target": 13607
+    },
+    {
+     "depth": 3,
+     "draft": 11014,
+     "target": 4468
+    },
+    {
+     "depth": 2,
+     "draft": 396,
+     "target": 260
+    },
+    {
+     "depth": 1,
+     "draft": 1688,
+     "target": 1017
+    },
+    {
+     "depth": 1,
+     "draft": 2645,
+     "target": 2142
+    },
+    {
+     "depth": 3,
+     "draft": 12066,
+     "target": 52
+    },
+    {
+     "depth": 2,
+     "draft": 4,
+     "target": 48465
+    },
+    {
+     "depth": 3,
+     "draft": 59471,
+     "target": 32578
+    },
+    {
+     "depth": 1,
+     "draft": 44382,
+     "target": 103764
+    },
+    {
+     "depth": 4,
+     "draft": 260,
+     "target": 44382
+    },
+    {
+     "depth": 1,
+     "draft": 343,
+     "target": 54284
+    },
+    {
+     "depth": 2,
+     "draft": 343,
+     "target": 16
+    },
+    {
+     "depth": 2,
+     "draft": 8668,
+     "target": 3077
+    }
+   ],
+   "n_rejections": 30,
+   "mean_confidence": -0.1499,
+   "elapsed_s": 490.9,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "structured_json": {
+   "n_blocks": 30,
+   "E[A]": 1.433,
+   "accepted_hist": {
+    "0": 12,
+    "1": 6,
+    "2": 6,
+    "3": 2,
+    "4": 1,
+    "5": 3
+   },
+   "rejections": [
+    {
+     "depth": 1,
+     "draft": 260,
+     "target": 270
+    },
+    {
+     "depth": 3,
+     "draft": 12604,
+     "target": 6405
+    },
+    {
+     "depth": 1,
+     "draft": 8786,
+     "target": 305
+    },
+    {
+     "depth": 1,
+     "draft": 396,
+     "target": 270
+    },
+    {
+     "depth": 3,
+     "draft": 582,
+     "target": 1469
+    },
+    {
+     "depth": 5,
+     "draft": 4870,
+     "target": 7013
+    },
+    {
+     "depth": 2,
+     "draft": 20870,
+     "target": 455
+    },
+    {
+     "depth": 1,
+     "draft": 5238,
+     "target": 26639
+    },
+    {
+     "depth": 3,
+     "draft": 63931,
+     "target": 1585
+    },
+    {
+     "depth": 4,
+     "draft": 1347,
+     "target": 10883
+    },
+    {
+     "depth": 1,
+     "draft": 49120,
+     "target": 1126
+    },
+    {
+     "depth": 2,
+     "draft": 14258,
+     "target": 16
+    },
+    {
+     "depth": 1,
+     "draft": 128822,
+     "target": 455
+    },
+    {
+     "depth": 1,
+     "draft": 26639,
+     "target": 4256
+    },
+    {
+     "depth": 2,
+     "draft": 366,
+     "target": 3394
+    },
+    {
+     "depth": 1,
+     "draft": 260,
+     "target": 1353
+    },
+    {
+     "depth": 3,
+     "draft": 2873,
+     "target": 14
+    },
+    {
+     "depth": 2,
+     "draft": 36803,
+     "target": 915
+    },
+    {
+     "depth": 2,
+     "draft": 16,
+     "target": 102292
+    },
+    {
+     "depth": 1,
+     "draft": 223,
+     "target": 361
+    }
+   ],
+   "n_rejections": 27,
+   "mean_confidence": 0.7844,
+   "elapsed_s": 512.2,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "long_generation": {
+   "n_blocks": 30,
+   "E[A]": 1.267,
+   "accepted_hist": {
+    "0": 16,
+    "1": 4,
+    "2": 3,
+    "3": 2,
+    "4": 3,
+    "5": 2
+   },
+   "rejections": [
+    {
+     "depth": 1,
+     "draft": 21429,
+     "target": 270
+    },
+    {
+     "depth": 1,
+     "draft": 3549,
+     "target": 100959
+    },
+    {
+     "depth": 4,
+     "draft": 305,
+     "target": 21429
+    },
+    {
+     "depth": 3,
+     "draft": 9639,
+     "target": 305
+    },
+    {
+     "depth": 1,
+     "draft": 270,
+     "target": 786
+    },
+    {
+     "depth": 1,
+     "draft": 1788,
+     "target": 3683
+    },
+    {
+     "depth": 4,
+     "draft": 3711,
+     "target": 59772
+    },
+    {
+     "depth": 1,
+     "draft": 16,
+     "target": 2148
+    },
+    {
+     "depth": 1,
+     "draft": 1718,
+     "target": 6989
+    },
+    {
+     "depth": 5,
+     "draft": 56414,
+     "target": 624
+    },
+    {
+     "depth": 1,
+     "draft": 1760,
+     "target": 15059
+    },
+    {
+     "depth": 1,
+     "draft": 10177,
+     "target": 1760
+    },
+    {
+     "depth": 5,
+     "draft": 3476,
+     "target": 3709
+    },
+    {
+     "depth": 1,
+     "draft": 13094,
+     "target": 56661
+    },
+    {
+     "depth": 1,
+     "draft": 31956,
+     "target": 11024
+    },
+    {
+     "depth": 3,
+     "draft": 13094,
+     "target": 48
+    },
+    {
+     "depth": 2,
+     "draft": 754,
+     "target": 11
+    },
+    {
+     "depth": 1,
+     "draft": 7572,
+     "target": 881
+    },
+    {
+     "depth": 2,
+     "draft": 513,
+     "target": 295
+    },
+    {
+     "depth": 1,
+     "draft": 1166,
+     "target": 288
+    }
+   ],
+   "n_rejections": 28,
+   "mean_confidence": 0.5081,
+   "elapsed_s": 489.8,
+   "classification": "BLACKWELL_SANDBOX_ONLY"
+  }
+ },
+ "aggregate": {
+  "E[A]": 1.424,
+  "n_blocks": 210,
+  "hist": {
+   "0": 92,
+   "1": 41,
+   "2": 29,
+   "3": 15,
+   "4": 10,
+   "5": 23
+  },
+  "P(depth>=d)": {
+   "1": 0.5619,
+   "2": 0.3667,
+   "3": 0.2286,
+   "4": 0.1571,
+   "5": 0.1095
+  },
+  "block_acceptance_rate": 0.5619,
+  "tokens_per_block_incl_bonus": 2.424
+ },
+ "aggregate_note": "computed locally from the 7 incremental per-prompt saves after the sandbox process ended before the final aggregate write"
+}

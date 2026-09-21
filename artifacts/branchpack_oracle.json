@@ -1,0 +1,637 @@
+{
+  "coverage_source": "artifacts/psc_audit.json (self-consistency, perfect-drafter ceiling)",
+  "coverage": {
+    "1": 0.9485714285714286,
+    "2": 0.9942857142857143,
+    "3": 0.9971428571428571,
+    "4": 1.0,
+    "6": 1.0,
+    "8": 1.0
+  },
+  "oracle": {
+    "16": {
+      "expected_accepted_depth": 10.576293420293018,
+      "allocation_first20": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 7.075863665145526,
+        "improved_1.2s": 8.813577850244181,
+        "fp8_moe_opt_0.9s": 11.751437133658909,
+        "core_only_0.1024s": 103.284115432549
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_ACCEPTED_DEPTH_MISS",
+        "fp8_moe_opt_0.9s": "TREE_ACCEPTED_DEPTH_MISS",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.3525431140097673,
+      "raw_positions_per_s_required": 45.38451997549644,
+      "raw_est_extrapolated": 19.094291262149188,
+      "t_block_est_extrapolated_s": 0.8379467863107842,
+      "r_oracle_est_output_tok_s": 12.621676690064183,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "24": {
+      "expected_accepted_depth": 14.279796520016772,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 9.553620472346807,
+        "improved_1.2s": 11.89983043334731,
+        "fp8_moe_opt_0.9s": 15.866440577796412,
+        "core_only_0.1024s": 139.45113789078877
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_ACCEPTED_DEPTH_MISS",
+        "fp8_moe_opt_0.9s": "TREE_ACCEPTED_DEPTH_MISS",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.4759932173338924,
+      "raw_positions_per_s_required": 50.42088652949197,
+      "raw_est_extrapolated": 23.550347373909702,
+      "t_block_est_extrapolated_s": 1.0190932481356283,
+      "r_oracle_est_output_tok_s": 14.012257019797577,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "32": {
+      "expected_accepted_depth": 17.899370944417193,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 11.975226429662937,
+        "improved_1.2s": 14.916142453680994,
+        "fp8_moe_opt_0.9s": 19.888189938241325,
+        "core_only_0.1024s": 174.79854437907414
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_ACCEPTED_DEPTH_MISS",
+        "fp8_moe_opt_0.9s": "TREE_ACCEPTED_DEPTH_MISS",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.5966456981472398,
+      "raw_positions_per_s_required": 53.63316973434888,
+      "raw_est_extrapolated": null,
+      "t_block_est_extrapolated_s": 1.1764705882352942,
+      "r_oracle_est_output_tok_s": 15.214465302754613,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "40": {
+      "expected_accepted_depth": 21.436918682598076,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 14.3419540259571,
+        "improved_1.2s": 17.864098902165065,
+        "fp8_moe_opt_0.9s": 23.818798536220083,
+        "core_only_0.1024s": 209.34490900974683
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_ACCEPTED_DEPTH_MISS",
+        "fp8_moe_opt_0.9s": "TREE_INSUFFICIENT_CURRENT_COMPUTE",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.7145639560866025,
+      "raw_positions_per_s_required": 55.9781943369561,
+      "raw_est_extrapolated": null,
+      "t_block_est_extrapolated_s": 1.3050570962479608,
+      "r_oracle_est_output_tok_s": 16.426038940540774,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "48": {
+      "expected_accepted_depth": 24.894298620843617,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 16.655046912988304,
+        "improved_1.2s": 20.745248850703014,
+        "fp8_moe_opt_0.9s": 27.660331800937353,
+        "core_only_0.1024s": 243.10838496917594
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_INSUFFICIENT_CURRENT_COMPUTE",
+        "fp8_moe_opt_0.9s": "TREE_NEAR",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.8298099540281206,
+      "raw_positions_per_s_required": 57.84457003316855,
+      "raw_est_extrapolated": null,
+      "t_block_est_extrapolated_s": 1.3973799126637554,
+      "r_oracle_est_output_tok_s": 17.814982450541216,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "56": {
+      "expected_accepted_depth": 28.27332751941323,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 18.915720558916995,
+        "improved_1.2s": 23.561106266177692,
+        "fp8_moe_opt_0.9s": 31.414808354903588,
+        "core_only_0.1024s": 276.1067140567698
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_ACCEPTED_DEPTH_MISS",
+        "improved_1.2s": "TREE_INSUFFICIENT_CURRENT_COMPUTE",
+        "fp8_moe_opt_0.9s": "TREE_VIABLE",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 0.9424442506471077,
+      "raw_positions_per_s_required": 59.41996034412528,
+      "raw_est_extrapolated": null,
+      "t_block_est_extrapolated_s": 1.5546918378678511,
+      "r_oracle_est_output_tok_s": 18.185808165165437,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "64": {
+      "expected_accepted_depth": 31.575780967200217,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 21.125162887000883,
+        "improved_1.2s": 26.31315080600018,
+        "fp8_moe_opt_0.9s": 35.08420107466691,
+        "core_only_0.1024s": 308.3572360078146
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_INSUFFICIENT_CURRENT_COMPUTE",
+        "improved_1.2s": "TREE_NEAR",
+        "fp8_moe_opt_0.9s": "TREE_VIABLE",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.0525260322400072,
+      "raw_positions_per_s_required": 60.806096989158455,
+      "raw_est_extrapolated": 39.116070046543356,
+      "t_block_est_extrapolated_s": 1.6361561865455245,
+      "r_oracle_est_output_tok_s": 19.298757188864286,
+      "class_vs_est": "TREE_ACCEPTED_DEPTH_MISS"
+    },
+    "80": {
+      "expected_accepted_depth": 37.95786358617044,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 25.39497128933595,
+        "improved_1.2s": 31.631552988475367,
+        "fp8_moe_opt_0.9s": 42.175403984633824,
+        "core_only_0.1024s": 370.68226158369566
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_NEAR",
+        "improved_1.2s": "TREE_VIABLE",
+        "fp8_moe_opt_0.9s": "TREE_STRONG",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.2652621195390146,
+      "raw_positions_per_s_required": 63.228005299919346,
+      "raw_est_extrapolated": 43.90234688394283,
+      "t_block_est_extrapolated_s": 1.8222260466275844,
+      "r_oracle_est_output_tok_s": 20.830491176667962,
+      "class_vs_est": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+    },
+    "96": {
+      "expected_accepted_depth": 44.053962691718816,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 29.473447977332455,
+        "improved_1.2s": 36.71163557643235,
+        "fp8_moe_opt_0.9s": 48.948847435243124,
+        "core_only_0.1024s": 430.2144794113165
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_NEAR",
+        "improved_1.2s": "TREE_VIABLE",
+        "fp8_moe_opt_0.9s": "TREE_STRONG",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.4684654230572938,
+      "raw_positions_per_s_required": 65.37436870670835,
+      "raw_est_extrapolated": 48.24463107066868,
+      "t_block_est_extrapolated_s": 1.9898587235412644,
+      "r_oracle_est_output_tok_s": 22.139241429822672,
+      "class_vs_est": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+    },
+    "112": {
+      "expected_accepted_depth": 49.8768933122353,
+      "allocation_first20": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 33.36916659679889,
+        "improved_1.2s": 41.564077760196085,
+        "fp8_moe_opt_0.9s": 55.41877034692811,
+        "core_only_0.1024s": 487.07903625229784
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_VIABLE",
+        "improved_1.2s": "TREE_STRONG",
+        "fp8_moe_opt_0.9s": "TREE_STRONG",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.6625631104078435,
+      "raw_positions_per_s_required": 67.3658637671356,
+      "raw_est_extrapolated": 52.24939131276218,
+      "t_block_est_extrapolated_s": 2.1435656413597957,
+      "r_oracle_est_output_tok_s": 23.268190322641725,
+      "class_vs_est": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+    },
+    "124": {
+      "expected_accepted_depth": 53.121619990530455,
+      "allocation_first20": [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 35.53998795111424,
+        "improved_1.2s": 44.26801665877538,
+        "fp8_moe_opt_0.9s": 59.024022211700505,
+        "core_only_0.1024s": 518.7658202200239
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_VIABLE",
+        "improved_1.2s": "TREE_STRONG",
+        "fp8_moe_opt_0.9s": "TREE_STRONG",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.770720666351015,
+      "raw_positions_per_s_required": 70.02798485180108,
+      "raw_est_extrapolated": 55.07420456986524,
+      "t_block_est_extrapolated_s": 2.2515077787950233,
+      "r_oracle_est_output_tok_s": 23.59379811646062,
+      "class_vs_est": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+    },
+    "128": {
+      "expected_accepted_depth": 53.7230235271069,
+      "allocation_first20": [
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "rates_tok_s": {
+        "historical_K56_1.4947s": 35.94234530481495,
+        "improved_1.2s": 44.76918627258909,
+        "fp8_moe_opt_0.9s": 59.692248363452116,
+        "core_only_0.1024s": 524.6389016319033
+      },
+      "classes": {
+        "historical_K56_1.4947s": "TREE_VIABLE",
+        "improved_1.2s": "TREE_STRONG",
+        "fp8_moe_opt_0.9s": "TREE_STRONG",
+        "core_only_0.1024s": "TREE_STRONG"
+      },
+      "t_block_max_for_30": 1.7907674509035634,
+      "raw_positions_per_s_required": 71.47773427276408,
+      "raw_est_extrapolated": 55.98620773709867,
+      "t_block_est_extrapolated_s": 2.2862773739036832,
+      "r_oracle_est_output_tok_s": 23.49803402698161,
+      "class_vs_est": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+    }
+  },
+  "verdict_N56": {
+    "expected_accepted_depth": 28.27332751941323,
+    "class_at_historical_block": "TREE_ACCEPTED_DEPTH_MISS",
+    "note": "Perfect-drafter ceiling from self-consistency coverage. Real DSpark drafter lowers coverage (eta_draft < 1), so real E[A_TREE] is strictly below this. If the ceiling itself misses, BranchPack cannot reach Exact-30 at this block time regardless of drafter quality or scheduler sophistication."
+  },
+  "wide_tree_frontier_verdict": {
+    "headline": "R_oracle is FLAT across N: 18.2/s (N=56) -> 23.5/s (N=128). No width alone reaches Exact-30 under current compute.",
+    "table": {
+      "16": {
+        "E_A": 10.576293420293018,
+        "T_max_for_30": 0.3525431140097673,
+        "raw_required": 45.38451997549644,
+        "T_est": 0.8379467863107842,
+        "R_oracle": 12.621676690064183,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "24": {
+        "E_A": 14.279796520016772,
+        "T_max_for_30": 0.4759932173338924,
+        "raw_required": 50.42088652949197,
+        "T_est": 1.0190932481356283,
+        "R_oracle": 14.012257019797577,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "32": {
+        "E_A": 17.899370944417193,
+        "T_max_for_30": 0.5966456981472398,
+        "raw_required": 53.63316973434888,
+        "T_est": 1.1764705882352942,
+        "R_oracle": 15.214465302754613,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "40": {
+        "E_A": 21.436918682598076,
+        "T_max_for_30": 0.7145639560866025,
+        "raw_required": 55.9781943369561,
+        "T_est": 1.3050570962479608,
+        "R_oracle": 16.426038940540774,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "48": {
+        "E_A": 24.894298620843617,
+        "T_max_for_30": 0.8298099540281206,
+        "raw_required": 57.84457003316855,
+        "T_est": 1.3973799126637554,
+        "R_oracle": 17.814982450541216,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "56": {
+        "E_A": 28.27332751941323,
+        "T_max_for_30": 0.9424442506471077,
+        "raw_required": 59.41996034412528,
+        "T_est": 1.5546918378678511,
+        "R_oracle": 18.185808165165437,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "64": {
+        "E_A": 31.575780967200217,
+        "T_max_for_30": 1.0525260322400072,
+        "raw_required": 60.806096989158455,
+        "T_est": 1.6361561865455245,
+        "R_oracle": 19.298757188864286,
+        "class": "TREE_ACCEPTED_DEPTH_MISS"
+      },
+      "80": {
+        "E_A": 37.95786358617044,
+        "T_max_for_30": 1.2652621195390146,
+        "raw_required": 63.228005299919346,
+        "T_est": 1.8222260466275844,
+        "R_oracle": 20.830491176667962,
+        "class": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+      },
+      "96": {
+        "E_A": 44.053962691718816,
+        "T_max_for_30": 1.4684654230572938,
+        "raw_required": 65.37436870670835,
+        "T_est": 1.9898587235412644,
+        "R_oracle": 22.139241429822672,
+        "class": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+      },
+      "112": {
+        "E_A": 49.8768933122353,
+        "T_max_for_30": 1.6625631104078435,
+        "raw_required": 67.3658637671356,
+        "T_est": 2.1435656413597957,
+        "R_oracle": 23.268190322641725,
+        "class": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+      },
+      "124": {
+        "E_A": 53.121619990530455,
+        "T_max_for_30": 1.770720666351015,
+        "raw_required": 70.02798485180108,
+        "T_est": 2.2515077787950233,
+        "R_oracle": 23.59379811646062,
+        "class": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+      },
+      "128": {
+        "E_A": 53.7230235271069,
+        "T_max_for_30": 1.7907674509035634,
+        "raw_required": 71.47773427276408,
+        "T_est": 2.2862773739036832,
+        "R_oracle": 23.49803402698161,
+        "class": "TREE_INSUFFICIENT_CURRENT_COMPUTE"
+      }
+    },
+    "compute_speedup_required": {
+      "56": 1.6496379884543386,
+      "96": 1.3550599777817363,
+      "128": 1.2767025516071904
+    },
+    "why_flat": "E[A](N) saturates (b=2 DP: 165.7*(1-0.994^D) with D=N/2) while raw rate scales sublinearly (log-log slope 0.517 from measured K32-56). The two effects nearly cancel.",
+    "decision": "Wider trees help mildly (+29%% N56->N128) but compute improvement remains MANDATORY at every width: 1.65x at N=56 down to 1.28x at N=128. WideVerify Stage 2 must validate the 0.517 slope extrapolation with measured T_target(N) at N64-128.",
+    "note": "T_est for N64+ is EXTRAPOLATED (log-log fit, 4 measured points); E[A] is exact from measured coverage under the perfect-drafter ceiling."
+  }
+}

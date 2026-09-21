@@ -1,0 +1,7 @@
+{
+ "n": 2688,
+ "steps": 300,
+ "free_q_top1_all": 1.0,
+ "free_q_top1_boundary": 1.0,
+ "final_ce": 0.0121
+}

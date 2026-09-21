@@ -1,0 +1,446 @@
+{
+ "phase": "DSpark-recursion-experiment",
+ "model_revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+ "classification": "BLACKWELL_SANDBOX_ONLY + DRAFTER_NUMERICS_DEVIATION_RECORDED",
+ "design": {
+  "R_depth": 6,
+  "blocks_per_prompt": 8,
+  "n_prompts": 4,
+  "recursive_state": "STALE main_hidden (zero-order hold from the block-1 position; trivial predictor)",
+  "verify": "exact greedy chain acceptance; first mismatch stops the chain (production semantics)"
+ },
+ "dependency_census": {
+  "input_ids (token at start_pos)": {
+   "source": "drafter output_ids / committed stream",
+   "class": "A (available from drafter)"
+  },
+  "start_pos (position)": {
+   "source": "runtime counter",
+   "class": "A (available from drafter)"
+  },
+  "drafter KV ring (WINDOW=128, per stage)": {
+   "source": "forward_spec itself writes kv_cache[start_pos % win] from the TARGET-projected main_x each call",
+   "class": "C (predictable approximately: entries at positions beyond the last target pass can only be written from stale/approximated main_x)"
+  },
+  "main_hidden [1,S,3*dim] (layers 40/41/42 mean-pooled)": {
+   "source": "exact target forward ONLY \u2014 the drafter produces no equivalent (its hidden is dim; main_hidden is 3*dim from target layers)",
+   "class": "D (requires exact target) \u2014 the recursion blocker"
+  },
+  "hyperconnection state": {
+   "source": "recomputed per forward_embed call from the draft block embedding \u2014 stateless across blocks",
+   "class": "A"
+  },
+  "markov state": {
+   "source": "output_ids chain within forward_head \u2014 stateless across blocks",
+   "class": "A"
+  },
+  "confidence state": {
+   "source": "computed per block from y + markov embed",
+   "class": "A"
+  },
+  "positional freqs_cis": {
+   "source": "precomputed table indexed by start_pos",
+   "class": "A"
+  }
+ },
+ "per_prompt": {
+  "coding": {
+   "n_points": 8,
+   "accepted_chain_tokens": [
+    5,
+    5,
+    3,
+    2,
+    10,
+    0,
+    1,
+    5
+   ],
+   "mean_accepted_per_chain": 3.875,
+   "per_recursion_depth": [
+    {
+     "r": 1,
+     "blocks_reached": 30,
+     "E[A]": 0.867,
+     "per_depth_accept": [
+      0.2333,
+      0.2,
+      0.1667,
+      0.1333,
+      0.1333
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 2,
+     "blocks_reached": 8,
+     "E[A]": 0.625,
+     "per_depth_accept": [
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 3,
+     "blocks_reached": 1,
+     "E[A]": 0.0,
+     "per_depth_accept": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 4,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 5,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 6,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    }
+   ],
+   "elapsed_s": 386.9
+  },
+  "agent_tool_use": {
+   "n_points": 8,
+   "accepted_chain_tokens": [
+    2,
+    1,
+    0,
+    1,
+    0,
+    0,
+    3,
+    0
+   ],
+   "mean_accepted_per_chain": 0.875,
+   "per_recursion_depth": [
+    {
+     "r": 1,
+     "blocks_reached": 15,
+     "E[A]": 0.467,
+     "per_depth_accept": [
+      0.2667,
+      0.1333,
+      0.0667,
+      0.0,
+      0.0
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 2,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 3,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 4,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 5,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 6,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    }
+   ],
+   "elapsed_s": 143.8
+  },
+  "math_reasoning": {
+   "n_points": 8,
+   "accepted_chain_tokens": [
+    4,
+    5,
+    6,
+    5,
+    4,
+    1,
+    0,
+    0
+   ],
+   "mean_accepted_per_chain": 3.125,
+   "per_recursion_depth": [
+    {
+     "r": 1,
+     "blocks_reached": 29,
+     "E[A]": 0.828,
+     "per_depth_accept": [
+      0.2069,
+      0.1724,
+      0.1724,
+      0.1724,
+      0.1034
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 2,
+     "blocks_reached": 4,
+     "E[A]": 0.25,
+     "per_depth_accept": [
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 3,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 4,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 5,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 6,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    }
+   ],
+   "elapsed_s": 305.8
+  },
+  "general_conversation": {
+   "n_points": 8,
+   "accepted_chain_tokens": [
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    1,
+    0
+   ],
+   "mean_accepted_per_chain": 0.625,
+   "per_recursion_depth": [
+    {
+     "r": 1,
+     "blocks_reached": 13,
+     "E[A]": 0.385,
+     "per_depth_accept": [
+      0.3077,
+      0.0769,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 2,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 3,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 4,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 5,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    },
+    {
+     "r": 6,
+     "blocks_reached": 0,
+     "E[A]": null,
+     "per_depth_accept": [
+      null,
+      null,
+      null,
+      null,
+      null
+     ],
+     "conditioning": "CHAIN_SURVIVOR (only blocks whose prefix reached depth r are scored)"
+    }
+   ],
+   "elapsed_s": 131.5
+  }
+ },
+ "aggregate": {
+  "n_chains": 32,
+  "mean_accepted_tokens_per_single_target_pass": 2.125,
+  "max_accepted": 10,
+  "chains_hitting_R_cap": 0,
+  "note": "R=6 blocks of 5 = 30 draft tokens from ONE target state. r=1 is fresh-state (D1-class); r>=2 is stale zero-order-hold recursion."
+ },
+ "metric_correction": {
+  "note": "per_recursion_depth[].E[A] is actually the PER-TOKEN acceptance rate within block r (accepted/evaluated tokens), not per-block E[A]; blocks_reached counts token-positions. mean_accepted_per_chain is the clean per-chain metric."
+ },
+ "result_summary": {
+  "block2_mechanically_possible": true,
+  "block2_quality": "r1 0.713 / r2 0.500 / r3 0.000 per-token (survivor-conditioned, pooled)",
+  "mean_tokens_per_single_target_pass": 2.125,
+  "max_chain": 10,
+  "chains_hitting_30_cap": 0,
+  "class_D_dependency": "main_hidden [1,S,3*dim] from target layers 40/41/42 mean-pooled \u2014 the ONLY exact-target input to forward_spec"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "classification": "TINY_CAUSAL_SEED_PRESERVING_T0",
+ "design": "3-layer causal, d=512, low-rank 128 draft head, frozen target embeddings, raw-L40 h1 bypass",
+ "results": {
+  "top1_by_h": {
+   "1": 0.4351,
+   "2": 0.1965,
+   "4": 0.1825,
+   "8": 0.1579,
+   "16": 0.1614,
+   "32": 0.1368
+  },
+  "survival": {
+   "2": 0.0,
+   "4": 0.0,
+   "8": 0.0
+  },
+  "E_A_free_roll": 1.5,
+  "rollout_latency_ms_K32": 33.4,
+  "params_millions_trainable": 36.7,
+  "bypass_h1_heldout": 0.4351
+ }
+}

@@ -1,0 +1,197 @@
+{
+ "classification": "RTX3060_DISPLAY_ATTACHED + EXACT_CONSTRAINED_RUNTIME (sequential reference path)",
+ "numeric_class": "source-class: MXINT exact-integer routed experts + FP8-act-quant shared expert + ExactAttention (3060) vs Blackwell transformers corpus reference",
+ "archive": "a9089f25fa85bac9",
+ "n_tokens": 8,
+ "results": [
+  {
+   "category": "coding",
+   "generated_ids": [
+    62,
+    80,
+    361,
+    855,
+    313,
+    8593,
+    223,
+    18
+   ],
+   "expected_ids": [
+    62,
+    80,
+    361,
+    855,
+    313,
+    8593,
+    223,
+    19
+   ],
+   "exact_prefix": 7,
+   "token_exact_full": false
+  },
+  {
+   "category": "agent_tool_use",
+   "generated_ids": [
+    6948,
+    270,
+    4256,
+    304,
+    3287,
+    270,
+    3967,
+    734
+   ],
+   "expected_ids": [
+    6948,
+    270,
+    4256,
+    304,
+    3287,
+    270,
+    3967,
+    734
+   ],
+   "exact_prefix": 8,
+   "token_exact_full": true
+  },
+  {
+   "category": "math_reasoning",
+   "generated_ids": [
+    15832,
+    29764,
+    10,
+    20,
+    11,
+    438,
+    280,
+    65887
+   ],
+   "expected_ids": [
+    12803,
+    13445,
+    14,
+    280,
+    65887,
+    295,
+    15022,
+    3999
+   ],
+   "exact_prefix": 0,
+   "token_exact_full": false
+  },
+  {
+   "category": "general_conversation",
+   "generated_ids": [
+    418,
+    270,
+    7891,
+    16325,
+    53983,
+    16,
+    455,
+    4632
+   ],
+   "expected_ids": [
+    418,
+    270,
+    16325,
+    53983,
+    734,
+    106306,
+    304,
+    270
+   ],
+   "exact_prefix": 2,
+   "token_exact_full": false
+  },
+  {
+   "category": "long_context_retrieval",
+   "generated_ids": [
+    304,
+    39627,
+    7723,
+    1951,
+    538,
+    260,
+    1606,
+    5148
+   ],
+   "expected_ids": [
+    304,
+    39627,
+    270,
+    1473,
+    7723,
+    10888,
+    362,
+    260
+   ],
+   "exact_prefix": 2,
+   "token_exact_full": false
+  },
+  {
+   "category": "structured_json",
+   "generated_ids": [
+    270,
+    6638,
+    344,
+    6405,
+    305,
+    270,
+    4109,
+    344
+   ],
+   "expected_ids": [
+    270,
+    6638,
+    344,
+    6405,
+    305,
+    270,
+    4109,
+    344
+   ],
+   "exact_prefix": 8,
+   "token_exact_full": true
+  },
+  {
+   "category": "long_generation",
+   "generated_ids": [
+    270,
+    100959,
+    24269,
+    3295,
+    14,
+    21429,
+    14458,
+    14
+   ],
+   "expected_ids": [
+    270,
+    3295,
+    294,
+    100959,
+    59773,
+    14,
+    21429,
+    14458
+   ],
+   "exact_prefix": 1,
+   "token_exact_full": false
+  }
+ ],
+ "summary": {
+  "mean_exact_prefix": 4.0,
+  "full_exact_prompts": 2
+ },
+ "divergence_analysis": {
+  "coding": "near-tie flip at pos 7 (18 vs 19); re-syncs after",
+  "agent_tool_use": "FULL exact 8/8",
+  "structured_json": "FULL exact 8/8",
+  "math_reasoning": "token-0: 3060 runtime == kit source (15832); corpus (transformers) = 12803 at kit-logit rank 3 \u2014 reference implementation sensitivity, proven by srcchain three-way",
+  "general_conversation": "near-tie flip at pos 2",
+  "long_context_retrieval": "near-tie flip at pos 2",
+  "long_generation": "near-tie flip at pos 1",
+  "interpretation": "Deep-sequence exact-token equivalence is bounded by cross-implementation bf16 sensitivity (local source-class runtime vs Blackwell transformers reference), not by a semantic defect. 2/2 equivalence requires either a source-class corpus regeneration or a top-k/logit-tolerance equivalence class for near-tie positions."
+ }
+}

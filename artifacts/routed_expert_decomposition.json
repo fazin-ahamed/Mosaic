@@ -1,0 +1,135 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "classification": "TRUE_P2_ROUTED_DECOMPOSITION",
+ "setup": "43 layers x fused_moe_mxint per block, golden routes remapped mod 128, packed4 bank, swiglu_limit=10 \u2014 identical to the TRUE P2 sweep routed workload",
+ "stages": [
+  "layout_sec",
+  "act_quant_sec",
+  "decode_int_sec",
+  "gu_sec",
+  "swiglu_sec",
+  "down_quant_sec",
+  "down_sec",
+  "reduction_sec"
+ ],
+ "rows": {
+  "1": {
+   "layout_sec": 0.000447,
+   "act_quant_sec": 0.000156,
+   "decode_int_sec": 5.4e-05,
+   "gu_sec": 0.002164,
+   "swiglu_sec": 2.6e-05,
+   "down_quant_sec": 4.1e-05,
+   "down_sec": 0.000844,
+   "reduction_sec": 7.1e-05,
+   "sum_stages": 0.003803,
+   "t_block_measured": 0.1452
+  },
+  "2": {
+   "layout_sec": 0.000462,
+   "act_quant_sec": 0.000152,
+   "decode_int_sec": 5.6e-05,
+   "gu_sec": 0.001272,
+   "swiglu_sec": 2.4e-05,
+   "down_quant_sec": 4.3e-05,
+   "down_sec": 0.000609,
+   "reduction_sec": 7.2e-05,
+   "sum_stages": 0.002692,
+   "t_block_measured": 0.1037
+  },
+  "4": {
+   "layout_sec": 0.000453,
+   "act_quant_sec": 0.000158,
+   "decode_int_sec": 5.5e-05,
+   "gu_sec": 0.001926,
+   "swiglu_sec": 2.7e-05,
+   "down_quant_sec": 4.5e-05,
+   "down_sec": 0.000984,
+   "reduction_sec": 7.6e-05,
+   "sum_stages": 0.003724,
+   "t_block_measured": 0.1431
+  },
+  "8": {
+   "layout_sec": 0.000451,
+   "act_quant_sec": 0.00016,
+   "decode_int_sec": 5.5e-05,
+   "gu_sec": 0.003014,
+   "swiglu_sec": 2.9e-05,
+   "down_quant_sec": 5.3e-05,
+   "down_sec": 0.001449,
+   "reduction_sec": 8.3e-05,
+   "sum_stages": 0.005293,
+   "t_block_measured": 0.2006
+  },
+  "16": {
+   "layout_sec": 0.000473,
+   "act_quant_sec": 0.000166,
+   "decode_int_sec": 5.8e-05,
+   "gu_sec": 0.004769,
+   "swiglu_sec": 4.6e-05,
+   "down_quant_sec": 6e-05,
+   "down_sec": 0.002378,
+   "reduction_sec": 0.000115,
+   "sum_stages": 0.008064,
+   "t_block_measured": 0.3057
+  },
+  "32": {
+   "layout_sec": 0.000496,
+   "act_quant_sec": 0.00017,
+   "decode_int_sec": 6.3e-05,
+   "gu_sec": 0.00766,
+   "swiglu_sec": 9.8e-05,
+   "down_quant_sec": 9.4e-05,
+   "down_sec": 0.003894,
+   "reduction_sec": 0.000154,
+   "sum_stages": 0.012629,
+   "t_block_measured": 0.4812
+  },
+  "56": {
+   "layout_sec": 0.000516,
+   "act_quant_sec": 0.000175,
+   "decode_int_sec": 6.6e-05,
+   "gu_sec": 0.010937,
+   "swiglu_sec": 0.000177,
+   "down_quant_sec": 0.00015,
+   "down_sec": 0.005874,
+   "reduction_sec": 0.00024,
+   "sum_stages": 0.018136,
+   "t_block_measured": 0.668
+  },
+  "80": {
+   "layout_sec": 0.000531,
+   "act_quant_sec": 0.000179,
+   "decode_int_sec": 6.6e-05,
+   "gu_sec": 0.012442,
+   "swiglu_sec": 0.000249,
+   "down_quant_sec": 0.000212,
+   "down_sec": 0.006754,
+   "reduction_sec": 0.000333,
+   "sum_stages": 0.020767,
+   "t_block_measured": 0.7734
+  },
+  "112": {
+   "layout_sec": 0.000534,
+   "act_quant_sec": 0.000182,
+   "decode_int_sec": 6.5e-05,
+   "gu_sec": 0.015772,
+   "swiglu_sec": 0.000341,
+   "down_quant_sec": 0.000276,
+   "down_sec": 0.008517,
+   "reduction_sec": 0.000481,
+   "sum_stages": 0.026168,
+   "t_block_measured": 0.9705
+  }
+ },
+ "intercept_view_N1_x43": {
+  "layout_sec": 0.0192,
+  "act_quant_sec": 0.0067,
+  "decode_int_sec": 0.0023,
+  "gu_sec": 0.0931,
+  "swiglu_sec": 0.0011,
+  "down_quant_sec": 0.0018,
+  "down_sec": 0.0363,
+  "reduction_sec": 0.0031
+ }
+}

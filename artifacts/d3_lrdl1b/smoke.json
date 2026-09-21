@@ -1,0 +1,9 @@
+{
+ "smoke_steps": 50,
+ "ratio_after_smoke": 0.02244,
+ "mean_ce": 0.0945,
+ "mean_kl": 0.2018,
+ "grad_norm_ce": 0.7586,
+ "grad_norm_penalty_lam1": 0.004548,
+ "lam_d_derived_ratio0.1": 16.680312
+}

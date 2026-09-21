@@ -1,0 +1,19 @@
+{
+  "classification": "G2_SOURCE_VS_SOURCE_CALIBRATION_SET (not the certification corpus)",
+  "prompts": [
+    {"category": "coding", "prompt": "Write a Python function that returns the second largest value in a list without sorting it."},
+    {"category": "coding", "prompt": "Refactor this SQL join into a subquery and explain when each form is faster: SELECT u.name FROM users u JOIN orders o ON u.id = o.user_id WHERE o.total > 100;"},
+    {"category": "math_reasoning", "prompt": "A rectangle's length is twice its width. Its perimeter is 36 cm. What is its area?"},
+    {"category": "math_reasoning", "prompt": "If 3 workers paint a house in 12 hours, how long do 5 workers take at the same rate?"},
+    {"category": "agent_tool_use", "prompt": "Check whether the file /var/log/app.log contains any ERROR lines from today, and if so summarize the first three."},
+    {"category": "agent_tool_use", "prompt": "Create a new git branch named feature/auth from the current commit and switch to it."},
+    {"category": "general_conversation", "prompt": "What's the difference between sympathy and empathy in everyday conversation?"},
+    {"category": "general_conversation", "prompt": "I have two hours free this evening and feel like relaxing but not staring at a screen. Any suggestions?"},
+    {"category": "long_context_retrieval", "prompt": "According to the passage, which three items must be included in the quarterly compliance report, and who signs it?"},
+    {"category": "long_context_retrieval", "prompt": "Based on the document above, list the deadlines mentioned for Phase 2 and identify which one depends on vendor approval."},
+    {"category": "long_generation", "prompt": "Write a short story about a lighthouse keeper who discovers the light has been guiding something other than ships."},
+    {"category": "long_generation", "prompt": "Explain, in a few paragraphs for a curious teenager, why the sky is blue during the day and red at sunset."},
+    {"category": "structured_json", "prompt": "Produce a JSON object for a calendar event with fields title, start, end, attendees (array of emails), and a boolean allDay."},
+    {"category": "structured_json", "prompt": "Return JSON describing a pizza order: size, crust, array of toppings, and total price as a number."}
+  ]
+}

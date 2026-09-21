@@ -1,0 +1,39 @@
+{
+  "phase": "2.12W-B",
+  "n_tensors_sampled": 48,
+  "layers_sampled": [
+    0,
+    5,
+    10,
+    20,
+    42
+  ],
+  "experts_per_layer": [
+    0,
+    1,
+    7,
+    50,
+    128,
+    200,
+    255
+  ],
+  "aggregate": {
+    "mean_nibble_entropy_bits": 3.8613750000000002,
+    "theoretical_compression_ratio": 1.035900424071736,
+    "mean_measured_compression_ratio": 1.0339583333333333,
+    "mean_duplicate_tile_rate": 0.0,
+    "classification": "COMPRESSION_WEAK",
+    "three_x_plausible": false,
+    "verdict": "E2M1 expert weights are near-maximum entropy (3.8614/4.0 bits per nibble; theoretical limit 1.036x; measured zstd-19 1.03x; zero duplicate tiles across all samples). 3x lossless compression is information-theoretically IMPOSSIBLE for this data. The 49.7 GB/block K56 working set cannot be reduced by compression. Wide-K residency must come from BranchPack (reducing unique experts per block), CPU Dual-Rail (avoiding H2D for some experts), or projection splitting \u2014 not from byte reduction."
+  },
+  "implication_for_roadmap": {
+    "compression_branch": "CLOSED: COMPRESSION_WEAK (\u00a733, <1.15x)",
+    "remaining_wide_k_solutions": [
+      "2.12W-H route-coherent candidate packing (BranchPack)",
+      "2.12W-F Dual-Rail CPU exact execution",
+      "2.12W-E projection-level streaming",
+      "Find K_RES where compute and transfer balance"
+    ],
+    "hard_bandwidth_gate_recheck": "With compression at only 1.03x, the ~3x traffic reduction target at K56 cannot be met by compression alone. If BranchPack and Dual-Rail are also insufficient, P3_PHYSICAL_BANDWIDTH_MISS becomes the likely branch (roadmap \u00a756)."
+  }
+}

@@ -1,0 +1,55 @@
+{
+ "classification": "D3_ABP2_D3_CONDITIONAL",
+ "width": 8,
+ "n_prompts": 70,
+ "by_thr": {
+  "0.0": {
+   "mean_EA": 2.2,
+   "S3": 0.0714,
+   "S4": 0.0714,
+   "trim20": 2.0476,
+   "mean_nodes": 3.0,
+   "branch_fraction": 0.0
+  },
+  "0.5": {
+   "mean_EA": 2.3571,
+   "S3": 0.1143,
+   "S4": 0.1143,
+   "trim20": 2.0476,
+   "mean_nodes": 4.5,
+   "branch_fraction": 0.214
+  },
+  "1.0": {
+   "mean_EA": 2.4571,
+   "S3": 0.1714,
+   "S4": 0.1429,
+   "trim20": 2.0476,
+   "mean_nodes": 6.0,
+   "branch_fraction": 0.429
+  },
+  "2.0": {
+   "mean_EA": 2.6,
+   "S3": 0.2,
+   "S4": 0.1714,
+   "trim20": 2.0476,
+   "mean_nodes": 7.5,
+   "branch_fraction": 0.643
+  },
+  "4.0": {
+   "mean_EA": 2.6571,
+   "S3": 0.2286,
+   "S4": 0.1857,
+   "trim20": 2.0952,
+   "mean_nodes": 9.4,
+   "branch_fraction": 0.914
+  },
+  "1000000000.0": {
+   "mean_EA": 2.6714,
+   "S3": 0.2429,
+   "S4": 0.1857,
+   "trim20": 2.119,
+   "mean_nodes": 10.0,
+   "branch_fraction": 1.0
+  }
+ }
+}

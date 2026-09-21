@@ -1,0 +1,148 @@
+{
+ "classification": "SCALE1000_RELOAD_BITWISE",
+ "n": 20,
+ "pass": true,
+ "rows": [
+  {
+   "category": "math_127",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "5d0c0d3d0e66b38ec3863838c6443698b77864b266084a39d979520a8ec642ef"
+  },
+  {
+   "category": "math_128",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "30615b012244964f08df6dc6bb1e1393274096769004dd713130dd4b253c2c1b"
+  },
+  {
+   "category": "math_129",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "7cd2655b8952637feb3338fb4ef9164d1fb542f9dcec24602e32838d4be1b3fe"
+  },
+  {
+   "category": "math_130",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "21207169759d7eb45c505e9bea8f2521f1f5e22b5df5584a4f017bebc3b69dc4"
+  },
+  {
+   "category": "math_131",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "e5c0514d42c0b1bfdf180da37a1ff7bc19ec80764bd894cb3a6d264a1e89e76a"
+  },
+  {
+   "category": "math_132",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "f69f499195a4d6ec696937357d98868ac1b29162e0a04d133ebac4a0061e38a2"
+  },
+  {
+   "category": "math_133",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "ef31bc9f25bf6c7cab3bf70fe6ad1335350a59c8f41466786b1c06880431b19a"
+  },
+  {
+   "category": "math_134",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "8485e5ded078d392fa63e7036893736976a1cb2441a0c27b191c29593724ced5"
+  },
+  {
+   "category": "math_135",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "a25693a742b3d2d7f8a084a59bc8f1a3a258efc7a13d4a97f5501419ddbd6436"
+  },
+  {
+   "category": "math_136",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "cde94f0e7916bde375bfccd47421df672987cbc702587f2aee8d0cc5ba7eb5a4"
+  },
+  {
+   "category": "math_137",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "496333fb7593be247e39dcb861e0b6fa1d5fc4966d2d3f81b1d7b79e86bde536"
+  },
+  {
+   "category": "math_138",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "7a89a1b1f9ecc0bf600ab004b8168d46343213f8005e04b7bb0f1b9c07503e04"
+  },
+  {
+   "category": "math_139",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "2b44e02679f7924e2ca846daa4950096ccc95d8c54e514b6aeef9a297d1b56c0"
+  },
+  {
+   "category": "math_140",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "930925764d130777514c9bea97572598903b87ae95a1ad41e28cb92b010d7595"
+  },
+  {
+   "category": "math_141",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "e60d32169c9d4bfc931ce62bd0b7e42c7c2b2ee24c92bfaca97ce128ad8ae56c"
+  },
+  {
+   "category": "math_142",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "b9ab8f751b5756690026e682f07ae3353854f2c2db22933ee6882e9ba15f0920"
+  },
+  {
+   "category": "math_143",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "aa67326d9278ecb6df3fdc0a2df2c85c2456195a5956ae233297ca32c7bfa7e1"
+  },
+  {
+   "category": "math_144",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "b226fe22d2567bff0ae6f54f7011ed16ccab4d653167b479a20d3981acc43810"
+  },
+  {
+   "category": "math_145",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "7ff9fd31d7019f477a2b7efe91baab5fa6c80a9eb8f9af70dcac908690de4214"
+  },
+  {
+   "category": "math_146",
+   "tokens": true,
+   "h40": true,
+   "h42": true,
+   "sha256": "2c629eace8cba4e5a3c028f4a779f5832c93dd23ef3f45326d93457f24de5e3a"
+  }
+ ],
+ "note": "same-file reload identity; not a second source capture"
+}

@@ -1,0 +1,14 @@
+{
+  "skipped": false,
+  "reason": "oracle K=8 accepted_output_toks < 30",
+  "oracle_k8_toks": 6.992806738346318,
+  "oracle_k5_toks": 4.879489691755935,
+  "aec_enabled": true,
+  "gates": {
+    "k5_ge_25": false,
+    "k8_ge_35": false,
+    "k8_ge_30": false,
+    "k5_toks": 4.879489691755935,
+    "k8_toks": 6.992806738346318
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "n_experts_graph": 32,
+  "rows": [
+    {
+      "k": 1,
+      "cuda_graph": "failed",
+      "reason": "RuntimeError: Cannot copy between CPU and CUDA tensors during CUDA graph capture unless the CPU tensor is pinned. Please use tensor.pin_memory() or allocate the tensor with pin_memory=True."
+    },
+    {
+      "k": 2,
+      "cuda_graph": "failed",
+      "reason": "RuntimeError: Cannot copy between CPU and CUDA tensors during CUDA graph capture unless the CPU tensor is pinned. Please use tensor.pin_memory() or allocate the tensor with pin_memory=True."
+    },
+    {
+      "k": 3,
+      "cuda_graph": "failed",
+      "reason": "RuntimeError: Cannot copy between CPU and CUDA tensors during CUDA graph capture unless the CPU tensor is pinned. Please use tensor.pin_memory() or allocate the tensor with pin_memory=True."
+    },
+    {
+      "k": 5,
+      "cuda_graph": "failed",
+      "reason": "RuntimeError: Cannot copy between CPU and CUDA tensors during CUDA graph capture unless the CPU tensor is pinned. Please use tensor.pin_memory() or allocate the tensor with pin_memory=True."
+    },
+    {
+      "k": 8,
+      "cuda_graph": "failed",
+      "reason": "RuntimeError: Cannot copy between CPU and CUDA tensors during CUDA graph capture unless the CPU tensor is pinned. Please use tensor.pin_memory() or allocate the tensor with pin_memory=True."
+    }
+  ]
+}

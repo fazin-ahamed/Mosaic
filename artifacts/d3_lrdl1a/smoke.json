@@ -1,0 +1,14 @@
+{
+ "smoke_steps": 50,
+ "mean_ce": 0.0967,
+ "mean_kl": 0.214,
+ "max_log_s": 0.01274,
+ "mean_log_s": 0.00312,
+ "p95_log_s": 0.01157,
+ "active_rows_gt_0.01": 20896,
+ "finite_s": true,
+ "scale_penalty_at_smoke": 2.874605888791848e-05,
+ "grad_norm_ce": 0.0321,
+ "grad_norm_scale_lam1": 4.5e-05,
+ "lam_s_derived_ratio0.1": 71.880401
+}

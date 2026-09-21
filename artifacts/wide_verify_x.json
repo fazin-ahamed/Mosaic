@@ -1,0 +1,335 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "stage": 1,
+  "k_values_requested": [
+    40,
+    48,
+    56
+  ],
+  "k_values_measured": [
+    40,
+    48,
+    56
+  ],
+  "k_values_skipped_short_corpus": [],
+  "golden_path": "artifacts/golden_routes.json",
+  "corpus_positions": 63,
+  "core": {
+    "40": {
+      "K": 40,
+      "attn_s": 0.0029076480865478514,
+      "router_s": 2.7132800221443176e-05,
+      "shared_s": 0.00023396639823913574,
+      "hc_s": 7.994080185890199e-05,
+      "lm_s": 0.011448064531598771,
+      "core_per_layer_s": 0.0032486880868673323,
+      "core_block_s": 0.15114165226689405
+    },
+    "48": {
+      "K": 48,
+      "attn_s": 0.002828691291809082,
+      "router_s": 3.065119981765747e-05,
+      "shared_s": 0.00021222400665283202,
+      "hc_s": 9.240159988403321e-05,
+      "lm_s": 0.013737677437918525,
+      "core_per_layer_s": 0.003163968098163605,
+      "core_block_s": 0.1497883056589535
+    },
+    "56": {
+      "K": 56,
+      "attn_s": 0.00284451847076416,
+      "router_s": 2.7852800488471987e-05,
+      "shared_s": 0.00024500000476837156,
+      "hc_s": 0.0001088479995727539,
+      "lm_s": 0.01602729034423828,
+      "core_per_layer_s": 0.0032262192755937577,
+      "core_block_s": 0.15475471919476985
+    }
+  },
+  "lm_head": "ok",
+  "moe_rows": [
+    {
+      "K": 40,
+      "backend": "qpa",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.4792113037109376,
+      "moe_per_layer_sec": 0.03440026287699855,
+      "status": "ok"
+    },
+    {
+      "K": 48,
+      "backend": "qpa",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.6540917358398437,
+      "moe_per_layer_sec": 0.03846724967069404,
+      "status": "ok"
+    },
+    {
+      "K": 56,
+      "backend": "qpa",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.868970458984375,
+      "moe_per_layer_sec": 0.0434644292787064,
+      "status": "ok"
+    },
+    {
+      "K": 40,
+      "backend": "mxint_hot8",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.1547144775390625,
+      "moe_per_layer_sec": 0.026853825059047966,
+      "status": "ok"
+    },
+    {
+      "K": 48,
+      "backend": "mxint_hot8",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.2440883178710938,
+      "moe_per_layer_sec": 0.02893228646211846,
+      "status": "ok"
+    },
+    {
+      "K": 56,
+      "backend": "mxint_hot8",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.3925744628906251,
+      "moe_per_layer_sec": 0.032385452625363374,
+      "status": "ok"
+    },
+    {
+      "K": 40,
+      "backend": "mxint_packed4",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.18117578125,
+      "moe_per_layer_sec": 0.027469204215116276,
+      "status": "ok"
+    },
+    {
+      "K": 48,
+      "backend": "mxint_packed4",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.29823486328125,
+      "moe_per_layer_sec": 0.030191508448401162,
+      "status": "ok"
+    },
+    {
+      "K": 56,
+      "backend": "mxint_packed4",
+      "corpus_positions": 63,
+      "moe_block_median_sec": 1.4731459350585938,
+      "moe_per_layer_sec": 0.03425920779206032,
+      "status": "ok"
+    }
+  ],
+  "stats_rows": [
+    {
+      "K": 40,
+      "corpus_positions": 63,
+      "unique_median": 71.0,
+      "assignments": 240,
+      "mean_m": 3.380281690140845,
+      "median_m": 2.0,
+      "p90_m": 7.0,
+      "r_k": 0.29583333333333334,
+      "backend_mix": {
+        "imma_assignments": 91,
+        "dp4a_assignments": 149,
+        "hexa": false,
+        "imma_share": 0.37916666666666665
+      },
+      "bytes_touched_source_median": 949223424.0,
+      "bytes_touched_hot8_median": 1842610176.0
+    },
+    {
+      "K": 48,
+      "corpus_positions": 63,
+      "unique_median": 79.0,
+      "assignments": 288,
+      "mean_m": 3.6455696202531644,
+      "median_m": 2.0,
+      "p90_m": 8.0,
+      "r_k": 0.2743055555555556,
+      "backend_mix": {
+        "imma_assignments": 107,
+        "dp4a_assignments": 181,
+        "hexa": false,
+        "imma_share": 0.3715277777777778
+      },
+      "bytes_touched_source_median": 1056178176.0,
+      "bytes_touched_hot8_median": 2050228224.0
+    },
+    {
+      "K": 56,
+      "corpus_positions": 63,
+      "unique_median": 86.0,
+      "assignments": 336,
+      "mean_m": 3.9069767441860463,
+      "median_m": 2.0,
+      "p90_m": 8.0,
+      "r_k": 0.25595238095238093,
+      "backend_mix": {
+        "imma_assignments": 141,
+        "dp4a_assignments": 195,
+        "hexa": false,
+        "imma_share": 0.41964285714285715
+      },
+      "bytes_touched_source_median": 1149763584.0,
+      "bytes_touched_hot8_median": 2231894016.0
+    }
+  ],
+  "full_rows": [
+    {
+      "K": 40,
+      "corpus_positions": 63,
+      "best_backend": "mxint_hot8",
+      "backend_block_secs": {
+        "qpa": 1.4792113037109376,
+        "mxint_hot8": 1.1547144775390625,
+        "mxint_packed4": 1.18117578125
+      },
+      "t_moe_block_s": 1.1547144775390625,
+      "t_core_block_s": 0.15114165226689405,
+      "t_full_block_s": 1.3058561298059566,
+      "candidate_toks": 30.63124572991344
+    },
+    {
+      "K": 48,
+      "corpus_positions": 63,
+      "best_backend": "mxint_hot8",
+      "backend_block_secs": {
+        "qpa": 1.6540917358398437,
+        "mxint_hot8": 1.2440883178710938,
+        "mxint_packed4": 1.29823486328125
+      },
+      "t_moe_block_s": 1.2440883178710938,
+      "t_core_block_s": 0.1497883056589535,
+      "t_full_block_s": 1.3938766235300473,
+      "candidate_toks": 34.43633330935568
+    },
+    {
+      "K": 56,
+      "corpus_positions": 63,
+      "best_backend": "mxint_hot8",
+      "backend_block_secs": {
+        "qpa": 1.868970458984375,
+        "mxint_hot8": 1.3925744628906251,
+        "mxint_packed4": 1.4731459350585938
+      },
+      "t_moe_block_s": 1.3925744628906251,
+      "t_core_block_s": 0.15475471919476985,
+      "t_full_block_s": 1.547329182085395,
+      "candidate_toks": 36.191393950527484
+    }
+  ],
+  "merged_curve": [
+    {
+      "K": 1,
+      "candidate_toks": 5.541799715441299,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 2,
+      "candidate_toks": 7.789642500136152,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 4,
+      "candidate_toks": 10.592900696601456,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 5,
+      "candidate_toks": 12.760386588389196,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 7,
+      "candidate_toks": 15.170173976773361,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 8,
+      "candidate_toks": 15.37708702512659,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 12,
+      "candidate_toks": 19.43281902267897,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 16,
+      "candidate_toks": 19.973145402172296,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 24,
+      "candidate_toks": 24.090936859702122,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 32,
+      "candidate_toks": 27.197498904239044,
+      "corpus_positions": 63,
+      "source": "wide_verify"
+    },
+    {
+      "K": 40,
+      "candidate_toks": 30.63124572991344,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    },
+    {
+      "K": 48,
+      "candidate_toks": 34.43633330935568,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    },
+    {
+      "K": 56,
+      "candidate_toks": 36.191393950527484,
+      "corpus_positions": 63,
+      "source": "wide_verify_x"
+    }
+  ],
+  "improvements_pct": {
+    "1->2": 40.561602730456215,
+    "2->4": 35.986994222344705,
+    "4->5": 20.461684234263977,
+    "5->7": 18.884908946072642,
+    "7->8": 1.3639464430007742,
+    "8->12": 26.37516449588404,
+    "12->16": 2.7804837726463694,
+    "16->24": 20.61663986625748,
+    "24->32": 12.895148339927754,
+    "32->40": 12.625230127830655,
+    "40->48": 12.422242350157898,
+    "48->56": 5.096537501264642
+  },
+  "gates": {
+    "best_wide_candidate_toks": 36.191393950527484,
+    "best_wide_k": 56,
+    "crossed_30_wide": true,
+    "crossed_35_wide": true,
+    "k_hw": 56,
+    "plateau": false,
+    "recapture_recommended": true
+  },
+  "vram": {
+    "vram_used_gb": 0.0,
+    "vram_budget_gb": 10.5,
+    "ram_used_gb": 0.0,
+    "ram_budget_gb": 14.0
+  },
+  "stage2_status": "unavailable_modal_spend_limit",
+  "stage2_note": "160-position Modal recapture dispatched after stage 1 (48->56 improvement straddled the 5% threshold across runs: 8.93%/4.88%/5.1%); the Modal workspace exceeded its spend limit, so K64/80/96 are unmeasured. Width ceiling recorded as >= 56, >56 unknown."
+}

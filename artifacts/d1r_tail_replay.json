@@ -1,0 +1,52 @@
+{
+ "classification": "D1R_EXACT_TAIL_REPLAY",
+ "method": "true h40 trajectory \u2192 real Block41 \u2192 real Block42 (sequential KV build) \u2192 fp32 head",
+ "results": [
+  {
+   "category": "coding_16",
+   "positions_compared": 24,
+   "h42_cosine_p50": 1.000002,
+   "h42_cosine_min": 0.999999,
+   "h42_max_abs_p50": 0.0,
+   "h42_max_abs_max": 0.0,
+   "head_top1_replay": 0.913,
+   "head_topk_replay": {
+    "1": 0.913,
+    "2": 0.913,
+    "4": 0.9565,
+    "8": 0.9565
+   }
+  },
+  {
+   "category": "coding_17",
+   "positions_compared": 29,
+   "h42_cosine_p50": 1.000001,
+   "h42_cosine_min": 0.999999,
+   "h42_max_abs_p50": 0.0,
+   "h42_max_abs_max": 0.0,
+   "head_top1_replay": 0.7857,
+   "head_topk_replay": {
+    "1": 0.7857,
+    "2": 0.9286,
+    "4": 0.9643,
+    "8": 0.9643
+   }
+  },
+  {
+   "category": "coding_18",
+   "positions_compared": 27,
+   "h42_cosine_p50": 1.000001,
+   "h42_cosine_min": 1.0,
+   "h42_max_abs_p50": 0.0,
+   "h42_max_abs_max": 0.0,
+   "head_top1_replay": 0.7692,
+   "head_topk_replay": {
+    "1": 0.7692,
+    "2": 0.8846,
+    "4": 0.9231,
+    "8": 0.9615
+   }
+  }
+ ],
+ "verdict": "PASS \u2014 tail replay reproduces L42"
+}

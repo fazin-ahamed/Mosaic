@@ -1,0 +1,66 @@
+{
+  "budget_model": {
+    "core_gb": 7.0,
+    "packed4_gb": 3.3,
+    "hot8_per_expert_mb": 25.6,
+    "budget_gb": 11.6
+  },
+  "rows": {
+    "F0.0": {
+      "F": 0.0,
+      "n_hot": 0,
+      "banks_gb": 6.702629376,
+      "fits_budget": false,
+      "moe_block_s": 1.00271142578125,
+      "R_oracle_prodcore": 24.045015962326666
+    },
+    "F0.05": {
+      "F": 0.05,
+      "n_hot": 12,
+      "banks_gb": 6.702629376,
+      "fits_budget": false,
+      "moe_block_s": 1.0323629760742188,
+      "R_oracle_prodcore": 23.453516128455654
+    },
+    "F0.1": {
+      "F": 0.1,
+      "n_hot": 25,
+      "banks_gb": 6.391202304,
+      "fits_budget": false,
+      "moe_block_s": 0.9894937744140625,
+      "R_oracle_prodcore": 24.31840980331191
+    },
+    "F0.15": {
+      "F": 0.15,
+      "n_hot": 38,
+      "banks_gb": 5.742395904,
+      "fits_budget": false,
+      "moe_block_s": 0.9665864562988281,
+      "R_oracle_prodcore": 24.807244631369066
+    },
+    "F0.2": {
+      "F": 0.2,
+      "n_hot": 51,
+      "banks_gb": 4.7551616,
+      "fits_budget": false,
+      "moe_block_s": 0.9392062683105469,
+      "R_oracle_prodcore": 25.417947017096413
+    }
+  },
+  "packed4_single_call_baseline_s": 0.9544663085937499,
+  "split_call_overhead_s": 0.04824511718750002,
+  "interpretation": {
+    "headline": "Two-call hybrid split at K56 golden: best 0.9392 s (F=0.20) vs pure-packed4 single-call 0.9545 s \u2014 only 1.6% faster. SPLIT-CALL HYBRID REJECTED: cannot reach the 0.772-0.783 s MoE budget.",
+    "why": "Splitting DOUBLES per-layer launches/layout/act-quant/reduce (+48 ms measured overhead). At M~4 both GEMM paths are launch/occupancy-bound, so moving 33% of assignments (top-20% experts by golden frequency) to hot8 saves little; the overhead cancels it.",
+    "vram_note": "F=0.20 partials+p4 = 4.76 GB banks; +core 7.0 = 11.76 GB (marginal). The fits flags reflect all-partials co-residency during the sweep, not per-config steady state.",
+    "remaining_path": "Single-call hybrid: extend the grouped kernel with an expert-SET hot_mask (hot experts read hot8 weights, cold read packed4, one launch, one layout). MXINTHybridBank exists but hot_mask is overwritten by counts>crossover per call (mxint.py:1325) \u2014 needs kernel-side expert-set indexing. This is the decisive Track B kernel task for production-fit MoE.",
+    "gate_status": "NEXT 1 gate (MoE <=750-780ms production-fit): NOT MET (0.939 s best). Single-call hybrid or packed4-kernel speedup required.",
+    "data": {
+      "0.0": 1.00271142578125,
+      "0.05": 1.0323629760742188,
+      "0.1": 0.9894937744140625,
+      "0.15": 0.9665864562988281,
+      "0.2": 0.9392062683105469
+    }
+  }
+}

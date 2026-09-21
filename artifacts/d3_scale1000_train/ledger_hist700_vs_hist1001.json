@@ -1,0 +1,63 @@
+{
+ "classification": "D3_SCALE_LEDGER",
+ "G_conversions": [
+  "agent_129",
+  "agent_130",
+  "agent_132",
+  "longform_130",
+  "longform_131",
+  "longform_133",
+  "math_130",
+  "math_134"
+ ],
+ "L_losses": [
+  "coding_133",
+  "coding_134",
+  "coding_135",
+  "convo_135",
+  "longform_128",
+  "longform_132",
+  "longform_136",
+  "math_133",
+  "retrieval_132"
+ ],
+ "G_count": 8,
+ "L_count": 9,
+ "delta_H": -1,
+ "n": 70,
+ "S1_base": 46,
+ "S1_scaled": 45,
+ "delta_EA": 0.0,
+ "delta_trim20": -0.0476,
+ "delta_loo": 0.0,
+ "S4_scaled": 0.0714,
+ "domain_gains": {
+  "agent": 3,
+  "longform": 3,
+  "math": 2
+ },
+ "domain_losses": {
+  "coding": 3,
+  "convo": 1,
+  "longform": 3,
+  "math": 1,
+  "retrieval": 1
+ },
+ "domains_net_gain": 2,
+ "boot_ci95_base": [
+  1.9429,
+  2.4714
+ ],
+ "boot_ci95_scaled": [
+  1.9143,
+  2.5
+ ],
+ "gates": {
+  "mechanism_S28": false,
+  "robust_S29": false,
+  "strong_S30": false,
+  "plateau_S32": true,
+  "fail_S33": false
+ },
+ "verdict": "PLATEAU_NO_AUTOMATIC_SCALE"
+}

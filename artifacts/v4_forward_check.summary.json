@@ -1,0 +1,10 @@
+{
+  "mean_token_match": null,
+  "mean_logit_cosine": null,
+  "pass": false,
+  "status": "incomplete_forward_uncompletable_in_time",
+  "n_weight_misses": 167,
+  "weight_misses_head": ["layers.0.ffn.gate.bias","layers.1.ffn.gate.bias","layers.2.ffn.gate.bias","ram_overflow:layers.28+..."],
+  "budget": {"vram_used_gb": null, "ram_used_gb": null},
+  "reason": "Streaming expert-from-volume forward path runs (passes model load, fp4 dequant, expert GEMM, into the per-layer streaming loop) but does not complete even one prompt in practical time: each decode step re-reads 6 experts x 3 tensors x 43 layers from network-attached storage. The slow-but-correct baseline is the Phase 1 path by design; byte-budgeted expert caching (LBEF) is a later phase and deliberately absent (plan Step 8). 95% golden match additionally requires RoPE, the CSA indexer/compressor, and MTP layers, which are not implemented in this Phase 1 forward. Per plan §56/§62 the honest negative result is the Phase 1 deliverable."
+}

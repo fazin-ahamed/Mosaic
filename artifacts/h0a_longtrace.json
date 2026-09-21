@@ -1,0 +1,59 @@
+{
+ "classification": "H0A_LONGTRACE",
+ "n_positions": 256,
+ "working_set_experts": 6666,
+ "working_set_GB": 89.12,
+ "late_growth_rate": 7.27,
+ "ws_growth_curve": [
+  258,
+  1298,
+  2543,
+  3352,
+  3845,
+  4140,
+  4453,
+  4733,
+  4978,
+  5237,
+  5440,
+  5664,
+  5794,
+  5903,
+  6055,
+  6128,
+  6201,
+  6301,
+  6402,
+  6475,
+  6587,
+  6657
+ ],
+ "by_store": {
+  "24": {
+   "slots": 1795,
+   "belady_miss": 214.8,
+   "compulsory": 105.7,
+   "capacity": 109.2
+  },
+  "30": {
+   "slots": 2243,
+   "belady_miss": 172.2,
+   "compulsory": 105.7,
+   "capacity": 66.5
+  },
+  "35": {
+   "slots": 2617,
+   "belady_miss": 143.5,
+   "compulsory": 105.7,
+   "capacity": 37.8
+  },
+  "38": {
+   "slots": 2842,
+   "belady_miss": 131.6,
+   "compulsory": 105.7,
+   "capacity": 25.9
+  }
+ },
+ "fits_38GB_store": false,
+ "saturating": false
+}

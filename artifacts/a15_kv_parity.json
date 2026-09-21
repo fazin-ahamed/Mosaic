@@ -1,0 +1,35 @@
+{
+ "classification": "A15_EA_INVARIANT_AND_KV_PARITY",
+ "population": "full held-out N=285",
+ "E_A_three_way": {
+  "direct": 1.498246,
+  "identity_1_plus_sum_Sk": 1.498246,
+  "prefix_histogram": 1.498246,
+  "invariant_holds": true
+ },
+ "S": {
+  "1": 0.4351,
+  "2": 0.0526,
+  "3": 0.0105,
+  "4": 0.0,
+  "8": 0.0,
+  "16": 0.0,
+  "32": 0.0
+ },
+ "prefix_distribution": {
+  "0": 161,
+  "1": 109,
+  "2": 12,
+  "3": 3
+ },
+ "kv_parity": {
+  "full_K32_sequence_match": "285/285",
+  "full_match_rate": 1.0,
+  "per_token_agreement": 1.0
+ },
+ "latency_ms_K32": {
+  "naive_corrected": 35.6,
+  "kv_cached": 22.5
+ },
+ "verdict": "A1.5 PASS \u2014 E[A] invariant holds three-way; KV rollout token-identical on all 285 examples; KV latency 22.5ms certified"
+}

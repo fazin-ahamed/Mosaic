@@ -1,0 +1,489 @@
+{
+ "classification": "D2P_SOURCE_ADAPTER_EXPERT_TIMING_V2",
+ "method": "real hooked routed activations; per (layer,matrix) strata; full adapter+VNNI call; p50 ms of reps",
+ "regimes": {
+  "L41.w1": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 0.482,
+   "dram_cold_ms": 0.55,
+   "first_use_ms": 29.752,
+   "contended_warm_ms": 0.434,
+   "contended_cold_ms": 0.569
+  },
+  "L41.w3": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 0.447,
+   "dram_cold_ms": 0.595,
+   "first_use_ms": 29.097,
+   "contended_warm_ms": 0.453,
+   "contended_cold_ms": 0.617
+  },
+  "L41.w2": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 0.374,
+   "dram_cold_ms": 0.51,
+   "first_use_ms": 28.821,
+   "contended_warm_ms": 0.35,
+   "contended_cold_ms": 0.52
+  },
+  "L42.w1": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.473,
+   "dram_cold_ms": 0.741,
+   "first_use_ms": 28.517,
+   "contended_warm_ms": 0.445,
+   "contended_cold_ms": 0.739
+  },
+  "L42.w3": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.429,
+   "dram_cold_ms": 0.665,
+   "first_use_ms": 25.996,
+   "contended_warm_ms": 0.422,
+   "contended_cold_ms": 0.638
+  },
+  "L42.w2": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.339,
+   "dram_cold_ms": 0.528,
+   "first_use_ms": 25.002,
+   "contended_warm_ms": 0.36,
+   "contended_cold_ms": 0.624
+  }
+ },
+ "n_prepared": 684,
+ "per_expert_prepare_seconds_mean": 0.0349,
+ "production_tail_wall": null,
+ "transfers_ms": {
+  "gpu_to_cpu_M1": 0.013,
+  "cpu_to_gpu_M1": 0.009
+ },
+ "end_to_end_idle": {
+  "L41.w1": {
+   "M1_n89": {
+    "e2e_warm_ms": 0.987,
+    "e2e_dram_cold_ms": 0.716
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 0.847,
+    "e2e_dram_cold_ms": 1.105
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 1.105,
+    "e2e_dram_cold_ms": 1.123
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 1.378,
+    "e2e_dram_cold_ms": 1.544
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 2.02,
+    "e2e_dram_cold_ms": 2.093
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 2.175,
+    "e2e_dram_cold_ms": 1.854
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 4.074,
+    "e2e_dram_cold_ms": 3.913
+   }
+  },
+  "L41.w3": {
+   "M1_n89": {
+    "e2e_warm_ms": 0.705,
+    "e2e_dram_cold_ms": 0.71
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 0.821,
+    "e2e_dram_cold_ms": 0.917
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 1.099,
+    "e2e_dram_cold_ms": 1.188
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 1.507,
+    "e2e_dram_cold_ms": 1.452
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 1.711,
+    "e2e_dram_cold_ms": 1.768
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 1.93,
+    "e2e_dram_cold_ms": 1.993
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 4.148,
+    "e2e_dram_cold_ms": 3.845
+   }
+  },
+  "L41.w2": {
+   "M1_n89": {
+    "e2e_warm_ms": 0.519,
+    "e2e_dram_cold_ms": 0.669
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 0.925,
+    "e2e_dram_cold_ms": 0.786
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 0.903,
+    "e2e_dram_cold_ms": 0.945
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 0.994,
+    "e2e_dram_cold_ms": 1.009
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 1.228,
+    "e2e_dram_cold_ms": 1.186
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 1.336,
+    "e2e_dram_cold_ms": 1.476
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 3.058,
+    "e2e_dram_cold_ms": 2.931
+   }
+  },
+  "L42.w1": {
+   "M1_n79": {
+    "e2e_warm_ms": 0.753,
+    "e2e_dram_cold_ms": 0.994
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 1.059,
+    "e2e_dram_cold_ms": 1.186
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 1.395,
+    "e2e_dram_cold_ms": 1.195
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 1.69,
+    "e2e_dram_cold_ms": 1.871
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 2.32,
+    "e2e_dram_cold_ms": 1.994
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 2.559,
+    "e2e_dram_cold_ms": 2.677
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 2.806,
+    "e2e_dram_cold_ms": 2.918
+   }
+  },
+  "L42.w3": {
+   "M1_n79": {
+    "e2e_warm_ms": 0.627,
+    "e2e_dram_cold_ms": 0.886
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 1.143,
+    "e2e_dram_cold_ms": 1.242
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 1.453,
+    "e2e_dram_cold_ms": 1.475
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 1.893,
+    "e2e_dram_cold_ms": 1.715
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 2.297,
+    "e2e_dram_cold_ms": 2.139
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 2.909,
+    "e2e_dram_cold_ms": 2.896
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 3.182,
+    "e2e_dram_cold_ms": 2.884
+   }
+  },
+  "L42.w2": {
+   "M1_n79": {
+    "e2e_warm_ms": 0.73,
+    "e2e_dram_cold_ms": 0.869
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 0.991,
+    "e2e_dram_cold_ms": 1.079
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 1.221,
+    "e2e_dram_cold_ms": 1.265
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 1.396,
+    "e2e_dram_cold_ms": 1.396
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 1.568,
+    "e2e_dram_cold_ms": 1.609
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 2.167,
+    "e2e_dram_cold_ms": 2.214
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 2.262,
+    "e2e_dram_cold_ms": 2.143
+   }
+  }
+ },
+ "end_to_end_contended": {
+  "L41.w1": {
+   "M1_n89": {
+    "e2e_warm_ms": 3.721,
+    "e2e_dram_cold_ms": 3.734
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 3.671,
+    "e2e_dram_cold_ms": 3.734
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 3.724,
+    "e2e_dram_cold_ms": 3.728
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 3.7,
+    "e2e_dram_cold_ms": 3.734
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 3.739,
+    "e2e_dram_cold_ms": 3.689
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 3.663,
+    "e2e_dram_cold_ms": 3.737
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 7.14,
+    "e2e_dram_cold_ms": 7.131
+   }
+  },
+  "L41.w3": {
+   "M1_n89": {
+    "e2e_warm_ms": 3.725,
+    "e2e_dram_cold_ms": 3.722
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 3.729,
+    "e2e_dram_cold_ms": 3.734
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 3.734,
+    "e2e_dram_cold_ms": 3.733
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 3.733,
+    "e2e_dram_cold_ms": 3.731
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 3.723,
+    "e2e_dram_cold_ms": 3.733
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 3.726,
+    "e2e_dram_cold_ms": 3.737
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 7.137,
+    "e2e_dram_cold_ms": 7.136
+   }
+  },
+  "L41.w2": {
+   "M1_n89": {
+    "e2e_warm_ms": 3.561,
+    "e2e_dram_cold_ms": 3.56
+   },
+   "M2_n9": {
+    "e2e_warm_ms": 3.564,
+    "e2e_dram_cold_ms": 3.562
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 3.567,
+    "e2e_dram_cold_ms": 3.543
+   },
+   "M4_n2": {
+    "e2e_warm_ms": 3.559,
+    "e2e_dram_cold_ms": 3.288
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 3.187,
+    "e2e_dram_cold_ms": 2.639
+   },
+   "M6_n2": {
+    "e2e_warm_ms": 3.164,
+    "e2e_dram_cold_ms": 5.206
+   },
+   "M14_n1": {
+    "e2e_warm_ms": 7.785,
+    "e2e_dram_cold_ms": 5.378
+   }
+  },
+  "L42.w1": {
+   "M1_n79": {
+    "e2e_warm_ms": 2.627,
+    "e2e_dram_cold_ms": 4.57
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 2.99,
+    "e2e_dram_cold_ms": 6.764
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 5.043,
+    "e2e_dram_cold_ms": 4.615
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 5.208,
+    "e2e_dram_cold_ms": 5.077
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 5.258,
+    "e2e_dram_cold_ms": 5.706
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 6.79,
+    "e2e_dram_cold_ms": 4.908
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 5.314,
+    "e2e_dram_cold_ms": 5.405
+   }
+  },
+  "L42.w3": {
+   "M1_n79": {
+    "e2e_warm_ms": 5.009,
+    "e2e_dram_cold_ms": 2.837
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 4.861,
+    "e2e_dram_cold_ms": 4.906
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 4.961,
+    "e2e_dram_cold_ms": 2.65
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 2.722,
+    "e2e_dram_cold_ms": 2.657
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 2.636,
+    "e2e_dram_cold_ms": 4.983
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 5.192,
+    "e2e_dram_cold_ms": 5.542
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 5.308,
+    "e2e_dram_cold_ms": 10.357
+   }
+  },
+  "L42.w2": {
+   "M1_n79": {
+    "e2e_warm_ms": 5.481,
+    "e2e_dram_cold_ms": 2.63
+   },
+   "M2_n19": {
+    "e2e_warm_ms": 2.973,
+    "e2e_dram_cold_ms": 5.062
+   },
+   "M3_n8": {
+    "e2e_warm_ms": 2.738,
+    "e2e_dram_cold_ms": 2.63
+   },
+   "M4_n1": {
+    "e2e_warm_ms": 2.636,
+    "e2e_dram_cold_ms": 2.633
+   },
+   "M5_n4": {
+    "e2e_warm_ms": 2.624,
+    "e2e_dram_cold_ms": 2.629
+   },
+   "M7_n1": {
+    "e2e_warm_ms": 2.634,
+    "e2e_dram_cold_ms": 2.632
+   },
+   "M8_n1": {
+    "e2e_warm_ms": 2.729,
+    "e2e_dram_cold_ms": 2.725
+   }
+  }
+ },
+ "regime_semantics": {
+  "per_stratum_rows": "CPU-kernel diagnostics (adapter+GEMM only, CPU-resident input/output)",
+  "end_to_end_*": "full hybrid call from GPU-resident input: blocking D2H + adapter + VNNI GEMM + H2D + synchronize"
+ }
+}

@@ -1,0 +1,37 @@
+{
+  "g1": {
+    "req": 2.0,
+    "obs": 0.9882485495291455,
+    "pass": false
+  },
+  "g2": {
+    "req": 6.0,
+    "obs": 0.7025081065850926,
+    "pass": false,
+    "comfort": true
+  },
+  "g3": {
+    "req": 40.0,
+    "obs": 5.361597686596886,
+    "pass": false
+  },
+  "g4": {
+    "obs_bps": 0.6691506245496974,
+    "obs_toks": 5.353204996397579,
+    "band": "NO-GO"
+  },
+  "last_line": "30 tok/s faithful V4 is not a realistic 3060 target",
+  "marlin": {
+    "status": "blocked_layout",
+    "install": "ok",
+    "vllm": "0.28.0",
+    "torch_after_install": "2.13.0+cu130",
+    "probed": [
+      "fused_marlin_moe",
+      "MarlinExperts",
+      "BatchedMarlinExperts",
+      "gptq_marlin_moe_repack"
+    ],
+    "error": "vLLM Marlin MoE documents GPTQ packing along K; MosaicVM pack_w4 is nibble-along-N (amax/7). No documented conversion; skipped rather than guessing."
+  }
+}

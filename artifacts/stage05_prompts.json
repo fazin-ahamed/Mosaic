@@ -1,0 +1,31 @@
+{
+  "classification": "STAGE05_EXIT_HEAD_PROMPTS (train/val/held-out; disjoint from G1, calibration, and certification sets)",
+  "splits": {
+    "train": ["coding_t", "math_reasoning_t", "agent_tool_use_t", "general_conversation_t", "long_context_retrieval_t", "long_generation_t", "structured_json_t"],
+    "val": ["coding_v", "math_reasoning_v", "agent_tool_use_v", "general_conversation_v", "long_context_retrieval_v", "long_generation_v", "structured_json_v"],
+    "held_out": ["coding_h", "math_reasoning_h", "agent_tool_use_h", "general_conversation_h", "long_context_retrieval_h", "long_generation_h", "structured_json_h"]
+  },
+  "prompts": [
+    {"category": "coding_t", "prompt": "Write a Python function merge_intervals(intervals) that merges overlapping ranges and returns them sorted."},
+    {"category": "math_reasoning_t", "prompt": "Solve for x: 3x + 7 = 2x - 5."},
+    {"category": "agent_tool_use_t", "prompt": "Show me how to count the number of occurrences of the word 'error' in a log file, case-insensitively."},
+    {"category": "general_conversation_t", "prompt": "What are some pros and cons of working from home compared to an office?"},
+    {"category": "long_context_retrieval_t", "prompt": "According to the specification, which component is responsible for retry logic and what is the maximum retry count?"},
+    {"category": "long_generation_t", "prompt": "Describe the water cycle in a few paragraphs as if explaining it to a curious child."},
+    {"category": "structured_json_t", "prompt": "Produce JSON for a bank account: accountNumber (string), balance (number), currency (string), and a transactions array with three objects containing id, amount, and timestamp."},
+    {"category": "coding_v", "prompt": "Implement a function is_palindrome(s) that ignores spaces, punctuation, and case."},
+    {"category": "math_reasoning_v", "prompt": "What is 15% of 240, and what is the result divided by 4?"},
+    {"category": "agent_tool_use_v", "prompt": "List the three most recently edited Python files in this project with their modification times."},
+    {"category": "general_conversation_v", "prompt": "I want to start running but I've never exercised regularly. How should I begin?"},
+    {"category": "long_context_retrieval_v", "prompt": "In the meeting notes, who was assigned to prepare the budget proposal and by what date?"},
+    {"category": "long_generation_v", "prompt": "Explain why the moon has phases, including what happens during a full moon and a new moon."},
+    {"category": "structured_json_v", "prompt": "Return JSON describing a flight itinerary with two legs, each having flightNumber, departure, arrival, and gate."},
+    {"category": "coding_h", "prompt": "Write a function that returns the nth Fibonacci number using memoization."},
+    {"category": "math_reasoning_h", "prompt": "If a shirt costs 40 dollars after a 20% discount, what was the original price?"},
+    {"category": "agent_tool_use_h", "prompt": "Check the current git status and tell me which files have been modified but not staged."},
+    {"category": "general_conversation_h", "prompt": "What's a thoughtful gift for a friend who just moved into a new apartment?"},
+    {"category": "long_context_retrieval_h", "prompt": "Based on the contract text, what is the notice period for termination and which clauses survive it?"},
+    {"category": "long_generation_h", "prompt": "Write a short explanation of how vaccines train the immune system, keeping it accessible and neutral in tone."},
+    {"category": "structured_json_h", "prompt": "Output JSON for a restaurant menu with two categories, each containing two dishes with name, price, and a vegetarian flag."}
+  ]
+}

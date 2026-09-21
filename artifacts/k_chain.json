@@ -1,0 +1,152 @@
+{
+  "phase": "2.13P-SC",
+  "date": "2026-08-28",
+  "measurement_type": "parallel_verifier_self_consistency",
+  "gpu": "RTX PRO 6000 Blackwell (model-property measurement only, not perf)",
+  "dspark_config": {
+    "block_size": 5,
+    "target_layer_ids": [
+      40,
+      41,
+      42
+    ],
+    "num_nextn_predict_layers": 1
+  },
+  "A_SC": {
+    "3": 2.7142857142857144,
+    "5": 4.190476190476191,
+    "7": 6.057142857142857
+  },
+  "acceptance_by_K": {
+    "3": {
+      "mean_accepted": 2.7142857142857144,
+      "median_accepted": 3.0,
+      "p90_accepted": 3,
+      "acceptance_rate": 0.9047619047619048,
+      "full_rejection_rate": 0.05714285714285714,
+      "n_measurements": 70
+    },
+    "5": {
+      "mean_accepted": 4.190476190476191,
+      "median_accepted": 5.0,
+      "p90_accepted": 5,
+      "acceptance_rate": 0.8380952380952381,
+      "full_rejection_rate": 0.047619047619047616,
+      "n_measurements": 42
+    },
+    "7": {
+      "mean_accepted": 6.057142857142857,
+      "median_accepted": 7,
+      "p90_accepted": 7,
+      "acceptance_rate": 0.8653061224489795,
+      "full_rejection_rate": 0.05714285714285714,
+      "n_measurements": 35
+    }
+  },
+  "per_prompt": {
+    "3": {
+      "coding": {
+        "mean": 3,
+        "rate": 1.0
+      },
+      "agent": {
+        "mean": 2.6,
+        "rate": 0.8666666666666667
+      },
+      "math": {
+        "mean": 3,
+        "rate": 1.0
+      },
+      "general": {
+        "mean": 2.8,
+        "rate": 0.9333333333333332
+      },
+      "json": {
+        "mean": 2.4,
+        "rate": 0.7999999999999999
+      },
+      "longform": {
+        "mean": 2.7,
+        "rate": 0.9
+      },
+      "longctx": {
+        "mean": 2.5,
+        "rate": 0.8333333333333334
+      }
+    },
+    "5": {
+      "coding": {
+        "mean": 5,
+        "rate": 1.0
+      },
+      "agent": {
+        "mean": 2.6666666666666665,
+        "rate": 0.5333333333333333
+      },
+      "math": {
+        "mean": 5,
+        "rate": 1.0
+      },
+      "general": {
+        "mean": 4.333333333333333,
+        "rate": 0.8666666666666666
+      },
+      "json": {
+        "mean": 4,
+        "rate": 0.8
+      },
+      "longform": {
+        "mean": 3.6666666666666665,
+        "rate": 0.7333333333333333
+      },
+      "longctx": {
+        "mean": 4.666666666666667,
+        "rate": 0.9333333333333333
+      }
+    },
+    "7": {
+      "coding": {
+        "mean": 7,
+        "rate": 1.0
+      },
+      "agent": {
+        "mean": 3.8,
+        "rate": 0.5428571428571428
+      },
+      "math": {
+        "mean": 6.8,
+        "rate": 0.9714285714285714
+      },
+      "general": {
+        "mean": 6.4,
+        "rate": 0.9142857142857144
+      },
+      "json": {
+        "mean": 7,
+        "rate": 1.0
+      },
+      "longform": {
+        "mean": 5.2,
+        "rate": 0.7428571428571429
+      },
+      "longctx": {
+        "mean": 6.2,
+        "rate": 0.8857142857142858
+      }
+    }
+  },
+  "terminology": {
+    "A_SC(K)": "mean accepted sequential depth when the parallel target verifies the supplied target/self-consistency candidate chain",
+    "K_CHAIN": "UNKNOWN \u2014 argmax_K E[A_real-drafter(K)]/(T_draft(K)+T_target(K)); requires actual DSpark/MTP proposals (Phase 2.13P-D)",
+    "rule": "4.19 is A_SC(5), NOT K_CHAIN; never call it K_CHAIN"
+  },
+  "forecasts_not_facts": {
+    "accepted_depth_2.5_to_3.5": "forecast assuming 60-80% drafter efficiency vs A_SC; UNMEASURED; do not freeze as MosaicVM fact"
+  },
+  "validation": "Phase 2.13P-V REQUIRED: ~5% parallel self-rejection must be explained (benign numerical vs bug) before A_SC(K) becomes authoritative",
+  "caveats": [
+    "Self-consistency upper-bounds real drafter acceptance; actual DSpark draft quality not measured",
+    "Task dependence: agent 53% vs coding/math 100% at K=5",
+    "n=147 blocks, ~30 positions per prompt sampled"
+  ]
+}

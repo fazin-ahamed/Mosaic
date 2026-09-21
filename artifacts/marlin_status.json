@@ -1,0 +1,13 @@
+{
+  "status": "blocked_layout",
+  "install": "ok",
+  "vllm": "0.28.0",
+  "torch_after_install": "2.13.0+cu130",
+  "probed": [
+    "fused_marlin_moe",
+    "MarlinExperts",
+    "BatchedMarlinExperts",
+    "gptq_marlin_moe_repack"
+  ],
+  "error": "vLLM Marlin MoE documents GPTQ packing along K; MosaicVM pack_w4 is nibble-along-N (amax/7). No documented conversion; skipped rather than guessing."
+}

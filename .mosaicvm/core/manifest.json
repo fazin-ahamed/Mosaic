@@ -1,0 +1,16 @@
+{
+  "phase": "2.11A-REBUILD",
+  "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+  "method": "hf_hub_download (xet-backed) \u2014 supersedes plain-HTTP-range acquisition whose CDN path served a STALE shard version (root cause of the 0xFF / checkpoint-integrity deviation)",
+  "selection_rule": "all tensors without '.experts.' in name",
+  "n_tensors": 1661,
+  "out_sha256": "a9089f25fa85bac924a7c159dd67960aa901fd3d7126babcf5e202d950597983",
+  "verification": {
+    "scale_tensors": 390,
+    "with_0xFF": 0,
+    "smoothness_fail": 0,
+    "wq_b_L2_sha16": "65d1cf8c02b74b16",
+    "nan_wgates": 0
+  }
+}

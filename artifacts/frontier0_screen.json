@@ -1,0 +1,111 @@
+{
+ "classification": "FRONTIER0_SCREEN_REAL_ROUTES",
+ "n_positions": 256,
+ "accept_p": 0.8077725516661773,
+ "EA": 3.757,
+ "note": "real routes + warm LRU + measured acceptance; window rows use accepted-path routes (OPTIMISTIC vs real rejected branches). demand+cache sim only, not latency.",
+ "by_store": {
+  "30": {
+   "eager6": {
+    "cold_all_mean": 453.3,
+    "cold_warm_mean": 454.6,
+    "GB_per_cycle": 6.06,
+    "rows_mean": 5.94,
+    "cycles": 65,
+    "reduction_vs_eager_pct": 0.0
+   },
+   "frontier2_4": {
+    "cold_all_mean": 381.8,
+    "cold_warm_mean": 378.6,
+    "GB_per_cycle": 5.104,
+    "rows_mean": 4.92,
+    "cycles": 73,
+    "reduction_vs_eager_pct": 15.8
+   },
+   "frontier1_2_3": {
+    "cold_all_mean": 385.6,
+    "cold_warm_mean": 377.3,
+    "GB_per_cycle": 5.155,
+    "rows_mean": 4.97,
+    "cycles": 63,
+    "reduction_vs_eager_pct": 14.9
+   },
+   "sequential": {
+    "cold_all_mean": 350.8,
+    "cold_warm_mean": 329.3,
+    "GB_per_cycle": 4.69,
+    "rows_mean": 4.52,
+    "cycles": 65,
+    "reduction_vs_eager_pct": 22.6
+   }
+  },
+  "35": {
+   "eager6": {
+    "cold_all_mean": 413.0,
+    "cold_warm_mean": 415.1,
+    "GB_per_cycle": 5.522,
+    "rows_mean": 5.98,
+    "cycles": 63,
+    "reduction_vs_eager_pct": 0.0
+   },
+   "frontier2_4": {
+    "cold_all_mean": 363.2,
+    "cold_warm_mean": 354.2,
+    "GB_per_cycle": 4.856,
+    "rows_mean": 5.25,
+    "cycles": 64,
+    "reduction_vs_eager_pct": 12.1
+   },
+   "frontier1_2_3": {
+    "cold_all_mean": 344.1,
+    "cold_warm_mean": 347.8,
+    "GB_per_cycle": 4.6,
+    "rows_mean": 5.0,
+    "cycles": 67,
+    "reduction_vs_eager_pct": 16.7
+   },
+   "sequential": {
+    "cold_all_mean": 297.1,
+    "cold_warm_mean": 306.8,
+    "GB_per_cycle": 3.972,
+    "rows_mean": 4.26,
+    "cycles": 70,
+    "reduction_vs_eager_pct": 28.1
+   }
+  },
+  "38": {
+   "eager6": {
+    "cold_all_mean": 361.8,
+    "cold_warm_mean": 379.4,
+    "GB_per_cycle": 4.837,
+    "rows_mean": 5.92,
+    "cycles": 80,
+    "reduction_vs_eager_pct": 0.0
+   },
+   "frontier2_4": {
+    "cold_all_mean": 333.8,
+    "cold_warm_mean": 341.9,
+    "GB_per_cycle": 4.462,
+    "rows_mean": 5.33,
+    "cycles": 60,
+    "reduction_vs_eager_pct": 7.7
+   },
+   "frontier1_2_3": {
+    "cold_all_mean": 314.0,
+    "cold_warm_mean": 317.9,
+    "GB_per_cycle": 4.197,
+    "rows_mean": 4.99,
+    "cycles": 72,
+    "reduction_vs_eager_pct": 13.2
+   },
+   "sequential": {
+    "cold_all_mean": 275.9,
+    "cold_warm_mean": 266.7,
+    "GB_per_cycle": 3.688,
+    "rows_mean": 4.31,
+    "cycles": 71,
+    "reduction_vs_eager_pct": 23.7
+   }
+  }
+ }
+}

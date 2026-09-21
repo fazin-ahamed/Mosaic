@@ -1,0 +1,27 @@
+{
+  "classification": "SOURCE_CLASS_CAPTURE_SCHEMA_CHECK_NOT_STUDENT_RESULT",
+  "captures": [
+    {
+      "category": "coding_01",
+      "split": "train",
+      "n_generated": 9,
+      "h40_shape": [
+        18,
+        4,
+        4096
+      ],
+      "state_token_alignment_pass": true
+    },
+    {
+      "category": "coding_13",
+      "split": "val",
+      "n_generated": 9,
+      "h40_shape": [
+        20,
+        4,
+        4096
+      ],
+      "state_token_alignment_pass": true
+    }
+  ]
+}

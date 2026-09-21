@@ -1,0 +1,27 @@
+{
+ "classification": "RECURRENT_TARGET_FEATURE_DRAFTER_R0R2",
+ "design": "z0=tanh(seed(h40)); GRU recurrence on token embeddings; frozen lm_head batched over K",
+ "results": {
+  "top1_by_h": {
+   "1": 0.1754,
+   "2": 0.214,
+   "4": 0.2632,
+   "8": 0.2316,
+   "16": 0.2596,
+   "32": 0.2561
+  },
+  "survival": {
+   "2": 0.0702,
+   "4": 0.0035,
+   "8": 0.0,
+   "16": 0.0,
+   "32": 0.0
+  },
+  "E_A_teacher_forced_argmax": 1.274,
+  "E_A_free_roll_subset": 1.281,
+  "val_h1_best": 0.2397,
+  "train_seconds": 252,
+  "params_millions": 118.63,
+  "rollout_latency_ms_K32": 113.1
+ }
+}

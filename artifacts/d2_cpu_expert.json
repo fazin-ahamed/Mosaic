@@ -1,0 +1,66 @@
+{
+  "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+  "production_correct": false,
+  "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+  "expert": "layers.41.ffn.experts.0",
+  "rows": 1,
+  "input": "seeded synthetic BF16, seed=20260907",
+  "route_weight": 0.25,
+  "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+  "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+  "tensor_sha256": {
+    "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+    "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+    "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+    "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+    "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+    "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+  },
+  "source_tensor_bytes": 13369344,
+  "stages": {
+    "w1": {
+      "negative_codes": 2057,
+      "fractional_codes": 135,
+      "codes_above_u8": 85,
+      "max_abs_code": 448.0,
+      "shim_vs_ordered": {
+        "bit_equal": true,
+        "different_elements": 0,
+        "max_abs_error": 0.0
+      }
+    },
+    "w3": {
+      "negative_codes": 2057,
+      "fractional_codes": 135,
+      "codes_above_u8": 85,
+      "max_abs_code": 448.0,
+      "shim_vs_ordered": {
+        "bit_equal": true,
+        "different_elements": 0,
+        "max_abs_error": 0.0
+      }
+    },
+    "w2": {
+      "negative_codes": 1009,
+      "fractional_codes": 641,
+      "codes_above_u8": 14,
+      "max_abs_code": 416.0,
+      "shim_vs_ordered": {
+        "bit_equal": true,
+        "different_elements": 0,
+        "max_abs_error": 0.0
+      }
+    }
+  },
+  "final_shim_vs_ordered_bit_equal": true,
+  "vnni_signed_regression": {
+    "expected_signed_dot": -32,
+    "observed_dot": 8160.0,
+    "signed_activation_supported": false
+  },
+  "blockers": [
+    "v4-B unsigned byte interface cannot directly represent signed fractional E4M3 activations",
+    "no source GPU kernel comparison or full routed/shared MoE reduction",
+    "synthetic input and route; no held-out acceptance or production latency measured"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+ "classification": "EK0B_RESIDENCY_R",
+ "abs_max_cold": 103,
+ "mean_union": 899.8,
+ "by_cap": {
+  "2": {
+   "cap_slots": 149,
+   "lru": {
+    "mean_miss": 899.8,
+    "p90_miss": 1001,
+    "max_miss": 1099,
+    "mean_cold_GB": 12.03,
+    "mean_move_ms": 950.0,
+    "mean_tput_UB": 3.98,
+    "min_tput_UB": 3.25
+   },
+   "hot": {
+    "mean_miss": 757.3,
+    "p90_miss": 865,
+    "max_miss": 950,
+    "mean_cold_GB": 10.124,
+    "mean_move_ms": 802.3,
+    "mean_tput_UB": 4.73,
+    "min_tput_UB": 3.75
+   },
+   "belady": {
+    "mean_miss": 772.9,
+    "p90_miss": 898,
+    "max_miss": 950,
+    "mean_cold_GB": 10.333,
+    "mean_move_ms": 818.5,
+    "mean_tput_UB": 4.64,
+    "min_tput_UB": 3.75
+   }
+  },
+  "4": {
+   "cap_slots": 299,
+   "lru": {
+    "mean_miss": 899.8,
+    "p90_miss": 1001,
+    "max_miss": 1099,
+    "mean_cold_GB": 12.03,
+    "mean_move_ms": 950.0,
+    "mean_tput_UB": 3.98,
+    "min_tput_UB": 3.25
+   },
+   "hot": {
+    "mean_miss": 643.0,
+    "p90_miss": 753,
+    "max_miss": 817,
+    "mean_cold_GB": 8.597,
+    "mean_move_ms": 683.9,
+    "mean_tput_UB": 5.56,
+    "min_tput_UB": 4.35
+   },
+   "belady": {
+    "mean_miss": 644.3,
+    "p90_miss": 814,
+    "max_miss": 914,
+    "mean_cold_GB": 8.614,
+    "mean_move_ms": 685.2,
+    "mean_tput_UB": 5.64,
+    "min_tput_UB": 3.89
+   }
+  },
+  "6": {
+   "cap_slots": 448,
+   "lru": {
+    "mean_miss": 899.8,
+    "p90_miss": 1001,
+    "max_miss": 1099,
+    "mean_cold_GB": 12.03,
+    "mean_move_ms": 950.0,
+    "mean_tput_UB": 3.98,
+    "min_tput_UB": 3.25
+   },
+   "hot": {
+    "mean_miss": 551.6,
+    "p90_miss": 640,
+    "max_miss": 726,
+    "mean_cold_GB": 7.374,
+    "mean_move_ms": 589.1,
+    "mean_tput_UB": 6.51,
+    "min_tput_UB": 4.88
+   },
+   "belady": {
+    "mean_miss": 517.9,
+    "p90_miss": 814,
+    "max_miss": 914,
+    "mean_cold_GB": 6.924,
+    "mean_move_ms": 554.2,
+    "mean_tput_UB": 7.27,
+    "min_tput_UB": 3.89
+   }
+  },
+  "8": {
+   "cap_slots": 598,
+   "lru": {
+    "mean_miss": 899.8,
+    "p90_miss": 1001,
+    "max_miss": 1099,
+    "mean_cold_GB": 12.03,
+    "mean_move_ms": 950.0,
+    "mean_tput_UB": 3.98,
+    "min_tput_UB": 3.25
+   },
+   "hot": {
+    "mean_miss": 472.7,
+    "p90_miss": 599,
+    "max_miss": 652,
+    "mean_cold_GB": 6.32,
+    "mean_move_ms": 507.4,
+    "mean_tput_UB": 7.63,
+    "min_tput_UB": 5.42
+   },
+   "belady": {
+    "mean_miss": 427.8,
+    "p90_miss": 814,
+    "max_miss": 914,
+    "mean_cold_GB": 5.72,
+    "mean_move_ms": 460.9,
+    "mean_tput_UB": 9.22,
+    "min_tput_UB": 3.89
+   }
+  },
+  "10": {
+   "cap_slots": 747,
+   "lru": {
+    "mean_miss": 899.8,
+    "p90_miss": 1001,
+    "max_miss": 1099,
+    "mean_cold_GB": 12.03,
+    "mean_move_ms": 950.0,
+    "mean_tput_UB": 3.98,
+    "min_tput_UB": 3.25
+   },
+   "hot": {
+    "mean_miss": 405.8,
+    "p90_miss": 534,
+    "max_miss": 592,
+    "mean_cold_GB": 5.426,
+    "mean_move_ms": 438.1,
+    "mean_tput_UB": 9.06,
+    "min_tput_UB": 5.95
+   },
+   "belady": {
+    "mean_miss": 384.1,
+    "p90_miss": 814,
+    "max_miss": 914,
+    "mean_cold_GB": 5.135,
+    "mean_move_ms": 415.6,
+    "mean_tput_UB": 10.63,
+    "min_tput_UB": 3.89
+   }
+  }
+ },
+ "best_oracle_10GB_mean_miss": 384.1,
+ "verdict": "GPU_ONLY_CLOSED"
+}

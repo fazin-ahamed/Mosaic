@@ -1,0 +1,130 @@
+{
+  "classification": "D3_STATE_DIAGNOSTICS_ONLY_SOURCE_TAIL_PENDING",
+  "student_pass": false,
+  "production_certified": false,
+  "source_tail_acceptance": null,
+  "fit_seconds": 0.04787021699939942,
+  "train_prompts": [
+    "coding_01"
+  ],
+  "val_prompts": [
+    "coding_13"
+  ],
+  "rank": 4,
+  "training_pairs_by_horizon": [
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "K": 8,
+  "chunk": 8,
+  "cpu_threads": 2,
+  "platform": "Linux-7.1.13-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "torch": "2.13.0+cu130",
+  "notes": [
+    "No checkpoint selection by state metrics",
+    "One exact committed boundary per validation prompt",
+    "Recursive chunks use predicted state, no token/tail feedback"
+  ],
+  "per_prompt": [
+    {
+      "category": "coding_13",
+      "split": "val",
+      "K": 8,
+      "state_diagnostics": {
+        "hold": {
+          "relative_l2_by_horizon": [
+            0.9945043325424194,
+            1.04630446434021,
+            0.9574012756347656,
+            1.0911036729812622,
+            1.2010209560394287,
+            1.1774892807006836,
+            1.3742477893829346,
+            1.3405061960220337
+          ],
+          "cosine_by_horizon": [
+            0.5801202654838562,
+            0.5468686819076538,
+            0.5554616451263428,
+            0.48962509632110596,
+            0.4282122254371643,
+            0.4525913596153259,
+            0.3679707646369934,
+            0.30861034989356995
+          ],
+          "normalized_mean_bias_l2": 0.9505061507225037,
+          "residual_lag1_cosine": 0.7193843126296997,
+          "selection_metric": false
+        },
+        "open_loop": {
+          "relative_l2_by_horizon": [
+            0.9374327063560486,
+            1.0103563070297241,
+            0.9573652148246765,
+            1.0497537851333618,
+            1.1908551454544067,
+            1.189658761024475,
+            1.5046675205230713,
+            1.349371314048767
+          ],
+          "cosine_by_horizon": [
+            0.592380166053772,
+            0.5361357927322388,
+            0.5376641750335693,
+            0.50107342004776,
+            0.4196281135082245,
+            0.4436369836330414,
+            0.308632493019104,
+            0.2957575023174286
+          ],
+          "normalized_mean_bias_l2": 0.9090752005577087,
+          "residual_lag1_cosine": 0.6876298189163208,
+          "selection_metric": false
+        },
+        "recursive_chunk": {
+          "relative_l2_by_horizon": [
+            0.9374327063560486,
+            1.0103563070297241,
+            0.9573652148246765,
+            1.0497537851333618,
+            1.1908551454544067,
+            1.189658761024475,
+            1.5046675205230713,
+            1.349371314048767
+          ],
+          "cosine_by_horizon": [
+            0.592380166053772,
+            0.5361357927322388,
+            0.5376641750335693,
+            0.50107342004776,
+            0.4196281135082245,
+            0.4436369836330414,
+            0.308632493019104,
+            0.2957575023174286
+          ],
+          "normalized_mean_bias_l2": 0.9090752005577087,
+          "residual_lag1_cosine": 0.6876298189163208,
+          "selection_metric": false
+        }
+      },
+      "student_cpu_timing": {
+        "open_loop": {
+          "cpu_seconds_p50": 0.00017438200029573636,
+          "repetitions": 10,
+          "scope": "CPU state prediction + BF16 cast; excludes tail/verifier"
+        },
+        "recursive_chunk": {
+          "cpu_seconds_p50": 0.00018482599989511073,
+          "repetitions": 10,
+          "scope": "CPU state prediction + BF16 cast; excludes tail/verifier"
+        }
+      }
+    }
+  ]
+}

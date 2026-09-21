@@ -1,0 +1,891 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "route_authority": "synthetic_distinct_interim (golden corpus = 63 positions/layer; golden windows end at K63)",
+  "core_assumption": "constant 0.1024 s (BF16 ceiling; core scales with N \u2014 refine in TRUE P2)",
+  "rows": {
+    "56": {
+      "moe_block_s": 3.596400634765625,
+      "t_target_s": 3.698800634765625,
+      "raw_candidate_per_s": 15.140042821893926,
+      "E_A_oracle": 28.27332751941323,
+      "R_oracle_output_per_s": 7.643917667166934,
+      "T_max_for_30_s": 0.9424442506471077,
+      "speedup_required": 3.924689054260693,
+      "reps_s": [
+        3.622559814453125,
+        3.596400634765625,
+        3.52769580078125
+      ]
+    },
+    "64": {
+      "moe_block_s": 4.063107177734375,
+      "t_target_s": 4.1655071777343755,
+      "raw_candidate_per_s": 15.36427552978307,
+      "E_A_oracle": 31.575780967200217,
+      "R_oracle_output_per_s": 7.580296857002254,
+      "T_max_for_30_s": 1.0525260322400072,
+      "speedup_required": 3.9576286477867524,
+      "reps_s": [
+        4.063107177734375,
+        4.021187744140625,
+        4.12561669921875
+      ]
+    },
+    "80": {
+      "moe_block_s": 5.00088623046875,
+      "t_target_s": 5.1032862304687505,
+      "raw_candidate_per_s": 15.676173427695781,
+      "E_A_oracle": 37.95786358617044,
+      "R_oracle_output_per_s": 7.4379256565203296,
+      "T_max_for_30_s": 1.2652621195390146,
+      "speedup_required": 4.033382610338545,
+      "reps_s": [
+        5.0139443359375,
+        4.997748046875,
+        5.00088623046875
+      ]
+    },
+    "96": {
+      "moe_block_s": 5.49135546875,
+      "t_target_s": 5.59375546875,
+      "raw_candidate_per_s": 17.161994394698215,
+      "E_A_oracle": 44.053962691718816,
+      "R_oracle_output_per_s": 7.875561049786694,
+      "T_max_for_30_s": 1.4684654230572938,
+      "speedup_required": 3.8092524215544663,
+      "reps_s": [
+        5.591189453125,
+        5.49135546875,
+        5.4329375
+      ]
+    },
+    "112": {
+      "moe_block_s": 5.50105078125,
+      "t_target_s": 5.60345078125,
+      "raw_candidate_per_s": 19.98768337089157,
+      "E_A_oracle": 49.8768933122353,
+      "R_oracle_output_per_s": 8.90110313436338,
+      "T_max_for_30_s": 1.6625631104078435,
+      "speedup_required": 3.370368767460152,
+      "reps_s": [
+        5.44897021484375,
+        5.50105078125,
+        5.53628125
+      ]
+    },
+    "124": {
+      "moe_block_s": 5.42871044921875,
+      "t_target_s": 5.53111044921875,
+      "raw_candidate_per_s": 22.418644707685157,
+      "E_A_oracle": 53.121619990530455,
+      "R_oracle_output_per_s": 9.604151006970707,
+      "T_max_for_30_s": 1.770720666351015,
+      "speedup_required": 3.1236493447703975,
+      "reps_s": [
+        5.29032373046875,
+        5.42871044921875,
+        5.48510693359375
+      ]
+    },
+    "128": {
+      "moe_block_s": 5.37240771484375,
+      "t_target_s": 5.474807714843751,
+      "raw_candidate_per_s": 23.379816546425154,
+      "E_A_oracle": 53.7230235271069,
+      "R_oracle_output_per_s": 9.812769018617514,
+      "T_max_for_30_s": 1.7907674509035634,
+      "speedup_required": 3.057241023719378,
+      "reps_s": [
+        5.37240771484375,
+        5.21287548828125,
+        5.42925
+      ]
+    }
+  },
+  "thermal_label": "UNKNOWN",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 72,
+    "sm_clock_mhz": 1905,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.037,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 100,
+    "ts": 1787936564.6306875
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 72,
+    "sm_clock_mhz": 1905,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.039,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 99,
+    "ts": 1787936716.9686112
+  },
+  "interpretation": {
+    "route_authority_caveat": "Synthetic-distinct windows at K>=56 generate ~200+ unique experts/window vs golden ~86 (mean M 3.9). The measured curve is therefore a WORST-CASE lower bound: K56 synthetic 3.596 s vs K56 golden 1.698 s (2.1x heavier). It does NOT invalidate the oracle extrapolation (built on golden-route historicals); it bounds the synthetic-routing regime.",
+    "golden_limit": "Golden corpus = 63 positions/layer -> golden windows end at K63. True golden N64-128 requires a longer capture (Track C sandbox dependency, >= 129 positions/layer).",
+    "findings": "Even on worst-case routes the curve rises with N (raw 15.1 -> 23.4/s from K56->K128) \u2014 amortization direction confirmed. R_oracle on worst-case routes: 7.4-9.8/s.",
+    "thermal_note": "Clocks 1905 MHz start+end, temp 72->72 flat; label UNKNOWN from one idle-gap rep snapshot. Treat as clock-stable evidence."
+  },
+  "golden_matched_surrogate": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "route_authority": "golden-matched surrogate (pool size from golden unique(K) fit; distinct top-6 per token); anchored by measured golden K56",
+    "unique_fit": {
+      "coef": 6.756945596513516,
+      "slope": 0.6263187631763562,
+      "golden_points": {
+        "8": 25,
+        "16": 38,
+        "24": 49.5,
+        "32": 59,
+        "40": 69,
+        "48": 75,
+        "56": 85
+      }
+    },
+    "validity": "TIMING cost estimates only; grouped-IMMA numerics correctness-blocked (AGENTS \u00a77)",
+    "configs": {
+      "c3_owner": {
+        "56_golden_anchor_s": 1.6221583251953124,
+        "56": {
+          "moe_block_s": 0.9414348754882812,
+          "t_target_s": 1.0438348754882811,
+          "raw_per_s": 53.64833204466802,
+          "E_A_oracle": 28.27332751941323,
+          "R_oracle_per_s": 27.08601540659162
+        },
+        "64": {
+          "moe_block_s": 0.99118896484375,
+          "t_target_s": 1.09358896484375,
+          "raw_per_s": 58.52290216657792,
+          "E_A_oracle": 31.575780967200217,
+          "R_oracle_per_s": 28.87353656838674
+        },
+        "80": {
+          "moe_block_s": 1.0976375732421875,
+          "t_target_s": 1.2000375732421875,
+          "raw_per_s": 66.6645793296796,
+          "E_A_oracle": 37.95786358617044,
+          "R_oracle_per_s": 31.630562602817697
+        },
+        "96": {
+          "moe_block_s": 1.2263270263671875,
+          "t_target_s": 1.3287270263671875,
+          "raw_per_s": 72.24960288680909,
+          "E_A_oracle": 44.053962691718816,
+          "R_oracle_per_s": 33.15501364653112
+        },
+        "112": {
+          "moe_block_s": 1.3195230712890624,
+          "t_target_s": 1.4219230712890625,
+          "raw_per_s": 78.76656779924457,
+          "E_A_oracle": 49.8768933122353,
+          "R_oracle_per_s": 35.07706873833812
+        },
+        "124": {
+          "moe_block_s": 1.397217041015625,
+          "t_target_s": 1.499617041015625,
+          "raw_per_s": 82.68777735148983,
+          "E_A_oracle": 53.121619990530455,
+          "R_oracle_per_s": 35.423457147801884
+        },
+        "128": {
+          "moe_block_s": 1.419946044921875,
+          "t_target_s": 1.522346044921875,
+          "raw_per_s": 84.08075182838525,
+          "E_A_oracle": 53.7230235271069,
+          "R_oracle_per_s": 35.28962663010295
+        }
+      },
+      "c0_candidate": {
+        "56_golden_anchor_s": 0.5577686767578125,
+        "56": {
+          "moe_block_s": 0.5092853698730468,
+          "t_target_s": 0.6116853698730469,
+          "raw_per_s": 91.55033413930204,
+          "E_A_oracle": 28.27332751941323,
+          "R_oracle_per_s": 46.22201038628937
+        },
+        "64": {
+          "moe_block_s": 0.5890722045898438,
+          "t_target_s": 0.6914722045898438,
+          "raw_per_s": 92.5561426405599,
+          "E_A_oracle": 31.575780967200217,
+          "R_oracle_per_s": 45.66457011230093
+        },
+        "80": {
+          "moe_block_s": 0.707006103515625,
+          "t_target_s": 0.809406103515625,
+          "raw_per_s": 98.8379005946743,
+          "E_A_oracle": 37.95786358617044,
+          "R_oracle_per_s": 46.89594434895152
+        },
+        "96": {
+          "moe_block_s": 0.8273869018554687,
+          "t_target_s": 0.9297869018554688,
+          "raw_per_s": 103.24946480577844,
+          "E_A_oracle": 44.053962691718816,
+          "R_oracle_per_s": 47.38070906764269
+        },
+        "112": {
+          "moe_block_s": 0.9503723754882812,
+          "t_target_s": 1.0527723754882812,
+          "raw_per_s": 106.3857701889773,
+          "E_A_oracle": 49.8768933122353,
+          "R_oracle_per_s": 47.376711693353606
+        },
+        "124": {
+          "moe_block_s": 1.0288271484375,
+          "t_target_s": 1.1312271484375,
+          "raw_per_s": 109.61547393136222,
+          "E_A_oracle": 53.121619990530455,
+          "R_oracle_per_s": 46.959286703739686
+        },
+        "128": {
+          "moe_block_s": 1.0594835205078126,
+          "t_target_s": 1.1618835205078126,
+          "raw_per_s": 110.16594842833844,
+          "E_A_oracle": 53.7230235271069,
+          "R_oracle_per_s": 46.237873744544316
+        }
+      }
+    },
+    "thermal": {
+      "start": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 71,
+        "sm_clock_mhz": 1897,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.04,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 100,
+        "ts": 1787939896.830455
+      },
+      "end": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 77,
+        "sm_clock_mhz": 1905,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.037,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 97,
+        "ts": 1787940004.2085438
+      },
+      "label": "UNKNOWN",
+      "window_drift_c": 5
+    },
+    "superseded_by": "consecutive_bootstrap_v2 (uniform pool unrealistic)"
+  },
+  "real_golden_post_fix": {
+    "authority": "REAL golden windows (K56, K63 = corpus max width)",
+    "K56": {
+      "c3_moe_s": 1.7536,
+      "c0_moe_s": 0.6491,
+      "c0_R_oracle_per_s": 37.6
+    },
+    "K63": {
+      "c3_moe_s": 1.8088,
+      "c0_moe_s": 0.7039,
+      "c0_R_oracle_est_per_s": 38.5
+    },
+    "note": "c0 (all-IMMA) post-fix is bitwise-exact vs QPA; these are the first REAL golden wide-K numbers with valid numerics. Surrogate uniform-pool tables above remain PRELIMINARY (route model weaker than the per-layer bootstrap specified in review)."
+  },
+  "per_layer_bootstrap": {
+    "authority": "per-layer golden bootstrap (whole-token resampling; only window length extrapolated)",
+    "real_anchors_c0": {
+      "56": 0.6491,
+      "63": 0.7039
+    },
+    "configs": {
+      "c0_all_imma": {
+        "56": {
+          "moe_block_s": 0.6084237365722657,
+          "t_target_s": 0.7108237365722657,
+          "raw_per_s": 78.78183735118807,
+          "E_A": 28.27332751941323,
+          "R_oracle_per_s": 39.77544089305862,
+          "route_stats": {
+            "unique": 116,
+            "mean_m": 2.896551724137931,
+            "p90_m": 6,
+            "max_m": 21,
+            "frac_m1": 0.33620689655172414
+          },
+          "E_A_interpolated": false
+        },
+        "63": {
+          "moe_block_s": 0.6560184326171875,
+          "t_target_s": 0.7584184326171876,
+          "raw_per_s": 83.06760132740511,
+          "E_A": 31.0,
+          "R_oracle_per_s": 40.874533986500936,
+          "route_stats": {
+            "unique": 122,
+            "mean_m": 3.098360655737705,
+            "p90_m": 6,
+            "max_m": 22,
+            "frac_m1": 0.3360655737704918
+          },
+          "E_A_interpolated": true
+        },
+        "64": {
+          "moe_block_s": 0.665086181640625,
+          "t_target_s": 0.7674861816406251,
+          "raw_per_s": 83.38912351905765,
+          "E_A": 31.575780967200217,
+          "R_oracle_per_s": 41.14182342632138,
+          "route_stats": {
+            "unique": 126,
+            "mean_m": 3.0476190476190474,
+            "p90_m": 6,
+            "max_m": 21,
+            "frac_m1": 0.30952380952380953
+          },
+          "E_A_interpolated": false
+        },
+        "80": {
+          "moe_block_s": 0.7670880432128906,
+          "t_target_s": 0.8694880432128906,
+          "raw_per_s": 92.00816575278922,
+          "E_A": 37.95786358617044,
+          "R_oracle_per_s": 43.65541755572665,
+          "route_stats": {
+            "unique": 130,
+            "mean_m": 3.6923076923076925,
+            "p90_m": 7,
+            "max_m": 29,
+            "frac_m1": 0.2076923076923077
+          },
+          "E_A_interpolated": false
+        },
+        "96": {
+          "moe_block_s": 0.8354940185546875,
+          "t_target_s": 0.9378940185546876,
+          "raw_per_s": 102.35698074707611,
+          "E_A": 44.053962691718816,
+          "R_oracle_per_s": 46.971152198632,
+          "route_stats": {
+            "unique": 133,
+            "mean_m": 4.330827067669173,
+            "p90_m": 8,
+            "max_m": 32,
+            "frac_m1": 0.23308270676691728
+          },
+          "E_A_interpolated": false
+        },
+        "112": {
+          "moe_block_s": 0.9699265441894531,
+          "t_target_s": 1.0723265441894532,
+          "raw_per_s": 104.44579648511659,
+          "E_A": 49.8768933122353,
+          "R_oracle_per_s": 46.51278435892501,
+          "route_stats": {
+            "unique": 132,
+            "mean_m": 5.090909090909091,
+            "p90_m": 11,
+            "max_m": 41,
+            "frac_m1": 0.17424242424242425
+          },
+          "E_A_interpolated": false
+        },
+        "124": {
+          "moe_block_s": 1.0611875610351562,
+          "t_target_s": 1.1635875610351563,
+          "raw_per_s": 106.56696939049996,
+          "E_A": 53.121619990530455,
+          "R_oracle_per_s": 45.65330686697282,
+          "route_stats": {
+            "unique": 132,
+            "mean_m": 5.636363636363637,
+            "p90_m": 11,
+            "max_m": 42,
+            "frac_m1": 0.12121212121212122
+          },
+          "E_A_interpolated": false
+        },
+        "128": {
+          "moe_block_s": 1.0678942260742188,
+          "t_target_s": 1.1702942260742188,
+          "raw_per_s": 109.37420449332575,
+          "E_A": 53.7230235271069,
+          "R_oracle_per_s": 45.90557000979329,
+          "route_stats": {
+            "unique": 129,
+            "mean_m": 5.953488372093023,
+            "p90_m": 13,
+            "max_m": 51,
+            "frac_m1": 0.12403100775193798
+          },
+          "E_A_interpolated": false
+        }
+      },
+      "c3_owner": {
+        "56": {
+          "moe_block_s": 1.5208741455078125,
+          "t_target_s": 1.6232741455078126,
+          "raw_per_s": 34.498177744635605,
+          "E_A": 28.27332751941323,
+          "R_oracle_per_s": 17.417469253518124,
+          "route_stats": {
+            "unique": 113,
+            "mean_m": 2.9734513274336285,
+            "p90_m": 6,
+            "max_m": 14,
+            "frac_m1": 0.2920353982300885
+          },
+          "E_A_interpolated": false
+        },
+        "63": {
+          "moe_block_s": 1.4620916137695312,
+          "t_target_s": 1.5644916137695313,
+          "raw_per_s": 40.26867222906103,
+          "E_A": 31.0,
+          "R_oracle_per_s": 19.814743477791936,
+          "route_stats": {
+            "unique": 112,
+            "mean_m": 3.375,
+            "p90_m": 7,
+            "max_m": 22,
+            "frac_m1": 0.23214285714285715
+          },
+          "E_A_interpolated": true
+        },
+        "64": {
+          "moe_block_s": 1.4482621459960936,
+          "t_target_s": 1.5506621459960936,
+          "raw_per_s": 41.27269125982858,
+          "E_A": 31.575780967200217,
+          "R_oracle_per_s": 20.362772799175406,
+          "route_stats": {
+            "unique": 119,
+            "mean_m": 3.226890756302521,
+            "p90_m": 7,
+            "max_m": 27,
+            "frac_m1": 0.3277310924369748
+          },
+          "E_A_interpolated": false
+        },
+        "80": {
+          "moe_block_s": 1.4970458984375,
+          "t_target_s": 1.5994458984375,
+          "raw_per_s": 50.01732167255677,
+          "E_A": 37.95786358617044,
+          "R_oracle_per_s": 23.731883412406454,
+          "route_stats": {
+            "unique": 135,
+            "mean_m": 3.5555555555555554,
+            "p90_m": 7,
+            "max_m": 20,
+            "frac_m1": 0.2518518518518518
+          },
+          "E_A_interpolated": false
+        },
+        "96": {
+          "moe_block_s": 1.5105427856445313,
+          "t_target_s": 1.6129427856445313,
+          "raw_per_s": 59.518540182836325,
+          "E_A": 44.053962691718816,
+          "R_oracle_per_s": 27.312786965419154,
+          "route_stats": {
+            "unique": 135,
+            "mean_m": 4.266666666666667,
+            "p90_m": 10,
+            "max_m": 25,
+            "frac_m1": 0.14814814814814814
+          },
+          "E_A_interpolated": false
+        },
+        "112": {
+          "moe_block_s": 1.55569921875,
+          "t_target_s": 1.65809921875,
+          "raw_per_s": 67.54722439615769,
+          "E_A": 49.8768933122353,
+          "R_oracle_per_s": 30.080765220935486,
+          "route_stats": {
+            "unique": 132,
+            "mean_m": 5.090909090909091,
+            "p90_m": 10,
+            "max_m": 39,
+            "frac_m1": 0.1893939393939394
+          },
+          "E_A_interpolated": false
+        },
+        "124": {
+          "moe_block_s": 1.577111083984375,
+          "t_target_s": 1.679511083984375,
+          "raw_per_s": 73.8310102162765,
+          "E_A": 53.121619990530455,
+          "R_oracle_per_s": 31.62921667924203,
+          "route_stats": {
+            "unique": 130,
+            "mean_m": 5.723076923076923,
+            "p90_m": 11,
+            "max_m": 44,
+            "frac_m1": 0.12307692307692308
+          },
+          "E_A_interpolated": false
+        },
+        "128": {
+          "moe_block_s": 1.576768798828125,
+          "t_target_s": 1.679168798828125,
+          "raw_per_s": 76.22819104864854,
+          "E_A": 53.7230235271069,
+          "R_oracle_per_s": 31.993819540119887,
+          "route_stats": {
+            "unique": 136,
+            "mean_m": 5.647058823529412,
+            "p90_m": 11,
+            "max_m": 45,
+            "frac_m1": 0.10294117647058823
+          },
+          "E_A_interpolated": false
+        }
+      }
+    },
+    "thermal": {
+      "label": "UNKNOWN",
+      "start": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 71,
+        "sm_clock_mhz": 1897,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.04,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 100,
+        "ts": 1787941315.9486308
+      },
+      "end": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 75,
+        "sm_clock_mhz": 1897,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.037,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 100,
+        "ts": 1787941525.7742946
+      }
+    },
+    "interpretation": {
+      "realism": "K56 bootstrap 0.6084s vs REAL golden 0.6491s = ratio 0.937 (6.3% optimistic); K63 anchor available for future cross-check. Route stats: uniq 116@K56 (real ~86-116 range), meanM 2.90 rising to 5.95@K128, p90M 6->13 \u2014 realistic multiplicity ladder, unlike the uniform-pool surrogate.",
+      "frontier_c0": {
+        "peak": "N96: moe 0.8355s, R_oracle 47.0/s",
+        "all_widths_above_40": "N64 41.1 / N80 43.7 / N96 47.0 / N112 46.5 / N124 45.7 / N128 45.9",
+        "N56_real": "37.6/s (real golden, not bootstrap)"
+      },
+      "with_173ms_production_core": {
+        "N96": "43.7/s",
+        "N128": "43.3/s",
+        "note": "even with the current non-gate core projection, N96-128 hold ~43/s oracle"
+      },
+      "caveats": [
+        "bootstrap surrogate (validated within 6.3% at K56); authoritative golden N64-128 still needs sandbox capture",
+        "core = 102.4ms BF16 ceiling in T_target; production core currently 173ms projected (see with_173ms table)",
+        "oracle = perfect-drafter ceiling; real DSpark acceptance lower (eta_draft unknown)",
+        "perfect-residency assumption: the K96 working set (~unique experts x 12.98MB packed4) is NOT resident in 12GB; P3 residency work remains",
+        "E[A](63)=31.0 interpolated; other E[A] from measured coverage DP",
+        "thermal label UNKNOWN (idle-gap clock artifact); clocks effectively locked \u2014 re-certify in TRUE P2"
+      ],
+      "verdict": "Post-fix exact all-IMMA: oracle output ceiling 37.6/s @ N56 (real) to 47.0/s @ N96 (bootstrap). Compute is no longer the binding Exact-30 constraint in perfect-residency terms; residency + real drafter are."
+    },
+    "superseded_by": "consecutive_bootstrap_v2 (U(K) inflated by pool mixing)"
+  },
+  "consecutive_bootstrap_v2": {
+    "authority": "consecutive-window golden bootstrap v2 (per-capture pools, wrap-within-capture; U(K)-realistic)",
+    "configs": {
+      "c0_all_imma": {
+        "56": {
+          "moe_block_s": 0.6849812316894531,
+          "raw_bf16core_per_s": 71.12183748632538,
+          "raw_prodcore_per_s": 65.26949300479482,
+          "R_oracle_bf16core_per_s": 35.90805366130998,
+          "R_oracle_prodcore_per_s": 32.95331701340383,
+          "E_A": 28.27332751941323,
+          "route_stats": {
+            "unique": 134,
+            "mean_m": 2.5074626865671643,
+            "p90_m": 5
+          }
+        },
+        "63": {
+          "moe_block_s": 0.7405352783203125,
+          "raw_bf16core_per_s": 74.7388341908502,
+          "raw_prodcore_per_s": 68.96285397520283,
+          "R_oracle_bf16core_per_s": 36.77625174470406,
+          "R_oracle_prodcore_per_s": 33.93410274970299,
+          "E_A": 31.0,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 2.6619718309859155,
+            "p90_m": 5
+          }
+        },
+        "64": {
+          "moe_block_s": 0.7497330932617188,
+          "raw_bf16core_per_s": 75.10563843381146,
+          "raw_prodcore_per_s": 69.35916839588997,
+          "R_oracle_bf16core_per_s": 37.05498732168383,
+          "R_oracle_prodcore_per_s": 34.21984233337152,
+          "E_A": 31.575780967200217,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 2.704225352112676,
+            "p90_m": 5
+          }
+        },
+        "80": {
+          "moe_block_s": 0.8321044006347655,
+          "raw_bf16core_per_s": 85.60687348894206,
+          "raw_prodcore_per_s": 79.59372175614457,
+          "R_oracle_bf16core_per_s": 40.618175324147664,
+          "R_oracle_prodcore_per_s": 37.76509540919178,
+          "E_A": 37.95786358617044,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 3.380281690140845,
+            "p90_m": 7
+          }
+        },
+        "96": {
+          "moe_block_s": 0.9173760681152344,
+          "raw_bf16core_per_s": 94.13831428445724,
+          "raw_prodcore_per_s": 88.0430181909077,
+          "R_oracle_bf16core_per_s": 43.19964359738312,
+          "R_oracle_prodcore_per_s": 40.402539985922594,
+          "E_A": 44.053962691718816,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 4.056338028169014,
+            "p90_m": 8
+          }
+        },
+        "112": {
+          "moe_block_s": 0.9991058349609374,
+          "raw_bf16core_per_s": 101.67898929375335,
+          "raw_prodcore_per_s": 95.5545110853685,
+          "R_oracle_bf16core_per_s": 45.28064375982546,
+          "R_oracle_prodcore_per_s": 42.55323352596188,
+          "E_A": 49.8768933122353,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 4.732394366197183,
+            "p90_m": 10
+          }
+        },
+        "124": {
+          "moe_block_s": 1.0660065307617188,
+          "raw_bf16core_per_s": 106.12744514459426,
+          "raw_prodcore_per_s": 100.08018272814675,
+          "R_oracle_bf16core_per_s": 45.46501460916937,
+          "R_oracle_prodcore_per_s": 42.87436641506017,
+          "E_A": 53.121619990530455,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 5.23943661971831,
+            "p90_m": 9
+          }
+        },
+        "128": {
+          "moe_block_s": 1.0834636840820313,
+          "raw_bf16core_per_s": 107.93820716340082,
+          "raw_prodcore_per_s": 101.87321895699391,
+          "R_oracle_bf16core_per_s": 45.30286596025876,
+          "R_oracle_prodcore_per_s": 42.757322959442945,
+          "E_A": 53.7230235271069,
+          "route_stats": {
+            "unique": 142,
+            "mean_m": 5.408450704225352,
+            "p90_m": 11
+          }
+        }
+      }
+    },
+    "thermal": {
+      "label": "UNKNOWN",
+      "start": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 72,
+        "sm_clock_mhz": 1897,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.041,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 100,
+        "ts": 1787942012.092303
+      },
+      "end": {
+        "gpu": "NVIDIA GeForce RTX 3060",
+        "temp_c": 79,
+        "sm_clock_mhz": 1890,
+        "mem_clock_mhz": 7301,
+        "power_w": 0.035,
+        "power_limit_w": 170.0,
+        "gpu_util_pct": 98,
+        "ts": 1787942090.6749668
+      }
+    },
+    "fidelity_check": {
+      "U_K_median": {
+        "56": 86,
+        "63": 91,
+        "96": 91,
+        "128": 91
+      },
+      "real_U_K_median": {
+        "56": 86,
+        "63": 91
+      },
+      "verdict": "EXACT match within corpus (K<=63). Beyond corpus, wrap-reuse caps U at the capture-layer total unique (~91): K96-128 timings are mildly OPTIMISTIC on expert-traffic diversity (fewer unique experts than a true longer generation would touch). meanM grows correctly (3.91@K56 -> 8.46@K128).",
+      "k56_timing_ratio": "1.055 (pessimistic 5.5%)",
+      "headline_v2_prodcore": {
+        "63": 33.9,
+        "64": 34.2,
+        "80": 37.8,
+        "96": 40.4,
+        "112": 42.6,
+        "124": 42.9,
+        "128": 42.8
+      },
+      "headline_v2_bf16core": {
+        "63": 36.8,
+        "64": 37.1,
+        "80": 40.6,
+        "96": 43.2,
+        "112": 45.3,
+        "124": 45.5,
+        "128": 45.3
+      },
+      "N56_real_golden": "37.6 bf16core / 33.2 prodcore (0.6491s moe, real)",
+      "track_d_status": "STILL BLOCKED for authoritative golden N64-128 (needs >=129-position capture on sandbox). v1 uniform-pool and v1 mixed-pool tables superseded by v2."
+    },
+    "interpretation": {
+      "frontier_v2": "Production-core oracle ceiling: N56 33.2 (real) rising to ~43/s at N124-128 (bootstrap, U-capped). BF16-core constant adds ~3/s. All widths N63-128 clear 30 in oracle terms; peak N124 42.9.",
+      "caveat_beyond_corpus": "K96-128 U-capped at 91 -> optimistic traffic; true longer-gen U(96+) unknown until sandbox capture."
+    },
+    "superseded_by": "v3_bounds (no-wrap anchors resolve wrap contamination)"
+  },
+  "v3_bounds": {
+    "authority": "v3: no-wrap anchors (K<=63) + OPTIMISTIC wrap / PESSIMISTIC mixed bounds (K>63); stats = medians over all windows",
+    "rows": {
+      "56_nowrap_anchor": {
+        "moe_s": 0.650287109375,
+        "u_median": 86,
+        "E_A": 28.27332751941323,
+        "ratio_vs_real": 1.001828854375289,
+        "R_oracle_prodcore": 34.342001954672874,
+        "R_oracle_bf16core": 37.56318816578408
+      },
+      "63_nowrap_anchor": {
+        "moe_s": 0.7089254455566406,
+        "u_median": 91,
+        "E_A": 31.0,
+        "ratio_vs_real": 1.0071394311076014,
+        "R_oracle_prodcore": 35.150363509960734,
+        "R_oracle_bf16core": 38.209081410889645
+      },
+      "64_optimistic_wrap": {
+        "moe_s": 0.7214205322265625,
+        "u_median": 91,
+        "E_A": 31.575780967200217,
+        "R_oracle_prodcore": 35.30305916456965,
+        "R_oracle_bf16core": 38.32847050055851
+      },
+      "64_pessimistic_mixed": {
+        "moe_s": 0.7135865783691406,
+        "u_median": 91,
+        "E_A": 31.575780967200217,
+        "R_oracle_prodcore": 35.61499997584361,
+        "R_oracle_bf16core": 38.6964464909566
+      },
+      "80_optimistic_wrap": {
+        "moe_s": 0.792647186279297,
+        "u_median": 91,
+        "E_A": 37.95786358617044,
+        "R_oracle_prodcore": 39.30821124475557,
+        "R_oracle_bf16core": 42.408784886482835
+      },
+      "80_pessimistic_mixed": {
+        "moe_s": 0.7883862304687499,
+        "u_median": 91,
+        "E_A": 37.95786358617044,
+        "R_oracle_prodcore": 39.48242900011482,
+        "R_oracle_bf16core": 42.611641590144735
+      },
+      "96_optimistic_wrap": {
+        "moe_s": 0.8676474609375,
+        "u_median": 91,
+        "E_A": 44.053962691718816,
+        "R_oracle_prodcore": 42.333224598493146,
+        "R_oracle_bf16core": 45.41423431915689
+      },
+      "96_pessimistic_mixed": {
+        "moe_s": 0.8725481567382812,
+        "u_median": 91,
+        "E_A": 44.053962691718816,
+        "R_oracle_prodcore": 42.13480020772136,
+        "R_oracle_bf16core": 45.185954132271696
+      },
+      "112_optimistic_wrap": {
+        "moe_s": 0.9485442199707032,
+        "u_median": 91,
+        "E_A": 49.8768933122353,
+        "R_oracle_prodcore": 44.471624412221736,
+        "R_oracle_bf16core": 47.459125198505504
+      },
+      "112_pessimistic_mixed": {
+        "moe_s": 0.9529978332519531,
+        "u_median": 91,
+        "E_A": 49.8768933122353,
+        "R_oracle_prodcore": 44.29572761093836,
+        "R_oracle_bf16core": 47.258855135746984
+      },
+      "124_optimistic_wrap": {
+        "moe_s": 1.0143764343261719,
+        "u_median": 91,
+        "E_A": 53.121619990530455,
+        "R_oracle_prodcore": 44.738651075449894,
+        "R_oracle_bf16core": 47.566924191575
+      },
+      "124_pessimistic_mixed": {
+        "moe_s": 1.0078155822753905,
+        "u_median": 91,
+        "E_A": 53.121619990530455,
+        "R_oracle_prodcore": 44.987228139526195,
+        "R_oracle_bf16core": 47.84802234684683
+      },
+      "128_optimistic_wrap": {
+        "moe_s": 1.0228059997558594,
+        "u_median": 91,
+        "E_A": 53.7230235271069,
+        "R_oracle_prodcore": 44.92620336248122,
+        "R_oracle_bf16core": 47.745056050859496
+      },
+      "128_pessimistic_mixed": {
+        "moe_s": 1.0241607666015624,
+        "u_median": 91,
+        "E_A": 53.7230235271069,
+        "R_oracle_prodcore": 44.87536262954308,
+        "R_oracle_bf16core": 47.68763933539987
+      }
+    },
+    "thermal": {
+      "label": "UNKNOWN"
+    },
+    "resolution": {
+      "audit": "v2 conflict resolved: uniq-134 was a single first-window tail sample; the v2 sampler MEDIAN was already 86 (600-window check). v3 eliminates the ambiguity: no-wrap anchors + median stats over all measured windows.",
+      "anchor_fidelity": {
+        "K56": "ratio 1.002, U_med 86 (exact)",
+        "K63": "ratio 1.007, U_med 91 (exact)"
+      },
+      "bounds_finding": "optimistic_wrap == pessimistic_mixed within noise at every K (U_med 91 both): within-corpus expert diversity SATURATES \u2014 a layer repertoire is nearly covered by ~63 consecutive tokens. True U(96+) from longer generations is unknown until the sandbox capture; the bounds bracket is corpus-limited-narrow, not evidence that U saturates in reality.",
+      "frontier_v3_prodcore": {
+        "N56": "34.3 (real golden 0.6491s, exact)",
+        "N63": "35.2",
+        "N96": "~42.2",
+        "N128": "~44.9"
+      },
+      "labels": "K64-128 rows = CORPUS-LIMITED BOOTSTRAP (canonical \u00a731). Authoritative Track D remains BLOCKED.",
+      "v2_consecutive_bootstrap": "superseded by v3 (wrap contamination in anchor); its K64-128 tables retain historical value only."
+    }
+  }
+}

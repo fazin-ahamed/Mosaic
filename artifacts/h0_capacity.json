@@ -1,0 +1,85 @@
+{
+ "classification": "H0A_CAPACITY",
+ "nvme_GBs_cold": 0.55,
+ "nvme_GBs_p50": 1.36,
+ "combined_store_GB": 30.0,
+ "budget_ms": 125.23333333333333,
+ "core_ms": 17.5,
+ "EA": 3.757,
+ "cases": {
+  "raw_packed|total_incl_compulsory|cold0.55": {
+   "eff_store_GB": 30.0,
+   "cap_slots": 2243,
+   "miss_per_cycle": 349.6,
+   "nvme_GB_per_cycle": 4.674,
+   "nvme_ms": 8498.8,
+   "cycle_ms": 8516.3,
+   "tput_UB": 0.44
+  },
+  "raw_packed|total_incl_compulsory|p50_1.36": {
+   "eff_store_GB": 30.0,
+   "cap_slots": 2243,
+   "miss_per_cycle": 349.6,
+   "nvme_GB_per_cycle": 4.674,
+   "nvme_ms": 3437.0,
+   "cycle_ms": 3454.5,
+   "tput_UB": 1.09
+  },
+  "raw_packed|capacity_only_steadystate|cold0.55": {
+   "eff_store_GB": 30.0,
+   "cap_slots": 2243,
+   "miss_per_cycle": 0.0,
+   "nvme_GB_per_cycle": 0.0,
+   "nvme_ms": 0.0,
+   "cycle_ms": 17.5,
+   "tput_UB": 214.69
+  },
+  "raw_packed|capacity_only_steadystate|p50_1.36": {
+   "eff_store_GB": 30.0,
+   "cap_slots": 2243,
+   "miss_per_cycle": 0.0,
+   "nvme_GB_per_cycle": 0.0,
+   "nvme_ms": 0.0,
+   "cycle_ms": 17.5,
+   "tput_UB": 214.69
+  },
+  "raw_packed_compressed_1.091|total_incl_compulsory|cold0.55": {
+   "eff_store_GB": 32.7,
+   "cap_slots": 2448,
+   "miss_per_cycle": 349.6,
+   "nvme_GB_per_cycle": 4.284,
+   "nvme_ms": 7789.9,
+   "cycle_ms": 7807.4,
+   "tput_UB": 0.48
+  },
+  "raw_packed_compressed_1.091|total_incl_compulsory|p50_1.36": {
+   "eff_store_GB": 32.7,
+   "cap_slots": 2448,
+   "miss_per_cycle": 349.6,
+   "nvme_GB_per_cycle": 4.284,
+   "nvme_ms": 3150.3,
+   "cycle_ms": 3167.8,
+   "tput_UB": 1.19
+  },
+  "raw_packed_compressed_1.091|capacity_only_steadystate|cold0.55": {
+   "eff_store_GB": 32.7,
+   "cap_slots": 2448,
+   "miss_per_cycle": 0.0,
+   "nvme_GB_per_cycle": 0.0,
+   "nvme_ms": 0.0,
+   "cycle_ms": 17.5,
+   "tput_UB": 214.69
+  },
+  "raw_packed_compressed_1.091|capacity_only_steadystate|p50_1.36": {
+   "eff_store_GB": 32.7,
+   "cap_slots": 2448,
+   "miss_per_cycle": 0.0,
+   "nvme_GB_per_cycle": 0.0,
+   "nvme_ms": 0.0,
+   "cycle_ms": 17.5,
+   "tput_UB": 214.69
+  }
+ },
+ "best_optimistic_tput_UB": 214.69,
+ "verdict": "HYBRID_ALIVE"
+}

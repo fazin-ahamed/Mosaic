@@ -1,0 +1,29 @@
+{
+  "categories": [
+    "coding_01",
+    "math_01",
+    "agent_01",
+    "convo_01",
+    "retrieval_01",
+    "longform_01",
+    "json_01",
+    "coding_13",
+    "math_13",
+    "agent_13",
+    "convo_13",
+    "retrieval_13",
+    "longform_13",
+    "json_13"
+  ],
+  "protected_prompt_files": [
+    "artifacts/routes_overlap_corpus_3060.json",
+    "artifacts/g2_cert_prompts.json",
+    "artifacts/g2_calibration_prompts.json"
+  ],
+  "normalized_exact_text_overlap": 0,
+  "semantic_near_duplicate_audit": "not exhaustive",
+  "train": 7,
+  "val": 7,
+  "test": 0,
+  "n_generated": 33
+}

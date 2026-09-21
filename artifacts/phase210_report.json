@@ -1,0 +1,163 @@
+{
+  "verdict": "WIDEVERIFY BORDERLINE \u2014 CORE CANNOT COMPENSATE, EXPERT-KERNEL RESEARCH REOPENS",
+  "next_phase": "2.11 exact core AND 2.9L expert-kernel research in parallel (core share 9%; free core only reaches 29.9 tok/s)",
+  "lut": "reopen_now_core_cannot_compensate",
+  "core_analysis": {
+    "k_best": 32,
+    "t_moe_block_s": 1.0707322998046875,
+    "t_core_block_s": 0.10584647726118564,
+    "core_share": 0.0899612327915206,
+    "cand_toks_if_core_free": 29.886088246181725,
+    "core_reaches_30": false,
+    "core_reaches_35": false,
+    "core_can_compensate": false
+  },
+  "source_semantics": "validated",
+  "decisive_route_source": "golden",
+  "provisional": false,
+  "best_candidate_toks": 27.197498904239044,
+  "best_candidate_toks_synthetic": 16.77024082299035,
+  "best_candidate_toks_golden": 27.197498904239044,
+  "k_hw_synthetic": 32,
+  "gate_synthetic": "miss_reopen_lut",
+  "gate_golden": "borderline_core_must_compensate",
+  "golden_status": "ok",
+  "backend_portfolio": {
+    "1": {
+      "best_backend": "qpa",
+      "candidate_toks": 5.541799715441299
+    },
+    "2": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 7.789642500136152
+    },
+    "4": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 10.592900696601456
+    },
+    "5": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 12.760386588389196
+    },
+    "7": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 15.170173976773361
+    },
+    "8": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 15.37708702512659
+    },
+    "12": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 19.43281902267897
+    },
+    "16": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 19.973145402172296
+    },
+    "24": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 24.090936859702122
+    },
+    "32": {
+      "best_backend": "mxint_hot8",
+      "candidate_toks": 27.197498904239044
+    }
+  },
+  "r_k_curve": [
+    {
+      "K": 1,
+      "unique_median": 6.0,
+      "r_k": 1.0,
+      "mean_m": 1.0,
+      "median_m": 1.0,
+      "p90_m": 1.0
+    },
+    {
+      "K": 2,
+      "unique_median": 10.0,
+      "r_k": 0.8333333333333334,
+      "mean_m": 1.2,
+      "median_m": 1.0,
+      "p90_m": 2.0
+    },
+    {
+      "K": 4,
+      "unique_median": 16.0,
+      "r_k": 0.6666666666666666,
+      "mean_m": 1.5,
+      "median_m": 1.0,
+      "p90_m": 3.0
+    },
+    {
+      "K": 5,
+      "unique_median": 18.0,
+      "r_k": 0.6,
+      "mean_m": 1.6666666666666667,
+      "median_m": 1.0,
+      "p90_m": 3.0
+    },
+    {
+      "K": 7,
+      "unique_median": 23.0,
+      "r_k": 0.5476190476190477,
+      "mean_m": 1.826086956521739,
+      "median_m": 1.0,
+      "p90_m": 4.0
+    },
+    {
+      "K": 8,
+      "unique_median": 25.0,
+      "r_k": 0.5208333333333334,
+      "mean_m": 1.92,
+      "median_m": 1.0,
+      "p90_m": 4.0
+    },
+    {
+      "K": 12,
+      "unique_median": 32.0,
+      "r_k": 0.4444444444444444,
+      "mean_m": 2.25,
+      "median_m": 1.0,
+      "p90_m": 5.0
+    },
+    {
+      "K": 16,
+      "unique_median": 39.0,
+      "r_k": 0.40625,
+      "mean_m": 2.4615384615384617,
+      "median_m": 1.0,
+      "p90_m": 5.0
+    },
+    {
+      "K": 24,
+      "unique_median": 51.0,
+      "r_k": 0.3541666666666667,
+      "mean_m": 2.823529411764706,
+      "median_m": 2.0,
+      "p90_m": 6.0
+    },
+    {
+      "K": 32,
+      "unique_median": 62.0,
+      "r_k": 0.3229166666666667,
+      "mean_m": 3.096774193548387,
+      "median_m": 2.0,
+      "p90_m": 7.0
+    }
+  ],
+  "r_k_summary": {
+    "flat": false,
+    "r_k_k8": 0.5208333333333334,
+    "r_k_k32": 0.3229166666666667,
+    "note": "synthetic-distinct fixes unique=3K, so R(K) is flat by construction; elasticity can only come from golden routes"
+  },
+  "hot8_benefit_k8": {
+    "hot8_block_s": 0.4122802276611328,
+    "packed4_block_s": 0.5773352966308594,
+    "hot8_speedup_vs_packed4": 1.4003467978711581
+  },
+  "p0_ratio": 1.6134785762367794,
+  "p1_ratio": 1.5526087723123243,
+  "bad_status_rows": 0
+}

@@ -1,0 +1,7 @@
+{
+  "max_abs_err": 1.9073e-06,
+  "idx_match": true,
+  "pass": true,
+  "ctx32k_ms": 619.25,
+  "peak_allocated_gb": 1.22
+}

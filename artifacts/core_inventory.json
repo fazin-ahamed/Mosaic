@@ -1,0 +1,246 @@
+{
+  "rows": [
+    {
+      "name": "layer.attn.q_a",
+      "numel": 4194304,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 92995584,
+      "bf16_bytes": 360710144,
+      "gb": 0.08660888671875
+    },
+    {
+      "name": "layer.attn.q_b",
+      "numel": 33554432,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 743964672,
+      "bf16_bytes": 2885681152,
+      "gb": 0.69287109375
+    },
+    {
+      "name": "layer.attn.kv_proj",
+      "numel": 2097152,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 46497792,
+      "bf16_bytes": 180355072,
+      "gb": 0.043304443359375
+    },
+    {
+      "name": "layer.attn.o_lora_a",
+      "numel": 33554432,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 743964672,
+      "bf16_bytes": 2885681152,
+      "gb": 0.69287109375
+    },
+    {
+      "name": "layer.attn.o_lora_b",
+      "numel": 33554432,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 743964672,
+      "bf16_bytes": 2885681152,
+      "gb": 0.69287109375
+    },
+    {
+      "name": "layer.shared.gate",
+      "numel": 8388608,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 185991168,
+      "bf16_bytes": 721420288,
+      "gb": 0.1732177734375
+    },
+    {
+      "name": "layer.shared.up",
+      "numel": 8388608,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 185991168,
+      "bf16_bytes": 721420288,
+      "gb": 0.1732177734375
+    },
+    {
+      "name": "layer.shared.down",
+      "numel": 8388608,
+      "copies": 43,
+      "fmt": "w4",
+      "bytes": 185991168,
+      "bf16_bytes": 721420288,
+      "gb": 0.1732177734375
+    },
+    {
+      "name": "layer.attn_sink",
+      "numel": 64,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 5504,
+      "bf16_bytes": 5504,
+      "gb": 5.125999450683594e-06
+    },
+    {
+      "name": "layer.attn_norm",
+      "numel": 4096,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 352256,
+      "bf16_bytes": 352256,
+      "gb": 0.00032806396484375
+    },
+    {
+      "name": "layer.ffn_norm",
+      "numel": 4096,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 352256,
+      "bf16_bytes": 352256,
+      "gb": 0.00032806396484375
+    },
+    {
+      "name": "layer.q_norm",
+      "numel": 1024,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 88064,
+      "bf16_bytes": 88064,
+      "gb": 8.20159912109375e-05
+    },
+    {
+      "name": "layer.kv_norm",
+      "numel": 512,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 44032,
+      "bf16_bytes": 44032,
+      "gb": 4.100799560546875e-05
+    },
+    {
+      "name": "layer.hc_attn.base",
+      "numel": 24,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 2064,
+      "bf16_bytes": 2064,
+      "gb": 1.9222497940063477e-06
+    },
+    {
+      "name": "layer.hc_attn.scale",
+      "numel": 3,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 258,
+      "bf16_bytes": 258,
+      "gb": 2.4028122425079346e-07
+    },
+    {
+      "name": "layer.hc_ffn.base",
+      "numel": 24,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 2064,
+      "bf16_bytes": 2064,
+      "gb": 1.9222497940063477e-06
+    },
+    {
+      "name": "layer.hc_ffn.scale",
+      "numel": 3,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 258,
+      "bf16_bytes": 258,
+      "gb": 2.4028122425079346e-07
+    },
+    {
+      "name": "layer.hc_attn.fn",
+      "numel": 393216,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 33816576,
+      "bf16_bytes": 33816576,
+      "gb": 0.031494140625
+    },
+    {
+      "name": "layer.hc_ffn.fn",
+      "numel": 393216,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 33816576,
+      "bf16_bytes": 33816576,
+      "gb": 0.031494140625
+    },
+    {
+      "name": "router.weight",
+      "numel": 1048576,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 90177536,
+      "bf16_bytes": 90177536,
+      "gb": 0.083984375
+    },
+    {
+      "name": "router.bias",
+      "numel": 256,
+      "copies": 43,
+      "fmt": "bf16",
+      "bytes": 22016,
+      "bf16_bytes": 22016,
+      "gb": 2.0503997802734375e-05
+    },
+    {
+      "name": "lm_head",
+      "numel": 529530880,
+      "copies": 1,
+      "fmt": "w4",
+      "bytes": 273039360,
+      "bf16_bytes": 1059061760,
+      "gb": 0.2542877197265625
+    },
+    {
+      "name": "norm",
+      "numel": 4096,
+      "copies": 1,
+      "fmt": "bf16",
+      "bytes": 8192,
+      "bf16_bytes": 8192,
+      "gb": 7.62939453125e-06
+    },
+    {
+      "name": "hc_head_fn",
+      "numel": 65536,
+      "copies": 1,
+      "fmt": "bf16",
+      "bytes": 131072,
+      "bf16_bytes": 131072,
+      "gb": 0.0001220703125
+    },
+    {
+      "name": "hc_head_base",
+      "numel": 4,
+      "copies": 1,
+      "fmt": "bf16",
+      "bytes": 8,
+      "bf16_bytes": 8,
+      "gb": 7.450580596923828e-09
+    },
+    {
+      "name": "hc_head_scale",
+      "numel": 1,
+      "copies": 1,
+      "fmt": "bf16",
+      "bytes": 2,
+      "bf16_bytes": 2,
+      "gb": 1.862645149230957e-09
+    }
+  ],
+  "gpu_w4_core_plus_lm_head_plus_router_bytes": 3361218990,
+  "gpu_gb": 3.1303791236132383,
+  "bf16_core_gb": 11.71627084724605,
+  "embed_host_gb": 0.986328125,
+  "under_6gb": true,
+  "limit_gb": 6.0,
+  "gpu_fp8_core_plus_lm_head_plus_router_gb": 5.858559055253863,
+  "gpu_mxfp4_experts_one_layer_gb": 3.1875
+}

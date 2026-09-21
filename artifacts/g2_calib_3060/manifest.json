@@ -1,0 +1,265 @@
+{
+ "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+ "core_archive_sha_prefix": "a9089f25fa85bac9",
+ "generator": "source_corpus_gen.py (kit inference/model.py + torch kernel shims; fp4_gemm/fp8_gemm block-factored code accumulation; act_quant exact)",
+ "arithmetic_class": "source: E4M3 act per-128 E8M0 x E2M1 packed per-32 E8M0 (experts), E4M3 weights per-128 (core), bf16 wo_a",
+ "hardware": "NVIDIA GeForce RTX 3060",
+ "temperature": 0.0,
+ "n_gen": 11,
+ "prompts": [
+  {
+   "category": "coding",
+   "S": 17,
+   "generated": [
+    455,
+    2019,
+    1531,
+    9495,
+    9449,
+    4599,
+    1277,
+    11181,
+    16893,
+    469,
+    16893
+   ],
+   "file": "coding_0.pt"
+  },
+  {
+   "category": "coding",
+   "S": 40,
+   "generated": [
+    3955,
+    223,
+    582,
+    15329,
+    3362,
+    582,
+    9544,
+    734,
+    270,
+    2362,
+    651
+   ],
+   "file": "coding_1.pt"
+  },
+  {
+   "category": "math_reasoning",
+   "S": 21,
+   "generated": [
+    3955,
+    223,
+    582,
+    15329,
+    3362,
+    582,
+    5718,
+    734,
+    9487,
+    566,
+    3132
+   ],
+   "file": "math_reasoning_0.pt"
+  },
+  {
+   "category": "math_reasoning",
+   "S": 24,
+   "generated": [
+    3955,
+    223,
+    582,
+    15329,
+    3362,
+    582,
+    3575,
+    223,
+    21,
+    8296,
+    13030
+   ],
+   "file": "math_reasoning_1.pt"
+  },
+  {
+   "category": "agent_tool_use",
+   "S": 24,
+   "generated": [
+    128822,
+    43,
+    5922,
+    4085,
+    270,
+    2912,
+    4245,
+    362,
+    87366,
+    6243,
+    538
+   ],
+   "file": "agent_tool_use_0.pt"
+  },
+  {
+   "category": "agent_tool_use",
+   "S": 17,
+   "generated": [
+    5715,
+    14,
+    3551,
+    260,
+    1017,
+    11181,
+    4245,
+    9306,
+    3608,
+    41615,
+    23042
+   ],
+   "file": "agent_tool_use_1.pt"
+  },
+  {
+   "category": "general_conversation",
+   "S": 12,
+   "generated": [
+    3955,
+    361,
+    582,
+    27824,
+    5224,
+    79078,
+    3362,
+    582,
+    3476,
+    477,
+    411
+   ],
+   "file": "general_conversation_0.pt"
+  },
+  {
+   "category": "general_conversation",
+   "S": 21,
+   "generated": [
+    3955,
+    361,
+    582,
+    53,
+    3362,
+    582,
+    43,
+    611,
+    1234,
+    4343,
+    3080
+   ],
+   "file": "general_conversation_1.pt"
+  },
+  {
+   "category": "long_context_retrieval",
+   "S": 22,
+   "generated": [
+    343,
+    43348,
+    2038,
+    21960,
+    35,
+    16,
+    455,
+    2446,
+    2231,
+    3394,
+    270
+   ],
+   "file": "long_context_retrieval_0.pt"
+  },
+  {
+   "category": "long_context_retrieval",
+   "S": 23,
+   "generated": [
+    10177,
+    7933,
+    16562,
+    74782,
+    12678,
+    65,
+    50300,
+    20,
+    19525,
+    36023,
+    65
+   ],
+   "file": "long_context_retrieval_1.pt"
+  },
+  {
+   "category": "long_generation",
+   "S": 20,
+   "generated": [
+    12025,
+    436,
+    113525,
+    305,
+    29930,
+    66910,
+    582,
+    11026,
+    3362,
+    5100,
+    14
+   ],
+   "file": "long_generation_0.pt"
+  },
+  {
+   "category": "long_generation",
+   "S": 24,
+   "generated": [
+    6948,
+    20586,
+    517,
+    305,
+    4654,
+    4063,
+    16,
+    19018,
+    436,
+    47468,
+    305
+   ],
+   "file": "long_generation_1.pt"
+  },
+  {
+   "category": "structured_json",
+   "S": 29,
+   "generated": [
+    455,
+    4018,
+    344,
+    260,
+    7425,
+    943,
+    2775,
+    17745,
+    16,
+    455,
+    7425
+   ],
+   "file": "structured_json_0.pt"
+  },
+  {
+   "category": "structured_json",
+   "S": 22,
+   "generated": [
+    6948,
+    270,
+    2502,
+    1499,
+    28,
+    3701,
+    28,
+    3226,
+    14,
+    29663,
+    28
+   ],
+   "file": "structured_json_1.pt"
+  }
+ ],
+ "script_sha": "16cd4553879f4f18",
+ "done": true
+}

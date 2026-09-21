@@ -1,0 +1,64 @@
+{
+ "classification": "D3_TCS_FD_PROJECTION_ORACLE",
+ "lambdas": [
+  0.25,
+  0.5,
+  1.0
+ ],
+ "methods": {
+  "per-pos-delta_lam0.25": {
+   "mean_E_A": 3.1905,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.2857
+  },
+  "per-pos-delta_lam0.5": {
+   "mean_E_A": 3.2857,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.381
+  },
+  "per-pos-delta_lam1.0": {
+   "mean_E_A": 3.5238,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.619
+  },
+  "dom-svd8_lam0.25": {
+   "mean_E_A": 2.9048,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.0
+  },
+  "dom-svd8_lam0.5": {
+   "mean_E_A": 2.9048,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.0
+  },
+  "dom-svd8_lam1.0": {
+   "mean_E_A": 2.9048,
+   "S1": 0.4286,
+   "delta_S1": 0.0,
+   "delta_E_A": 0.0
+  }
+ },
+ "baseline": {
+  "mean_E_A": 2.9048,
+  "S1": 0.4286
+ },
+ "production_timing": null,
+ "best": {
+  "key": "per-pos-delta_lam0.25",
+  "mean_E_A": 3.1905,
+  "S1": 0.4286,
+  "delta_S1": 0.0,
+  "delta_E_A": 0.2857
+ },
+ "kill_gate": {
+  "threshold": 0.1,
+  "best_delta_S1": 0.0,
+  "passed": false
+ },
+ "verdict": "FAIL \u2014 even FD-derived correction does not improve decisions enough; TCS-FD CLOSED"
+}

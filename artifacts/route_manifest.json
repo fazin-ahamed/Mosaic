@@ -1,0 +1,29 @@
+{
+  "model_revision": "deepseek-ai/DeepSeek-V4-Flash-0731",
+  "route_capture": "modal_app.py::capture_routes (exact noaux_tc recompute from checkpoint gate weights: sqrtsoftplus, bias-for-selection-only, norm_topk_prob, scale 1.5)",
+  "prompt_categories": [
+    "coding",
+    "agent_tool_use",
+    "math_reasoning",
+    "general_conversation",
+    "long_context_retrieval",
+    "structured_json",
+    "long_generation"
+  ],
+  "decode_positions": 63,
+  "layer_count": 43,
+  "top_k": 6,
+  "n_experts": 256,
+  "route_artifact_sha256": "5e181817793212fa1cb104b6b6cb3648f345e8e95cd2a3316503b8525ddac21c",
+  "routing_impl_fingerprint": "2134a3a99885d887",
+  "bytes": {
+    "packed4_gu": 8912896,
+    "packed4_down": 4456448,
+    "hot8_gu": 17301504,
+    "hot8_down": 8650752
+  },
+  "transport_provisional": {
+    "h2d_gbs": 12.0,
+    "nvme_gbs": 3.5
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "banks": "Mixed-A (gu=p4, down=h8) 4.53GB",
+  "rows": {
+    "56": {
+      "moe_s": 0.8379481811523437,
+      "auth": "real_golden",
+      "E_A": 28.27332751941323,
+      "R_oracle_prodcore": 27.967138223826144,
+      "raw_per_s": 55.393541473280656
+    },
+    "63": {
+      "moe_s": 0.90226416015625,
+      "auth": "real_golden",
+      "E_A": 31.0,
+      "R_oracle_prodcore": 28.830124864847438,
+      "raw_per_s": 58.590253757593175
+    },
+    "64": {
+      "moe_s": 0.9111114196777343,
+      "auth": "corpus_wrap",
+      "E_A": 31.575780967200217,
+      "R_oracle_prodcore": 29.125955500576232,
+      "raw_per_s": 59.034522502331725
+    },
+    "80": {
+      "moe_s": 1.004622344970703,
+      "auth": "corpus_wrap",
+      "E_A": 37.95786358617044,
+      "R_oracle_prodcore": 32.232628523293485,
+      "raw_per_s": 67.93349357003773
+    },
+    "96": {
+      "moe_s": 1.0966665649414062,
+      "auth": "corpus_wrap",
+      "E_A": 44.053962691718816,
+      "R_oracle_prodcore": 34.69726927380486,
+      "raw_per_s": 75.61040248738873
+    },
+    "112": {
+      "moe_s": 1.19590869140625,
+      "auth": "corpus_wrap",
+      "E_A": 49.8768933122353,
+      "R_oracle_prodcore": 36.43551511167473,
+      "raw_per_s": 81.81699824328301
+    },
+    "128": {
+      "moe_s": 1.3096946411132813,
+      "auth": "corpus_wrap",
+      "E_A": 53.7230235271069,
+      "R_oracle_prodcore": 36.23336999907747,
+      "raw_per_s": 86.32930642002671
+    }
+  },
+  "thermal": {
+    "start": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 70,
+      "sm_clock_mhz": 1905,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.037,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 99,
+      "ts": 1787946138.7282119
+    },
+    "end": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 77,
+      "sm_clock_mhz": 1897,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.037,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 100,
+      "ts": 1787946219.1653836
+    }
+  },
+  "interpretation": {
+    "headline": "FIRST VRAM-FITTING EXACT FRONTIER TO CROSS EXACT-30 COMPUTE: Mixed-A banks (4.53GB, bitwise-validated) cross at N~72-80 and peak at N112 = 36.4/s oracle (P4 headroom ~21%).",
+    "table": {
+      "56": {
+        "moe_s": 0.8379481811523437,
+        "auth": "real_golden",
+        "R_oracle": 28.0
+      },
+      "63": {
+        "moe_s": 0.90226416015625,
+        "auth": "real_golden",
+        "R_oracle": 28.8
+      },
+      "64": {
+        "moe_s": 0.9111114196777343,
+        "auth": "corpus_wrap",
+        "R_oracle": 29.1
+      },
+      "80": {
+        "moe_s": 1.004622344970703,
+        "auth": "corpus_wrap",
+        "R_oracle": 32.2
+      },
+      "96": {
+        "moe_s": 1.0966665649414062,
+        "auth": "corpus_wrap",
+        "R_oracle": 34.7
+      },
+      "112": {
+        "moe_s": 1.19590869140625,
+        "auth": "corpus_wrap",
+        "R_oracle": 36.4
+      },
+      "128": {
+        "moe_s": 1.3096946411132813,
+        "auth": "corpus_wrap",
+        "R_oracle": 36.2
+      }
+    },
+    "n56_real": "28.0/s (miss); n63_real 28.8/s (miss) \u2014 real-corpus authority ends at 63",
+    "crossing": "N80 32.2/s (+7% margin); N96 34.7/s; N112 36.4/s peak; N128 36.2/s",
+    "caveats": [
+      "perfect-drafter oracle E[A] (real DSpark acceptance will be lower)",
+      "K64+ timings corpus-wrap (U capped ~91; mildly optimistic traffic)",
+      "core = constant 173ms projection; core(K) grows mildly with width \u2014 TRUE P2 must measure the full block",
+      "MoE-block timing only; draft/movement/runtime not yet included"
+    ],
+    "gate_status": "P2-classification (\u00a739): N112 ~36.4/s = P2 GOOD band (35-40) if the full block confirms; N80 32.2 = P2 MINIMUM+.",
+    "next": "TRUE P2 at N80/N112: full 43-layer block (core+MoE interleaved, production-fit banks), STEADY; then width decision N*_TREE."
+  }
+}

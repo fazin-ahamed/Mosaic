@@ -1,0 +1,152 @@
+{
+ "classification": "VNNI_V4_FOUR_ARM_RACE",
+ "threads": 12,
+ "parity": {
+  "v3": 0.0009765625,
+  "v4a": 0.0009765625,
+  "v4b": 0.0009765625,
+  "v4ab": 0.0009765625
+ },
+ "bench": {
+  "M1": {
+   "v3": {
+    "ms": 0.3,
+    "tflops_eq": 0.1679,
+    "packed_gbps": 41.97
+   },
+   "v4a": {
+    "ms": 0.354,
+    "tflops_eq": 0.1421,
+    "packed_gbps": 35.52
+   },
+   "v4b": {
+    "ms": 0.325,
+    "tflops_eq": 0.1549,
+    "packed_gbps": 38.72
+   },
+   "v4ab": {
+    "ms": 2.166,
+    "tflops_eq": 0.0232,
+    "packed_gbps": 5.81
+   }
+  },
+  "M2": {
+   "v3": {
+    "ms": 0.49,
+    "tflops_eq": 0.2055,
+    "packed_gbps": 25.69
+   },
+   "v4a": {
+    "ms": 0.607,
+    "tflops_eq": 0.1659,
+    "packed_gbps": 20.74
+   },
+   "v4b": {
+    "ms": 0.334,
+    "tflops_eq": 0.3014,
+    "packed_gbps": 37.68
+   },
+   "v4ab": {
+    "ms": 2.23,
+    "tflops_eq": 0.0451,
+    "packed_gbps": 5.64
+   }
+  },
+  "M3": {
+   "v3": {
+    "ms": 2.036,
+    "tflops_eq": 0.0742,
+    "packed_gbps": 6.18
+   },
+   "v4a": {
+    "ms": 1.088,
+    "tflops_eq": 0.1388,
+    "packed_gbps": 11.57
+   },
+   "v4b": {
+    "ms": 0.399,
+    "tflops_eq": 0.3784,
+    "packed_gbps": 31.53
+   },
+   "v4ab": {
+    "ms": 2.327,
+    "tflops_eq": 0.0649,
+    "packed_gbps": 5.41
+   }
+  },
+  "M4": {
+   "v3": {
+    "ms": 1.026,
+    "tflops_eq": 0.1962,
+    "packed_gbps": 12.26
+   },
+   "v4a": {
+    "ms": 1.447,
+    "tflops_eq": 0.1392,
+    "packed_gbps": 8.7
+   },
+   "v4b": {
+    "ms": 0.459,
+    "tflops_eq": 0.4384,
+    "packed_gbps": 27.4
+   },
+   "v4ab": {
+    "ms": 2.44,
+    "tflops_eq": 0.0825,
+    "packed_gbps": 5.16
+   }
+  },
+  "M8": {
+   "v3": {
+    "ms": 1.804,
+    "tflops_eq": 0.2232,
+    "packed_gbps": 6.97
+   },
+   "v4a": {
+    "ms": 5.158,
+    "tflops_eq": 0.0781,
+    "packed_gbps": 2.44
+   },
+   "v4b": {
+    "ms": 0.796,
+    "tflops_eq": 0.5061,
+    "packed_gbps": 15.82
+   },
+   "v4ab": {
+    "ms": 3.098,
+    "tflops_eq": 0.13,
+    "packed_gbps": 4.06
+   }
+  },
+  "M16": {
+   "v3": {
+    "ms": 3.341,
+    "tflops_eq": 0.2411,
+    "packed_gbps": 3.77
+   },
+   "v4a": {
+    "ms": 4.898,
+    "tflops_eq": 0.1644,
+    "packed_gbps": 2.57
+   },
+   "v4b": {
+    "ms": 1.747,
+    "tflops_eq": 0.461,
+    "packed_gbps": 7.2
+   },
+   "v4ab": {
+    "ms": 4.524,
+    "tflops_eq": 0.178,
+    "packed_gbps": 2.78
+   }
+  }
+ },
+ "hybrid_projection": {
+  "best_arm_M3": "v4b",
+  "ms_per_expert": 0.399,
+  "all_cpu_block_s": 1.012,
+  "balanced_f": 0.723,
+  "tcrit_s": 0.732,
+  "perfect_proposer_tok_s": 43.7
+ }
+}

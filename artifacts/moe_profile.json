@@ -1,0 +1,53 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "thermal_label": "UNKNOWN",
+  "canonical_backend": "hot8",
+  "backend_profiles": {
+    "packed4": {
+      "stage_median_s_per_layer": {
+        "layout_sec": 0.0006780160069465637,
+        "act_quant_sec": 0.0002117439955472946,
+        "decode_int_sec": 7.919999957084656e-05,
+        "gu_sec": 0.024205312728881836,
+        "swiglu_sec": 0.00014950400590896606,
+        "down_quant_sec": 0.00012800000607967376,
+        "down_sec": 0.01195315170288086,
+        "reduction_sec": 0.0002027519941329956
+      },
+      "total_per_layer_s": 0.03760768043994904,
+      "block_bench_s": 1.706474853515625
+    },
+    "hot8": {
+      "stage_median_s_per_layer": {
+        "layout_sec": 0.0006912000179290772,
+        "act_quant_sec": 0.0002170879989862442,
+        "decode_int_sec": 7.98719972372055e-05,
+        "gu_sec": 0.025796607971191408,
+        "swiglu_sec": 0.00014950400590896606,
+        "down_quant_sec": 0.0001279039978981018,
+        "down_sec": 0.008697855949401855,
+        "reduction_sec": 0.00020284800231456756
+      },
+      "total_per_layer_s": 0.03596287994086742,
+      "block_bench_s": 1.6055469970703125
+    }
+  },
+  "track_b_k56_golden": {
+    "backend": "hot8",
+    "stage_median_s_per_layer": {
+      "layout_sec": 0.0006912000179290772,
+      "act_quant_sec": 0.0002170879989862442,
+      "decode_int_sec": 7.98719972372055e-05,
+      "gu_sec": 0.025796607971191408,
+      "swiglu_sec": 0.00014950400590896606,
+      "down_quant_sec": 0.0001279039978981018,
+      "down_sec": 0.008697855949401855,
+      "reduction_sec": 0.00020284800231456756
+    },
+    "total_per_layer_s": 0.03596287994086742,
+    "block_projection_s": 1.546403837457299,
+    "block_bench_s": 1.6055469970703125,
+    "historical_block_s": 1.3923
+  },
+  "owner": "gu_sec"
+}

@@ -1,0 +1,154 @@
+{
+ "classification": "D2_COMPLETE_TAIL",
+ "method": "captured real h40 trajectories; genuine routes; wall p50 over reps; prefill committed prefix included in wall",
+ "geometries": {
+  "gpu_serial": {
+   "1": {
+    "wall_ms_p50": 580.72,
+    "expert_calls_per_replay": 7.5,
+    "expert_rows_per_replay": 16.2,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "4": {
+    "wall_ms_p50": 776.67,
+    "expert_calls_per_replay": 10.2,
+    "expert_rows_per_replay": 18.9,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "8": {
+    "wall_ms_p50": 1063.15,
+    "expert_calls_per_replay": 13.8,
+    "expert_rows_per_replay": 22.5,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "16": {
+    "wall_ms_p50": 1673.87,
+    "expert_calls_per_replay": 21.0,
+    "expert_rows_per_replay": 29.7,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "32": {
+    "wall_ms_p50": 2739.89,
+    "expert_calls_per_replay": 35.4,
+    "expert_rows_per_replay": 44.1,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0
+   }
+  },
+  "gpu_chunk": {
+   "1": {
+    "wall_ms_p50": 488.67,
+    "expert_calls_per_replay": 6.7,
+    "expert_rows_per_replay": 16.2,
+    "expert_maxM": 16,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "4": {
+    "wall_ms_p50": 566.12,
+    "expert_calls_per_replay": 7.7,
+    "expert_rows_per_replay": 18.9,
+    "expert_maxM": 17,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "8": {
+    "wall_ms_p50": 623.12,
+    "expert_calls_per_replay": 8.6,
+    "expert_rows_per_replay": 22.5,
+    "expert_maxM": 21,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "16": {
+    "wall_ms_p50": 722.69,
+    "expert_calls_per_replay": 9.6,
+    "expert_rows_per_replay": 29.7,
+    "expert_maxM": 25,
+    "cpu_rail_s_per_replay": 0.0
+   },
+   "32": {
+    "wall_ms_p50": 922.11,
+    "expert_calls_per_replay": 12.3,
+    "expert_rows_per_replay": 44.1,
+    "expert_maxM": 34,
+    "cpu_rail_s_per_replay": 0.0
+   }
+  },
+  "hybrid_serial": {
+   "1": {
+    "wall_ms_p50": 406.89,
+    "expert_calls_per_replay": 7.5,
+    "expert_rows_per_replay": 16.2,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.008
+   },
+   "4": {
+    "wall_ms_p50": 570.85,
+    "expert_calls_per_replay": 10.2,
+    "expert_rows_per_replay": 18.9,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0104
+   },
+   "8": {
+    "wall_ms_p50": 755.37,
+    "expert_calls_per_replay": 13.8,
+    "expert_rows_per_replay": 22.5,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.013
+   },
+   "16": {
+    "wall_ms_p50": 1123.52,
+    "expert_calls_per_replay": 21.0,
+    "expert_rows_per_replay": 29.7,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0189
+   },
+   "32": {
+    "wall_ms_p50": 1931.4,
+    "expert_calls_per_replay": 35.4,
+    "expert_rows_per_replay": 44.1,
+    "expert_maxM": 15,
+    "cpu_rail_s_per_replay": 0.0349
+   }
+  },
+  "hybrid_chunk": {
+   "1": {
+    "wall_ms_p50": 350.96,
+    "expert_calls_per_replay": 6.7,
+    "expert_rows_per_replay": 16.2,
+    "expert_maxM": 16,
+    "cpu_rail_s_per_replay": 0.0074
+   },
+   "4": {
+    "wall_ms_p50": 402.22,
+    "expert_calls_per_replay": 7.7,
+    "expert_rows_per_replay": 18.9,
+    "expert_maxM": 17,
+    "cpu_rail_s_per_replay": 0.0075
+   },
+   "8": {
+    "wall_ms_p50": 478.93,
+    "expert_calls_per_replay": 8.6,
+    "expert_rows_per_replay": 22.5,
+    "expert_maxM": 21,
+    "cpu_rail_s_per_replay": 0.0092
+   },
+   "16": {
+    "wall_ms_p50": 583.57,
+    "expert_calls_per_replay": 9.6,
+    "expert_rows_per_replay": 29.7,
+    "expert_maxM": 25,
+    "cpu_rail_s_per_replay": 0.0119
+   },
+   "32": {
+    "wall_ms_p50": 768.25,
+    "expert_calls_per_replay": 12.3,
+    "expert_rows_per_replay": 44.1,
+    "expert_maxM": 34,
+    "cpu_rail_s_per_replay": 0.0166
+   }
+  }
+ }
+}

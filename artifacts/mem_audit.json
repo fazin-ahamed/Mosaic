@@ -1,0 +1,100 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "total_vram_gb_decimal": 12.484,
+ "stages": [
+  {
+   "stage": "cuda_init",
+   "allocated_gb": 0.0,
+   "reserved_gb": 0.002,
+   "max_allocated_gb": 0.0,
+   "smi_used_mb": 1180.0,
+   "smi_free_mb": 10727.0
+  },
+  {
+   "stage": "P1_expert_banks",
+   "allocated_gb": 4.518,
+   "reserved_gb": 4.534,
+   "max_allocated_gb": 6.949,
+   "smi_used_mb": 5503.0,
+   "smi_free_mb": 6404.0,
+   "delta_gb": 4.518
+  },
+  {
+   "stage": "P1_core_no_head",
+   "allocated_gb": 10.426,
+   "reserved_gb": 10.448,
+   "max_allocated_gb": 10.426,
+   "smi_used_mb": 11130.0,
+   "smi_free_mb": 777.0,
+   "delta_gb": 5.908
+  },
+  {
+   "stage": "P2_reset_banks_free",
+   "allocated_gb": 0.004,
+   "reserved_gb": 0.046,
+   "max_allocated_gb": 0.004,
+   "smi_used_mb": 1107.0,
+   "smi_free_mb": 10800.0,
+   "delta_gb": -10.422
+  },
+  {
+   "stage": "P2_core_no_head",
+   "allocated_gb": 5.912,
+   "reserved_gb": 5.918,
+   "max_allocated_gb": 5.912,
+   "smi_used_mb": 6711.0,
+   "smi_free_mb": 5196.0,
+   "delta_gb": 5.908
+  },
+  {
+   "stage": "P2_dsa_bf16_weights_state_buffers",
+   "allocated_gb": 6.964,
+   "reserved_gb": 6.967,
+   "max_allocated_gb": 6.964,
+   "smi_used_mb": 7816.0,
+   "smi_free_mb": 4091.0,
+   "delta_gb": 1.052
+  },
+  {
+   "stage": "P2_plus_state_4K",
+   "allocated_gb": 6.972,
+   "reserved_gb": 7.128,
+   "max_allocated_gb": 7.087,
+   "smi_used_mb": 7988.0,
+   "smi_free_mb": 3919.0,
+   "delta_gb": 0.008
+  },
+  {
+   "stage": "P2_block_peak_K112",
+   "allocated_gb": 7.041,
+   "reserved_gb": 7.128,
+   "max_allocated_gb": 7.107,
+   "smi_used_mb": 7988.0,
+   "smi_free_mb": 3919.0,
+   "delta_gb": 0.069
+  }
+ ],
+ "verdict": {
+  "measured_components_gb": {
+   "banks_mixed_a": 4.52,
+   "core_no_head": 5.908,
+   "dsa_fp32_weights_and_buffers": 1.67,
+   "dsa_bf16_weights_and_buffers": 1.052,
+   "dsa_state_populate_delta_4K": 0.008,
+   "block_transient_K112": 0.066
+  },
+  "reporting_error_root_cause": "P2 bench docstring summed the HISTORICAL 7.0-GB core figure with an ESTIMATED 1.95-GB DSA footprint (4.4+7.0+1.95=13.35). Measured: 4.52+5.91+1.67=12.10 fp32 (OOMs empirically); bf16 storage 4.52+5.91+1.05=11.49.",
+  "system_budget": {
+   "card_total_gb": 12.48,
+   "smi_free_before_run_mb": 10856.0,
+   "other_processes_gb": 0.16,
+   "display_driver_overhead_gb_approx": 1.47
+  },
+  "fp32_stack_steady_gb": 12.098,
+  "fp32_dsa_beside_banks_core_fits": false,
+  "practical_process_budget_gb": 11.35,
+  "bf16_stack_steady_gb": 11.488,
+  "bf16_block_peak_gb": 11.554,
+  "bf16_verdict": "bf16 DSA storage is NECESSARY (fp32 stack 12.10 GB OOMs empirically) but NOT SUFFICIENT: bf16 stack steady 11.49 GB + K112 block transient 0.07 GB = 11.55 GB exceeds the measured ~11.35 GB practical process budget (12.48 card - 0.16 other procs - ~0.67 display - ~0.30 CUDA context). Remaining gap: ~0.14 GB steady / ~0.20 GB with transients \u2014 closable via NEXT-2 fusion (shrinks the transient), state-buffer sizing, or ~150 MB from banks/core. Tiering remains REQUIRED until then."
+ }
+}

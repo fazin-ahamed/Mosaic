@@ -1,0 +1,9 @@
+{
+  "gpu": {"name": "NVIDIA A10G", "cc": "8.6", "vram_gb": 23.7, "sms": 80},
+  "vram_bandwidth": {
+    "memcpy_d2d_peak_gbs": 483.55,
+    "triad_peak_gbs": 483.72,
+    "skipped_mb": [8192],
+    "note": "Modal gpu=A10 maps to A10G; D2D ~484 GB/s is within ~20% of 600 GB/s class (actual 81% of nominal)."
+  }
+}

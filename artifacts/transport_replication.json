@@ -1,0 +1,96 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "thermal_label": "STEADY",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 75,
+    "sm_clock_mhz": 1905,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.037,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 100,
+    "ts": 1787934036.2898927
+  },
+  "pipeline_as_built": {
+    "times_s": [
+      0.01714204788208008,
+      0.017341440200805663,
+      0.01774048042297363,
+      0.019168256759643554,
+      0.018097631454467772,
+      0.0177894401550293,
+      0.019166303634643556
+    ],
+    "gbs": [
+      7.799152173630327,
+      7.709477324368293,
+      7.536066488192122,
+      6.974731279762246,
+      7.387344600113129,
+      7.515325880685637,
+      6.975442033504358
+    ],
+    "median_gbs": 7.515325880685637,
+    "min_gbs": 6.974731279762246,
+    "max_gbs": 7.799152173630327
+  },
+  "sustained_copy_only": {
+    "times_s": [
+      0.010694751739501953,
+      0.010328927993774413,
+      0.010381792068481445,
+      0.010374208450317383,
+      0.010358943939208984,
+      0.010360032081604005,
+      0.010363903999328614
+    ],
+    "gbs": [
+      12.5008455788826,
+      12.943592992475256,
+      12.877684230055618,
+      12.887097906338083,
+      12.906087800510765,
+      12.904732238946963,
+      12.899911076816307
+    ],
+    "median_gbs": 12.899911076816307,
+    "min_gbs": 12.5008455788826,
+    "max_gbs": 12.943592992475256
+  },
+  "compute_alone_median_s": 0.0160545597076416,
+  "diagnosis": {
+    "pipeline_compute_bound": true,
+    "compute_alone_s": 0.0160545597076416,
+    "copies_alone_s": 0.010363903999328614,
+    "explanation": "transport.py's effective_gbs divides bytes by max(copy, compute); with the fixed 10-GEMM load the pipeline is compute-bound, so the historical 8.0-9.5 GB/s range reflected compute-time variance, not copy-pipe variance.",
+    "frozen_bw_pipe_ram_tier_gbs": 12.899911076816307,
+    "frozen_bw_pipe_nvme_tier_gbs": 11.0,
+    "planning_reduction_ram_tier": 2.063930859950727,
+    "planning_reduction_nvme_tier": 2.420411323823763,
+    "rule": "BW_PIPE frozen to sustained copy-only median (RAM tier); pipeline-as-built number (compute-bound wall time) is a method diagnostic only. Supersedes the 8.0-9.5 n=2 range. Production pipe rate is source-tier dependent: 13.1 pinned "
+  },
+  "thermal_certification": {
+    "window_temps_c": [
+      71,
+      71,
+      71,
+      71,
+      71,
+      71
+    ],
+    "window_drift_c": 0,
+    "clocks_locked_at_mhz": 1905,
+    "label": "STEADY",
+    "method": "per-rep NVML snapshots, rep 2 onward (cooldown tail excluded); clock-lock required for STEADY/CONTROLLED"
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 71,
+    "sm_clock_mhz": 1905,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.037,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 12,
+    "ts": 1787934037.0290735
+  }
+}

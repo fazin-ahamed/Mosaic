@@ -1,0 +1,8 @@
+{
+  "mosaicvm/bench/source_tail.py": "055e35f437c77fe18cbfb4f04a47d1a613c625b05b3efbb2f2fb99192fff72ad",
+  "mosaicvm/bench/d3_tail_eval.py": "0f41d3960b6a24f636e492825c012c635f54e8a7340a046d887b12d2d2572cd4",
+  "mosaicvm/bench/d3_student.py": "fd106f0fe18050e5403c334866bfa414997e1d87d32380b658cfbc57782ca2c9",
+  "mosaicvm/bench/d2_tail_parity.py": "81bea09e4a90b24b056435bdb06ba75c7d5cd96548123b0c27ed56c4e1904451",
+  "mosaicvm/bench/vnni_source.py": "ffbffdae352fe1fde91c64a6d576f7e42529c3e07f767d6e3f17322ae7d3291b",
+  "mosaicvm/bench/vnni_source_kernel.c": "1beb289b58f27c6bc67be5b56229a91beea88b0cc59da99dd66010824349aab3"
+}

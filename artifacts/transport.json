@@ -1,0 +1,103 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "thermal_start": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 59,
+    "sm_clock_mhz": 1935,
+    "mem_clock_mhz": 7501,
+    "power_w": 0.042,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 5,
+    "ts": 1787917743.186121
+  },
+  "h2d_pinned_1MB": {
+    "sec": 8.361600339412689e-05,
+    "gbs": 12.540374538800918
+  },
+  "h2d_pageable_1MB": {
+    "sec": 0.00011431999877095222,
+    "gbs": 9.172288412116698
+  },
+  "h2d_pinned_4MB": {
+    "sec": 0.00032233598828315733,
+    "gbs": 13.012211333707787
+  },
+  "h2d_pageable_4MB": {
+    "sec": 0.00036287999153137207,
+    "gbs": 11.558377694785053
+  },
+  "h2d_pinned_expert-packed4": {
+    "sec": 0.001039088010787964,
+    "gbs": 13.118703958159363
+  },
+  "h2d_pageable_expert-packed4": {
+    "sec": 0.001112239956855774,
+    "gbs": 12.255887693996609
+  },
+  "h2d_pinned_expert-hot8": {
+    "sec": 0.0020898720026016233,
+    "gbs": 13.045285053850707
+  },
+  "h2d_pageable_expert-hot8": {
+    "sec": 0.002215951919555664,
+    "gbs": 12.303053942373753
+  },
+  "h2d_pinned_100MB": {
+    "sec": 0.008009568214416504,
+    "gbs": 13.091542164690694
+  },
+  "h2d_pageable_100MB": {
+    "sec": 0.008412032127380372,
+    "gbs": 12.46519252567978
+  },
+  "h2d_pinned_500MB": {
+    "sec": 0.03997286415100097,
+    "gbs": 13.116097911309444
+  },
+  "h2d_pageable_500MB": {
+    "sec": 0.04179881668090821,
+    "gbs": 12.543130203957924
+  },
+  "overlap": {
+    "transfer_sec": 0.0010196959972381592,
+    "compute_sec": 0.001375488042831421,
+    "overlapped_sec": 0.0014088799953460693,
+    "overlap_efficiency": 1.7000624950184213,
+    "transfer_gb": 0.013369344
+  },
+  "pipeline_10_experts": {
+    "sec": 0.01411299705505371,
+    "total_gb": 0.13369344,
+    "effective_gbs": 9.473072195684036
+  },
+  "nvme_seq_100mb": {
+    "sec": 0.011476516723632812,
+    "gbs": 8.50922386571381
+  },
+  "nvme_seq_500mb": {
+    "sec": 0.044367074966430664,
+    "gbs": 11.005486621992702
+  },
+  "thermal_end": {
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "temp_c": 60,
+    "sm_clock_mhz": 1935,
+    "mem_clock_mhz": 7301,
+    "power_w": 0.044,
+    "power_limit_w": 170.0,
+    "gpu_util_pct": 81,
+    "ts": 1787917749.9118972
+  },
+  "summary": {
+    "pinned_h2d_gbs": 13.10382003800007,
+    "assumed_h2d_gbs": 12.0,
+    "actual_vs_assumed": 1.0919850031666725,
+    "expert_transfer_ms": 1.020263095893406,
+    "k56_transfer_budget_gb": 24.460464070933465,
+    "k56_actual_traffic_gb": 49.7,
+    "reduction_needed": 2.0318502484611014
+  },
+  "steady_state_note": "Rerun after warmup_steady. H2D unchanged at 13.1 GB/s (PCIe not thermally sensitive). Pipeline improved from 8.0 to 9.5 GB/s (possibly warm-GPU scheduling or variance; needs replication). NVMe improved from 10.1 to 11.0 GB/s. Planning number updated.",
+  "steady_pipeline_gbs": 9.5,
+  "steady_planning_reduction": 2.8026315789473686
+}

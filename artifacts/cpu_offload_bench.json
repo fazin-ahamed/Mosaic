@@ -1,0 +1,8 @@
+{
+ "classification": "CPU_EMBED_HEAD_OFFLOAD_BENCHMARK",
+ "cpu_head_gemm_1x4096_ms": 43.0,
+ "cpu_head_gemm_8x4096_ms": 103.6,
+ "cpu_embed_lookup_ms": 0.06,
+ "verifier_impact": "one head call per verify block: +43ms vs GPU ~13ms; embed lookup negligible",
+ "n_threads": 6
+}

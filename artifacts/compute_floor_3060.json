@@ -1,0 +1,326 @@
+{
+  "raw": {
+    "attention": [
+      {
+        "ctx": 4096,
+        "K": 1,
+        "sec_per_step": 0.0006112224102020263
+      },
+      {
+        "ctx": 32768,
+        "K": 1,
+        "sec_per_step": 0.004922940826416015
+      }
+    ],
+    "router": {
+      "sec_per_step": 3.1436800956726076e-05
+    },
+    "shared_expert": [
+      {
+        "K": 1,
+        "sec_per_step": 0.0002396159887313843
+      },
+      {
+        "K": 2,
+        "sec_per_step": 0.0002575311899185181
+      },
+      {
+        "K": 3,
+        "sec_per_step": 0.00025277440547943116
+      },
+      {
+        "K": 4,
+        "sec_per_step": 0.0002589168071746826
+      },
+      {
+        "K": 5,
+        "sec_per_step": 0.0002638335943222046
+      },
+      {
+        "K": 8,
+        "sec_per_step": 0.00023388800621032714
+      },
+      {
+        "K": 10,
+        "sec_per_step": 0.00027571198940277097
+      }
+    ],
+    "routed_expert": [
+      {
+        "K": 1,
+        "top_k": 6,
+        "sec_per_step": 0.001385472011566162,
+        "bf16_sec": 0.001385472011566162,
+        "w4a16_sec_per_step": 0.0015773183822631836,
+        "int4_sec_per_step": 0.0015773183822631836,
+        "n_expert_gemm_rows": 6,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 2,
+        "top_k": 6,
+        "sec_per_step": 0.0022435327529907226,
+        "bf16_sec": 0.0022435327529907226,
+        "w4a16_sec_per_step": 0.001585409641265869,
+        "int4_sec_per_step": 0.001585409641265869,
+        "n_expert_gemm_rows": 12,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 3,
+        "top_k": 6,
+        "sec_per_step": 0.003158988761901855,
+        "bf16_sec": 0.003158988761901855,
+        "w4a16_sec_per_step": 0.002579148864746094,
+        "int4_sec_per_step": 0.002579148864746094,
+        "n_expert_gemm_rows": 18,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 4,
+        "top_k": 6,
+        "sec_per_step": 0.0041556831359863275,
+        "bf16_sec": 0.0041556831359863275,
+        "w4a16_sec_per_step": 0.0026278751373291012,
+        "int4_sec_per_step": 0.0026278751373291012,
+        "n_expert_gemm_rows": 24,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 5,
+        "top_k": 6,
+        "sec_per_step": 0.005268377685546876,
+        "bf16_sec": 0.005268377685546876,
+        "w4a16_sec_per_step": 0.0025634719848632815,
+        "int4_sec_per_step": 0.0025634719848632815,
+        "n_expert_gemm_rows": 30,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 8,
+        "top_k": 6,
+        "sec_per_step": 0.008471097564697265,
+        "bf16_sec": 0.008471097564697265,
+        "w4a16_sec_per_step": 0.002969372749328613,
+        "int4_sec_per_step": 0.002969372749328613,
+        "n_expert_gemm_rows": 48,
+        "routed_kernel": "w4a16"
+      },
+      {
+        "K": 10,
+        "top_k": 6,
+        "sec_per_step": 0.010497974395751954,
+        "bf16_sec": 0.010497974395751954,
+        "w4a16_sec_per_step": 0.004093588638305664,
+        "int4_sec_per_step": 0.004093588638305664,
+        "n_expert_gemm_rows": 60,
+        "routed_kernel": "w4a16"
+      }
+    ],
+    "hyper_conn": [
+      {
+        "K": 1,
+        "sec_per_step": 2.6025599241256712e-05
+      },
+      {
+        "K": 2,
+        "sec_per_step": 3.671039938926697e-05
+      },
+      {
+        "K": 3,
+        "sec_per_step": 3.64544004201889e-05
+      },
+      {
+        "K": 4,
+        "sec_per_step": 3.5737600922584534e-05
+      },
+      {
+        "K": 5,
+        "sec_per_step": 3.5238400101661685e-05
+      },
+      {
+        "K": 8,
+        "sec_per_step": 3.496960103511811e-05
+      },
+      {
+        "K": 10,
+        "sec_per_step": 3.6316800117492676e-05
+      }
+    ],
+    "measured_d2d_bw_gbs": 280.2026325965615,
+    "gpu_name": "NVIDIA GeForce RTX 3060",
+    "routed_expert_top4_k1": {
+      "K": 1,
+      "top_k": 4,
+      "sec_per_step": 0.0009148927688598633,
+      "bf16_sec": 0.0009148927688598633,
+      "w4a16_sec_per_step": 0.001442150402069092,
+      "int4_sec_per_step": 0.001442150402069092,
+      "n_expert_gemm_rows": 4,
+      "routed_kernel": "w4a16"
+    }
+  },
+  "projection_rows": [
+    {
+      "K": 1,
+      "per_layer_sec": 0.002485619181394577,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.10688162479996681,
+      "draft_tokens_per_block": 1,
+      "blocks_per_sec": 9.356145192136998,
+      "oracle_accepted_toks": 9.356145192136998,
+      "k1_toks": 9.356145192136998,
+      "derated_3060_toks": 9.356145192136998,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 3.421312185769648,
+      "k1_toks_top4": 9.894191354243194,
+      "aed_mean_k": 4.01953125,
+      "k1_toks_aed": 9.894191354243194
+    },
+    {
+      "K": 2,
+      "per_layer_sec": 0.0025223104417324066,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.10845934899449348,
+      "draft_tokens_per_block": 2,
+      "blocks_per_sec": 9.220044277149132,
+      "oracle_accepted_toks": 18.440088554298264,
+      "k1_toks": 9.220044277149132,
+      "derated_3060_toks": 9.220044277149132,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 3.4029434813473514
+    },
+    {
+      "K": 3,
+      "per_layer_sec": 0.003511036881804466,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.15097458591759205,
+      "draft_tokens_per_block": 3,
+      "blocks_per_sec": 6.623631347767629,
+      "oracle_accepted_toks": 19.87089404330289,
+      "k1_toks": 6.623631347767629,
+      "derated_3060_toks": 6.623631347767629,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 2.9728418015809837
+    },
+    {
+      "K": 4,
+      "per_layer_sec": 0.0035651887565851205,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.15330311653316017,
+      "draft_tokens_per_block": 4,
+      "blocks_per_sec": 6.5230245973746745,
+      "oracle_accepted_toks": 26.092098389498698,
+      "k1_toks": 6.5230245973746745,
+      "derated_3060_toks": 6.5230245973746745,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 2.9524042169490574
+    },
+    {
+      "K": 5,
+      "per_layer_sec": 0.0035052031904459005,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.15072373718917373,
+      "draft_tokens_per_block": 5,
+      "blocks_per_sec": 6.6346550228176575,
+      "oracle_accepted_toks": 33.173275114088284,
+      "k1_toks": 6.6346550228176575,
+      "derated_3060_toks": 6.6346550228176575,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 2.9750604040438113
+    },
+    {
+      "K": 8,
+      "per_layer_sec": 0.003880889567732811,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.16687825141251086,
+      "draft_tokens_per_block": 8,
+      "blocks_per_sec": 5.99239260679975,
+      "oracle_accepted_toks": 47.939140854398,
+      "k1_toks": 5.99239260679975,
+      "derated_3060_toks": 5.99239260679975,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 2.838633802454301
+    },
+    {
+      "K": 10,
+      "per_layer_sec": 0.00504827663898468,
+      "attn_ctx": "4k",
+      "verification_block_latency_s": 0.21707589547634126,
+      "draft_tokens_per_block": 10,
+      "blocks_per_sec": 4.606683749043838,
+      "oracle_accepted_toks": 46.06683749043838,
+      "k1_toks": 4.606683749043838,
+      "derated_3060_toks": 4.606683749043838,
+      "derate_scale": 1.0,
+      "routed_kernel": "w4a16",
+      "_alt_attn32k_native": 2.484596820440816
+    }
+  ],
+  "gate_eval": {
+    "gate": "k1_toks >= 12.0 (Gate A' on 3060)",
+    "measured_k1": 9.356145192136998,
+    "measured_derated_k1": 9.356145192136998,
+    "required": 12.0,
+    "pass": false
+  },
+  "roofline": {
+    "n_sel": 6,
+    "bytes_moved": 302186496,
+    "bf16_sec": 0.001385472011566162,
+    "achieved_bw_gbs": 218.11086292418352,
+    "d2d_bw_gbs": 280.2026325965615,
+    "bw_util": 0.7784040460398589,
+    "flops": 301989888,
+    "achieved_tflops": 0.217968956051754,
+    "ampere_3060_fp16_tflops": 50.0,
+    "compute_util": 0.00435937912103508,
+    "derate_mode": "mixed",
+    "sm_scale_a10g_to_3060": 0.35,
+    "bw_scale_a10g_to_3060": 0.743801652892562
+  },
+  "constants": {
+    "n_layers": 43,
+    "hidden": 4096,
+    "n_heads": 64,
+    "head_dim": 512,
+    "n_experts": 256,
+    "top_k": 6,
+    "moe_inter": 2048,
+    "derate_bw_3060": 360.0,
+    "measured_bw_gbs": 280.2026325965615,
+    "gpu_name": "NVIDIA GeForce RTX 3060",
+    "on_3060": true,
+    "k_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      10
+    ],
+    "ampere_3060_fp16_tflops": 50.0
+  },
+  "aed": {
+    "n": 2048,
+    "mean_k": 4.01953125,
+    "assumed_mean_k": 4.01953125,
+    "hist": {
+      "1": 0,
+      "2": 1014,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 1034
+    },
+    "source": "random_hidden_plus_peaked_mix",
+    "note": "checkpoint hidden states absent; assumed_mean_k used for floor re-project"
+  }
+}

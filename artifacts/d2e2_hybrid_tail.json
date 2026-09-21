@@ -1,0 +1,130 @@
+{
+ "classification": "D2E2_HYBRID_TAIL_PARITY",
+ "e1_case_coverage": {
+  "match_basis": "name + M + activation sha256 (exact input identity)",
+  "n_executed_calls_total": 5610,
+  "e1_non_bitwise_cases": [
+   "L41.w3.e125.M3.7a9dcf62c758355e@convo_13/prefill",
+   "L41.w1.e254.M1.dad7d70f583c1a9f@convo_13/decode0",
+   "L42.w3.e205.M1.a8de8d286c0d48b8@math_13/decode6",
+   "L42.w2.e180.M4.ab6470f92023ea63@coding_13/prefill"
+  ],
+  "exact_input_matched": [
+   "L41.w3.e125.M3.7a9dcf62c758355e@convo_13/prefill",
+   "L41.w1.e254.M1.dad7d70f583c1a9f@convo_13/decode0",
+   "L42.w3.e205.M1.a8de8d286c0d48b8@math_13/decode6",
+   "L42.w2.e180.M4.ab6470f92023ea63@coding_13/prefill"
+  ],
+  "unmatched_stay_open": []
+ },
+ "topology": "GPU attention/core/router + CPU VNNI routed experts + GPU continuation/shared/head",
+ "prompts": [
+  "convo_13",
+  "math_13",
+  "coding_13",
+  "json_13"
+ ],
+ "n_prompts": 4,
+ "hyb_vs_gpuref_bitwise": "4/4",
+ "hyb_vs_gpuref_max_abs": 0.0,
+ "hyb_vs_capture_bitwise": "4/4",
+ "hyb_vs_capture_max_abs": 0.0,
+ "all_routes_equal": true,
+ "all_head_greedy_equal": true,
+ "rows": [
+  {
+   "category": "convo_13",
+   "S": 10,
+   "K": 32,
+   "hyb_vs_gpuref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "hyb_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "gpuref_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "first_divergence_pos": null,
+   "routes_equal": {
+    "41": true,
+    "42": true
+   },
+   "head_greedy_equal": true
+  },
+  {
+   "category": "math_13",
+   "S": 18,
+   "K": 32,
+   "hyb_vs_gpuref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "hyb_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "gpuref_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "first_divergence_pos": null,
+   "routes_equal": {
+    "41": true,
+    "42": true
+   },
+   "head_greedy_equal": true
+  },
+  {
+   "category": "coding_13",
+   "S": 12,
+   "K": 32,
+   "hyb_vs_gpuref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "hyb_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "gpuref_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "first_divergence_pos": null,
+   "routes_equal": {
+    "41": true,
+    "42": true
+   },
+   "head_greedy_equal": true
+  },
+  {
+   "category": "json_13",
+   "S": 17,
+   "K": 32,
+   "hyb_vs_gpuref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "hyb_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "gpuref_vs_capture": {
+    "bitwise": true,
+    "max_abs": 0.0
+   },
+   "first_divergence_pos": null,
+   "routes_equal": {
+    "41": true,
+    "42": true
+   },
+   "head_greedy_equal": true
+  }
+ ],
+ "verdict": "PASS \u2014 hybrid tail reproduces the GPU source tail bitwise",
+ "production_timing": null
+}

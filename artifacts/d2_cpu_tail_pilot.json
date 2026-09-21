@@ -1,0 +1,19 @@
+{
+  "classification": "CAPTURED_STATE_CPU_TAIL_ADAPTER_REFERENCE_PARITY",
+  "production_certified": false,
+  "production_latency": null,
+  "capture_sha256": "d84b9016d2e623c27d67c212815ab784f1992e705f5984c791d5045645a26277",
+  "category": "coding_13",
+  "positions": 20,
+  "S": 12,
+  "cpu_adapter_h42_bit_equal": true,
+  "cpu_adapter_routes_equal": true,
+  "cpu_reference_vs_gpu_capture_h42_bit_equal": false,
+  "cpu_reference_vs_gpu_capture_max_abs": 4.0,
+  "cpu_reference_source_labels_equal": true,
+  "distinct_routed_experts": {
+    "41": 54,
+    "42": 49
+  },
+  "script_sha256": "81bea09e4a90b24b056435bdb06ba75c7d5cd96548123b0c27ed56c4e1904451"
+}

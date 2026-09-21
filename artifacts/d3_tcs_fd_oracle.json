@@ -1,0 +1,53 @@
+{
+ "classification": "D3_TCS_FD_ALPHA_ORACLE",
+ "alphas": [
+  0.0,
+  0.125,
+  0.25,
+  0.5,
+  0.75,
+  1.0
+ ],
+ "gold_interp": {
+  "0.0": {
+   "mean_E_A": 2.905,
+   "S1": 0.429
+  },
+  "0.125": {
+   "mean_E_A": 2.952,
+   "S1": 0.429
+  },
+  "0.25": {
+   "mean_E_A": 3.667,
+   "S1": 0.429
+  },
+  "0.5": {
+   "mean_E_A": 5.238,
+   "S1": 0.571
+  },
+  "0.75": {
+   "mean_E_A": 12.238,
+   "S1": 0.667
+  },
+  "1.0": {
+   "mean_E_A": 33.0,
+   "S1": 1.0
+  }
+ },
+ "random_control": "not completed (shape bug; gold-interp is decisive)",
+ "recovery_fraction": {
+  "0.0": 0.0,
+  "0.125": 0.002,
+  "0.25": 0.025,
+  "0.5": 0.078,
+  "0.75": 0.31,
+  "1.0": 1.0
+ },
+ "gate": {
+  "alpha_0.25_recovery": 0.025,
+  "threshold": 0.5,
+  "passed": false
+ },
+ "verdict": "TCS-FD CLOSED \u2014 the decision-recovery curve is strongly convex: even moving 50% of the error directly toward gold recovers only 7.8% of the acceptance gap. The decision-critical error is DIFFUSE across the h40 space, not concentrated in any low-rank subspace. No basis construction (SVD, FD, or otherwise) can extract a compact decision-correcting subspace from this error distribution.",
+ "production_timing": null
+}

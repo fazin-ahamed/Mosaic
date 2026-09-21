@@ -1,0 +1,87 @@
+{
+ "classification": "H0B_CPU_EXPERTS",
+ "cpu": "12th Gen Intel(R) Core(TM) i5-12400F",
+ "isa": [
+  "avx2",
+  "avx_vnni"
+ ],
+ "path": "bf16->fp32 torch GEMM, host-resident (numeric UB; VNNI would beat)",
+ "bank_experts": 64,
+ "bank_GB": 3.22,
+ "by_M": {
+  "1": {
+   "thr4": {
+    "p50_ms": 1.199,
+    "p95_ms": 1.631
+   },
+   "thr6": {
+    "p50_ms": 1.17,
+    "p95_ms": 1.252
+   },
+   "thr12": {
+    "p50_ms": 5.047,
+    "p95_ms": 13.903
+   }
+  },
+  "2": {
+   "thr4": {
+    "p50_ms": 1.689,
+    "p95_ms": 1.773
+   },
+   "thr6": {
+    "p50_ms": 1.739,
+    "p95_ms": 1.763
+   },
+   "thr12": {
+    "p50_ms": 2.08,
+    "p95_ms": 5.279
+   }
+  },
+  "3": {
+   "thr4": {
+    "p50_ms": 2.205,
+    "p95_ms": 2.446
+   },
+   "thr6": {
+    "p50_ms": 1.581,
+    "p95_ms": 1.66
+   },
+   "thr12": {
+    "p50_ms": 2.761,
+    "p95_ms": 12.174
+   }
+  },
+  "4": {
+   "thr4": {
+    "p50_ms": 2.938,
+    "p95_ms": 3.129
+   },
+   "thr6": {
+    "p50_ms": 3.332,
+    "p95_ms": 3.346
+   },
+   "thr12": {
+    "p50_ms": 3.633,
+    "p95_ms": 5.294
+   }
+  },
+  "6": {
+   "thr4": {
+    "p50_ms": 4.451,
+    "p95_ms": 4.766
+   },
+   "thr6": {
+    "p50_ms": 4.947,
+    "p95_ms": 4.981
+   },
+   "thr12": {
+    "p50_ms": 11.557,
+    "p95_ms": 23.535
+   }
+  }
+ },
+ "best_M1_ms": 1.17,
+ "per_layer_ms_serial": 8.2,
+ "cycle_ms_all_cpu_serial": 352.2,
+ "tput_all_cpu": 10.668
+}

@@ -1,0 +1,37 @@
+{
+ "classification": "VNNI_EXACT_PACKED_FP4_KERNEL",
+ "parity": {
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "bitwise_close": true
+ },
+ "bench": {
+  "rows3_threads12": {
+   "ms_per_expert": 0.834,
+   "qW_gb_per_s": 30.18,
+   "tflops_equiv": 0.1811,
+   "packed_equiv_gb_per_s": 15.09
+  },
+  "rows8_threads12": {
+   "ms_per_expert": 1.841,
+   "qW_gb_per_s": 13.67,
+   "tflops_equiv": 0.2187,
+   "packed_equiv_gb_per_s": 6.83
+  },
+  "rows16_threads12": {
+   "ms_per_expert": 3.333,
+   "qW_gb_per_s": 7.55,
+   "tflops_equiv": 0.2416,
+   "packed_equiv_gb_per_s": 3.78
+  }
+ },
+ "hybrid_projection": {
+  "best_config": "rows3_threads12",
+  "objects_per_N32_block": 2537,
+  "cpu_seconds_all_objects": 2.12,
+  "model": "T_H(f)=2.64(1-f); T_C(f)=cpu_sec*f; balanced f and critical path computed from measured cpu rate",
+  "balanced_f": 0.555,
+  "critical_path_s": 1.175,
+  "perfect_proposer_tok_s": 27.2
+ }
+}

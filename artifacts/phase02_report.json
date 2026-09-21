@@ -1,0 +1,72 @@
+{
+  "ladder": [
+    {
+      "stage": "3060 K1 perfect residency (bf16 or w4a16)",
+      "required": 12.0,
+      "observed": 9.356145192136998,
+      "pass": false
+    },
+    {
+      "stage": "Fused W4A16 + resident core (K1)",
+      "required": 14.0,
+      "observed": 9.356145192136998,
+      "pass": false
+    },
+    {
+      "stage": "Top-4 / AED (K1 equiv)",
+      "required": 16.0,
+      "observed": 9.894191354243194,
+      "pass": false
+    },
+    {
+      "stage": "Oracle K=5",
+      "required": 25.0,
+      "observed": 4.879489691755935,
+      "pass": false
+    },
+    {
+      "stage": "Oracle K=8",
+      "required": 35.0,
+      "observed": 6.992806738346318,
+      "pass": false
+    }
+  ],
+  "no_drafter": true,
+  "kernel": "w4a16",
+  "topk_quality": {
+    "status": "blocked_no_modal",
+    "reason": "Modal token is the leaked Phase-1 credential; remote H100 sweep skipped",
+    "sweep": [
+      6,
+      5,
+      4,
+      3,
+      2
+    ],
+    "prompts": [
+      "def fibonacci(n):",
+      "The history of the silk road begins",
+      "Prove that sqrt(2) is irrational:",
+      "Call the weather API for Tokyo tomorrow with units=celsius.",
+      "In a long-context retrieval setting, the key idea is"
+    ],
+    "turbo_default": 4,
+    "turbo_default_quality": "unvalidated",
+    "fidelity_k": 6,
+    "pass_criterion": "mean_token_match >= 0.90 vs k=6 golden"
+  },
+  "aec": {
+    "skipped": false,
+    "reason": "oracle K=8 accepted_output_toks < 30",
+    "oracle_k8_toks": 6.992806738346318,
+    "oracle_k5_toks": 4.879489691755935,
+    "aec_enabled": true,
+    "gates": {
+      "k5_ge_25": false,
+      "k8_ge_35": false,
+      "k8_ge_30": false,
+      "k5_toks": 4.879489691755935,
+      "k8_toks": 6.992806738346318
+    }
+  }
+}

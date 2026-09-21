@@ -1,0 +1,103 @@
+{
+  "stage": "DSpark Stage-1 inspection",
+  "date": "2026-08-29",
+  "source": [
+    "runtime introspection on RTX PRO 6000 Blackwell MoLab sandbox",
+    "checkpoint safetensors index scan (72,317 tensors)",
+    "checkpoint source kit: .mosaicvm/source/inference_model.py (DSpark implementation)",
+    "checkpoint source kit: .mosaicvm/source/inference_config.json",
+    "transformers 4.x deepseek_v4 modeling source"
+  ],
+  "model": {
+    "repo": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+    "checkpoint_size_gb": 166.9,
+    "n_tensors": 72317
+  },
+  "environment": {
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "vram_gib": 95.0,
+    "cuda": "13.0",
+    "torch": "2.11.0+cu130",
+    "python": "3.13.11",
+    "transformers": "transformers deepseek_v4 native module",
+    "classification": "BLACKWELL_SANDBOX_ONLY"
+  },
+  "dspark_config": {
+    "n_mtp_layers": 3,
+    "dspark_block_size": 5,
+    "dspark_noise_token_id": 128799,
+    "dspark_target_layer_ids": [40, 41, 42],
+    "dspark_markov_rank": 256,
+    "temperature_default": 1.0,
+    "dim": 4096,
+    "moe_inter_dim": 2048,
+    "n_heads": 64,
+    "head_dim": 512,
+    "rope_head_dim": 64,
+    "q_lora_rank": 1024,
+    "o_groups": 8,
+    "o_lora_rank": 1024,
+    "hc_mult": 4,
+    "hc_sinkhorn_iters": 20,
+    "window_size": 128,
+    "score_func": "sqrtsoftplus",
+    "route_scale": 1.5,
+    "swiglu_limit": 10.0,
+    "n_routed_experts": 256,
+    "n_activated_experts": 6,
+    "vocab_size": 129280
+  },
+  "transformers_surface": {
+    "main_model_class": "DeepseekV4ForCausalLM",
+    "mtp_modules_in_loaded_model": [],
+    "mtp_ignored_by_transformers": "_keys_to_ignore_on_load_unexpected = [r\"(^|\\.)mtp\\..*\"]",
+    "hidden_states_layout": "[B, S, hc_mult, hidden] between layers (matches source kit)",
+    "main_hidden_hook": "layers 40/41/42 forward outputs, mean(dim=2), concat in layer order",
+    "get_mtp_config_exists_on_config": true
+  },
+  "checkpoint_mtp_tensors": {
+    "count": 4705,
+    "stages": 3,
+    "per_stage": {
+      "attn": ["wq_a.weight+scale", "wq_b.weight+scale", "wkv.weight+scale", "wo_a.weight+scale", "wo_b.weight+scale", "q_norm.weight", "kv_norm.weight", "attn_sink"],
+      "ffn": ["gate.weight+scale", "gate.bias", "experts.{0..255}.{w1,w2,w3}.weight+scale (FP4)", "shared_experts.{w1,w2,w3}.weight+scale"],
+      "norms": ["attn_norm.weight", "ffn_norm.weight"],
+      "hc": ["hc_attn_fn", "hc_attn_base", "hc_attn_scale", "hc_ffn_fn", "hc_ffn_base", "hc_ffn_scale"]
+    },
+    "stage0_only": ["main_proj.weight+scale", "main_norm.weight"],
+    "stage2_only": ["norm.weight", "markov_head.markov_w1.weight", "markov_head.markov_w2.weight+scale", "confidence_head.proj.weight", "hc_head_fn", "hc_head_base", "hc_head_scale"]
+  },
+  "observed_interface": {
+    "target_forward": "Transformer.forward(input_ids, start_pos) -> (output_ids, logits, main_hidden); main_hidden = concat over dspark_target_layer_ids of h.mean(dim=2)",
+    "drafter_forward": "Transformer.forward_spec(input_ids, main_hidden, start_pos) -> (output_ids[6], logits, confidence) when start_pos>0; None at start_pos==0 (prefill fills KV only)",
+    "drafter_prefill": "forward_spec(start_pos=0): each DSparkAttention stores kv_norm(wkv(main_x)) into its windowed ring cache from the prompt main_hidden",
+    "draft_block": "block_size=5: [committed_token, noise*4] embedded, 3 stages, markov head adds bigram logit bias per drafted position, sample(T=1.0)",
+    "drafter_kv": "ring window_size=128 over TARGET projected hiddens (main_norm(main_proj(main_hidden))); draft tokens add their own KV at block positions",
+    "sparse_attn": "per-query top-k gather, online softmax, attn_sink added to DENOMINATOR ONLY as exp(attn_sink - max) (virtual entry with no value contribution)",
+    "hyper_connections": "hc_pre (sinkhorn: pre=sigmoid(mix*scale0+base)+eps, post=2*sigmoid(mix*scale1+base), comb=sinkhorn-normalized mix*scale2+base), hc_post (post*x + comb@residual)",
+    "moe_gate": "sqrtsoftplus scores, bias shifts selection only, top-6, weights normalized *1.5 (MTP layers are learned-router, NOT hash)",
+    "expert": "SwiGLU w1/w2/w3 with swiglu_limit=10 clamp (up clamped +-10, gate clamped max 10), fp32 compute in source",
+    "confidence_head": "concat(hidden, markov_embed) -> proj -> scalar per position (fp32)",
+    "sampling": "Gumbel-max at temperature=1.0 default"
+  },
+  "constraints_discovered": {
+    "full_source_kit_route_blocked": "kit requires tilelang kernels and all-on-GPU (~167GB) load; sandbox has 95GB VRAM single GPU",
+    "transformers_route": "main model via device_map=auto works (proven by route capture); mtp.* must be loaded and executed manually",
+    "mtp_memory": "3 stages x 256 experts x 3 mats x 2048x4096 FP4-packed ~= 9.7GB; keep packed on GPU, dequant selected experts on the fly"
+  },
+  "stage2_plan": {
+    "route": "hybrid: transformers main model (target) + custom PyTorch DSpark stages (drafter) from observed interface",
+    "numerics_deviations": [
+      "FP8 weights dequantized to bf16 (value-exact; GEMM accumulation path differs from source FP8 kernels)",
+      "FP4 experts dequantized to bf16 on the fly (value-exact per FP4 table)",
+      "KV cache stored bf16 (source quantizes to FP8)",
+      "activations not FP8-quantized (source act_quant skipped)"
+    ],
+    "classification": "DRAFTER_NUMERICS_DEVIATION_RECORDED; acceptance is model-property estimate pending source-numerics drafter + 3060 equivalence",
+    "interpretation_choices": [
+      "chain verification: greedy argmax equality, first mismatch stops, bonus token emitted",
+      "drafter ring cache updated only at draft positions (kit demonstrates no full speculative loop in inference_generate.py)"
+    ]
+  }
+}

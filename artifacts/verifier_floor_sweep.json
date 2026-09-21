@@ -1,0 +1,184 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "classification": "P2_COREBLOCK_VERIFY_TIMING (post-exact-DSA attention; 0xFF open; NOT TRUE_P2)",
+ "n_values": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  56,
+  80,
+  112
+ ],
+ "phases": {
+  "A_bank_core_head": {
+   "1": 0.2972,
+   "2": 0.2461,
+   "4": 0.3001,
+   "8": 0.371,
+   "16": 0.4931,
+   "32": 0.7568,
+   "56": 1.0512,
+   "80": 1.1834,
+   "112": 1.4522
+  },
+  "B_eager_banks_free": {
+   "1": 0.0958,
+   "2": 0.1064,
+   "4": 0.1069,
+   "8": 0.1084,
+   "16": 0.1005,
+   "32": 0.1191,
+   "56": 0.1881,
+   "80": 0.2461,
+   "112": 0.2789
+  },
+  "B_exact_dsa_banks_free": {
+   "1": 0.1031,
+   "2": 0.1259,
+   "4": 0.1285,
+   "8": 0.1306,
+   "16": 0.1256,
+   "32": 0.1417,
+   "56": 0.2116,
+   "80": 0.2568,
+   "112": 0.2975
+  }
+ },
+ "rows": {
+  "1": {
+   "T_A_bank_core_head_s": 0.2972,
+   "T_Be_eager_s": 0.0958,
+   "T_Bd_exact_dsa_s": 0.1031,
+   "T_moe_head_s": 0.2014,
+   "T_dsa_delta_s": 0.0073,
+   "T_verify_reconstructed_s": 0.3045,
+   "raw_verify_tok_s": 3.3,
+   "E_req_for_30": 9.1
+  },
+  "2": {
+   "T_A_bank_core_head_s": 0.2461,
+   "T_Be_eager_s": 0.1064,
+   "T_Bd_exact_dsa_s": 0.1259,
+   "T_moe_head_s": 0.1398,
+   "T_dsa_delta_s": 0.0196,
+   "T_verify_reconstructed_s": 0.2657,
+   "raw_verify_tok_s": 7.5,
+   "E_req_for_30": 8.0
+  },
+  "4": {
+   "T_A_bank_core_head_s": 0.3001,
+   "T_Be_eager_s": 0.1069,
+   "T_Bd_exact_dsa_s": 0.1285,
+   "T_moe_head_s": 0.1932,
+   "T_dsa_delta_s": 0.0216,
+   "T_verify_reconstructed_s": 0.3217,
+   "raw_verify_tok_s": 12.4,
+   "E_req_for_30": 9.7
+  },
+  "8": {
+   "T_A_bank_core_head_s": 0.371,
+   "T_Be_eager_s": 0.1084,
+   "T_Bd_exact_dsa_s": 0.1306,
+   "T_moe_head_s": 0.2626,
+   "T_dsa_delta_s": 0.0222,
+   "T_verify_reconstructed_s": 0.3931,
+   "raw_verify_tok_s": 20.3,
+   "E_req_for_30": 11.8
+  },
+  "16": {
+   "T_A_bank_core_head_s": 0.4931,
+   "T_Be_eager_s": 0.1005,
+   "T_Bd_exact_dsa_s": 0.1256,
+   "T_moe_head_s": 0.3926,
+   "T_dsa_delta_s": 0.0251,
+   "T_verify_reconstructed_s": 0.5182,
+   "raw_verify_tok_s": 30.9,
+   "E_req_for_30": 15.5
+  },
+  "32": {
+   "T_A_bank_core_head_s": 0.7568,
+   "T_Be_eager_s": 0.1191,
+   "T_Bd_exact_dsa_s": 0.1417,
+   "T_moe_head_s": 0.6378,
+   "T_dsa_delta_s": 0.0226,
+   "T_verify_reconstructed_s": 0.7795,
+   "raw_verify_tok_s": 41.1,
+   "E_req_for_30": 23.4
+  },
+  "56": {
+   "T_A_bank_core_head_s": 1.0512,
+   "T_Be_eager_s": 0.1881,
+   "T_Bd_exact_dsa_s": 0.2116,
+   "T_moe_head_s": 0.8631,
+   "T_dsa_delta_s": 0.0235,
+   "T_verify_reconstructed_s": 1.0747,
+   "raw_verify_tok_s": 52.1,
+   "E_req_for_30": 32.2
+  },
+  "80": {
+   "T_A_bank_core_head_s": 1.1834,
+   "T_Be_eager_s": 0.2461,
+   "T_Bd_exact_dsa_s": 0.2568,
+   "T_moe_head_s": 0.9372,
+   "T_dsa_delta_s": 0.0107,
+   "T_verify_reconstructed_s": 1.194,
+   "raw_verify_tok_s": 67.0,
+   "E_req_for_30": 35.8
+  },
+  "112": {
+   "T_A_bank_core_head_s": 1.4522,
+   "T_Be_eager_s": 0.2789,
+   "T_Bd_exact_dsa_s": 0.2975,
+   "T_moe_head_s": 1.1734,
+   "T_dsa_delta_s": 0.0186,
+   "T_verify_reconstructed_s": 1.4709,
+   "raw_verify_tok_s": 76.1,
+   "E_req_for_30": 44.1
+  }
+ },
+ "vram": {
+  "after_core_bank_gb": 10.71,
+  "after_bank_free_gb": 7.02,
+  "after_dsa_load_gb": 8.68,
+  "after_populate_gb": 8.68
+ },
+ "fits": {
+  "T_verify": {
+   "T0_s": 0.3202,
+   "alpha_s_per_tok": 0.01106
+  },
+  "T_moe_head": {
+   "T0_s": 0.2099,
+   "alpha_s_per_tok": 0.00936
+  },
+  "T_dsa_delta": {
+   "T0_s": 0.0196,
+   "alpha_s_per_tok": -2e-05
+  }
+ },
+ "thermal": {
+  "start": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 53,
+   "sm_clock_mhz": 435,
+   "mem_clock_mhz": 810,
+   "power_w": 0.047,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 33,
+   "ts": 1788372207.2155955
+  },
+  "end": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 66,
+   "sm_clock_mhz": 1920,
+   "mem_clock_mhz": 7301,
+   "power_w": 0.042,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 99,
+   "ts": 1788372461.4067464
+  }
+ }
+}

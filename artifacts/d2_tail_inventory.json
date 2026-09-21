@@ -1,0 +1,32 @@
+{
+  "classification": "LOCAL_SOURCE_STORAGE_INVENTORY_NOT_RUNTIME_TIMING",
+  "snapshot": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+  "shards_read": 48,
+  "checkpoint_payload_bytes": 166878536440,
+  "tail_source_payload_bytes": {
+    "core_router_norm": 263008688,
+    "routed": 6845104128,
+    "shared": 50334720
+  },
+  "tail_tensor_counts": {
+    "core_router_norm": 61,
+    "routed": 3072,
+    "shared": 12
+  },
+  "tail_source_total_bytes": 7158447536,
+  "derived_representation_bytes": {
+    "routed_packed_weights": 6442450944,
+    "routed_e8m0_scales": 402653184,
+    "routed_vnni_v4b_int8_weights_fp32_scales": 14495514624,
+    "fp32_head": 2118123520
+  },
+  "excluded": [
+    "runtime dtype expansion",
+    "KV/DSA",
+    "scratch",
+    "allocator/runtime",
+    "student",
+    "verifier residency",
+    "duplicate canonical/expanded buffers"
+  ]
+}

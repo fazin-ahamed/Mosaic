@@ -1,0 +1,100 @@
+{
+ "ws210": {
+  "recall": {
+   "1": 0.5286,
+   "2": 0.7857,
+   "4": 0.8,
+   "8": 0.8571,
+   "16": 0.8714,
+   "32": 0.9143,
+   "64": 0.9286,
+   "128": 0.9571,
+   "256": 0.9714,
+   "512": 0.9857
+  },
+  "rerankable": [
+   "agent_38",
+   "agent_40",
+   "agent_43",
+   "agent_45",
+   "agent_46",
+   "coding_37",
+   "coding_38",
+   "coding_44",
+   "coding_46",
+   "convo_46",
+   "json_37",
+   "json_39",
+   "json_41",
+   "json_44",
+   "json_45",
+   "json_46",
+   "longform_37",
+   "longform_39",
+   "longform_40",
+   "longform_41",
+   "longform_42",
+   "longform_43",
+   "math_38",
+   "math_40",
+   "math_42",
+   "math_44",
+   "math_45",
+   "retrieval_37"
+  ],
+  "unreachable": {
+   "coding_39": 453,
+   "coding_43": 6730,
+   "json_40": 168,
+   "longform_45": 74,
+   "retrieval_46": 92
+  }
+ },
+ "hist210": {
+  "recall": {
+   "1": 0.5857,
+   "2": 0.7857,
+   "4": 0.8571,
+   "8": 0.9,
+   "16": 0.9429,
+   "32": 0.9429,
+   "64": 0.9429,
+   "128": 0.9571,
+   "256": 0.9714,
+   "512": 0.9714
+  },
+  "rerankable": [
+   "agent_37",
+   "agent_38",
+   "agent_39",
+   "agent_40",
+   "agent_42",
+   "agent_43",
+   "agent_45",
+   "agent_46",
+   "coding_44",
+   "convo_46",
+   "json_39",
+   "json_41",
+   "json_44",
+   "longform_37",
+   "longform_39",
+   "longform_40",
+   "longform_42",
+   "longform_45",
+   "math_38",
+   "math_40",
+   "math_41",
+   "math_44",
+   "math_45",
+   "retrieval_37",
+   "retrieval_46"
+  ],
+  "unreachable": {
+   "coding_39": 1496,
+   "coding_43": 3139,
+   "json_40": 144,
+   "json_45": 78
+  }
+ }
+}

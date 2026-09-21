@@ -1,0 +1,259 @@
+{
+ "classification": "GU_PARAM_RACE_N16_32",
+ "configs": {
+  "16": {
+   "imma8_xo0": {
+    "gu_ms": 3.77,
+    "down_ms": 1.822,
+    "total_ms": 5.592
+   },
+   "imma4_xo0": {
+    "gu_ms": 3.265,
+    "down_ms": 1.549,
+    "total_ms": 4.814
+   },
+   "imma16_xo0": {
+    "gu_ms": 4.131,
+    "down_ms": 2.037,
+    "total_ms": 6.168
+   },
+   "imma8_xo4": {
+    "gu_ms": 9.565,
+    "down_ms": 4.612,
+    "total_ms": 14.177
+   },
+   "imma8_xo16": {
+    "gu_ms": 17.38,
+    "down_ms": 8.392,
+    "total_ms": 25.772
+   },
+   "imma8_xo32": {
+    "gu_ms": 17.35,
+    "down_ms": 8.394,
+    "total_ms": 25.743
+   }
+  },
+  "20": {
+   "imma8_xo0": {
+    "gu_ms": 4.835,
+    "down_ms": 2.387,
+    "total_ms": 7.222
+   },
+   "imma4_xo0": {
+    "gu_ms": 4.216,
+    "down_ms": 2.014,
+    "total_ms": 6.23
+   },
+   "imma16_xo0": {
+    "gu_ms": 5.934,
+    "down_ms": 2.687,
+    "total_ms": 8.621
+   },
+   "imma8_xo4": {
+    "gu_ms": 15.38,
+    "down_ms": 7.625,
+    "total_ms": 23.005
+   },
+   "imma8_xo16": {
+    "gu_ms": 18.599,
+    "down_ms": 8.994,
+    "total_ms": 27.593
+   },
+   "imma8_xo32": {
+    "gu_ms": 31.357,
+    "down_ms": 13.873,
+    "total_ms": 45.23
+   }
+  },
+  "24": {
+   "imma8_xo0": {
+    "gu_ms": 5.431,
+    "down_ms": 2.7,
+    "total_ms": 8.132
+   },
+   "imma4_xo0": {
+    "gu_ms": 4.735,
+    "down_ms": 2.275,
+    "total_ms": 7.01
+   },
+   "imma16_xo0": {
+    "gu_ms": 5.928,
+    "down_ms": 2.999,
+    "total_ms": 8.927
+   },
+   "imma8_xo4": {
+    "gu_ms": 13.276,
+    "down_ms": 5.874,
+    "total_ms": 19.15
+   },
+   "imma8_xo16": {
+    "gu_ms": 26.128,
+    "down_ms": 13.125,
+    "total_ms": 39.253
+   },
+   "imma8_xo32": {
+    "gu_ms": 25.949,
+    "down_ms": 13.26,
+    "total_ms": 39.209
+   }
+  },
+  "28": {
+   "imma8_xo0": {
+    "gu_ms": 5.79,
+    "down_ms": 2.898,
+    "total_ms": 8.688
+   },
+   "imma4_xo0": {
+    "gu_ms": 5.022,
+    "down_ms": 2.439,
+    "total_ms": 7.461
+   },
+   "imma16_xo0": {
+    "gu_ms": 6.344,
+    "down_ms": 3.211,
+    "total_ms": 9.555
+   },
+   "imma8_xo4": {
+    "gu_ms": 14.482,
+    "down_ms": 7.618,
+    "total_ms": 22.099
+   },
+   "imma8_xo16": {
+    "gu_ms": 23.046,
+    "down_ms": 10.945,
+    "total_ms": 33.991
+   },
+   "imma8_xo32": {
+    "gu_ms": 31.221,
+    "down_ms": 14.621,
+    "total_ms": 45.841
+   }
+  },
+  "32": {
+   "imma8_xo0": {
+    "gu_ms": 6.669,
+    "down_ms": 3.387,
+    "total_ms": 10.056
+   },
+   "imma4_xo0": {
+    "gu_ms": 6.13,
+    "down_ms": 3.184,
+    "total_ms": 9.313
+   },
+   "imma16_xo0": {
+    "gu_ms": 7.271,
+    "down_ms": 3.724,
+    "total_ms": 10.995
+   },
+   "imma8_xo4": {
+    "gu_ms": 15.734,
+    "down_ms": 8.116,
+    "total_ms": 23.85
+   },
+   "imma8_xo16": {
+    "gu_ms": 32.274,
+    "down_ms": 15.597,
+    "total_ms": 47.871
+   },
+   "imma8_xo32": {
+    "gu_ms": 39.286,
+    "down_ms": 18.628,
+    "total_ms": 57.913
+   }
+  },
+  "56": {
+   "imma8_xo0": {
+    "gu_ms": 9.738,
+    "down_ms": 5.831,
+    "total_ms": 15.569
+   },
+   "imma4_xo0": {
+    "gu_ms": 10.953,
+    "down_ms": 5.958,
+    "total_ms": 16.91
+   },
+   "imma16_xo0": {
+    "gu_ms": 12.428,
+    "down_ms": 6.25,
+    "total_ms": 18.679
+   },
+   "imma8_xo4": {
+    "gu_ms": 21.818,
+    "down_ms": 10.625,
+    "total_ms": 32.443
+   },
+   "imma8_xo16": {
+    "gu_ms": 37.682,
+    "down_ms": 18.177,
+    "total_ms": 55.859
+   },
+   "imma8_xo32": {
+    "gu_ms": 61.548,
+    "down_ms": 29.795,
+    "total_ms": 91.343
+   }
+  },
+  "112": {
+   "imma8_xo0": {
+    "gu_ms": 14.063,
+    "down_ms": 7.626,
+    "total_ms": 21.688
+   },
+   "imma4_xo0": {
+    "gu_ms": 11.015,
+    "down_ms": 5.606,
+    "total_ms": 16.622
+   },
+   "imma16_xo0": {
+    "gu_ms": 13.611,
+    "down_ms": 7.323,
+    "total_ms": 20.934
+   },
+   "imma8_xo4": {
+    "gu_ms": 24.078,
+    "down_ms": 12.359,
+    "total_ms": 36.437
+   },
+   "imma8_xo16": {
+    "gu_ms": 57.118,
+    "down_ms": 27.545,
+    "total_ms": 84.662
+   },
+   "imma8_xo32": {
+    "gu_ms": 97.209,
+    "down_ms": 48.008,
+    "total_ms": 145.217
+   }
+  }
+ },
+ "best": {
+  "16": {
+   "best": "imma4_xo0",
+   "total_ms": 4.814
+  },
+  "20": {
+   "best": "imma4_xo0",
+   "total_ms": 6.23
+  },
+  "24": {
+   "best": "imma4_xo0",
+   "total_ms": 7.01
+  },
+  "28": {
+   "best": "imma4_xo0",
+   "total_ms": 7.461
+  },
+  "32": {
+   "best": "imma4_xo0",
+   "total_ms": 9.313
+  },
+  "56": {
+   "best": "imma8_xo0",
+   "total_ms": 15.569
+  },
+  "112": {
+   "best": "imma4_xo0",
+   "total_ms": 16.622
+  }
+ }
+}

@@ -1,0 +1,112 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "top_k": 6,
+  "aec": true,
+  "rows": [
+    {
+      "K": 2,
+      "top_k": 6,
+      "verification_block_latency_s": 0.6525230614751577,
+      "draft_tokens_per_block": 2,
+      "mean_accepted_tokens_per_block": 2,
+      "accepted_output_toks": 3.0650257716234637,
+      "t_block_ms": 652.5230614751578,
+      "need_133_ratio": 4.906188432144043,
+      "need_100_ratio": 6.525230614751577,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.015174954918026924
+    },
+    {
+      "K": 3,
+      "top_k": 6,
+      "verification_block_latency_s": 0.8910734793245793,
+      "draft_tokens_per_block": 3,
+      "mean_accepted_tokens_per_block": 3,
+      "accepted_output_toks": 3.3667257185950104,
+      "t_block_ms": 891.0734793245792,
+      "need_133_ratio": 6.6998005964254075,
+      "need_100_ratio": 8.910734793245792,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.020722639054059983
+    },
+    {
+      "K": 4,
+      "top_k": 6,
+      "verification_block_latency_s": 0.86909522742033,
+      "draft_tokens_per_block": 4,
+      "mean_accepted_tokens_per_block": 4,
+      "accepted_output_toks": 4.602487591460949,
+      "t_block_ms": 869.0952274203299,
+      "need_133_ratio": 6.534550582107744,
+      "need_100_ratio": 8.6909522742033,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.02021151691675186
+    },
+    {
+      "K": 5,
+      "top_k": 6,
+      "verification_block_latency_s": 1.0246973179280758,
+      "draft_tokens_per_block": 5,
+      "mean_accepted_tokens_per_block": 5,
+      "accepted_output_toks": 4.879489691755935,
+      "t_block_ms": 1024.6973179280758,
+      "need_133_ratio": 7.704491112241171,
+      "need_100_ratio": 10.246973179280758,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.023830170184373854
+    },
+    {
+      "K": 6,
+      "top_k": 6,
+      "verification_block_latency_s": 1.0979616515755652,
+      "draft_tokens_per_block": 6,
+      "mean_accepted_tokens_per_block": 6,
+      "accepted_output_toks": 5.4646717318314835,
+      "t_block_ms": 1097.9616515755652,
+      "need_133_ratio": 8.255350763726053,
+      "need_100_ratio": 10.979616515755652,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.025533991897106166
+    },
+    {
+      "K": 8,
+      "top_k": 6,
+      "verification_block_latency_s": 1.1440327609986067,
+      "draft_tokens_per_block": 8,
+      "mean_accepted_tokens_per_block": 8,
+      "accepted_output_toks": 6.992806738346318,
+      "t_block_ms": 1144.0327609986068,
+      "need_133_ratio": 8.601750082696292,
+      "need_100_ratio": 11.440327609986069,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.026605413046479225
+    },
+    {
+      "K": 10,
+      "top_k": 6,
+      "verification_block_latency_s": 1.0094508796975017,
+      "draft_tokens_per_block": 10,
+      "mean_accepted_tokens_per_block": 10,
+      "accepted_output_toks": 9.906376031884445,
+      "t_block_ms": 1009.4508796975017,
+      "need_133_ratio": 7.589856238327081,
+      "need_100_ratio": 10.094508796975017,
+      "routed_kernel": "w4a16",
+      "aec": true,
+      "per_layer_sec": 0.02347560185343027
+    }
+  ],
+  "gates": {
+    "k5_ge_25": false,
+    "k8_ge_35": false,
+    "k8_ge_30": false,
+    "k5_toks": 4.879489691755935,
+    "k8_toks": 6.992806738346318
+  }
+}

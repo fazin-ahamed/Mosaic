@@ -1,0 +1,19 @@
+{
+  "decision": "KERNEL PERFORMANCE MISS",
+  "r0": true,
+  "r1": false,
+  "r2": false,
+  "r3": false,
+  "r4": "skipped_no_ncu",
+  "r5": true,
+  "r6": true,
+  "s3_pass": false,
+  "s4_pass": false,
+  "exact_k8_mid_sec": 0.024665484619140626,
+  "exact_n_experts": 256,
+  "invalid_not_256": false,
+  "chosen_exact_backend": "fused_moe_qpa",
+  "ptx_has_m16n8k16": true,
+  "prepack_stage": "qpa_k32_fragment",
+  "decoder": "lut_reg"
+}

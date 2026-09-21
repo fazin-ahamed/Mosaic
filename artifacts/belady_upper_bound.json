@@ -1,0 +1,74 @@
+{
+ "note": "cold-window Belady on 32-token genuine traces; conservative vs steady conversation",
+ "demand_gb_total": 774.4,
+ "capacities": {
+  "0.5GB": {
+   "objects": 37,
+   "byte_hit_rate": 0.1327,
+   "miss_bytes_gb_per_32tok_block": 95.9,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "1.0GB": {
+   "objects": 74,
+   "byte_hit_rate": 0.2562,
+   "miss_bytes_gb_per_32tok_block": 82.3,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "2.0GB": {
+   "objects": 149,
+   "byte_hit_rate": 0.4277,
+   "miss_bytes_gb_per_32tok_block": 63.3,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "3.0GB": {
+   "objects": 223,
+   "byte_hit_rate": 0.5089,
+   "miss_bytes_gb_per_32tok_block": 54.3,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "4.0GB": {
+   "objects": 298,
+   "byte_hit_rate": 0.5574,
+   "miss_bytes_gb_per_32tok_block": 49.0,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "6.0GB": {
+   "objects": 447,
+   "byte_hit_rate": 0.6157,
+   "miss_bytes_gb_per_32tok_block": 42.5,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "8.0GB": {
+   "objects": 597,
+   "byte_hit_rate": 0.6528,
+   "miss_bytes_gb_per_32tok_block": 38.4,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "12.0GB": {
+   "objects": 895,
+   "byte_hit_rate": 0.6874,
+   "miss_bytes_gb_per_32tok_block": 34.6,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "16.0GB": {
+   "objects": 1194,
+   "byte_hit_rate": 0.6915,
+   "miss_bytes_gb_per_32tok_block": 34.1,
+   "h2d_s_per_block_at_12.9": 0.0
+  },
+  "20.0GB": {
+   "objects": 1492,
+   "byte_hit_rate": 0.6915,
+   "miss_bytes_gb_per_32tok_block": 34.1,
+   "h2d_s_per_block_at_12.9": 0.0
+  }
+ },
+ "reuse_distance": {
+  "n": 39966,
+  "p50": 261,
+  "p90": 2577,
+  "p95": 3355,
+  "p99": 5674,
+  "max": 8001
+ }
+}

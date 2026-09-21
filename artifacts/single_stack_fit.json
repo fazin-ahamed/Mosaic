@@ -1,0 +1,54 @@
+{
+ "config": {
+  "n_cold": 104,
+  "max_seq": 4224,
+  "K": 112,
+  "cold_set": "golden-frequency tail (least used)"
+ },
+ "stages": [
+  {
+   "stage": "cuda_init",
+   "allocated_gb": 0.0,
+   "reserved_gb": 0.002,
+   "max_allocated_gb": 0.0
+  },
+  {
+   "stage": "banks_split(104 cold)",
+   "allocated_gb": 4.082,
+   "reserved_gb": 4.157,
+   "max_allocated_gb": 9.211,
+   "delta_gb": 4.082
+  },
+  {
+   "stage": "core+dsa_bf16(maxseq4224)",
+   "allocated_gb": 11.016,
+   "reserved_gb": 11.031,
+   "max_allocated_gb": 11.016,
+   "delta_gb": 6.934
+  },
+  {
+   "stage": "dsa_state_4K",
+   "allocated_gb": 11.025,
+   "reserved_gb": 11.169,
+   "max_allocated_gb": 11.139,
+   "delta_gb": 0.009
+  },
+  {
+   "stage": "block_steps_K112_resident",
+   "allocated_gb": 11.094,
+   "reserved_gb": 11.19,
+   "max_allocated_gb": 11.159,
+   "delta_gb": 0.069
+  },
+  {
+   "stage": "lm_head_attempt",
+   "result": "OOM"
+  }
+ ],
+ "block_steps_ok": true,
+ "head_fits": false,
+ "steady_gb": 11.094,
+ "split_moe_block_ms": 1975.2099609375,
+ "moe_ref_n112_s": 1.1959,
+ "moe_delta_ms": 779.3
+}

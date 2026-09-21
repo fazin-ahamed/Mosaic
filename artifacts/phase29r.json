@@ -1,0 +1,334 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "n_experts": 256,
+  "k_values": [
+    1,
+    2,
+    4,
+    8,
+    12,
+    16
+  ],
+  "family": "mid",
+  "levels": {
+    "P0": "isolated kernel (qpa_race.json)",
+    "P1": "one resident MoE layer (this file)"
+  },
+  "p0": {
+    "dp4a_gbs": 44.67713833040182,
+    "imma_gbs": 100.78740583618773,
+    "qpa_w8_gbs": 62.46590895012732,
+    "ratio": 1.6134785762367794,
+    "lut": "skipped_mxint_ge_1.5"
+  },
+  "p0_packed4_vs_hot8": {
+    "dp4a_m1": 7.318129280576635,
+    "imma_m8": 84.49100969922938,
+    "hot8_dp4a_m1": 44.67713833040182,
+    "hot8_imma_m8": 100.78740583618773
+  },
+  "integrated": {
+    "qpa_k8_mid_sec": 0.015223500061035157,
+    "hot8_k8_mid_sec": 0.00980511016845703,
+    "packed4_k8_mid_sec": 0.012263297271728514,
+    "hybrid_k8_mid_sec": null,
+    "hot8_ratio": 1.5526087723123243,
+    "packed4_ratio": 1.2413871835375807
+  },
+  "hot8_status": "ok",
+  "s3_mxint_block_median_sec": 0.4117420017719269,
+  "s3_mxint_block_p90_sec": 0.4176672697067261,
+  "s3_route_authority": "synthetic_distinct_interim",
+  "stage_times_k8_hot8": {
+    "layout_sec": 0.000659712016582489,
+    "act_quant_sec": 0.00019833600521087646,
+    "decode_int_sec": 6.969600170850754e-05,
+    "gu_sec": 0.006024127960205078,
+    "swiglu_sec": 2.5599999353289605e-05,
+    "down_quant_sec": 4.300799965858459e-05,
+    "down_sec": 0.0022108159065246584,
+    "reduction_sec": 6.963200122117996e-05,
+    "total_sec": 0.009300927890464664
+  },
+  "launch_census": {
+    "total_cuda_launches": 319,
+    "custom_qpa_launches": 0,
+    "custom_xsimt_launches": 0,
+    "custom_mxint_launches": 4,
+    "layout_launches": 4,
+    "epilogue_launches": 311
+  },
+  "hot8_bytes": 6643777536,
+  "packed4_bytes": 3422552064,
+  "vram": {
+    "vram_used_gb": 0.0,
+    "vram_budget_gb": 10.5,
+    "ram_used_gb": 0.0,
+    "ram_budget_gb": 14.0
+  },
+  "rows": [
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 1,
+      "family": "mid",
+      "sec_per_moe_layer": 0.003484467315673828,
+      "unique_experts": 6,
+      "mean_m_per_expert": 1.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 2,
+      "family": "mid",
+      "sec_per_moe_layer": 0.005544819259643555,
+      "unique_experts": 6,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 4,
+      "family": "mid",
+      "sec_per_moe_layer": 0.008695928192138672,
+      "unique_experts": 12,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 8,
+      "family": "mid",
+      "sec_per_moe_layer": 0.015223500061035157,
+      "unique_experts": 23,
+      "mean_m_per_expert": 2.08695650100708,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 12,
+      "family": "mid",
+      "sec_per_moe_layer": 0.02093671875,
+      "unique_experts": 35,
+      "mean_m_per_expert": 2.057142972946167,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_qpa",
+      "weight_repr": "qpa_fragment",
+      "level": "P1",
+      "k": 16,
+      "family": "mid",
+      "sec_per_moe_layer": 0.029716888427734376,
+      "unique_experts": 47,
+      "mean_m_per_expert": 2.042553186416626,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 1,
+      "family": "mid",
+      "sec_per_moe_layer": 0.004282316970825195,
+      "unique_experts": 6,
+      "mean_m_per_expert": 1.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 2,
+      "family": "mid",
+      "sec_per_moe_layer": 0.0028503040313720704,
+      "unique_experts": 6,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 4,
+      "family": "mid",
+      "sec_per_moe_layer": 0.004436684799194336,
+      "unique_experts": 12,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 8,
+      "family": "mid",
+      "sec_per_moe_layer": 0.00980511016845703,
+      "unique_experts": 23,
+      "mean_m_per_expert": 2.08695650100708,
+      "status": "ok",
+      "stage_times": {
+        "layout_sec": 0.000659712016582489,
+        "act_quant_sec": 0.00019833600521087646,
+        "decode_int_sec": 6.969600170850754e-05,
+        "gu_sec": 0.006024127960205078,
+        "swiglu_sec": 2.5599999353289605e-05,
+        "down_quant_sec": 4.300799965858459e-05,
+        "down_sec": 0.0022108159065246584,
+        "reduction_sec": 6.963200122117996e-05,
+        "total_sec": 0.009300927890464664
+      }
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 12,
+      "family": "mid",
+      "sec_per_moe_layer": 0.013425059509277344,
+      "unique_experts": 35,
+      "mean_m_per_expert": 2.057142972946167,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 16,
+      "family": "mid",
+      "sec_per_moe_layer": 0.019796850585937498,
+      "unique_experts": 47,
+      "mean_m_per_expert": 2.042553186416626,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 1,
+      "family": "mid",
+      "sec_per_moe_layer": 0.003765193557739258,
+      "unique_experts": 6,
+      "mean_m_per_expert": 1.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 2,
+      "family": "mid",
+      "sec_per_moe_layer": 0.004784668731689453,
+      "unique_experts": 6,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 4,
+      "family": "mid",
+      "sec_per_moe_layer": 0.007329742431640625,
+      "unique_experts": 12,
+      "mean_m_per_expert": 2.0,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 8,
+      "family": "mid",
+      "sec_per_moe_layer": 0.012263297271728514,
+      "unique_experts": 23,
+      "mean_m_per_expert": 2.08695650100708,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 12,
+      "family": "mid",
+      "sec_per_moe_layer": 0.017259750366210937,
+      "unique_experts": 35,
+      "mean_m_per_expert": 2.057142972946167,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "level": "P1",
+      "k": 16,
+      "family": "mid",
+      "sec_per_moe_layer": 0.024699667358398437,
+      "unique_experts": 47,
+      "mean_m_per_expert": 2.042553186416626,
+      "status": "ok"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 1,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 2,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 4,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 8,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 12,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    },
+    {
+      "backend": "fused_moe_mxint",
+      "weight_repr": "hybrid",
+      "level": "P1",
+      "k": 16,
+      "family": "mid",
+      "sec_per_moe_layer": null,
+      "unique_experts": 0,
+      "mean_m_per_expert": 0.0,
+      "status": "invalid_not_256"
+    }
+  ]
+}

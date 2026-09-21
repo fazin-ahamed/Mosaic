@@ -1,0 +1,35 @@
+{
+ "population": "full held-out N=285",
+ "prefix_len_distribution": {
+  "0": 157,
+  "1": 125,
+  "2": 3
+ },
+ "S": {
+  "1": 0.4491,
+  "2": 0.0105,
+  "3": 0.0,
+  "4": 0.0,
+  "8": 0.0,
+  "16": 0.0,
+  "32": 0.0
+ },
+ "E_A_direct": 1.4596,
+ "E_A_identity_1_plus_sum_S1_S31": 1.4491,
+ "identity_holds": false,
+ "bypass_h1_full_set": 0.4491,
+ "contingency": {
+  "n_rank1": 128,
+  "n_rank2": 44,
+  "n_rank_gt2": 113,
+  "P_tf_h2_given_rank1": 0.125,
+  "P_tf_h2_given_rank2": 0.2045,
+  "P_tf_h2_given_rank_gt2": 0.1416,
+  "P_fr_h2_given_rank1": 0.0234,
+  "P_fr_h2_given_rank2": 0.0227,
+  "P_fr_h2_top2_first_branch": null,
+  "top2_coverage_h1": 0.6035
+ },
+ "tf_fr_h2_agreement_on_h1_correct": 0.8516,
+ "causal_mask_invariance_positions0_4": 1.0
+}

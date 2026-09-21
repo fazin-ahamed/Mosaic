@@ -1,0 +1,256 @@
+{
+ "level": "P1",
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "thermal": "UNKNOWN",
+ "dtype": "bf16 caches / fp32 states",
+ "state": {
+  "C4096": {
+   "analytic_per_layer": {
+    "ratio4": 1523712,
+    "ratio128": 688128,
+    "ratio0": 131072,
+    "total_43L": 46022656
+   },
+   "measured_ratio0": {
+    "semantic_bytes": 131072,
+    "semantic_MB": 0.131,
+    "freqs_artifact_MB": 1.049,
+    "components": {
+     "kv_cache": 0.131,
+     "compressor_states": 0.0
+    },
+    "matches_analytic": true
+   },
+   "measured_ratio4": {
+    "semantic_bytes": 1523712,
+    "semantic_MB": 1.524,
+    "freqs_artifact_MB": 3.147,
+    "components": {
+     "kv_cache": 1.18,
+     "ix_kv_cache": 0.262,
+     "compressor_states": 0.082
+    },
+    "matches_analytic": true
+   },
+   "measured_ratio128": {
+    "semantic_bytes": 688128,
+    "semantic_MB": 0.688,
+    "freqs_artifact_MB": 2.098,
+    "components": {
+     "kv_cache": 0.164,
+     "compressor_states": 0.524
+    },
+    "matches_analytic": true
+   },
+   "freqs_artifact_43L_MB": 110.15
+  },
+  "C16384": {
+   "analytic_per_layer": {
+    "ratio4": 5455872,
+    "ratio128": 786432,
+    "ratio0": 131072,
+    "total_43L": 130564096
+   },
+   "freqs_artifact_43L_MB": 440.46
+  },
+  "C65536": {
+   "analytic_per_layer": {
+    "ratio4": 21184512,
+    "ratio128": 1179648,
+    "ratio0": 131072,
+    "total_43L": 468729856
+   },
+   "measured_ratio0": {
+    "semantic_bytes": 131072,
+    "semantic_MB": 0.131,
+    "freqs_artifact_MB": 16.777,
+    "components": {
+     "kv_cache": 0.131,
+     "compressor_states": 0.0
+    },
+    "matches_analytic": true
+   },
+   "measured_ratio4": {
+    "semantic_bytes": 21184512,
+    "semantic_MB": 21.185,
+    "freqs_artifact_MB": 50.333,
+    "components": {
+     "kv_cache": 16.908,
+     "ix_kv_cache": 4.194,
+     "compressor_states": 0.082
+    },
+    "matches_analytic": true
+   },
+   "measured_ratio128": {
+    "semantic_bytes": 1179648,
+    "semantic_MB": 1.18,
+    "freqs_artifact_MB": 33.555,
+    "components": {
+     "kv_cache": 0.655,
+     "compressor_states": 0.524
+    },
+    "matches_analytic": true
+   },
+   "freqs_artifact_43L_MB": 1761.66
+  },
+  "C262144": {
+   "analytic_per_layer": {
+    "ratio4": 84099072,
+    "ratio128": 2752512,
+    "ratio0": 131072,
+    "total_43L": 1821392896
+   },
+   "freqs_artifact_43L_MB": 7046.48
+  },
+  "C524288": {
+   "analytic_per_layer": {
+    "ratio4": 167985152,
+    "ratio128": 4849664,
+    "ratio0": 131072,
+    "total_43L": 3624943616
+   },
+   "freqs_artifact_43L_MB": 14092.92
+  },
+  "C1048576": {
+   "analytic_per_layer": {
+    "ratio4": 335757312,
+    "ratio128": 9043968,
+    "ratio0": 131072,
+    "total_43L": 7232045056
+   },
+   "freqs_artifact_43L_MB": 28185.78
+  }
+ },
+ "decode": {
+  "ratio0": {
+   "ladder": {
+    "C4096": {
+     "median_ms": 1.1886,
+     "p90_ms": 1.3774,
+     "transient_peak_bytes": 669696
+    },
+    "C16384": {
+     "median_ms": 1.1676,
+     "p90_ms": 1.3423,
+     "transient_peak_bytes": 669696
+    },
+    "C65536": {
+     "median_ms": 1.218,
+     "p90_ms": 1.3904,
+     "transient_peak_bytes": 669696
+    },
+    "C262144": {
+     "median_ms": 1.1763,
+     "p90_ms": 1.3441,
+     "transient_peak_bytes": 669696
+    },
+    "C524288": {
+     "median_ms": 1.1837,
+     "p90_ms": 1.3257,
+     "transient_peak_bytes": 669696
+    },
+    "C1048576": {
+     "median_ms": 1.1793,
+     "p90_ms": 1.3584,
+     "transient_peak_bytes": 669696
+    }
+   },
+   "compression_event_ms": null
+  },
+  "ratio4": {
+   "ladder": {
+    "C4096": {
+     "median_ms": 1.8422,
+     "p90_ms": 2.5624,
+     "transient_peak_bytes": 3173888
+    },
+    "C16384": {
+     "median_ms": 1.7599,
+     "p90_ms": 2.5445,
+     "transient_peak_bytes": 3281408
+    },
+    "C65536": {
+     "median_ms": 1.8447,
+     "p90_ms": 2.6742,
+     "transient_peak_bytes": 12718592
+    },
+    "C262144": {
+     "median_ms": 2.4667,
+     "p90_ms": 3.1156,
+     "transient_peak_bytes": 50467328
+    },
+    "C524288": {
+     "median_ms": 3.1813,
+     "p90_ms": 3.5553,
+     "transient_peak_bytes": 100798976
+    },
+    "C1048576": {
+     "median_ms": 4.689,
+     "p90_ms": 5.1457,
+     "transient_peak_bytes": 201462272
+    }
+   },
+   "compression_event_ms": 2.854
+  },
+  "ratio128": {
+   "ladder": {
+    "C4096": {
+     "median_ms": 1.306,
+     "p90_ms": 1.4883,
+     "transient_peak_bytes": 785920
+    },
+    "C16384": {
+     "median_ms": 1.2999,
+     "p90_ms": 1.4869,
+     "transient_peak_bytes": 1129984
+    },
+    "C65536": {
+     "median_ms": 1.2659,
+     "p90_ms": 1.4299,
+     "transient_peak_bytes": 3297280
+    },
+    "C262144": {
+     "median_ms": 1.3244,
+     "p90_ms": 1.4759,
+     "transient_peak_bytes": 8036352
+    },
+    "C524288": {
+     "median_ms": 1.3202,
+     "p90_ms": 1.5829,
+     "transient_peak_bytes": 15403008
+    },
+    "C1048576": {
+     "median_ms": 1.5523,
+     "p90_ms": 1.7795,
+     "transient_peak_bytes": 30136320
+    }
+   },
+   "compression_event_ms": 1.64
+  }
+ },
+ "validation_real_prefill_vs_fill_4K": {
+  "S": 2048,
+  "real_prefill_then_decode_ms": 2.1619,
+  "fill_based_decode_ms": 1.8146
+ },
+ "prefill_width_ms": {
+  "ratio0": {
+   "N32": 1.5295,
+   "N56": 1.6875,
+   "N80": 2.9108,
+   "N112": 3.4551
+  },
+  "ratio4": {
+   "N32": 3.1442,
+   "N56": 3.619,
+   "N80": 4.6336,
+   "N112": 5.731
+  },
+  "ratio128": {
+   "N32": 1.7879,
+   "N56": 1.929,
+   "N80": 3.0955,
+   "N112": 3.75
+  }
+ }
+}

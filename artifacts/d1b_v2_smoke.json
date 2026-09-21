@@ -1,0 +1,244 @@
+{
+ "classification": "D1B32_SOURCE_TAIL_SYNTHETIC_BOUNDARY_PROBE",
+ "schema_version": 2,
+ "production_certified": false,
+ "acceptance_semantics": "K speculative decisions exclude exact root; prefix+1",
+ "conditioning": "true future h40 plus synthetic error; not real student acceptance",
+ "snapshot_revision": "7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+ "script_sha256": "3b8fef56c58d713412840d23e22277b196591841db4fc63c5d2b5a4752a5e7b8",
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "torch": "2.13.0+cu130",
+ "method": "perturbed h40 trajectory (spec positions only) -> real L41/L42 replay -> fp32 head -> Top-k / routes / E[A]",
+ "horizons": [
+  8
+ ],
+ "n_steps": 8,
+ "per_prompt": [
+  {
+   "prompt": "coding_16",
+   "family": "exact",
+   "level": 0.0,
+   "root_top1": 1.0,
+   "spec_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "all_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "route_exact_l41": 1.0,
+   "route_jac_l41": 1.0,
+   "route_exact_l42": 1.0,
+   "route_jac_l42": 1.0,
+   "h42_cos_p50": 1.000974,
+   "h42_cos_min": 0.997976,
+   "horizons": {
+    "8": {
+     "K": 8,
+     "accepted_draft": 8,
+     "E_A": 9,
+     "Sk": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "topk": {
+      "1": 1.0,
+      "4": 1.0,
+      "16": 1.0
+     },
+     "h42_final_rel_l2": 0.0
+    }
+   },
+   "spec_correct": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "h42_bit_exact": true
+  },
+  {
+   "prompt": "coding_16",
+   "family": "scale",
+   "level": 0.3,
+   "rel_l2_pre": 0.3,
+   "rel_l2_post": 0.300056,
+   "root_top1": 1.0,
+   "spec_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "all_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "route_exact_l41": 1.0,
+   "route_jac_l41": 1.0,
+   "route_exact_l42": 0.75,
+   "route_jac_l42": 0.9018,
+   "h42_cos_p50": 0.994262,
+   "h42_cos_min": 0.991605,
+   "horizons": {
+    "8": {
+     "K": 8,
+     "accepted_draft": 8,
+     "E_A": 9,
+     "Sk": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     "topk": {
+      "1": 1.0,
+      "4": 1.0,
+      "16": 1.0
+     },
+     "h42_final_rel_l2": 0.20384719967842102
+    }
+   },
+   "spec_correct": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  }
+ ],
+ "curve": [
+  {
+   "family": "exact",
+   "level": 0.0,
+   "n": 1,
+   "root_top1": 1.0,
+   "route_exact_l41": 1.0,
+   "route_jac_l41": 1.0,
+   "route_exact_l42": 1.0,
+   "route_jac_l42": 1.0,
+   "h42_cos_p50": 1.001,
+   "h42_cos_min": 0.998,
+   "spec_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "all_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "horizons": {
+    "8": {
+     "n_boundaries": 1,
+     "E_A": 9.0,
+     "Sk": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "topk": {
+      "1": 1.0,
+      "4": 1.0,
+      "16": 1.0
+     },
+     "per_prompt_E_A": [
+      9
+     ]
+    }
+   }
+  },
+  {
+   "family": "scale",
+   "level": 0.3,
+   "n": 1,
+   "root_top1": 1.0,
+   "route_exact_l41": 1.0,
+   "route_jac_l41": 1.0,
+   "route_exact_l42": 0.75,
+   "route_jac_l42": 0.9018,
+   "h42_cos_p50": 0.9943,
+   "h42_cos_min": 0.9916,
+   "spec_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "all_topk": {
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 1.0
+   },
+   "horizons": {
+    "8": {
+     "n_boundaries": 1,
+     "E_A": 9.0,
+     "Sk": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "topk": {
+      "1": 1.0,
+      "4": 1.0,
+      "16": 1.0
+     },
+     "per_prompt_E_A": [
+      9
+     ]
+    }
+   },
+   "rel_l2_pre": 0.3,
+   "rel_l2_post": 0.300056
+  }
+ ],
+ "provenance_note": "Development smoke: script edited while running; end-of-run hash does not identify loaded version. Prefer frozen d1b32_v2_pilot."
+}

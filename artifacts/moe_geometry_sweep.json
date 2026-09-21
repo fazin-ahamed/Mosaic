@@ -1,0 +1,62 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "safe_configs": {
+    "c0_w8": {
+      "gu_ms": 6.503936052322388,
+      "down_ms": 4.749727964401245,
+      "total_ms": 12.944991960190237,
+      "block_proj_s": 0.5566346542881802
+    },
+    "c1_w4": {
+      "gu_ms": 14.995664119720457,
+      "down_ms": 6.642240047454834,
+      "total_ms": 23.290880240499973,
+      "block_proj_s": 1.001507850341499
+    },
+    "c1_w8": {
+      "gu_ms": 14.343232154846193,
+      "down_ms": 6.96780800819397,
+      "total_ms": 22.93657611310482,
+      "block_proj_s": 0.9862727728635073
+    },
+    "c1_w16": {
+      "gu_ms": 15.380719661712648,
+      "down_ms": 7.478783845901488,
+      "total_ms": 24.457183867692947,
+      "block_proj_s": 1.0516589063107966
+    },
+    "c3_w4": {
+      "gu_ms": 27.866512298583984,
+      "down_ms": 9.051296234130861,
+      "total_ms": 38.558719957014546,
+      "block_proj_s": 1.6580249581516253
+    },
+    "c3_w8": {
+      "gu_ms": 27.564032554626465,
+      "down_ms": 9.462272167205809,
+      "total_ms": 39.150080651044846,
+      "block_proj_s": 1.6834534679949285
+    },
+    "c3_w16": {
+      "gu_ms": 30.070799827575684,
+      "down_ms": 9.487311840057373,
+      "total_ms": 41.265311941504486,
+      "block_proj_s": 1.774408413484693
+    }
+  },
+  "crashed_configs": [
+    "c1000_w* (all-DP4A queue): illegal memory access \u2014 grouped DP4A path bug when the IMMA queue is empty (or DP4A all-tiles edge); NOT the fast config. The fast config is c0 (all-IMMA)."
+  ],
+  "verdict": "crossover=0 (all-IMMA, block_m=8 tiles) is 3.0x faster than the c3_w8 baseline at K56 golden: 12.94 vs 39.15 ms/layer (0.557 vs 1.683 s/block). The crossover=3 split was tuned at K8-mid where tiny-M DP4A dominates; at K56 (mean M=3.9) all-IMMA wins. Full 43-layer block bench + exactness parity verification pending in artifacts/moe_breakthrough.json.",
+  "source_analysis": {
+    "weight_load_pattern": "per-warp 16B strided segments (g*K + 4t), 8 rows x 16B per 32-lane transaction -> ~50-62% DRAM sector efficiency",
+    "reduction": "__syncthreads() per K-round in shared-memory K-split reduction",
+    "proposed_surgery": "float4 vectorized weight loads; gu n-tile 16->64 / down 32->64 (4x fewer blocks, 4x weight reuse per block, wider coalesced segments); warp-shuffle reduction instead of smem round-trip",
+    "bug_found": "crossover=1000 (all-IMMA) triggers illegal memory access in grouped path when DP4A queue empty"
+  },
+  "config_semantics": {
+    "crossover=N": "counts <= N -> DP4A queue (block_m=1 tiles); counts > N -> IMMA queue (block_m=8 tiles)",
+    "c0": "all experts IMMA (fast at K56)",
+    "c1000": "all experts DP4A (crashes; also slow per c8 trend)"
+  }
+}

@@ -1,0 +1,434 @@
+{
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "classification": "TRUE_P2_PRODUCTION_NUMERIC_SWEEP (imma_k=4 GU)",
+ "components": "ExactAttention (DSA delta reconstruction), source FP8 core, real HC+sinkhorn, real router, MXIE routed experts (packed4, swiglu_limit=10), source-class shared expert (E4M3 per-128 act quant, bf16 GEMM fp32-accum), fp32 LM head",
+ "n_values": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  56,
+  80,
+  112
+ ],
+ "phases": {
+  "T_full_block": {
+   "1": 0.2831,
+   "2": 0.2476,
+   "4": 0.2808,
+   "8": 0.3359,
+   "16": 0.4277,
+   "32": 0.5997,
+   "56": 0.8,
+   "80": 0.9515,
+   "112": 1.1709
+  },
+  "component_routed": {
+   "1": 0.1376,
+   "2": 0.0874,
+   "4": 0.1189,
+   "8": 0.1724,
+   "16": 0.2579,
+   "32": 0.4053,
+   "56": 0.5829,
+   "80": 0.6642,
+   "112": 0.845
+  },
+  "component_shared": {
+   "1": 0.0113,
+   "2": 0.0113,
+   "4": 0.0124,
+   "8": 0.0147,
+   "16": 0.0108,
+   "32": 0.0046,
+   "56": 0.0229,
+   "80": 0.0128,
+   "112": 0.0189
+  },
+  "component_head": {
+   "1": 0.0017,
+   "2": 0.0028,
+   "4": 0.0058,
+   "8": 0.0055,
+   "16": -0.0008,
+   "32": -0.0089,
+   "56": 0.0142,
+   "80": -0.0029,
+   "112": 0.0016
+  },
+  "component_hc": {
+   "1": 0.0258,
+   "2": 0.0268,
+   "4": 0.0282,
+   "8": 0.0304,
+   "16": 0.0284,
+   "32": 0.0303,
+   "56": 0.0574,
+   "80": 0.0561,
+   "112": 0.0762
+  },
+  "component_router": {
+   "1": 0.0025,
+   "2": 0.0019,
+   "4": 0.0051,
+   "8": 0.0052,
+   "16": -0.0004,
+   "32": -0.0081,
+   "56": 0.0113,
+   "80": -0.0032,
+   "112": 0.0024
+  },
+  "component_attn": {
+   "1": 0.0424,
+   "2": 0.0519,
+   "4": 0.0532,
+   "8": 0.0567,
+   "16": 0.0493,
+   "32": 0.0592,
+   "56": 0.0855,
+   "80": 0.1201,
+   "112": 0.1383
+  },
+  "component_swap": {
+   "1": 0.0589,
+   "2": 0.0575,
+   "4": 0.0581,
+   "8": 0.062,
+   "16": 0.0549,
+   "32": 0.0494,
+   "56": 0.0651,
+   "80": 0.0495,
+   "112": 0.0547
+  },
+  "B_eager_banks_free": {
+   "1": 0.0864,
+   "2": 0.0958,
+   "4": 0.0963,
+   "8": 0.098,
+   "16": 0.0982,
+   "32": 0.1068,
+   "56": 0.1687,
+   "80": 0.2196,
+   "112": 0.2498
+  },
+  "B_exact_dsa_banks_free": {
+   "1": 0.0952,
+   "2": 0.1191,
+   "4": 0.1189,
+   "8": 0.1212,
+   "16": 0.1219,
+   "32": 0.1304,
+   "56": 0.1919,
+   "80": 0.2326,
+   "112": 0.268
+  }
+ },
+ "components_by_n": {
+  "1": {
+   "routed": 0.1376,
+   "shared": 0.0113,
+   "head": 0.0017,
+   "hc": 0.0258,
+   "router": 0.0025,
+   "attn": 0.0424,
+   "swap": 0.0589,
+   "swap_only_floor": 0.0608
+  },
+  "2": {
+   "routed": 0.0874,
+   "shared": 0.0113,
+   "head": 0.0028,
+   "hc": 0.0268,
+   "router": 0.0019,
+   "attn": 0.0519,
+   "swap": 0.0575,
+   "swap_only_floor": 0.0603
+  },
+  "4": {
+   "routed": 0.1189,
+   "shared": 0.0124,
+   "head": 0.0058,
+   "hc": 0.0282,
+   "router": 0.0051,
+   "attn": 0.0532,
+   "swap": 0.0581,
+   "swap_only_floor": 0.0606
+  },
+  "8": {
+   "routed": 0.1724,
+   "shared": 0.0147,
+   "head": 0.0055,
+   "hc": 0.0304,
+   "router": 0.0052,
+   "attn": 0.0567,
+   "swap": 0.062,
+   "swap_only_floor": 0.0606
+  },
+  "16": {
+   "routed": 0.2579,
+   "shared": 0.0108,
+   "head": -0.0008,
+   "hc": 0.0284,
+   "router": -0.0004,
+   "attn": 0.0493,
+   "swap": 0.0549,
+   "swap_only_floor": 0.0608
+  },
+  "32": {
+   "routed": 0.4053,
+   "shared": 0.0046,
+   "head": -0.0089,
+   "hc": 0.0303,
+   "router": -0.0081,
+   "attn": 0.0592,
+   "swap": 0.0494,
+   "swap_only_floor": 0.0616
+  },
+  "56": {
+   "routed": 0.5829,
+   "shared": 0.0229,
+   "head": 0.0142,
+   "hc": 0.0574,
+   "router": 0.0113,
+   "attn": 0.0855,
+   "swap": 0.0651,
+   "swap_only_floor": 0.0624
+  },
+  "80": {
+   "routed": 0.6642,
+   "shared": 0.0128,
+   "head": -0.0029,
+   "hc": 0.0561,
+   "router": -0.0032,
+   "attn": 0.1201,
+   "swap": 0.0495,
+   "swap_only_floor": 0.0633
+  },
+  "112": {
+   "routed": 0.845,
+   "shared": 0.0189,
+   "head": 0.0016,
+   "hc": 0.0762,
+   "router": 0.0024,
+   "attn": 0.1383,
+   "swap": 0.0547,
+   "swap_only_floor": 0.0644
+  }
+ },
+ "rows": {
+  "1": {
+   "T_full_block_s": 0.2831,
+   "T_dsa_delta_s": 0.0088,
+   "T_true_s": 0.2918,
+   "true_verify_tok_s": 3.4,
+   "E_req_for_30": 8.8,
+   "components": {
+    "routed": 0.1376,
+    "shared": 0.0113,
+    "head": 0.0017,
+    "hc": 0.0258,
+    "router": 0.0025,
+    "attn": 0.0424,
+    "swap": 0.0589,
+    "swap_only_floor": 0.0608
+   }
+  },
+  "2": {
+   "T_full_block_s": 0.2476,
+   "T_dsa_delta_s": 0.0233,
+   "T_true_s": 0.2709,
+   "true_verify_tok_s": 7.4,
+   "E_req_for_30": 8.1,
+   "components": {
+    "routed": 0.0874,
+    "shared": 0.0113,
+    "head": 0.0028,
+    "hc": 0.0268,
+    "router": 0.0019,
+    "attn": 0.0519,
+    "swap": 0.0575,
+    "swap_only_floor": 0.0603
+   }
+  },
+  "4": {
+   "T_full_block_s": 0.2808,
+   "T_dsa_delta_s": 0.0227,
+   "T_true_s": 0.3035,
+   "true_verify_tok_s": 13.2,
+   "E_req_for_30": 9.1,
+   "components": {
+    "routed": 0.1189,
+    "shared": 0.0124,
+    "head": 0.0058,
+    "hc": 0.0282,
+    "router": 0.0051,
+    "attn": 0.0532,
+    "swap": 0.0581,
+    "swap_only_floor": 0.0606
+   }
+  },
+  "8": {
+   "T_full_block_s": 0.3359,
+   "T_dsa_delta_s": 0.0232,
+   "T_true_s": 0.3591,
+   "true_verify_tok_s": 22.3,
+   "E_req_for_30": 10.8,
+   "components": {
+    "routed": 0.1724,
+    "shared": 0.0147,
+    "head": 0.0055,
+    "hc": 0.0304,
+    "router": 0.0052,
+    "attn": 0.0567,
+    "swap": 0.062,
+    "swap_only_floor": 0.0606
+   }
+  },
+  "16": {
+   "T_full_block_s": 0.4277,
+   "T_dsa_delta_s": 0.0238,
+   "T_true_s": 0.4515,
+   "true_verify_tok_s": 35.4,
+   "E_req_for_30": 13.5,
+   "components": {
+    "routed": 0.2579,
+    "shared": 0.0108,
+    "head": -0.0008,
+    "hc": 0.0284,
+    "router": -0.0004,
+    "attn": 0.0493,
+    "swap": 0.0549,
+    "swap_only_floor": 0.0608
+   }
+  },
+  "32": {
+   "T_full_block_s": 0.5997,
+   "T_dsa_delta_s": 0.0236,
+   "T_true_s": 0.6233,
+   "true_verify_tok_s": 51.3,
+   "E_req_for_30": 18.7,
+   "components": {
+    "routed": 0.4053,
+    "shared": 0.0046,
+    "head": -0.0089,
+    "hc": 0.0303,
+    "router": -0.0081,
+    "attn": 0.0592,
+    "swap": 0.0494,
+    "swap_only_floor": 0.0616
+   }
+  },
+  "56": {
+   "T_full_block_s": 0.8,
+   "T_dsa_delta_s": 0.0232,
+   "T_true_s": 0.8232,
+   "true_verify_tok_s": 68.0,
+   "E_req_for_30": 24.7,
+   "components": {
+    "routed": 0.5829,
+    "shared": 0.0229,
+    "head": 0.0142,
+    "hc": 0.0574,
+    "router": 0.0113,
+    "attn": 0.0855,
+    "swap": 0.0651,
+    "swap_only_floor": 0.0624
+   }
+  },
+  "80": {
+   "T_full_block_s": 0.9515,
+   "T_dsa_delta_s": 0.013,
+   "T_true_s": 0.9645,
+   "true_verify_tok_s": 82.9,
+   "E_req_for_30": 28.9,
+   "components": {
+    "routed": 0.6642,
+    "shared": 0.0128,
+    "head": -0.0029,
+    "hc": 0.0561,
+    "router": -0.0032,
+    "attn": 0.1201,
+    "swap": 0.0495,
+    "swap_only_floor": 0.0633
+   }
+  },
+  "112": {
+   "T_full_block_s": 1.1709,
+   "T_dsa_delta_s": 0.0183,
+   "T_true_s": 1.1891,
+   "true_verify_tok_s": 94.2,
+   "E_req_for_30": 35.7,
+   "components": {
+    "routed": 0.845,
+    "shared": 0.0189,
+    "head": 0.0016,
+    "hc": 0.0762,
+    "router": 0.0024,
+    "attn": 0.1383,
+    "swap": 0.0547,
+    "swap_only_floor": 0.0644
+   }
+  }
+ },
+ "vram": {
+  "full_resident_gb": 10.01,
+  "after_bank_free_gb": 8.03,
+  "after_dsa_load_gb": 9.7
+ },
+ "fits": {
+  "T_true": {
+   "T0_s": 0.2974,
+   "alpha_s_per_tok": 0.00836
+  },
+  "T_full_block": {
+   "T0_s": 0.2764,
+   "alpha_s_per_tok": 0.00839
+  },
+  "T_dsa_delta": {
+   "T0_s": 0.0209,
+   "alpha_s_per_tok": -3e-05
+  }
+ },
+ "intercept_decomposition": {
+  "T0_true": 0.2974,
+  "T0_swap_only_floor": 0.0604,
+  "T0_components": {
+   "routed": 0.1278,
+   "shared": 0.0111,
+   "head": 0.0025,
+   "hc": 0.0245,
+   "router": 0.0022,
+   "attn": 0.0439,
+   "swap": 0.0581
+  },
+  "T0_dsa_delta": 0.0209
+ },
+ "thermal": {
+  "start": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 57,
+   "sm_clock_mhz": 210,
+   "mem_clock_mhz": 405,
+   "power_w": 0.046,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 12,
+   "ts": 1788543263.0774102
+  },
+  "end": {
+   "gpu": "NVIDIA GeForce RTX 3060",
+   "temp_c": 73,
+   "sm_clock_mhz": 1912,
+   "mem_clock_mhz": 7301,
+   "power_w": 0.036,
+   "power_limit_w": 170.0,
+   "gpu_util_pct": 98,
+   "ts": 1788543724.97046
+  }
+ },
+ "prior_provisional_fit": {
+  "T0_s": 0.3202,
+  "alpha_s_per_tok": 0.01106
+ }
+}

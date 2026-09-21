@@ -1,0 +1,2451 @@
+{
+ "layers": {
+  "0": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "d8646783efb3c0bd",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "791dd6d1c5ab2109",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     114,
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "090a8a929944fd30",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "4ed730a5e64d2bf1",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "b2927daabb03f766",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "1": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "3c1c18dd6e414b47",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "f8ece5988ff9183d",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "a3095d83f941077e",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "ab673209cc9fc08d",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "d6bdbb78b96affd2",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "2": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "499b59d537b50b82",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "65d1cf8c02b74b16",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "108bf0e279a04312",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "5ea199a89cbdf645",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "afb8aa77090e6a96",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "3": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "d789583d090d2865",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "47ef8a5e937e55f5",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "6a2db8d064248045",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "30e842f7fdb649a1",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "d98264e6aa13a80c",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "4": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "db4da020dae47726",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "3d65cfda6bf1c327",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "9f2a5640b674a898",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "56581e705c33bfda",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "32b175299d87aca8",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "5": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "54ad90a7e6c60c4f",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "038bdf69dea172ac",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "6a3b0f6794b2d15b",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "8476edbd69c2f4a0",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "c5b27be81938ec1e",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "6": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "345be5981e3f8e94",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "c4ebf1a01ee872b6",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "14e855418827c5dc",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "ad6dbe2c1f6f25b9",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "561d762b85e38ebf",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "7": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "3ac694b6bf88f957",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "c6e840aafd1eacdc",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "73bcd00b26c26f8a",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "2cc287a52f44e2f3",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "74af9b0fc9fc6df1",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "8": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "4d57170968a703a0",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "aa631dbff359b367",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "59f22178b8dee558",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "e028d089bb26d359",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "67864f0c0fbf0da4",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "9": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "dde379c97d4267ef",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "df049c2df08e1935",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "f0206379cfd733f0",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "2ab5549e9071a9d9",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "0621378d89e4af28",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "10": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "216f6329f3ac6639",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "e6d4f32dca0cb855",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "79637712d69b996e",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "fcc820181be7d778",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "2b51a49cb39ef481",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "11": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "03b89ffb15a1d92f",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "0cf1d661d8b170e6",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "ae2ea4c61eb7704e",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "afe54fe10f90ea9d",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "fa8162add1cb728a",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "12": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "011cc9b3d689e09d",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "7dca82c459431b6c",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "714e9b67a0c05066",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "badb1eee8594c268",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "416f872b12f3130f",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "13": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "ca3d42f81be5a1d7",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "095c024b73ea9c3c",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "cb1c433234daa7fa",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "f468ff7e1de28c32",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "e36678d0c894de7f",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "14": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "096681cb42164296",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "0ca5cf09dacdc92f",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "ba755e9adc91f1e1",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "9113904d6f090883",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "26a5a9a4c629ebf1",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "15": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "3637e82d98224006",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "7b7260c203a84712",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "2b369161776683e1",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "2bfcab2e0580714f",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "01258dcfb14ad7a0",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "16": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "8749ca362f1eace0",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "36f9d0349a0d3082",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "6314b25968ab1011",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "c99513d807e4693c",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "902a88686b1e165a",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "17": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "3bb82f0a447c824e",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "141afbac1f39fe96",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "1f292f50033358de",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "6fd224cbbf8f5202",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "557af86f9ae93dff",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "18": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "005a35d35b694e18",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "b1f19bd003d87fe0",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     114,
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "e78ff02fb26df8ab",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "9ddf8f1e0a675620",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "0e56c5636239f579",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "19": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "88c853a11ea1f233",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "ae3dc9748ab2bac2",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "cef2f4a222a5df7d",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "d11836db539dfa61",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "ff8cc946f574634e",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "20": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "f38cc00ab31b233d",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "0b0510e93ae85613",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "8a108486d1ff650a",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "2d1a404a2aac5566",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "d27699bc910f472c",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "21": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "cbd95d436884a8bd",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "ab66f7dd45cc73f3",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "f2d063a082023fb6",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "797d4504cfeb6f3d",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "2648737bf25ac5b8",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "22": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "8011d393ca2a786e",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "792bb5cbfd3deeec",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "3a92a2bb5c99eaff",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "ee0ff8b61d5e162b",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "0c16e0a6acda3c4f",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "23": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "0575351b49a32e6f",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "217eb3cd89662644",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "0c91ab1ba8ca763f",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "a01e8f673502c92f",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "4c9e14c04ea8f849",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "24": {
+   "q_a_proj": {
+    "w_shape": [
+     1024,
+     4096
+    ],
+    "w_sha256": "5e434037a0c4a363",
+    "s_shape": [
+     8,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 256
+   },
+   "q_b_proj": {
+    "w_shape": [
+     32768,
+     1024
+    ],
+    "w_sha256": "e681821252ce1a0f",
+    "s_shape": [
+     256,
+     8
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "kv_proj": {
+    "w_shape": [
+     512,
+     4096
+    ],
+    "w_sha256": "c5f1da5faf45c6aa",
+    "s_shape": [
+     4,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 128
+   },
+   "o_a_proj": {
+    "w_shape": [
+     8192,
+     4096
+    ],
+    "w_sha256": "bd3494daccda2406",
+    "s_shape": [
+     64,
+     32
+    ],
+    "s_uniques": [
+     115,
+     116,
+     117,
+     118
+    ],
+    "s_bytes_b64_len": 2048
+   },
+   "o_b_proj": {
+    "w_shape": [
+     4096,
+     8192
+    ],
+    "w_sha256": "b51f86ca215bb4a0",
+    "s_shape": [
+     32,
+     64
+    ],
+    "s_uniques": [
+     115,
+     116
+    ],
+    "s_bytes_b64_len": 2048
+   }
+  },
+  "25": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "26": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "27": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "28": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "29": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "30": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "31": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "32": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "33": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "34": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "35": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "36": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "37": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "38": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "39": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "40": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "41": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  },
+  "42": {
+   "q_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "q_b_proj": {
+    "status": "META (offloaded)"
+   },
+   "kv_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_a_proj": {
+    "status": "META (offloaded)"
+   },
+   "o_b_proj": {
+    "status": "META (offloaded)"
+   }
+  }
+ },
+ "meta_offloaded_tensors": 90,
+ "scale_byte_histogram": {
+  "115": 125,
+  "116": 125,
+  "117": 75,
+  "118": 6,
+  "114": 2
+ }
+}

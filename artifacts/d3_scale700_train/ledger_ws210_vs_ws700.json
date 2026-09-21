@@ -1,0 +1,60 @@
+{
+ "classification": "D3_SCALE210_LEDGER",
+ "G_conversions": [
+  "agent_049",
+  "agent_054",
+  "coding_053",
+  "coding_055",
+  "coding_056",
+  "json_052",
+  "json_053",
+  "json_054",
+  "longform_055",
+  "math_052",
+  "math_056",
+  "retrieval_048"
+ ],
+ "L_losses": [
+  "json_047",
+  "math_053"
+ ],
+ "G_count": 12,
+ "L_count": 2,
+ "delta_H": 10,
+ "n": 70,
+ "S1_base": 39,
+ "S1_scaled": 49,
+ "delta_EA": 0.2286,
+ "delta_trim20": 0.3333,
+ "delta_loo": 0.2319,
+ "S4_scaled": 0.0429,
+ "domain_gains": {
+  "agent": 2,
+  "coding": 3,
+  "json": 3,
+  "longform": 1,
+  "math": 2,
+  "retrieval": 1
+ },
+ "domain_losses": {
+  "json": 1,
+  "math": 1
+ },
+ "domains_net_gain": 6,
+ "boot_ci95_base": [
+  1.8429,
+  2.4286
+ ],
+ "boot_ci95_scaled": [
+  2.0714,
+  2.6429
+ ],
+ "gates": {
+  "mechanism_S28": true,
+  "robust_S29": true,
+  "strong_S30": true,
+  "plateau_S32": false,
+  "fail_S33": false
+ },
+ "verdict": "STRONG_PASS_SCALE700_AUTHORIZED"
+}

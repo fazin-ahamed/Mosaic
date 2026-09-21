@@ -1,0 +1,21 @@
+[project]
+name = "mosaicvm"
+version = "0.1.0"
+description = "MosaicVM: single-consumer-GPU streaming inference for DeepSeek-class MoE models"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.4",
+    "triton>=3.0",
+    "pynvml",
+    "numpy",
+    "huggingface_hub[hf_transfer]",
+    "safetensors",
+    "modal",
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build"]

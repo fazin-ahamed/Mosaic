@@ -1,0 +1,10 @@
+{
+ "prov": "8f885d5cb092102d47020fac4a7e36a234dea669fc992e22bbbb9a9acddc34f2",
+ "n": 96096,
+ "per": {
+  "d3_r2_teacher": 8064,
+  "d3_scale_teacher_aug": 12096,
+  "d3_scale700_teacher_aug": 47040,
+  "d3_scale1000_teacher_aug": 28896
+ }
+}

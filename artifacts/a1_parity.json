@@ -1,0 +1,54 @@
+{
+ "classification": "A1_TF_FR_PARITY_AUDIT",
+ "population": "h1-correct held-out n=124",
+ "agreement": 1.0,
+ "n_disagree": 0,
+ "stage_max_abs_diff": {
+  "seed_proj": "0.00e+00",
+  "token1_embed": "0.00e+00",
+  "after_pos": "0.00e+00",
+  "block0": "0.00e+00",
+  "block1": "0.00e+00",
+  "block2": "0.00e+00",
+  "ln_f": "0.00e+00",
+  "h2_state": "0.00e+00",
+  "head_down": "0.00e+00",
+  "logits": "0.00e+00"
+ },
+ "disagreement_margins": {
+  "p50": null,
+  "max": null,
+  "n_near_tie_lt0.5": 0,
+  "n_structural": 0
+ },
+ "kv_rollout": {
+  "h2_agreement_with_tf_subset": 0.0333,
+  "latency_ms_K32": 28.0
+ },
+ "corrected_free_roll": {
+  "note": "original rollout had off-by-one: fed toks (len L) to a model consuming t[:,:,-1] \u2014 position L-1 re-predicted the last drafted token. All prior FR metrics invalid.",
+  "S": {
+   "1": 0.4351,
+   "2": 0.0526,
+   "3": 0.0105,
+   "4": 0.0,
+   "8": 0.0,
+   "16": 0.0
+  },
+  "prefix_dist": {
+   "0": 161,
+   "1": 109,
+   "2": 12,
+   "3": 3
+  },
+  "E_A": 1.4351,
+  "P_fr_h2_given_h1_correct": 0.121,
+  "conditional_chain": {
+   "P(h2_given_prefix)": 0.121,
+   "P(h3_given_prefix)": 0.2,
+   "P(h4_given_prefix)": 0.0
+  },
+  "latency_ms_K32": 40.7
+ },
+ "verdict": "PASS \u2014 TF/FR paths equivalent (stage diffs 0.0); the prior 85% agreement and 5x conditional collapse were caused by an off-by-one rollout bug (lagged context), now fixed"
+}

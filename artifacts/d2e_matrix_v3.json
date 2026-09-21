@@ -1,0 +1,2831 @@
+{
+  "classification": "LOCAL_CPU_SYNTHETIC_REAL_EXPERT_MATRIX_REFERENCE_ONLY",
+  "complete": true,
+  "cases": [
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 1,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 1009,
+          "fractional_codes": 688,
+          "codes_above_u8": 13,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 2,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 2049,
+          "fractional_codes": 1242,
+          "codes_above_u8": 29,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 3,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.7749999761581421,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 3059,
+          "fractional_codes": 1868,
+          "codes_above_u8": 47,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 4,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.5333333611488342,
+        1.0166666507720947,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 4056,
+          "fractional_codes": 2537,
+          "codes_above_u8": 49,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 8,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.2571428716182709,
+        0.4642857313156128,
+        0.6714285612106323,
+        0.8785713911056519,
+        1.085714340209961,
+        1.2928571701049805,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 8205,
+          "fractional_codes": 4939,
+          "codes_above_u8": 110,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.0",
+      "rows": 16,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.14666667580604553,
+        0.2433333396911621,
+        0.3400000035762787,
+        0.43666669726371765,
+        0.5333333611488342,
+        0.6300000548362732,
+        0.7266666889190674,
+        0.8233333230018616,
+        0.9199999570846558,
+        1.0166666507720947,
+        1.1133333444595337,
+        1.2100000381469727,
+        1.306666612625122,
+        1.403333306312561,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.0.w1.weight": "7fb913dbfa247ae667c7682222290cd0ea3daae966f793839c8a83dd14496f3a",
+        "layers.41.ffn.experts.0.w1.scale": "c9ca1c3f41e7d38a63230d2075188882cb8bd6ab1ef503e6b1be7394123d8015",
+        "layers.41.ffn.experts.0.w3.weight": "3a86c19611ab08452a9e858d749d5787a5f7a0ef04ba7186d40fdbe7adac74ba",
+        "layers.41.ffn.experts.0.w3.scale": "5b9b5d9e14e8f20d4fbc9e3ed8006cd219fbcffabb1e5387feb9c4d23bdb4c62",
+        "layers.41.ffn.experts.0.w2.weight": "4b2f0dc8217f9e39bc8535b8025d3aeaad65c64efb3ad5588332e5bbda4a0caa",
+        "layers.41.ffn.experts.0.w2.scale": "70e369dc85a09bff60ad1fa5dc00f4a2a86567f42cf877464c217935090b6d88"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 16361,
+          "fractional_codes": 9886,
+          "codes_above_u8": 240,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 1,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 1007,
+          "fractional_codes": 623,
+          "codes_above_u8": 17,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 2,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 2049,
+          "fractional_codes": 1188,
+          "codes_above_u8": 30,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 3,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.7749999761581421,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 3013,
+          "fractional_codes": 1798,
+          "codes_above_u8": 46,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 4,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.5333333611488342,
+        1.0166666507720947,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 4036,
+          "fractional_codes": 2396,
+          "codes_above_u8": 64,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 8,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.2571428716182709,
+        0.4642857313156128,
+        0.6714285612106323,
+        0.8785713911056519,
+        1.085714340209961,
+        1.2928571701049805,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 8066,
+          "fractional_codes": 4680,
+          "codes_above_u8": 129,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.41.ffn.experts.1",
+      "rows": 16,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.14666667580604553,
+        0.2433333396911621,
+        0.3400000035762787,
+        0.43666669726371765,
+        0.5333333611488342,
+        0.6300000548362732,
+        0.7266666889190674,
+        0.8233333230018616,
+        0.9199999570846558,
+        1.0166666507720947,
+        1.1133333444595337,
+        1.2100000381469727,
+        1.306666612625122,
+        1.403333306312561,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.41.ffn.experts.1.w1.weight": "4e6c93ae859a4ae5ccd38e9c59177cb455889428531ef4733e8e0fddc1572732",
+        "layers.41.ffn.experts.1.w1.scale": "f6b10330c11ebf32b39c3a5f173083f90f890ea70152649fdbe340b4a572177c",
+        "layers.41.ffn.experts.1.w3.weight": "0be7c8a1be74b3fc34557c8923223b34d940d49714aef274ca0ca53d703b1fec",
+        "layers.41.ffn.experts.1.w3.scale": "79331a109ee02ea9b27b6811383d21d11144a526d61c1e984e99f0d33c5f35d8",
+        "layers.41.ffn.experts.1.w2.weight": "b11c45cfa03c4135136b855571ecacfc8273f9d0d40312fb02f5e036000a7e62",
+        "layers.41.ffn.experts.1.w2.scale": "44f5323e3e190197f7d512a53628c0022b9e9fff5b0f77521e40bf3108164cbf"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 16147,
+          "fractional_codes": 9322,
+          "codes_above_u8": 249,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 1,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 1036,
+          "fractional_codes": 641,
+          "codes_above_u8": 12,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 2,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 2019,
+          "fractional_codes": 1237,
+          "codes_above_u8": 25,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 3,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.7749999761581421,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 3019,
+          "fractional_codes": 1897,
+          "codes_above_u8": 41,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 4,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.5333333611488342,
+        1.0166666507720947,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 4055,
+          "fractional_codes": 2549,
+          "codes_above_u8": 54,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 8,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.2571428716182709,
+        0.4642857313156128,
+        0.6714285612106323,
+        0.8785713911056519,
+        1.085714340209961,
+        1.2928571701049805,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 8143,
+          "fractional_codes": 5015,
+          "codes_above_u8": 121,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.0",
+      "rows": 16,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.14666667580604553,
+        0.2433333396911621,
+        0.3400000035762787,
+        0.43666669726371765,
+        0.5333333611488342,
+        0.6300000548362732,
+        0.7266666889190674,
+        0.8233333230018616,
+        0.9199999570846558,
+        1.0166666507720947,
+        1.1133333444595337,
+        1.2100000381469727,
+        1.306666612625122,
+        1.403333306312561,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.0.w1.weight": "b3ef52a54e3b8576a8a5748dee2923908350a405555cf7723dd0382842979770",
+        "layers.42.ffn.experts.0.w1.scale": "9bf3e3d59fc1ea49a2172e72092456b153773bbc97668894901c3c17c7e4bc5c",
+        "layers.42.ffn.experts.0.w3.weight": "c194e28f5cc2282a2e08dc7c51f81476e96b42a7578a17d783e0c52387401d96",
+        "layers.42.ffn.experts.0.w3.scale": "094cc15c207506fb639567422e55d0884eca1fab3c621cc297ab1ba82f0685c6",
+        "layers.42.ffn.experts.0.w2.weight": "57fba586dad4daee51faeed72268f4c2a1fdf129a8d91deaa53effc35ce61269",
+        "layers.42.ffn.experts.0.w2.scale": "865bb534a7299b74153fb55852ae9937f74b3b298f06c2dde704dcd471718049"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 16378,
+          "fractional_codes": 9943,
+          "codes_above_u8": 271,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 1,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 2057,
+          "fractional_codes": 135,
+          "codes_above_u8": 85,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 1033,
+          "fractional_codes": 771,
+          "codes_above_u8": 10,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 2,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 4087,
+          "fractional_codes": 297,
+          "codes_above_u8": 204,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 2026,
+          "fractional_codes": 1532,
+          "codes_above_u8": 22,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 3,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.7749999761581421,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 6141,
+          "fractional_codes": 432,
+          "codes_above_u8": 326,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 3044,
+          "fractional_codes": 2254,
+          "codes_above_u8": 38,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 4,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.5333333611488342,
+        1.0166666507720947,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 8212,
+          "fractional_codes": 555,
+          "codes_above_u8": 433,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 4113,
+          "fractional_codes": 2920,
+          "codes_above_u8": 45,
+          "max_abs_code": 416.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 8,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.2571428716182709,
+        0.4642857313156128,
+        0.6714285612106323,
+        0.8785713911056519,
+        1.085714340209961,
+        1.2928571701049805,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 16284,
+          "fractional_codes": 1135,
+          "codes_above_u8": 851,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 8216,
+          "fractional_codes": 5722,
+          "codes_above_u8": 98,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    },
+    {
+      "classification": "LOCAL_CPU_REAL_EXPERT_SYNTHETIC_INPUT_REFERENCE_ONLY",
+      "production_correct": false,
+      "source": "/home/fazinahamed/.cache/huggingface/hub/models--deepseek-ai--DeepSeek-V4-Flash-0731/snapshots/7872f01b1d1fe23eabc4c98b48bffcef5a386062",
+      "expert": "layers.42.ffn.experts.1",
+      "rows": 16,
+      "input": "seeded synthetic BF16, seed=20260907",
+      "route_weights": [
+        0.05000000074505806,
+        0.14666667580604553,
+        0.2433333396911621,
+        0.3400000035762787,
+        0.43666669726371765,
+        0.5333333611488342,
+        0.6300000548362732,
+        0.7266666889190674,
+        0.8233333230018616,
+        0.9199999570846558,
+        1.0166666507720947,
+        1.1133333444595337,
+        1.2100000381469727,
+        1.306666612625122,
+        1.403333306312561,
+        1.5
+      ],
+      "expert_forward": "checkpoint AST executed unchanged; source clamp/SwiGLU/route placement/casts",
+      "source_model_sha256": "c0c19e6c9fa439bac7fbb1c5bc1868232dfd5aa2f439a548d0e33dcc2a9edd3f",
+      "tensor_sha256": {
+        "layers.42.ffn.experts.1.w1.weight": "017ed8b49aaad66fde6dc1bc7699d6b3e3b95eb520544c3ea13aeae61d9699c2",
+        "layers.42.ffn.experts.1.w1.scale": "b9c407e03d6b223cde15603a249c57b3b0625ee407ef7e26014bc492acb62a12",
+        "layers.42.ffn.experts.1.w3.weight": "e03d94da0fa854605551a9a03704f0314b8a3894542cbbc2ac5189790d3c8d07",
+        "layers.42.ffn.experts.1.w3.scale": "08add7f3762858152df7f7cecb11f52fd2ebb8d36ef15ef73732437c307090a0",
+        "layers.42.ffn.experts.1.w2.weight": "68bec89bebab7c3f516afad72476b647b3d2bb7ac7a88ba6ef69f2c093d0a07e",
+        "layers.42.ffn.experts.1.w2.scale": "2ad1badd7e499de1c4ca024b7bbef93c748731bacf4fa9fdfbb40aa7515cde00"
+      },
+      "source_tensor_bytes": 13369344,
+      "stages": {
+        "w1": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w3": {
+          "negative_codes": 32574,
+          "fractional_codes": 2212,
+          "codes_above_u8": 1677,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        },
+        "w2": {
+          "negative_codes": 16368,
+          "fractional_codes": 11490,
+          "codes_above_u8": 237,
+          "max_abs_code": 448.0,
+          "shim_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          },
+          "vnni_source_vs_ordered": {
+            "bit_equal": true,
+            "different_elements": 0,
+            "max_abs_error": 0.0
+          }
+        }
+      },
+      "final_shim_vs_ordered_bit_equal": true,
+      "final_vnni_vs_ordered_bit_equal": true,
+      "vnni_source_adapter_checks": {
+        "full_finite_e4m3_code_coverage": 254,
+        "integer_cases": [
+          {
+            "rows": 2,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          },
+          {
+            "rows": 1,
+            "integer_oracle_fp32_bit_equal": true
+          }
+        ],
+        "source_bf16_reference_bit_equal": true,
+        "admitted_scale_bytes_tested": [
+          1,
+          254
+        ],
+        "scale_0_255_rejected": true,
+        "e4m3_nan_codes_rejected": true
+      },
+      "vnni_prepared_weight_bytes": 31457280,
+      "vnni_signed_regression": {
+        "expected_signed_dot": -32,
+        "observed_dot": 8160.0,
+        "signed_activation_supported": false
+      },
+      "blockers": [
+        "no source GPU kernel comparison or full routed/shared MoE reduction",
+        "synthetic input and route; no held-out acceptance or production latency measured"
+      ],
+      "gate_pass": true
+    }
+  ],
+  "gate_pass": true
+}

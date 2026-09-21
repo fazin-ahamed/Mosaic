@@ -1,0 +1,16 @@
+{
+  "measured_bw_gbs": 483.17,
+  "derate_scale": 0.745079,
+  "derate_formula": "native * (360 / measured_A10_bw)",
+  "gate": "derated_3060 K=1 > 3.0 tok/s x1.15 headroom",
+  "measured_derated_k1": 12.30014486191325,
+  "required": 3.45,
+  "pass": true,
+  "rows": [
+    {"K": 1, "native_a10_toks": 16.5085, "derated_3060_toks": 12.3001, "attn32k_native": 4.8903},
+    {"K": 2, "native_a10_toks": 11.6373, "derated_3060_toks": 8.6707, "attn32k_native": 4.3508},
+    {"K": 3, "native_a10_toks": 8.6145, "derated_3060_toks": 6.4185, "attn32k_native": 3.8462},
+    {"K": 4, "native_a10_toks": 6.8306, "derated_3060_toks": 5.0893, "attn32k_native": 3.4446},
+    {"K": 5, "native_a10_toks": 5.6366, "derated_3060_toks": 4.1997, "attn32k_native": 3.1121}
+  ]
+}

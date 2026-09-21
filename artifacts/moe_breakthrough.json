@@ -1,0 +1,49 @@
+{
+  "phase": "2.13X-B Track B session",
+  "date": "2026-08-28",
+  "summary": "Geometry sweep found a 3x faster crossover config; the exactness gate caught it: the grouped-IMMA path is WRONG at counts>=4. Correctness-first bug filed; fix is the next work item.",
+  "evidence": {
+    "1_owner_profile": "dual-backend K56 golden (moe_profile.json): hot8 canonical 1.6055s; gu 71.7% + down 24.2% = 95.9%",
+    "2_geometry_sweep": "crossover=0 (all-IMMA block_m=8): 12.94 ms/layer -> 0.557 s/block projection; FULL 43-layer block bench 0.5652 s (T_target 0.668s, R_oracle 42.3/s) \u2014 3.0x faster than c3 baseline",
+    "3_exactness_gate": "c0 vs QPA(exact_moe) shared banks: ~100% max diff. Single-expert top-1 weight-1 bisect: M=1,2,3 c3 BITWISE-EXACT (DP4A queue); M>=4 BOTH c0 and c3 ~100% wrong (IMMA queue)",
+    "4_per_gemm_isolation": "mxint_imma_gemm and mxint_dp4a_gemm (UNgrouped) bitwise-exact vs reference_fp4_linear_source_semantics at m=1..8 \u2014 the bug is in the GROUPED path (mxint_ksplit_grouped) or its driving, not the GEMM math",
+    "5_warp_independence": "error identical across imma_k in {2,4,8,16} -> not the K-split warp reduction",
+    "6_uniform_M_exceptions": "c0 == c3 bitwise at uniform single-expert M in {3..20} (both equally wrong vs QPA for M>=4; equal to each other)"
+  },
+  "bug": {
+    "name": "GROUPED_IMMA_TILE_BUG",
+    "location": "mxint_ksplit_grouped / _imma_grouped_src or emit_tiles interaction, exercised when expert counts > crossover (multi-row IMMA tiles)",
+    "never_caught_because": "2.9R validation at K8-mid had mean M ~1.6-2.4 (nearly all assignments rode the DP4A queue); golden-greedy lineage is K1 (counts=1, DP4A, exact). Repro tests only cover k<=4 with e=8 random ids (counts<=2 mostly).",
+    "impact_correctness": "Any fused_moe_mxint result at K>=~32 with default crossover=3 where counts>3 occur is numerically WRONG. Golden-greedy K1 path unaffected.",
+    "impact_timing": "Historical MoE timings (1.3923s K56 etc.) remain valid as compute-cost estimates (identical kernels/work, wrong values). WideVerify raw-rate numbers unaffected as timing.",
+    "fix_next": "debug _imma_grouped_src gu/down at multi-row tiles vs the exact ungrouped GEMM; suspected tile/pad/scatter handling (warp-independent, ~100% scale). After fix: re-run crossover sweep \u2014 the 3x all-IMMA speedup may land and clear the 750ms gate (0.565s measured WITH the bug; fixed version to be re-timed)."
+  },
+  "tests_to_add": "fused_moe_mxint vs exact_moe parity at counts>=4 (e.g. single expert, top-1, M in {4..16}, weight=1) \u2014 current suite misses this regime.",
+  "resolution": {
+    "status": "FIXED \u2014 GROUPED_IMMA_TILE_BUG resolved",
+    "root_cause": "mxint.py _imma_grouped_src: scale base pointer folded nb*(K/32) into the kt-column offset, so sb[g] advanced the K-column instead of selecting weight row nb+g. g=0 read the correct element (kt+0); g>=1 read a neighboring K-block e8m0 scale -> pow2-ratio output errors.",
+    "fix": "base sb at column kt only; loads sb[(nb+g)*(K/32)] / sb[(nb+g+8)*(K/32)]. Applied to both hot8 and packed4 variants. One-line class of change; kernel math otherwise identical to the validated ungrouped kernel.",
+    "verification": [
+      "single expert top-1 weight=1 vs exact_moe: M=1..56 ALL BITWISE-EQ (both c0 and c3)",
+      "multi-expert 64 experts, distinct top-6, real weights, uniform+skewed (max M=33): hot8+packed4, c0+c3 ALL BITWISE-EQ",
+      "permanent regression suite tests/test_grouped_imma_parity.py: 26 tests; full suite 134 passed"
+    ],
+    "post_fix_timing_k56_golden": {
+      "c0_all_imma_moe_block_s": 0.6491,
+      "c0_T_target_s": 0.7515,
+      "c0_raw_per_s": 74.5,
+      "R_oracle_K56_output_per_s": 37.6,
+      "c3_owner_moe_block_s": 1.7536,
+      "band_per_roadmap_16": "EXCELLENT (565-650ms)",
+      "speedup_retained": "2.47x-2.70x vs required 2.14x",
+      "verdict": "PERFORMANCE_CANDIDATE -> PROMOTED (exactness + timing both pass)",
+      "note": "thermal 71->75C clocks 1912->1897 (0.8% clock delta); treat as near-STEADY, confirm in TRUE P2 rerun"
+    },
+    "n63_real_golden": {
+      "c0_moe_block_s": 0.7039,
+      "c0_T_target_s": 0.8063,
+      "c0_raw_per_s": 78.1,
+      "R_oracle_est_per_s": "~38.5 (E[A](63)~31 interpolated)"
+    }
+  }
+}

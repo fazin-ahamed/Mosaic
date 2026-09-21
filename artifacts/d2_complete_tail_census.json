@@ -1,0 +1,90 @@
+{
+ "classification": "D2_COMPLETE_TAIL_CENSUS_CORRECTION",
+ "note": "traffic census corrected (the original JSON divided a per-rep-zeroed census by 40 \u2014 call/row counts were ~40x too small). Walls below are the ORIGINAL uncontended certified walls; the census rerun ran under CPU contention from a concurrent training job, so ITS walls are invalid and were not saved.",
+ "census_per_replay": {
+  "serial": {
+   "1": {
+    "expert_calls": 286,
+    "expert_rows": 549,
+    "maxM": 15
+   },
+   "4": {
+    "expert_calls": 394,
+    "expert_rows": 657,
+    "maxM": 15
+   },
+   "8": {
+    "expert_calls": 538,
+    "expert_rows": 801,
+    "maxM": 15
+   },
+   "16": {
+    "expert_calls": 826,
+    "expert_rows": 1089,
+    "maxM": 15
+   },
+   "32": {
+    "expert_calls": 1402,
+    "expert_rows": 1665,
+    "maxM": 15
+   }
+  },
+  "chunk": {
+   "1": {
+    "expert_calls": 266,
+    "expert_rows": 549,
+    "maxM": 16
+   },
+   "4": {
+    "expert_calls": 316,
+    "expert_rows": 657,
+    "maxM": 17
+   },
+   "8": {
+    "expert_calls": 359,
+    "expert_rows": 801,
+    "maxM": 21
+   },
+   "16": {
+    "expert_calls": 411,
+    "expert_rows": 1089,
+    "maxM": 25
+   },
+   "32": {
+    "expert_calls": 508,
+    "expert_rows": 1665,
+    "maxM": 34
+   }
+  }
+ },
+ "original_walls_ms": {
+  "gpu_serial": {
+   "1": 580.72,
+   "4": 776.67,
+   "8": 1063.15,
+   "16": 1673.87,
+   "32": 2739.89
+  },
+  "gpu_chunk": {
+   "1": 488.67,
+   "4": 566.12,
+   "8": 623.12,
+   "16": 722.69,
+   "32": 922.11
+  },
+  "hybrid_serial": {
+   "1": 406.89,
+   "4": 570.85,
+   "8": 755.37,
+   "16": 1123.52,
+   "32": 1931.4
+  },
+  "hybrid_chunk": {
+   "1": 350.96,
+   "4": 402.22,
+   "8": 478.93,
+   "16": 583.57,
+   "32": 768.25
+  }
+ }
+}

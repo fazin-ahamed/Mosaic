@@ -1,0 +1,325 @@
+{
+ "classification": "D3_DTR0_CENSUS",
+ "n": 21,
+ "M_grid": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  32,
+  64,
+  128,
+  256,
+  512
+ ],
+ "recall_hist1": {
+  "1": 0.4762,
+  "2": 0.5714,
+  "4": 0.7143,
+  "8": 0.8095,
+  "16": 0.8095,
+  "32": 0.8571,
+  "64": 0.8571,
+  "128": 0.8571,
+  "256": 0.9048,
+  "512": 0.9048
+ },
+ "recall_ws1": {
+  "1": 0.4762,
+  "2": 0.6667,
+  "4": 0.7619,
+  "8": 0.8095,
+  "16": 0.8095,
+  "32": 0.8095,
+  "64": 0.8095,
+  "128": 0.8095,
+  "256": 0.8095,
+  "512": 0.8571
+ },
+ "recall_union": {
+  "1": 0.4762,
+  "2": 0.6667,
+  "4": 0.8095,
+  "8": 0.8095,
+  "16": 0.8095,
+  "32": 0.8571,
+  "64": 0.8571,
+  "128": 0.8571,
+  "256": 0.9048,
+  "512": 1.0
+ },
+ "per_prompt": {
+  "agent_13": {
+   "true_token": 9405,
+   "rank_hist1": 27,
+   "rank_ws1": 2023,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 27,
+   "h_pos": 26,
+   "w_pos": 2022
+  },
+  "agent_14": {
+   "true_token": 1124,
+   "rank_hist1": 34821,
+   "rank_ws1": 1547,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 512,
+   "h_pos": 34820,
+   "w_pos": 1546
+  },
+  "agent_15": {
+   "true_token": 260,
+   "rank_hist1": 7,
+   "rank_ws1": 3,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 3,
+   "h_pos": 6,
+   "w_pos": 2
+  },
+  "coding_13": {
+   "true_token": 2511,
+   "rank_hist1": 208,
+   "rank_ws1": 509,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 208,
+   "h_pos": 207,
+   "w_pos": 508
+  },
+  "coding_14": {
+   "true_token": 223,
+   "rank_hist1": 2,
+   "rank_ws1": 2,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 2,
+   "h_pos": 1,
+   "w_pos": 1
+  },
+  "coding_15": {
+   "true_token": 16178,
+   "rank_hist1": 3520,
+   "rank_ws1": 17745,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 512,
+   "h_pos": 3519,
+   "w_pos": 17744
+  },
+  "convo_13": {
+   "true_token": 361,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "convo_14": {
+   "true_token": 361,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "convo_15": {
+   "true_token": 361,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "json_13": {
+   "true_token": 26639,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "json_14": {
+   "true_token": 26639,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "json_15": {
+   "true_token": 270,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "longform_13": {
+   "true_token": 270,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "longform_14": {
+   "true_token": 6744,
+   "rank_hist1": 4,
+   "rank_ws1": 2,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 2,
+   "h_pos": 3,
+   "w_pos": 1
+  },
+  "longform_15": {
+   "true_token": 23,
+   "rank_hist1": 7,
+   "rank_ws1": 2,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 2,
+   "h_pos": 6,
+   "w_pos": 1
+  },
+  "math_13": {
+   "true_token": 361,
+   "rank_hist1": 2,
+   "rank_ws1": 2,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 2,
+   "h_pos": 1,
+   "w_pos": 1
+  },
+  "math_14": {
+   "true_token": 361,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "math_15": {
+   "true_token": 782,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  },
+  "retrieval_13": {
+   "true_token": 1445,
+   "rank_hist1": 4,
+   "rank_ws1": 3,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 3,
+   "h_pos": 3,
+   "w_pos": 2
+  },
+  "retrieval_14": {
+   "true_token": 223,
+   "rank_hist1": 3,
+   "rank_ws1": 5,
+   "hit_hist1": false,
+   "hit_ws1": false,
+   "union_rank_at_M": 3,
+   "h_pos": 2,
+   "w_pos": 4
+  },
+  "retrieval_15": {
+   "true_token": 528,
+   "rank_hist1": 1,
+   "rank_ws1": 1,
+   "hit_hist1": true,
+   "hit_ws1": true,
+   "union_rank_at_M": 1,
+   "h_pos": 0,
+   "w_pos": 0
+  }
+ },
+ "per_domain_rank_ws1": {
+  "agent": [
+   3,
+   1547,
+   2023
+  ],
+  "coding": [
+   2,
+   509,
+   17745
+  ],
+  "convo": [
+   1,
+   1,
+   1
+  ],
+  "json": [
+   1,
+   1,
+   1
+  ],
+  "longform": [
+   1,
+   2,
+   2
+  ],
+  "math": [
+   1,
+   1,
+   2
+  ],
+  "retrieval": [
+   1,
+   3,
+   5
+  ]
+ },
+ "rerankable_misses_ws1": {
+  "agent_15": 3,
+  "coding_14": 2,
+  "longform_14": 2,
+  "longform_15": 2,
+  "math_13": 2,
+  "retrieval_13": 3,
+  "retrieval_14": 5
+ },
+ "unreachable_beyond_64": {
+  "agent_13": 2023,
+  "agent_14": 1547,
+  "coding_13": 509,
+  "coding_15": 17745
+ },
+ "branch_inputs": {
+  "recall16": 0.8095,
+  "recall64": 0.8095,
+  "recall256": 0.8095,
+  "current_S1": 0.47619047619047616,
+  "reranker_ceiling_at_16": 0.8095,
+  "reranker_ceiling_at_64": 0.8095,
+  "note": "ceiling = recall; reranker converts a subset of retrieved non-top-1 targets"
+ }
+}

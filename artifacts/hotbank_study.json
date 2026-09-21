@@ -1,0 +1,132 @@
+{
+ "classification": "HOTBANK_SIZING_STUDY",
+ "source": "golden routes (real Blackwell routing, 7 prompts)",
+ "expert_packed4_mb": 13.4,
+ "h2d_steady_gbps": 12.9,
+ "rows": {
+  "N16": {
+   "n_blocks": 42,
+   "mean_unique_experts": 256.0,
+   "p50": 256,
+   "max": 256,
+   "bank48": {
+    "use_hit_rate": 0.188,
+    "mean_miss_experts": 208.0,
+    "h2d_ms_per_block": 215.6
+   },
+   "bank64": {
+    "use_hit_rate": 0.25,
+    "mean_miss_experts": 192.0,
+    "h2d_ms_per_block": 199.0
+   },
+   "bank96": {
+    "use_hit_rate": 0.375,
+    "mean_miss_experts": 160.0,
+    "h2d_ms_per_block": 165.8
+   },
+   "bank128": {
+    "use_hit_rate": 0.5,
+    "mean_miss_experts": 128.0,
+    "h2d_ms_per_block": 132.7
+   },
+   "bank160": {
+    "use_hit_rate": 0.625,
+    "mean_miss_experts": 96.0,
+    "h2d_ms_per_block": 99.5
+   },
+   "bank192": {
+    "use_hit_rate": 0.75,
+    "mean_miss_experts": 64.0,
+    "h2d_ms_per_block": 66.3
+   },
+   "bank256": {
+    "use_hit_rate": 1.0,
+    "mean_miss_experts": 0.0,
+    "h2d_ms_per_block": 0.0
+   }
+  },
+  "N32": {
+   "n_blocks": 14,
+   "mean_unique_experts": 256.0,
+   "p50": 256,
+   "max": 256,
+   "bank48": {
+    "use_hit_rate": 0.188,
+    "mean_miss_experts": 208.0,
+    "h2d_ms_per_block": 215.6
+   },
+   "bank64": {
+    "use_hit_rate": 0.25,
+    "mean_miss_experts": 192.0,
+    "h2d_ms_per_block": 199.0
+   },
+   "bank96": {
+    "use_hit_rate": 0.375,
+    "mean_miss_experts": 160.0,
+    "h2d_ms_per_block": 165.8
+   },
+   "bank128": {
+    "use_hit_rate": 0.5,
+    "mean_miss_experts": 128.0,
+    "h2d_ms_per_block": 132.7
+   },
+   "bank160": {
+    "use_hit_rate": 0.625,
+    "mean_miss_experts": 96.0,
+    "h2d_ms_per_block": 99.5
+   },
+   "bank192": {
+    "use_hit_rate": 0.75,
+    "mean_miss_experts": 64.0,
+    "h2d_ms_per_block": 66.3
+   },
+   "bank256": {
+    "use_hit_rate": 1.0,
+    "mean_miss_experts": 0.0,
+    "h2d_ms_per_block": 0.0
+   }
+  },
+  "N56": {
+   "n_blocks": 7,
+   "mean_unique_experts": 256.0,
+   "p50": 256,
+   "max": 256,
+   "bank48": {
+    "use_hit_rate": 0.188,
+    "mean_miss_experts": 208.0,
+    "h2d_ms_per_block": 215.6
+   },
+   "bank64": {
+    "use_hit_rate": 0.25,
+    "mean_miss_experts": 192.0,
+    "h2d_ms_per_block": 199.0
+   },
+   "bank96": {
+    "use_hit_rate": 0.375,
+    "mean_miss_experts": 160.0,
+    "h2d_ms_per_block": 165.8
+   },
+   "bank128": {
+    "use_hit_rate": 0.5,
+    "mean_miss_experts": 128.0,
+    "h2d_ms_per_block": 132.7
+   },
+   "bank160": {
+    "use_hit_rate": 0.625,
+    "mean_miss_experts": 96.0,
+    "h2d_ms_per_block": 99.5
+   },
+   "bank192": {
+    "use_hit_rate": 0.75,
+    "mean_miss_experts": 64.0,
+    "h2d_ms_per_block": 66.3
+   },
+   "bank256": {
+    "use_hit_rate": 1.0,
+    "mean_miss_experts": 0.0,
+    "h2d_ms_per_block": 0.0
+   }
+  }
+ },
+ "note": "frequency policy from global usage; movement = miss_experts x 13.4MB / 12.9GB/s; LRU/per-layer policies and route-aware prefetch are the next race"
+}

@@ -1,0 +1,40 @@
+{
+  "gates": [
+    {
+      "gate": "S1",
+      "metric": "M=1 gate_up packed GB/s",
+      "req": 100.0,
+      "obs": 37.97,
+      "pass": false
+    },
+    {
+      "gate": "S2",
+      "metric": "M=1 skinny <=0.5x grouped",
+      "req": 2.0,
+      "obs": 0.94,
+      "pass": false,
+      "comfort": true
+    },
+    {
+      "gate": "S3",
+      "metric": "K8 mid ms/MoE layer",
+      "req": 4.16,
+      "obs": 23.19,
+      "pass": false
+    },
+    {
+      "gate": "S4",
+      "metric": "K8 mid ms/MoE layer",
+      "req": 2.61,
+      "obs": 23.19,
+      "pass": false,
+      "comfort": true
+    }
+  ],
+  "decision": "SKINNY M=1 < 100 GB/s \u2014 SIMT kernel still memory-starved",
+  "s1_pass": false,
+  "s3_pass": false,
+  "s4_pass": false,
+  "skinny_k8_mid_sec": 0.02319165496826172,
+  "chosen_exact_backend": "skinny_mxfp4"
+}

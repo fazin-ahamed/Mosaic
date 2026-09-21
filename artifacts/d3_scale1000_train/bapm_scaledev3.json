@@ -1,0 +1,2447 @@
+{
+ "classification": "D3_DEPTH_BRANCH_PROBE",
+ "policy": {
+  "root": 1,
+  "branch_depths": [
+   2,
+   3
+  ],
+  "beams": [
+   1,
+   2,
+   4,
+   8
+  ],
+  "score": "sum_logp",
+  "gold": "post-freeze only"
+ },
+ "n_prompts": 70,
+ "by_B": {
+  "1": {
+   "canonical": {
+    "n": 70,
+    "mean": 3.2714,
+    "median": 2.5,
+    "trim20": 2.4524,
+    "loo_min": 3.0725,
+    "loo_max": 3.3043,
+    "boot_ci95": [
+     2.6429,
+     3.9429
+    ],
+    "S1": 0.6429,
+    "S2": 0.5,
+    "S3": 0.2857,
+    "S4": 0.2429,
+    "S8": 0.0714,
+    "S16": 0.0143,
+    "M_deep": 0.8429,
+    "accepted": 45,
+    "deepest": 16,
+    "per_domain_mean": {
+     "agent": 1.7,
+     "coding": 2.2,
+     "convo": 2.2,
+     "json": 4.1,
+     "longform": 1.9,
+     "math": 4.2,
+     "retrieval": 6.6
+    },
+    "per_prompt": {
+     "agent_127": 1,
+     "agent_128": 1,
+     "agent_129": 2,
+     "agent_130": 3,
+     "agent_131": 2,
+     "agent_132": 2,
+     "agent_133": 1,
+     "agent_134": 3,
+     "agent_135": 1,
+     "agent_136": 1,
+     "coding_127": 1,
+     "coding_128": 1,
+     "coding_129": 3,
+     "coding_130": 4,
+     "coding_131": 2,
+     "coding_132": 3,
+     "coding_133": 1,
+     "coding_134": 1,
+     "coding_135": 1,
+     "coding_136": 5,
+     "convo_127": 5,
+     "convo_128": 1,
+     "convo_129": 1,
+     "convo_130": 3,
+     "convo_131": 3,
+     "convo_132": 1,
+     "convo_133": 3,
+     "convo_134": 3,
+     "convo_135": 1,
+     "convo_136": 1,
+     "json_127": 6,
+     "json_128": 3,
+     "json_129": 1,
+     "json_130": 5,
+     "json_131": 3,
+     "json_132": 2,
+     "json_133": 5,
+     "json_134": 8,
+     "json_135": 2,
+     "json_136": 6,
+     "longform_127": 1,
+     "longform_128": 1,
+     "longform_129": 3,
+     "longform_130": 2,
+     "longform_131": 2,
+     "longform_132": 1,
+     "longform_133": 4,
+     "longform_134": 1,
+     "longform_135": 3,
+     "longform_136": 1,
+     "math_127": 1,
+     "math_128": 8,
+     "math_129": 9,
+     "math_130": 6,
+     "math_131": 3,
+     "math_132": 3,
+     "math_133": 1,
+     "math_134": 4,
+     "math_135": 5,
+     "math_136": 2,
+     "retrieval_127": 6,
+     "retrieval_128": 12,
+     "retrieval_129": 9,
+     "retrieval_130": 9,
+     "retrieval_131": 17,
+     "retrieval_132": 1,
+     "retrieval_133": 3,
+     "retrieval_134": 2,
+     "retrieval_135": 1,
+     "retrieval_136": 6
+    }
+   },
+   "delta_EA": 0.0,
+   "S1": 0.6429,
+   "S2": 0.5,
+   "S3": 0.2857,
+   "S4": 0.2429,
+   "d2_survived": 0.5,
+   "d3_survived": 0.2857,
+   "mean_expansions": 3.0,
+   "GainPerNode": 0.0,
+   "per_prompt": {
+    "agent_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_129": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_130": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_132": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_129": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "coding_130": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_132": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "coding_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_136": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_127": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_130": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_131": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_133": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_128": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "json_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_130": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_131": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "json_132": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_133": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_134": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_135": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_129": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "longform_130": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_133": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_135": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "longform_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_128": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_130": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_131": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "math_132": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "math_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_134": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_135": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_136": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_128": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_131": {
+     "E_A": 17,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_133": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_134": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    }
+   }
+  },
+  "2": {
+   "canonical": {
+    "n": 70,
+    "mean": 3.7429,
+    "median": 3.0,
+    "trim20": 2.9524,
+    "loo_min": 3.5507,
+    "loo_max": 3.7826,
+    "boot_ci95": [
+     3.0286,
+     4.4857
+    ],
+    "S1": 0.6429,
+    "S2": 0.5286,
+    "S3": 0.4143,
+    "S4": 0.3286,
+    "S8": 0.1,
+    "S16": 0.0143,
+    "M_deep": 1.1571,
+    "accepted": 45,
+    "deepest": 16,
+    "per_domain_mean": {
+     "agent": 2.4,
+     "coding": 2.3,
+     "convo": 3.1,
+     "json": 4.5,
+     "longform": 2.2,
+     "math": 4.2,
+     "retrieval": 7.5
+    },
+    "per_prompt": {
+     "agent_127": 1,
+     "agent_128": 1,
+     "agent_129": 7,
+     "agent_130": 3,
+     "agent_131": 4,
+     "agent_132": 2,
+     "agent_133": 1,
+     "agent_134": 3,
+     "agent_135": 1,
+     "agent_136": 1,
+     "coding_127": 1,
+     "coding_128": 1,
+     "coding_129": 4,
+     "coding_130": 4,
+     "coding_131": 2,
+     "coding_132": 3,
+     "coding_133": 1,
+     "coding_134": 1,
+     "coding_135": 1,
+     "coding_136": 5,
+     "convo_127": 5,
+     "convo_128": 1,
+     "convo_129": 1,
+     "convo_130": 9,
+     "convo_131": 6,
+     "convo_132": 1,
+     "convo_133": 3,
+     "convo_134": 3,
+     "convo_135": 1,
+     "convo_136": 1,
+     "json_127": 6,
+     "json_128": 4,
+     "json_129": 1,
+     "json_130": 5,
+     "json_131": 6,
+     "json_132": 2,
+     "json_133": 5,
+     "json_134": 8,
+     "json_135": 2,
+     "json_136": 6,
+     "longform_127": 1,
+     "longform_128": 1,
+     "longform_129": 6,
+     "longform_130": 2,
+     "longform_131": 2,
+     "longform_132": 1,
+     "longform_133": 4,
+     "longform_134": 1,
+     "longform_135": 3,
+     "longform_136": 1,
+     "math_127": 1,
+     "math_128": 8,
+     "math_129": 9,
+     "math_130": 6,
+     "math_131": 3,
+     "math_132": 3,
+     "math_133": 1,
+     "math_134": 4,
+     "math_135": 5,
+     "math_136": 2,
+     "retrieval_127": 6,
+     "retrieval_128": 12,
+     "retrieval_129": 9,
+     "retrieval_130": 9,
+     "retrieval_131": 17,
+     "retrieval_132": 1,
+     "retrieval_133": 12,
+     "retrieval_134": 2,
+     "retrieval_135": 1,
+     "retrieval_136": 6
+    }
+   },
+   "delta_EA": 0.4715,
+   "S1": 0.6429,
+   "S2": 0.5286,
+   "S3": 0.4143,
+   "S4": 0.3286,
+   "d2_survived": 0.5286,
+   "d3_survived": 0.4143,
+   "mean_expansions": 7.0,
+   "GainPerNode": 0.0786,
+   "per_prompt": {
+    "agent_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_129": {
+     "E_A": 7,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_130": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_131": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_132": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_129": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_130": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_132": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "coding_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_136": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_127": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_133": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_128": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_130": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_132": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_133": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_134": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_135": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_129": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_130": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_133": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_135": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "longform_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_128": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_130": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_131": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "math_132": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "math_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_134": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_135": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_136": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_128": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_131": {
+     "E_A": 17,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_133": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_134": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    }
+   }
+  },
+  "4": {
+   "canonical": {
+    "n": 70,
+    "mean": 3.9571,
+    "median": 3.0,
+    "trim20": 3.2143,
+    "loo_min": 3.7681,
+    "loo_max": 4.0,
+    "boot_ci95": [
+     3.2286,
+     4.7143
+    ],
+    "S1": 0.6429,
+    "S2": 0.5429,
+    "S3": 0.4857,
+    "S4": 0.3714,
+    "S8": 0.1143,
+    "S16": 0.0143,
+    "M_deep": 1.2857,
+    "accepted": 45,
+    "deepest": 16,
+    "per_domain_mean": {
+     "agent": 2.4,
+     "coding": 2.4,
+     "convo": 3.8,
+     "json": 4.8,
+     "longform": 2.2,
+     "math": 4.6,
+     "retrieval": 7.5
+    },
+    "per_prompt": {
+     "agent_127": 1,
+     "agent_128": 1,
+     "agent_129": 7,
+     "agent_130": 3,
+     "agent_131": 4,
+     "agent_132": 2,
+     "agent_133": 1,
+     "agent_134": 3,
+     "agent_135": 1,
+     "agent_136": 1,
+     "coding_127": 1,
+     "coding_128": 1,
+     "coding_129": 4,
+     "coding_130": 4,
+     "coding_131": 2,
+     "coding_132": 4,
+     "coding_133": 1,
+     "coding_134": 1,
+     "coding_135": 1,
+     "coding_136": 5,
+     "convo_127": 5,
+     "convo_128": 1,
+     "convo_129": 1,
+     "convo_130": 9,
+     "convo_131": 6,
+     "convo_132": 1,
+     "convo_133": 10,
+     "convo_134": 3,
+     "convo_135": 1,
+     "convo_136": 1,
+     "json_127": 6,
+     "json_128": 4,
+     "json_129": 1,
+     "json_130": 5,
+     "json_131": 6,
+     "json_132": 5,
+     "json_133": 5,
+     "json_134": 8,
+     "json_135": 2,
+     "json_136": 6,
+     "longform_127": 1,
+     "longform_128": 1,
+     "longform_129": 6,
+     "longform_130": 2,
+     "longform_131": 2,
+     "longform_132": 1,
+     "longform_133": 4,
+     "longform_134": 1,
+     "longform_135": 3,
+     "longform_136": 1,
+     "math_127": 1,
+     "math_128": 8,
+     "math_129": 9,
+     "math_130": 6,
+     "math_131": 6,
+     "math_132": 4,
+     "math_133": 1,
+     "math_134": 4,
+     "math_135": 5,
+     "math_136": 2,
+     "retrieval_127": 6,
+     "retrieval_128": 12,
+     "retrieval_129": 9,
+     "retrieval_130": 9,
+     "retrieval_131": 17,
+     "retrieval_132": 1,
+     "retrieval_133": 12,
+     "retrieval_134": 2,
+     "retrieval_135": 1,
+     "retrieval_136": 6
+    }
+   },
+   "delta_EA": 0.6857,
+   "S1": 0.6429,
+   "S2": 0.5429,
+   "S3": 0.4857,
+   "S4": 0.3714,
+   "d2_survived": 0.5429,
+   "d3_survived": 0.4857,
+   "mean_expansions": 21.0,
+   "GainPerNode": 0.0343,
+   "per_prompt": {
+    "agent_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_129": {
+     "E_A": 7,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_130": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_131": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_132": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_129": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_130": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_132": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_136": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_127": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_133": {
+     "E_A": 10,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_128": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_130": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_132": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_133": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_134": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_135": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_129": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_130": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_133": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_135": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "longform_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_128": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_130": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_132": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_134": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_135": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_136": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_128": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_131": {
+     "E_A": 17,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_133": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_134": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    }
+   }
+  },
+  "8": {
+   "canonical": {
+    "n": 70,
+    "mean": 4,
+    "median": 4.0,
+    "trim20": 3.2857,
+    "loo_min": 3.8116,
+    "loo_max": 4.0435,
+    "boot_ci95": [
+     3.2857,
+     4.7571
+    ],
+    "S1": 0.6429,
+    "S2": 0.5571,
+    "S3": 0.5143,
+    "S4": 0.3714,
+    "S8": 0.1143,
+    "S16": 0.0143,
+    "M_deep": 1.2857,
+    "accepted": 45,
+    "deepest": 16,
+    "per_domain_mean": {
+     "agent": 2.7,
+     "coding": 2.4,
+     "convo": 3.8,
+     "json": 4.8,
+     "longform": 2.2,
+     "math": 4.6,
+     "retrieval": 7.5
+    },
+    "per_prompt": {
+     "agent_127": 1,
+     "agent_128": 1,
+     "agent_129": 7,
+     "agent_130": 4,
+     "agent_131": 4,
+     "agent_132": 4,
+     "agent_133": 1,
+     "agent_134": 3,
+     "agent_135": 1,
+     "agent_136": 1,
+     "coding_127": 1,
+     "coding_128": 1,
+     "coding_129": 4,
+     "coding_130": 4,
+     "coding_131": 2,
+     "coding_132": 4,
+     "coding_133": 1,
+     "coding_134": 1,
+     "coding_135": 1,
+     "coding_136": 5,
+     "convo_127": 5,
+     "convo_128": 1,
+     "convo_129": 1,
+     "convo_130": 9,
+     "convo_131": 6,
+     "convo_132": 1,
+     "convo_133": 10,
+     "convo_134": 3,
+     "convo_135": 1,
+     "convo_136": 1,
+     "json_127": 6,
+     "json_128": 4,
+     "json_129": 1,
+     "json_130": 5,
+     "json_131": 6,
+     "json_132": 5,
+     "json_133": 5,
+     "json_134": 8,
+     "json_135": 2,
+     "json_136": 6,
+     "longform_127": 1,
+     "longform_128": 1,
+     "longform_129": 6,
+     "longform_130": 2,
+     "longform_131": 2,
+     "longform_132": 1,
+     "longform_133": 4,
+     "longform_134": 1,
+     "longform_135": 3,
+     "longform_136": 1,
+     "math_127": 1,
+     "math_128": 8,
+     "math_129": 9,
+     "math_130": 6,
+     "math_131": 6,
+     "math_132": 4,
+     "math_133": 1,
+     "math_134": 4,
+     "math_135": 5,
+     "math_136": 2,
+     "retrieval_127": 6,
+     "retrieval_128": 12,
+     "retrieval_129": 9,
+     "retrieval_130": 9,
+     "retrieval_131": 17,
+     "retrieval_132": 1,
+     "retrieval_133": 12,
+     "retrieval_134": 2,
+     "retrieval_135": 1,
+     "retrieval_136": 6
+    }
+   },
+   "delta_EA": 0.7286,
+   "S1": 0.6429,
+   "S2": 0.5571,
+   "S3": 0.5143,
+   "S4": 0.3714,
+   "d2_survived": 0.5571,
+   "d3_survived": 0.5143,
+   "mean_expansions": 73.0,
+   "GainPerNode": 0.0101,
+   "per_prompt": {
+    "agent_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_129": {
+     "E_A": 7,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_130": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_131": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_132": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "agent_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "agent_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "agent_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_129": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_130": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_132": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "coding_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "coding_136": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_127": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_133": {
+     "E_A": 10,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "convo_134": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "convo_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "convo_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_128": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_129": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_130": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_132": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_133": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_134": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "json_135": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "json_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_128": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_129": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_130": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_131": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_133": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "longform_134": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "longform_135": {
+     "E_A": 3,
+     "d2": true,
+     "d3": false,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": false
+    },
+    "longform_136": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_127": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_128": {
+     "E_A": 8,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_130": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_131": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_132": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_133": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "math_134": {
+     "E_A": 4,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_135": {
+     "E_A": 5,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "math_136": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_127": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_128": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_129": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_130": {
+     "E_A": 9,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_131": {
+     "E_A": 17,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_132": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_133": {
+     "E_A": 12,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    },
+    "retrieval_134": {
+     "E_A": 2,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_135": {
+     "E_A": 1,
+     "d2": false,
+     "d3": false,
+     "gold_in_beam_d2": false,
+     "gold_in_beam_d3": false
+    },
+    "retrieval_136": {
+     "E_A": 6,
+     "d2": true,
+     "d3": true,
+     "gold_in_beam_d2": true,
+     "gold_in_beam_d3": true
+    }
+   }
+  }
+ },
+ "verdict": "PASS",
+ "gate": {
+  "PASS": "dEA_B8>=0.50",
+  "STRONG": "dEA_B8>=1.00",
+  "observed_dEA_B8": 0.7286
+ }
+}

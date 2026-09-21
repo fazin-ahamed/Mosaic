@@ -1,0 +1,46 @@
+{
+ "classification": "D2E2B_PER_CASE_DELTA_ABLATION",
+ "method": "GPU reference tail with exactly ONE expert call substituted to its CPU VNNI output per run; final h42 compared bitwise",
+ "n_cases": 4,
+ "per_case_washout": "4/4",
+ "results": [
+  {
+   "case": "L41.w3.e125.M3.7a9dcf62c758355e@convo_13/prefill",
+   "delta_from_e1": 9.5367431640625e-07,
+   "substitutions_triggered": 1,
+   "h42_sub_vs_ref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   }
+  },
+  {
+   "case": "L41.w1.e254.M1.dad7d70f583c1a9f@convo_13/decode0",
+   "delta_from_e1": 2.384185791015625e-07,
+   "substitutions_triggered": 1,
+   "h42_sub_vs_ref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   }
+  },
+  {
+   "case": "L42.w3.e205.M1.a8de8d286c0d48b8@math_13/decode6",
+   "delta_from_e1": 0.0001220703125,
+   "substitutions_triggered": 1,
+   "h42_sub_vs_ref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   }
+  },
+  {
+   "case": "L42.w2.e180.M4.ab6470f92023ea63@coding_13/prefill",
+   "delta_from_e1": 1.52587890625e-05,
+   "substitutions_triggered": 1,
+   "h42_sub_vs_ref": {
+    "bitwise": true,
+    "max_abs": 0.0
+   }
+  }
+ ],
+ "verdict": "ALL FOUR individual deltas wash out (per-case bitwise)",
+ "production_timing": null
+}

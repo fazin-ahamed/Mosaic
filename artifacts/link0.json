@@ -1,0 +1,38 @@
+{
+ "classification": "LINK0_BANDWIDTH",
+ "pcie": "Gen3 x16 (nvidia-smi)",
+ "reps": 30,
+ "note": "pinned H2D copy_, cuda-event p50",
+ "sizes": {
+  "256": {
+   "p50_ms": 19.7068,
+   "GB_s": 12.99
+  },
+  "64": {
+   "p50_ms": 4.944,
+   "GB_s": 12.95
+  },
+  "13.37": {
+   "p50_ms": 1.0412,
+   "GB_s": 12.84
+  },
+  "8": {
+   "p50_ms": 0.6206,
+   "GB_s": 12.89
+  },
+  "4": {
+   "p50_ms": 0.3112,
+   "GB_s": 12.85
+  },
+  "2.2": {
+   "p50_ms": 0.1718,
+   "GB_s": 12.81
+  },
+  "1.0": {
+   "p50_ms": 0.08,
+   "GB_s": 12.51
+  }
+ },
+ "asymptotic_GB_s": 12.99,
+ "expert_13MB_GB_s": 12.84
+}

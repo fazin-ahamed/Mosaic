@@ -1,0 +1,19 @@
+{
+ "n": 2688,
+ "mean_ce": 19.369270688011532,
+ "mean_rank": 19.070891425723122,
+ "mean_m_stored": 2.178473574774606,
+ "mean_kl": 4.7203789211454845,
+ "active_hinge_fraction": 1.0,
+ "grad_norm_ce": 89.03601687822953,
+ "grad_norm_rank": 108.14799166202171,
+ "grad_norm_m_stored": 15.541936966513022,
+ "grad_norm_kl": 25.024739630837583,
+ "rank_margin": 1.0,
+ "rank_smooth": false,
+ "lam_r_arms": {
+  "LOW": 0.2058,
+  "MED": 0.4116,
+  "HIGH": 0.8233
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "classification": "EK0_ROUTE_CENSUS",
+ "window": 6,
+ "n_layers": 43,
+ "bytes_per_routed": 13369344,
+ "P_M": {
+  "1": 0.6473956015145326,
+  "2": 0.17756735828694417,
+  "3": 0.07523885593039491,
+  "4": 0.040399729286450296,
+  "5": 0.028449311326679307,
+  "6": 0.03094914365499875
+ },
+ "mean_M": 1.718,
+ "mean_experts_B1": 865.0,
+ "mean_experts_B4": 865.0,
+ "bytes_B1_GB": 11.5645,
+ "bytes_B4_GB": 11.5645,
+ "T_move_min_B1_ms": 896.47,
+ "T_move_min_B4_ms": 896.47,
+ "budget_ms": 125.2,
+ "full_bank_GB": 147.17,
+ "working_set_GB": 103.907
+}

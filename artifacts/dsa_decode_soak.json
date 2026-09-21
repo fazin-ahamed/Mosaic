@@ -1,0 +1,598 @@
+{
+ "level": "P1-integration-gate",
+ "gpu": "NVIDIA GeForce RTX 3060",
+ "thermal": "UNKNOWN",
+ "layers": {
+  "0": {
+   "ratio": 0,
+   "bitwise_max": 0.0035400390625,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "1": {
+   "ratio": 0,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "2": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.002685546875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "3": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00390625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "4": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.00250244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "5": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "6": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "7": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00390625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "8": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "9": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "10": {
+   "ratio": 4,
+   "bitwise_max": 0.00244140625,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "11": {
+   "ratio": 128,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.0035400390625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "12": {
+   "ratio": 4,
+   "bitwise_max": 0.00244140625,
+   "parity_max": 0.0025634765625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "13": {
+   "ratio": 128,
+   "bitwise_max": 0.003662109375,
+   "parity_max": 0.003173828125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "14": {
+   "ratio": 4,
+   "bitwise_max": 0.0029296875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "15": {
+   "ratio": 128,
+   "bitwise_max": 0.0035400390625,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "16": {
+   "ratio": 4,
+   "bitwise_max": 0.003173828125,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "17": {
+   "ratio": 128,
+   "bitwise_max": 0.003662109375,
+   "parity_max": 0.003173828125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "18": {
+   "ratio": 4,
+   "bitwise_max": 0.0029296875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "19": {
+   "ratio": 128,
+   "bitwise_max": 0.00372314453125,
+   "parity_max": 0.003173828125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "20": {
+   "ratio": 4,
+   "bitwise_max": 0.0028076171875,
+   "parity_max": 0.0023193359375,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "21": {
+   "ratio": 128,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.003173828125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "22": {
+   "ratio": 4,
+   "bitwise_max": 0.00244140625,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "23": {
+   "ratio": 128,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.00335693359375,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "24": {
+   "ratio": 4,
+   "bitwise_max": 0.002532958984375,
+   "parity_max": 0.002197265625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "25": {
+   "ratio": 128,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.003662109375,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "26": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "27": {
+   "ratio": 128,
+   "bitwise_max": 0.00360107421875,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "28": {
+   "ratio": 4,
+   "bitwise_max": 0.002685546875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "29": {
+   "ratio": 128,
+   "bitwise_max": 0.003662109375,
+   "parity_max": 0.0035400390625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "30": {
+   "ratio": 4,
+   "bitwise_max": 0.0030517578125,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "31": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "32": {
+   "ratio": 4,
+   "bitwise_max": 0.00244140625,
+   "parity_max": 0.002685546875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "33": {
+   "ratio": 128,
+   "bitwise_max": 0.00347900390625,
+   "parity_max": 0.003173828125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "34": {
+   "ratio": 4,
+   "bitwise_max": 0.0029296875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "35": {
+   "ratio": 128,
+   "bitwise_max": 0.00341796875,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "36": {
+   "ratio": 4,
+   "bitwise_max": 0.0025634765625,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "37": {
+   "ratio": 128,
+   "bitwise_max": 0.003662109375,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "38": {
+   "ratio": 4,
+   "bitwise_max": 0.0025634765625,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "39": {
+   "ratio": 128,
+   "bitwise_max": 0.00390625,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "40": {
+   "ratio": 4,
+   "bitwise_max": 0.0028076171875,
+   "parity_max": 0.00244140625,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "41": {
+   "ratio": 128,
+   "bitwise_max": 0.003662109375,
+   "parity_max": 0.00341796875,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  },
+  "42": {
+   "ratio": 4,
+   "bitwise_max": 0.0029296875,
+   "parity_max": 0.00225830078125,
+   "checks": 6,
+   "events": {
+    "prefill_A": true,
+    "decode_A_wrap": true,
+    "chunk_verify": true,
+    "device_move": true,
+    "reset_reprefill": true
+   }
+  }
+ },
+ "wall_s_info_only": 60.1,
+ "fp32_control": {
+  "0": {
+   "bitwise_max": 1.087784767150879e-06,
+   "parity_max": 8.642673492431641e-07
+  },
+  "2": {
+   "bitwise_max": 5.513429641723633e-07,
+   "parity_max": 6.556510925292969e-07
+  },
+  "3": {
+   "bitwise_max": 7.003545761108398e-07,
+   "parity_max": 8.940696716308594e-07
+  },
+  "20": {
+   "bitwise_max": 6.109476089477539e-07,
+   "parity_max": 6.854534149169922e-07
+  },
+  "42": {
+   "bitwise_max": 5.476176738739014e-07,
+   "parity_max": 8.046627044677734e-07
+  }
+ },
+ "summary": {
+  "layers_passed": 43,
+  "layers_failed": 0,
+  "max_bitwise_drift_bf16": 0.00390625,
+  "max_parity_drift_bf16": 0.00390625,
+  "max_bitwise_drift_fp32_control": 1.087784767150879e-06,
+  "max_parity_drift_fp32_control": 8.940696716308594e-07,
+  "gate": "bf16 NUMERIC_PARITY <= 0.06 (~4 bf16 ulps); fp32 control <= 1e-4 (isolates GEMM-batching + bf16 cache rounding); semantic-bug class (ring overwrite) shows at 1.0+"
+ }
+}

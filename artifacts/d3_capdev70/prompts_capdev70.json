@@ -1,0 +1,432 @@
+{
+ "classification": "STAGE1_CAP_DEV70",
+ "purpose": "CAP-DEV70 fresh capability-promotion holdout; val-only; disjoint from all train + SCALE-DEV3",
+ "splits": {
+  "train": [],
+  "val": [
+   "math_300",
+   "math_301",
+   "math_302",
+   "math_303",
+   "math_304",
+   "math_305",
+   "math_306",
+   "math_307",
+   "math_308",
+   "math_309",
+   "json_300",
+   "json_301",
+   "json_302",
+   "json_303",
+   "json_304",
+   "json_305",
+   "json_306",
+   "json_307",
+   "json_308",
+   "json_309",
+   "retrieval_300",
+   "retrieval_301",
+   "retrieval_302",
+   "retrieval_303",
+   "retrieval_304",
+   "retrieval_305",
+   "retrieval_306",
+   "retrieval_307",
+   "retrieval_308",
+   "retrieval_309",
+   "agent_300",
+   "agent_301",
+   "agent_302",
+   "agent_303",
+   "agent_304",
+   "agent_305",
+   "agent_306",
+   "agent_307",
+   "agent_308",
+   "agent_309",
+   "coding_300",
+   "coding_301",
+   "coding_302",
+   "coding_303",
+   "coding_304",
+   "coding_305",
+   "coding_306",
+   "coding_307",
+   "coding_308",
+   "coding_309",
+   "longform_300",
+   "longform_301",
+   "longform_302",
+   "longform_303",
+   "longform_304",
+   "longform_305",
+   "longform_306",
+   "longform_307",
+   "longform_308",
+   "longform_309",
+   "convo_300",
+   "convo_301",
+   "convo_302",
+   "convo_303",
+   "convo_304",
+   "convo_305",
+   "convo_306",
+   "convo_307",
+   "convo_308",
+   "convo_309"
+  ]
+ },
+ "prompts": [
+  {
+   "category": "math_300",
+   "prompt": "A regular hexagon has side length 4. What is its area in terms of the square root of three?",
+   "domain": "math"
+  },
+  {
+   "category": "math_301",
+   "prompt": "How many integers between 1 and 200 are divisible by neither 4 nor 6?",
+   "domain": "math"
+  },
+  {
+   "category": "math_302",
+   "prompt": "A geometric series has first term 3 and common ratio one half. What is its infinite sum?",
+   "domain": "math"
+  },
+  {
+   "category": "math_303",
+   "prompt": "Two trains leave the same station going opposite directions at 60 and 90 km/h. How far apart are they after 40 minutes?",
+   "domain": "math"
+  },
+  {
+   "category": "math_304",
+   "prompt": "What is the probability of rolling a sum of 8 with two fair six-sided dice?",
+   "domain": "math"
+  },
+  {
+   "category": "math_305",
+   "prompt": "Factor the expression x squared minus 5x minus 14 completely.",
+   "domain": "math"
+  },
+  {
+   "category": "math_306",
+   "prompt": "A cone has height 9 and base radius 4. What is its volume in terms of pi?",
+   "domain": "math"
+  },
+  {
+   "category": "math_307",
+   "prompt": "The angles of a triangle are in the ratio 2 to 3 to 4. What is the largest angle in degrees?",
+   "domain": "math"
+  },
+  {
+   "category": "math_308",
+   "prompt": "How many trailing zeros does 25 factorial have?",
+   "domain": "math"
+  },
+  {
+   "category": "math_309",
+   "prompt": "A rectangle's length is twice its width and its perimeter is 54. What is its area?",
+   "domain": "math"
+  },
+  {
+   "category": "json_300",
+   "prompt": "Output JSON for a wind turbine with turbine id, hub height meters, rated power kilowatts, and commissioning date.",
+   "domain": "json"
+  },
+  {
+   "category": "json_301",
+   "prompt": "Create JSON for a comic issue with series title, issue number, cover artist, and cover price cents.",
+   "domain": "json"
+  },
+  {
+   "category": "json_302",
+   "prompt": "Return JSON for a ferry crossing with vessel name, departure port, arrival port, and duration minutes.",
+   "domain": "json"
+  },
+  {
+   "category": "json_303",
+   "prompt": "Generate JSON for a soil sample with plot id, pH value, nitrogen ppm, and sampling depth centimeters.",
+   "domain": "json"
+  },
+  {
+   "category": "json_304",
+   "prompt": "Write JSON for a marathon runner with bib number, name, chip time seconds, and age group.",
+   "domain": "json"
+  },
+  {
+   "category": "json_305",
+   "prompt": "Produce JSON for a warranty claim with claim id, product serial, fault code, and received-at date.",
+   "domain": "json"
+  },
+  {
+   "category": "json_306",
+   "prompt": "Output JSON for a vineyard block with block name, grape variety, vine count, and planting year.",
+   "domain": "json"
+  },
+  {
+   "category": "json_307",
+   "prompt": "Create JSON for a podcast episode with show name, episode number, duration seconds, and guest name.",
+   "domain": "json"
+  },
+  {
+   "category": "json_308",
+   "prompt": "Return JSON for a blood donation with donor id, blood type, volume milliliters, and collected-at timestamp.",
+   "domain": "json"
+  },
+  {
+   "category": "json_309",
+   "prompt": "Generate JSON for a satellite pass with satellite name, max elevation degrees, start azimuth, and pass duration seconds.",
+   "domain": "json"
+  },
+  {
+   "category": "retrieval_300",
+   "prompt": "According to the quarry blast report, what charge weight was used in the eastern face?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_301",
+   "prompt": "Which anchorage does the port pilot's boarding note assign to the inbound tanker?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_302",
+   "prompt": "What curing time does the concrete pour record list for the bridge deck section?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_303",
+   "prompt": "Who authorized the overtime shift in the bakery production ledger?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_304",
+   "prompt": "What water pressure does the fire hydrant inspection card record for the corner unit?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_305",
+   "prompt": "When does the aquarium feeding schedule say the seals are fed in the afternoon?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_306",
+   "prompt": "How many pallets does the cold-store intake manifest log for the frozen berries?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_307",
+   "prompt": "Which technician signed off the elevator annual load test in the maintenance book?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_308",
+   "prompt": "Where does the campsite ranger's notice say to deposit food overnight?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "retrieval_309",
+   "prompt": "Which reagent did the brewery lab sheet flag as below specification?",
+   "domain": "retrieval"
+  },
+  {
+   "category": "agent_300",
+   "prompt": "Rename every file ending in .jpeg under photos to end in .jpg instead.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_301",
+   "prompt": "Print the total size in bytes of all files modified in the last day under logs.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_302",
+   "prompt": "Create a symbolic link named latest pointing at the newest file in releases.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_303",
+   "prompt": "Show the first line of every .csv file in the reports folder with its filename.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_304",
+   "prompt": "Set read-only permission on all files inside the archive directory.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_305",
+   "prompt": "Find and print duplicate filenames that appear in both drafts and final.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_306",
+   "prompt": "Write the current UTC timestamp into a file named heartbeat.txt every append.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_307",
+   "prompt": "Truncate access.log to its last 500 lines in place.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_308",
+   "prompt": "Print the line count of the largest .txt file under documents.",
+   "domain": "agent"
+  },
+  {
+   "category": "agent_309",
+   "prompt": "Move all files older than a year from downloads into a folder named stale.",
+   "domain": "agent"
+  },
+  {
+   "category": "coding_300",
+   "prompt": "Write a function that returns the k most frequent elements of a list in descending frequency order.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_301",
+   "prompt": "Write a function that checks whether two strings are anagrams ignoring spaces and case.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_302",
+   "prompt": "Write a function that merges overlapping intervals given as a list of start-end pairs.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_303",
+   "prompt": "Write a function that computes the edit distance between two strings.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_304",
+   "prompt": "Write a function that rotates a square matrix 90 degrees clockwise in place.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_305",
+   "prompt": "Write a function that returns the length of the longest increasing subsequence of a list.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_306",
+   "prompt": "Write a function that validates whether a string of brackets is balanced across three bracket types.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_307",
+   "prompt": "Write a function that flattens an arbitrarily nested list of integers into a single list.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_308",
+   "prompt": "Write a function that finds the median of two sorted lists in logarithmic time.",
+   "domain": "coding"
+  },
+  {
+   "category": "coding_309",
+   "prompt": "Write a function that generates all subsets of a list of distinct integers.",
+   "domain": "coding"
+  },
+  {
+   "category": "longform_300",
+   "prompt": "Explain how a heat pump moves warmth from cold outdoor air into a house.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_301",
+   "prompt": "Describe how a lock on a canal raises a boat between two water levels.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_302",
+   "prompt": "Explain how noise-cancelling headphones suppress ambient sound.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_303",
+   "prompt": "Describe how a sourdough starter leavens bread without commercial yeast.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_304",
+   "prompt": "Explain how a magnetic resonance imaging scanner produces an image of soft tissue.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_305",
+   "prompt": "Describe how a windmill was used to drain water from low-lying polders.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_306",
+   "prompt": "Explain how a refrigerator's compressor cycle keeps food cold.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_307",
+   "prompt": "Describe how a suspension bridge carries its load down to the towers and anchors.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_308",
+   "prompt": "Explain how a desalination plant removes salt from seawater by reverse osmosis.",
+   "domain": "longform"
+  },
+  {
+   "category": "longform_309",
+   "prompt": "Describe how a glassblower shapes a molten gather into a finished vessel.",
+   "domain": "longform"
+  },
+  {
+   "category": "convo_300",
+   "prompt": "How do I ask a neighbor to trim a hedge that is blocking my driveway sightline?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_301",
+   "prompt": "What should I consider before agreeing to pet-sit a friend's parrot for two weeks?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_302",
+   "prompt": "How can I politely decline a coworker's offer to carpool without causing tension?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_303",
+   "prompt": "What is a fair way to split a shared grocery bill when diets differ a lot?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_304",
+   "prompt": "How do I bring up a recurring noise problem with an upstairs tenant calmly?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_305",
+   "prompt": "What should I do if a delivery was left at the wrong apartment door?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_306",
+   "prompt": "How can I stay focused during a long online workshop without drifting off?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_307",
+   "prompt": "What is a tactful way to remind a friend they still owe me for concert tickets?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_308",
+   "prompt": "How do I choose a reliable used bicycle without getting overcharged?",
+   "domain": "convo"
+  },
+  {
+   "category": "convo_309",
+   "prompt": "What should I say to gracefully leave a party that is running much later than expected?",
+   "domain": "convo"
+  }
+ ],
+ "author_note": "IDs 300-309; 10 structurally distinct tasks/domain; frozen before candidate eval"
+}

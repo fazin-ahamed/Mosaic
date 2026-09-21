@@ -1,0 +1,30 @@
+{
+ "rank": 512,
+ "E_shape": [
+  129280,
+  512
+ ],
+ "V_shape": [
+  4096,
+  512
+ ],
+ "rel_frobenius_error": 0.824374,
+ "energy_fraction_top256": 0.320407,
+ "s1": 201.5801,
+ "s512": 22.8533,
+ "s_spectrum_decay": [
+  201.58,
+  33.283,
+  28.984,
+  26.826,
+  25.279,
+  24.004,
+  22.865
+ ],
+ "functional_ceiling_on_hist1_z": {
+  "n_rows": 2688,
+  "top1_agreement": 0.1101,
+  "mean_top16_overlap": 0.2949,
+  "target_rank_worse_fraction": 0.8899
+ }
+}

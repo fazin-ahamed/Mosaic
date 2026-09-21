@@ -1,0 +1,33 @@
+{
+ "classification": "T1_TEMPORAL_MULTISTATE",
+ "design": "4-state context + deltas + T0 pieces (bypass, causal, low-rank head, certified KV)",
+ "params_millions": 51.71,
+ "val_h2_best": -1,
+ "S": {
+  "1": 0.491,
+  "2": 0.0631,
+  "3": 0.0135,
+  "4": 0.0,
+  "8": 0.0,
+  "16": 0.0,
+  "32": 0.0
+ },
+ "prefix_distribution": {
+  "0": 113,
+  "1": 95,
+  "2": 11,
+  "3": 3
+ },
+ "E_A_direct": 1.567568,
+ "E_A_identity": 1.567568,
+ "invariant_holds": true,
+ "P_h2_given_h1": 0.1284,
+ "conditional_chain": {
+  "P(h2|prefix1)": 0.1284,
+  "P(h3|prefix2)": 0.2143,
+  "P(h4|prefix3)": 0.0,
+  "P(h8|prefix7)": null
+ },
+ "kv_latency_ms_K32": 24.0,
+ "train_seconds": 6
+}

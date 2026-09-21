@@ -1,0 +1,22 @@
+{
+  "status": "blocked_no_modal",
+  "reason": "Modal token is the leaked Phase-1 credential; remote H100 sweep skipped",
+  "sweep": [
+    6,
+    5,
+    4,
+    3,
+    2
+  ],
+  "prompts": [
+    "def fibonacci(n):",
+    "The history of the silk road begins",
+    "Prove that sqrt(2) is irrational:",
+    "Call the weather API for Tokyo tomorrow with units=celsius.",
+    "In a long-context retrieval setting, the key idea is"
+  ],
+  "turbo_default": 4,
+  "turbo_default_quality": "unvalidated",
+  "fidelity_k": 6,
+  "pass_criterion": "mean_token_match >= 0.90 vs k=6 golden"
+}

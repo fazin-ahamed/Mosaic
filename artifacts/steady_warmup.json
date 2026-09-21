@@ -1,0 +1,40 @@
+{
+  "steady_warmup": {
+    "steady": true,
+    "seconds": 129.51045632362366,
+    "temps_c": [
+      66,
+      69,
+      69,
+      70,
+      70,
+      70,
+      71,
+      72,
+      72,
+      73,
+      73,
+      73
+    ],
+    "start": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 52,
+      "sm_clock_mhz": 345,
+      "mem_clock_mhz": 405,
+      "power_w": 0.046,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 33,
+      "ts": 1787917598.5349197
+    },
+    "end": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 73,
+      "sm_clock_mhz": 1912,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.038,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 100,
+      "ts": 1787917728.1951013
+    }
+  }
+}

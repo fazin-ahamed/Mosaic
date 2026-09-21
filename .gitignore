@@ -1,0 +1,38 @@
+# Virtualenvs / caches
+.venv-cu/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Model weights, checkpoints, tensors, datasets (too large / binary for git)
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.gguf
+*.f32
+*.npy
+*.npz
+
+# Local secrets (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Archives / bundles (large binaries)
+*.zip
+*.tar
+*.tar.*
+*.tgz
+*.7z
+*.rar
+
+# OS
+.DS_Store

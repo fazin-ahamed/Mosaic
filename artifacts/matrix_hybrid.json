@@ -1,0 +1,84 @@
+{
+  "banks_gb": 4.52841472,
+  "vram_total_with_core": 11.52841472,
+  "mixed_A_gu_p4_down_h8": {
+    "moe_block_s": 0.8478735046386718,
+    "per_layer_ms": {
+      "gu": 12.444671630859375,
+      "down": 5.047296047210693,
+      "total": 19.18054413050413
+    },
+    "R_oracle_prodcore": 27.69197150434998
+  },
+  "reference": {
+    "packed4_pure": 0.9545,
+    "hot8_pure": 0.6491,
+    "moe_budget_for_exact30": 0.7693000000000001
+  },
+  "thermal": {
+    "start": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 68,
+      "sm_clock_mhz": 1905,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.041,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 100,
+      "ts": 1787944610.828557
+    },
+    "end": {
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "temp_c": 71,
+      "sm_clock_mhz": 1905,
+      "mem_clock_mhz": 7301,
+      "power_w": 0.04,
+      "power_limit_w": 170.0,
+      "gpu_util_pct": 97,
+      "ts": 1787944620.1246216
+    }
+  },
+  "parity": "4/4 windows bitwise both directions",
+  "interpretation": {
+    "mixed_A_measured": {
+      "config": "gu=packed4 bank, down=hot8 bank (zero extra launches; per-stage banks)",
+      "moe_block_s": 0.8479,
+      "banks_gb": 4.53,
+      "vram_total": 11.53,
+      "parity": "4/4 windows BITWISE vs exact_moe (shared source)",
+      "R_oracle_prodcore": 27.7,
+      "gate_band_roadmap_19": "780-850ms = NEEDS WIDTH/MORE OPTIMIZATION (N56 miss)",
+      "vs_packed4": "11.2% faster (0.9545 -> 0.8479)"
+    },
+    "c0_stage_splits_ms_per_layer": {
+      "hot8": {
+        "gu": 8.4,
+        "down": 5.22,
+        "total": 15.17
+      },
+      "packed4": {
+        "gu": 12.92,
+        "down": 7.09,
+        "total": 21.42
+      },
+      "finding": "At crossover=0 hot8 wins BOTH stages (gu 1.54x, down 1.36x). The earlier \"packed4 wins gu\" was a c3-regime artifact. Direction evidence inverted."
+    },
+    "byte_accounting": {
+      "per_expert_mb": {
+        "gu_hot8": 16.8,
+        "gu_p4": 8.4,
+        "down_hot8": 8.4,
+        "down_p4": 4.2
+      },
+      "mixed_A": "8.4+8.4 = 16.8 MB/e -> 4.3 GB banks (measured 4.53) -> 11.53 total FITS",
+      "mixed_B": "16.8+4.2 = 21 MB/e -> 5.4 GB -> 12.4 total DOES NOT FIT",
+      "per_GB_efficiency": "hot8-gu saves 4.52 ms/2.15GB = 2.10 ms/GB; hot8-down 1.87/1.07 = 1.75 ms/GB"
+    },
+    "projection_matrix_selective_mask": {
+      "config": "per-expert matrix_hot_mask: top-F experts hot8-gu + top-G hot8-down, rest p4 (requires the \u00a716 kernel masks; NOT yet implemented)",
+      "budget": "8.4F + 4.2G <= 5.4 MB/e (same 4.6GB bank budget)",
+      "F_G_equal_043": "time ~ 17.3 ms/layer ~ 0.744s + overhead -> UNDER the 0.769 N56 budget",
+      "caveat": "first-order per-expert linear mixing estimate; per-expert divergence in the grouped kernel unmeasured; needs the hot_mask kernel surgery + mixed-bank parity tests per \u00a718"
+    },
+    "next_kernel_task": "Implement resident_hot8_mask + matrix_hot_mask in the grouped kernels (single launch, per-expert branch): F=G~0.43 frequency-ranked projection predicts ~0.74s = inside the N56 Exact-30 budget. This is the remaining path from 0.8479 to budget."
+  }
+}

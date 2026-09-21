@@ -1,0 +1,9 @@
+{
+  "e2m1_lut_reg_ok": true,
+  "e2m1_bitwise_ok": true,
+  "e4m3_ok": true,
+  "n_e2m1": 4096,
+  "n_e4m3": 256,
+  "prepack_ok": true,
+  "e2m1_ok": true
+}

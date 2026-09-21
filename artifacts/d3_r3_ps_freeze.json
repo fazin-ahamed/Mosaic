@@ -1,0 +1,32 @@
+{
+ "classification": "R3_PS_BASELINE_FREEZE",
+ "checkpoint": "artifacts/d3_bridge_r3b/bridge_ps/bridge.pt",
+ "checkpoint_sha256": "26a239f2e06084a3ea1eaaf4435f3997e374c14a488cf6f211a65cc17cc30492",
+ "config": {
+  "hidden": 1024,
+  "depth": 3,
+  "steps": 800,
+  "gold_frac": 0.25,
+  "pos_weight": "strong",
+  "mu": 1.0,
+  "lam_m": 1.0,
+  "lam_kl": 0.5,
+  "a2": "frozen artifacts/d3_v1_A2/student.pt",
+  "objective": "full-vocab CE + margin(top-8) + KL(top-16)"
+ },
+ "stats": {
+  "mean": 2.6667,
+  "median": 1,
+  "trim20": 1.5385,
+  "loo_min": 2.0,
+  "S1": 0.381,
+  "S2": 0.3333,
+  "S4": 0.1429,
+  "M_deep": 0.7619,
+  "deepest": 15,
+  "accepted": 8,
+  "n_prompts": 21
+ },
+ "stats_source": "artifacts/d3_bridge_r3b/bridge_ps_eval.json",
+ "eval_sha256": "abaacf0952d901d842a90a4353ee297827567cb76d4af46d8e78c9189de4d543"
+}

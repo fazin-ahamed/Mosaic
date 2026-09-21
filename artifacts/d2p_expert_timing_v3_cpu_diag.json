@@ -1,0 +1,121 @@
+{
+ "classification": "D2P_SOURCE_ADAPTER_EXPERT_TIMING",
+ "method": "real hooked routed activations; per (layer,matrix) strata; full adapter+VNNI call; p50 ms of reps",
+ "regimes": {
+  "L41.w1": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 0.772,
+   "dram_cold_ms": 1.901,
+   "first_use_ms": 90.306,
+   "contended_warm_ms": 0.865,
+   "contended_cold_ms": 4.445
+  },
+  "L41.w3": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 0.873,
+   "dram_cold_ms": 0.85,
+   "first_use_ms": 71.789,
+   "contended_warm_ms": 3.819,
+   "contended_cold_ms": 0.799
+  },
+  "L41.w2": {
+   "M_histogram": {
+    "1": 89,
+    "3": 8,
+    "2": 9,
+    "14": 1,
+    "4": 2,
+    "6": 2,
+    "5": 4
+   },
+   "M": 1,
+   "n_experts_in_stratum": 115,
+   "warm_ms": 5.303,
+   "dram_cold_ms": 0.743,
+   "first_use_ms": 82.661,
+   "contended_warm_ms": 0.819,
+   "contended_cold_ms": 1.929
+  },
+  "L42.w1": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.688,
+   "dram_cold_ms": 0.916,
+   "first_use_ms": 75.398,
+   "contended_warm_ms": 0.571,
+   "contended_cold_ms": 2.357
+  },
+  "L42.w3": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.681,
+   "dram_cold_ms": 1.87,
+   "first_use_ms": 67.417,
+   "contended_warm_ms": 0.578,
+   "contended_cold_ms": 1.009
+  },
+  "L42.w2": {
+   "M_histogram": {
+    "1": 79,
+    "2": 19,
+    "3": 8,
+    "5": 4,
+    "8": 1,
+    "7": 1,
+    "4": 1
+   },
+   "M": 1,
+   "n_experts_in_stratum": 113,
+   "warm_ms": 0.456,
+   "dram_cold_ms": 0.949,
+   "first_use_ms": 74.024,
+   "contended_warm_ms": 0.481,
+   "contended_cold_ms": 0.711
+  }
+ },
+ "n_prepared": 684,
+ "per_expert_prepare_seconds_mean": 0.0736,
+ "production_tail_wall": null,
+ "transfers_ms": {
+  "gpu_to_cpu_M1": 0.017,
+  "cpu_to_gpu_M1": 0.013
+ }
+}
