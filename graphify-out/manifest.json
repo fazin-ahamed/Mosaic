@@ -4564,5 +4564,23 @@
     "seen": 1790004382.6017513,
     "ast_hash": "fe42457e5c2320ea32b3711df52282cf",
     "semantic_hash": ""
+  },
+  "artifacts/proofcache01.json": {
+    "mtime": 1790006026.742784,
+    "seen": 1790006229.397238,
+    "ast_hash": "0162c54fde5b48678a438139dd06eb88",
+    "semantic_hash": ""
+  },
+  "mosaicvm/bench/proofcache01.py": {
+    "mtime": 1790005822.4374592,
+    "seen": 1790006229.4014,
+    "ast_hash": "15b4f4d0d3c4c7acbfddb5ce32a45cf1",
+    "semantic_hash": ""
+  },
+  "artifacts/session_proofcache01.md": {
+    "mtime": 1790006103.3120148,
+    "seen": 1790006229.4053843,
+    "ast_hash": "7dc1bcd80b8f3f09e02a489cb5994ec5",
+    "semantic_hash": ""
   }
 }

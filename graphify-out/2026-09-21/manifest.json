@@ -4546,5 +4546,23 @@
     "seen": 1789991206.3142877,
     "ast_hash": "5029dff06f111571ab27cdaac163a438",
     "semantic_hash": ""
+  },
+  "artifacts/result_cache_census.json": {
+    "mtime": 1790004201.2402976,
+    "seen": 1790004382.5917742,
+    "ast_hash": "ab19af010fdd4c4995f1bfef86d3dad7",
+    "semantic_hash": ""
+  },
+  "mosaicvm/bench/result_cache_census.py": {
+    "mtime": 1790004061.8792572,
+    "seen": 1790004382.5977712,
+    "ast_hash": "6a58ccc6cd56c230fe3b5999f31350a6",
+    "semantic_hash": ""
+  },
+  "artifacts/session_result_cache.md": {
+    "mtime": 1790004266.5423443,
+    "seen": 1790004382.6017513,
+    "ast_hash": "fe42457e5c2320ea32b3711df52282cf",
+    "semantic_hash": ""
   }
 }
