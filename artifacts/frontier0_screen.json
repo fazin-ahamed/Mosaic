@@ -1,110 +1,136 @@
 {
- "classification": "FRONTIER0_SCREEN_REAL_ROUTES",
+ "classification": "FRONTIER0_SCREEN_V2",
  "n_positions": 256,
  "accept_p": 0.8077725516661773,
  "EA": 3.757,
- "note": "real routes + warm LRU + measured acceptance; window rows use accepted-path routes (OPTIMISTIC vs real rejected branches). demand+cache sim only, not latency.",
+ "cycles": 51,
+ "emitted_tokens_total": 257,
+ "note": "shared ledger; chronological all-loads LRU + Belady lower bound; accepted-path routes as speculative-candidate proxy (demand direction vs real candidates UNKNOWN). demand+cache sim only.",
  "by_store": {
   "30": {
    "eager6": {
-    "cold_all_mean": 453.3,
-    "cold_warm_mean": 454.6,
-    "GB_per_cycle": 6.06,
-    "rows_mean": 5.94,
-    "cycles": 65,
+    "lru_miss_total": 19958,
+    "belady_miss_total": 10164,
+    "lru_over_belady": 1.964,
+    "GB_per_emitted_token": 1.0382,
+    "cold_GB_per_emit": 1.0077,
+    "later_GB_per_emit": 1.1379,
+    "accesses": 78690,
     "reduction_vs_eager_pct": 0.0
    },
    "frontier2_4": {
-    "cold_all_mean": 381.8,
-    "cold_warm_mean": 378.6,
-    "GB_per_cycle": 5.104,
-    "rows_mean": 4.92,
-    "cycles": 73,
-    "reduction_vs_eager_pct": 15.8
+    "lru_miss_total": 19948,
+    "belady_miss_total": 10045,
+    "lru_over_belady": 1.986,
+    "GB_per_emitted_token": 1.0377,
+    "cold_GB_per_emit": 0.9663,
+    "later_GB_per_emit": 1.1363,
+    "accesses": 71466,
+    "reduction_vs_eager_pct": 0.1
    },
    "frontier1_2_3": {
-    "cold_all_mean": 385.6,
-    "cold_warm_mean": 377.3,
-    "GB_per_cycle": 5.155,
-    "rows_mean": 4.97,
-    "cycles": 63,
-    "reduction_vs_eager_pct": 14.9
+    "lru_miss_total": 19882,
+    "belady_miss_total": 9928,
+    "lru_over_belady": 2.003,
+    "GB_per_emitted_token": 1.0343,
+    "cold_GB_per_emit": 0.9692,
+    "later_GB_per_emit": 1.1326,
+    "accesses": 67854,
+    "reduction_vs_eager_pct": 0.4
    },
    "sequential": {
-    "cold_all_mean": 350.8,
-    "cold_warm_mean": 329.3,
-    "GB_per_cycle": 4.69,
-    "rows_mean": 4.52,
-    "cycles": 65,
-    "reduction_vs_eager_pct": 22.6
+    "lru_miss_total": 19755,
+    "belady_miss_total": 9792,
+    "lru_over_belady": 2.017,
+    "GB_per_emitted_token": 1.0277,
+    "cold_GB_per_emit": 0.963,
+    "later_GB_per_emit": 1.1256,
+    "accesses": 60630,
+    "reduction_vs_eager_pct": 1.0
    }
   },
   "35": {
    "eager6": {
-    "cold_all_mean": 413.0,
-    "cold_warm_mean": 415.1,
-    "GB_per_cycle": 5.522,
-    "rows_mean": 5.98,
-    "cycles": 63,
+    "lru_miss_total": 17412,
+    "belady_miss_total": 8677,
+    "lru_over_belady": 2.007,
+    "GB_per_emitted_token": 0.9058,
+    "cold_GB_per_emit": 0.8821,
+    "later_GB_per_emit": 1.0203,
+    "accesses": 78690,
     "reduction_vs_eager_pct": 0.0
    },
    "frontier2_4": {
-    "cold_all_mean": 363.2,
-    "cold_warm_mean": 354.2,
-    "GB_per_cycle": 4.856,
-    "rows_mean": 5.25,
-    "cycles": 64,
-    "reduction_vs_eager_pct": 12.1
+    "lru_miss_total": 17409,
+    "belady_miss_total": 8611,
+    "lru_over_belady": 2.022,
+    "GB_per_emitted_token": 0.9056,
+    "cold_GB_per_emit": 0.844,
+    "later_GB_per_emit": 1.0197,
+    "accesses": 71466,
+    "reduction_vs_eager_pct": 0.0
    },
    "frontier1_2_3": {
-    "cold_all_mean": 344.1,
-    "cold_warm_mean": 347.8,
-    "GB_per_cycle": 4.6,
-    "rows_mean": 5.0,
-    "cycles": 67,
-    "reduction_vs_eager_pct": 16.7
+    "lru_miss_total": 17364,
+    "belady_miss_total": 8565,
+    "lru_over_belady": 2.027,
+    "GB_per_emitted_token": 0.9033,
+    "cold_GB_per_emit": 0.8468,
+    "later_GB_per_emit": 1.0178,
+    "accesses": 67854,
+    "reduction_vs_eager_pct": 0.3
    },
    "sequential": {
-    "cold_all_mean": 297.1,
-    "cold_warm_mean": 306.8,
-    "GB_per_cycle": 3.972,
-    "rows_mean": 4.26,
-    "cycles": 70,
-    "reduction_vs_eager_pct": 28.1
+    "lru_miss_total": 17520,
+    "belady_miss_total": 8442,
+    "lru_over_belady": 2.075,
+    "GB_per_emitted_token": 0.9114,
+    "cold_GB_per_emit": 0.8467,
+    "later_GB_per_emit": 1.0209,
+    "accesses": 60630,
+    "reduction_vs_eager_pct": -0.6
    }
   },
   "38": {
    "eager6": {
-    "cold_all_mean": 361.8,
-    "cold_warm_mean": 379.4,
-    "GB_per_cycle": 4.837,
-    "rows_mean": 5.92,
-    "cycles": 80,
+    "lru_miss_total": 15917,
+    "belady_miss_total": 8002,
+    "lru_over_belady": 1.989,
+    "GB_per_emitted_token": 0.828,
+    "cold_GB_per_emit": 0.7926,
+    "later_GB_per_emit": 0.964,
+    "accesses": 78690,
     "reduction_vs_eager_pct": 0.0
    },
    "frontier2_4": {
-    "cold_all_mean": 333.8,
-    "cold_warm_mean": 341.9,
-    "GB_per_cycle": 4.462,
-    "rows_mean": 5.33,
-    "cycles": 60,
-    "reduction_vs_eager_pct": 7.7
+    "lru_miss_total": 16000,
+    "belady_miss_total": 7977,
+    "lru_over_belady": 2.006,
+    "GB_per_emitted_token": 0.8323,
+    "cold_GB_per_emit": 0.7673,
+    "later_GB_per_emit": 0.9616,
+    "accesses": 71466,
+    "reduction_vs_eager_pct": -0.5
    },
    "frontier1_2_3": {
-    "cold_all_mean": 314.0,
-    "cold_warm_mean": 317.9,
-    "GB_per_cycle": 4.197,
-    "rows_mean": 4.99,
-    "cycles": 72,
-    "reduction_vs_eager_pct": 13.2
+    "lru_miss_total": 15988,
+    "belady_miss_total": 7941,
+    "lru_over_belady": 2.013,
+    "GB_per_emitted_token": 0.8317,
+    "cold_GB_per_emit": 0.7675,
+    "later_GB_per_emit": 0.9631,
+    "accesses": 67854,
+    "reduction_vs_eager_pct": -0.4
    },
    "sequential": {
-    "cold_all_mean": 275.9,
-    "cold_warm_mean": 266.7,
-    "GB_per_cycle": 3.688,
-    "rows_mean": 4.31,
-    "cycles": 71,
-    "reduction_vs_eager_pct": 23.7
+    "lru_miss_total": 15848,
+    "belady_miss_total": 7887,
+    "lru_over_belady": 2.009,
+    "GB_per_emitted_token": 0.8244,
+    "cold_GB_per_emit": 0.7643,
+    "later_GB_per_emit": 0.9557,
+    "accesses": 60630,
+    "reduction_vs_eager_pct": 0.4
    }
   }
  }
