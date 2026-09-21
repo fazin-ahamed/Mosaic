@@ -290,20 +290,32 @@ def main():
     full_accept = sum(1 for _, depth, navail in ledger if depth == navail)
     cold_cut = ncyc // 3
 
-    # BOUNDARY ACCOUNTING CHECK (deterministic, runs before any result)
-    chk = verify_boundary_accounting(routes, nlayers, ledger, [W])
+    # BOUNDARY ACCOUNTING CHECK (deterministic, runs before any result).
+    # Run for every policy's schedule (not just eager) so any policy that
+    # under-charges positions fails the gate.
+    chk_by_policy = {}
+    for _pname, _chunks in POLICIES.items():
+        chk_by_policy[_pname] = verify_boundary_accounting(
+            routes, nlayers, ledger, _chunks)
+    chk = chk_by_policy["eager6"]
+    all_policies_ok = all(c["all_ok"] for c in chk_by_policy.values())
     print("boundary accounting check:")
     print(f"  charged positions={chk['n_charged_positions']} "
           f"max={chk['max_charged']} contiguous={chk['contiguous']} "
           f"cursor_ok={chk['cursor_consistent']} "
           f"two_cycle={chk['two_cycle_check']}")
+    print(f"  all policies pass: {all_policies_ok}")
     if chk["interior_gaps"]:
         print(f"  interior gaps: {chk['interior_gaps']}")
-    print(f"  {chk['two_full_accept_cycles']}")
-    if not chk["all_ok"]:
-        raise SystemExit("boundary accounting check FAILED - refusing to emit "
-                         "results (demand would be undercounted)")
-    print("  ALL OK -> interior positions fully charged")
+    if not all_policies_ok:
+        for _p, _c in chk_by_policy.items():
+            if not _c["all_ok"]:
+                print(f"  FAIL policy={_p}: contiguous={_c['contiguous']} "
+                      f"cursor={_c['cursor_consistent']} "
+                      f"two_cycle={_c['two_cycle_check']}")
+        raise SystemExit("boundary accounting check FAILED for at least one "
+                         "policy - refusing to emit results")
+
 
     out = {"classification": "FRONTIER0_SCREEN_V4",
            "n_positions": len(routes), "hit_q": q,
@@ -311,11 +323,12 @@ def main():
            "cycles": ncyc, "emitted_tokens_total": emitted_total,
            "full_accept_cycles": full_accept,
            "boundary_check": chk,
+           "boundary_check_by_policy": chk_by_policy,
            "note": "canonical prefix_metrics (E_A=depth+1, depth may be 0); "
                    "per-stage sweeps; one continuous LRU; mandatory+bypass "
-                   "Belady; full-acceptance boundary forward CHARGED (v4). "
-                   "real routes as speculative-candidate proxy (direction "
-                   "UNKNOWN). sim only.",
+                   "Belady; full-acceptance boundary forward CHARGED (v4); "
+                   "gate run for ALL policies. real routes as speculative-"
+                   "candidate proxy (direction UNKNOWN). sim only.",
            "by_store": {}}
     print(f"q(hit)={q:.4f}  cycles={ncyc}  mean_depth="
           f"{accepted_total/ncyc:.3f}  mean_E_A={emitted_total/ncyc:.3f}  "

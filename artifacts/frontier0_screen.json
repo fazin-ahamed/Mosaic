@@ -32,7 +32,109 @@
   "two_cycle_check": true,
   "all_ok": true
  },
- "note": "canonical prefix_metrics (E_A=depth+1, depth may be 0); per-stage sweeps; one continuous LRU; mandatory+bypass Belady; full-acceptance boundary forward CHARGED (v4). real routes as speculative-candidate proxy (direction UNKNOWN). sim only.",
+ "boundary_check_by_policy": {
+  "eager6": {
+   "n_charged_positions": 255,
+   "max_charged": 254,
+   "interior_gaps": [],
+   "contiguous": true,
+   "cursor_consistent": true,
+   "two_full_accept_cycles": [
+    {
+     "cycle": 1,
+     "charged_boundary_pos": 10,
+     "next_cycle_cur": 11,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    },
+    {
+     "cycle": 4,
+     "charged_boundary_pos": 20,
+     "next_cycle_cur": 21,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    }
+   ],
+   "two_cycle_check": true,
+   "all_ok": true
+  },
+  "frontier2_4": {
+   "n_charged_positions": 255,
+   "max_charged": 254,
+   "interior_gaps": [],
+   "contiguous": true,
+   "cursor_consistent": true,
+   "two_full_accept_cycles": [
+    {
+     "cycle": 1,
+     "charged_boundary_pos": 10,
+     "next_cycle_cur": 11,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    },
+    {
+     "cycle": 4,
+     "charged_boundary_pos": 20,
+     "next_cycle_cur": 21,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    }
+   ],
+   "two_cycle_check": true,
+   "all_ok": true
+  },
+  "frontier1_2_3": {
+   "n_charged_positions": 255,
+   "max_charged": 254,
+   "interior_gaps": [],
+   "contiguous": true,
+   "cursor_consistent": true,
+   "two_full_accept_cycles": [
+    {
+     "cycle": 1,
+     "charged_boundary_pos": 10,
+     "next_cycle_cur": 11,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    },
+    {
+     "cycle": 4,
+     "charged_boundary_pos": 20,
+     "next_cycle_cur": 21,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    }
+   ],
+   "two_cycle_check": true,
+   "all_ok": true
+  },
+  "sequential": {
+   "n_charged_positions": 255,
+   "max_charged": 254,
+   "interior_gaps": [],
+   "contiguous": true,
+   "cursor_consistent": true,
+   "two_full_accept_cycles": [
+    {
+     "cycle": 1,
+     "charged_boundary_pos": 10,
+     "next_cycle_cur": 11,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    },
+    {
+     "cycle": 4,
+     "charged_boundary_pos": 20,
+     "next_cycle_cur": 21,
+     "boundary_charged": true,
+     "cursor_is_next_after_boundary": true
+    }
+   ],
+   "two_cycle_check": true,
+   "all_ok": true
+  }
+ },
+ "note": "canonical prefix_metrics (E_A=depth+1, depth may be 0); per-stage sweeps; one continuous LRU; mandatory+bypass Belady; full-acceptance boundary forward CHARGED (v4); gate run for ALL policies. real routes as speculative-candidate proxy (direction UNKNOWN). sim only.",
  "by_store": {
   "30": {
    "eager6": {
