@@ -158,13 +158,21 @@ def pc1(tail, n_traj):
 
 
 def pc2(tail, cap0):
-    """nearest-neighbour certificate screen on real arithmetic.
+    """direct BF16 output-equality oracle (replaces the distance heuristic).
 
-    Replays trajectory 0 capturing (x, y, q) for the most-invoked groups, then
-    measures how close the closest input pairs actually are in OUTPUT space,
-    against the source's own quantization granularity.
+    The earlier distance-vs-act_quant-step heuristic was not a valid
+    certificate screen: it compared relative BF16 output distances against an
+    FP8 quantization step, mixing two different boundaries. The decisive test
+    is direct: does any pair of calls at the same (layer, expert, op) group
+    with the same shape produce IDENTICAL BF16 output bytes?
+
+    - Groups calls by (layer, expert, op) and compatible shape.
+    - Hashes complete BF16 outputs to locate candidates; torch.equal confirms.
+    - Counts chronological availability: an earlier identical output exists.
+    - Identical outputs from different inputs are an OPPORTUNITY UPPER BOUND
+      only - discovering equality after execution supplies no cheap
+      pre-execution certificate.
     """
-    # pass 1: find most-invoked (layer, expert, op) groups in trajectory 0
     tail.ops.clear()
     replay_capture(tail, cap0, 0)
     counts = Counter((l, e, o) for _, _, l, e, o, _ in tail.ops)
@@ -183,58 +191,53 @@ def pc2(tail, cap0):
         if len(recs) < 2:
             continue
         layer, ex, op = g
-        # bucket by call input shape: replay processes a multi-position
-        # prefill call ([S,4,4096]) then single-position decode calls
-        # ([1,4,4096]); only same-shape calls are comparable
+        # bucket by call input shape: only same-shape calls are comparable
+        # (prefill [S,4,4096] vs decode [1,4,4096])
         by_shape = defaultdict(list)
         for r in recs:
             by_shape[tuple(r[0].shape)].append(r)
-        best = None
+        n_pairs = 0
+        n_equal = 0
         for shp, rr in by_shape.items():
             if len(rr) < 2:
                 continue
-            xs = [r[0].flatten().float() for r in rr]
-            ys = [r[1].flatten().float() for r in rr]
-            for i in range(len(xs)):
-                for j in range(i + 1, len(xs)):
-                    cos = torch.nn.functional.cosine_similarity(
-                        xs[i], xs[j], dim=0).item()
-                    rel_out = (ys[i] - ys[j]).abs().max().item() / max(
-                        ys[i].abs().max().item(), ys[j].abs().max().item(), 1e-12)
-                    if best is None or cos > best[0]:
-                        best = (cos, rel_out)
-        if best is None:
-            continue
-        # source's own downstream quantization granularity on these outputs:
-        # act_quant relative step (FP8 E4M3, 128-blocks)
-        y0 = recs[0][1].to(torch.bfloat16)
-        q, sa = tail.km.act_quant(y0, 128, tail.km.scale_fmt, tail.km.scale_dtype)
-        dq = q.to(torch.float32) * sa.to(torch.float32).repeat_interleave(
-            y0.shape[-1] // sa.shape[-1] if sa.dim() > 0 else 1, -1) \
-            if sa.numel() > 1 else q.to(torch.float32) * sa.item()
-        step = (y0.float() - dq).abs().max().item() / max(
-            y0.abs().max().item(), 1e-12)
+            # chronological: an earlier identical output would be reusable
+            seen = []                    # list of (hash, output tensor)
+            for r in rr:
+                y = r[1]
+                yb = y.detach().contiguous().view(
+                    torch.uint8).numpy().tobytes()
+                yh = hashlib.sha256(yb).hexdigest()
+                for ph, py in seen:
+                    n_pairs += 1
+                    if ph == yh and torch.equal(py, y):
+                        n_equal += 1
+                seen.append((yh, y))
         per_group[f"{layer}_{ex}_{op}"] = {
             "n_invocations": len(recs),
-            "closest_pair_input_cosine": round(best[0], 6),
-            "closest_pair_relative_output_dist": round(best[1], 6),
-            "act_quant_relative_step": round(step, 6),
+            "n_eligible_pairs": n_pairs,
+            "n_identical_output_pairs": n_equal,
         }
-
     if not per_group:
         return {"error": "no group had >= 2 invocations"}
-    cos_all = [v["closest_pair_input_cosine"] for v in per_group.values()]
-    rel_all = [v["closest_pair_relative_output_dist"] for v in per_group.values()]
-    step_all = [v["act_quant_relative_step"] for v in per_group.values()]
+    total_pairs = sum(v["n_eligible_pairs"] for v in per_group.values())
+    total_equal = sum(v["n_identical_output_pairs"] for v in per_group.values())
     return {
         "groups": per_group,
         "n_groups": len(per_group),
-        "best_input_cosine": round(max(cos_all), 6),
-        "min_relative_output_dist": round(min(rel_all), 6),
-        "typical_act_quant_relative_step": round(sum(step_all) / len(step_all), 6),
-        "note": "certified reuse needs relative output dist below ~half an "
-                "act_quant step (cell reuse) or exactly 0 (bitwise reuse)",
+        "total_eligible_pairs": total_pairs,
+        "total_identical_output_pairs": total_equal,
+        "note": "direct BF16 output-equality oracle on the PINNED boundary "
+                "(RoutedLinear returns BF16). Equality means identical output "
+                "BYTES; a hash locates and torch.equal confirms. Identical "
+                "outputs from DIFFERENT inputs would be an opportunity upper "
+                "bound only: discovering equality after execution does not "
+                "provide a cheap pre-execution certificate.",
+        "boundary_caveat": "this oracle tests reuse of the COMPLETE BF16 "
+                "output at this boundary only; post-act_quant equality is a "
+                "DIFFERENT boundary and remains untested",
     }
+
 
 
 def main():
@@ -262,33 +265,37 @@ def main():
     verdict = "PC1 GATE: no exact reuse -> Path A closed as a major lever"
     if r1["avoided_pct"] < need * 100:
         verdict += f" (avoided {r1['avoided_pct']}% << required ~{need*100:.0f}%)"
-    if "min_relative_output_dist" in r2:
-        ratio = (r2["min_relative_output_dist"] /
-                 max(r2["typical_act_quant_relative_step"], 1e-12))
-        verdict += (f"; PC2: closest-pair output distance is {ratio:.0f}x the "
-                    "quantization step -> proximity certificates cannot "
-                    "authorise reuse at this boundary")
+    if "total_identical_output_pairs" in r2:
+        tp, te = r2["total_eligible_pairs"], r2["total_identical_output_pairs"]
+        verdict += (f"; PC2: {te} identical output pairs of {tp} eligible "
+                    "at the pinned BF16 boundary")
+        if te == 0:
+            verdict += (" -> no reuse opportunity for complete outputs in "
+                        "this sample; partial-output reuse and residual "
+                        "disclosure remain untested")
+
     out = {
         "classification": "PROOFCACHE01",
         "pc0_boundary": "source RoutedLinear L41/L42 w1/w2/w3; effective input "
                         "= act_quant operand q + scales; consumers SwiGLU -> "
                         "w2 -> routing weight (outside boundary)",
         "pc1_exact_reuse_census": r1,
-        "pc2_nearest_neighbour_screen": r2,
+        "pc2_output_equality_oracle": r2,
         "required_byte_avoidance_pct": need * 100,
         "verdict": verdict,
         "correction": "result_cache_census.py v1 cleared the op log per "
                       "trajectory, so it analysed only the last trajectory "
                       "(1260 ops) while reporting the summed total (5151). "
-                      "This run accumulates across trajectories.",
+                      "This run accumulates across trajectories. PC2 was also "
+                      "rewritten: the original distance-vs-act_quant-step "
+                      "heuristic compared two different boundaries and is "
+                      "superseded by a direct output-equality oracle.",
         "scope": "L41/L42 of 43 layers; source's own exact reference path; "
                  "single decode sessions on real captured h40 trajectories. "
                  "Sim/measurement, not an accelerator.",
     }
     OUT.write_text(json.dumps(out, indent=1))
-    print("\n" + verdict)
-    print(f"wrote {OUT}")
-
+    print(verdict)
 
 if __name__ == "__main__":
     main()

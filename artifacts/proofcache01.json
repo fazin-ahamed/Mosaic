@@ -14,53 +14,47 @@
   "total_weight_read_GB": 21.6049,
   "avoided_pct": 0.0
  },
- "pc2_nearest_neighbour_screen": {
+ "pc2_output_equality_oracle": {
   "groups": {
    "42_159_w1": {
     "n_invocations": 19,
-    "closest_pair_input_cosine": 0.978667,
-    "closest_pair_relative_output_dist": 0.156966,
-    "act_quant_relative_step": 0.03352
+    "n_eligible_pairs": 153,
+    "n_identical_output_pairs": 0
    },
    "42_159_w3": {
     "n_invocations": 19,
-    "closest_pair_input_cosine": 0.978667,
-    "closest_pair_relative_output_dist": 0.152753,
-    "act_quant_relative_step": 0.029412
+    "n_eligible_pairs": 153,
+    "n_identical_output_pairs": 0
    },
    "42_159_w2": {
     "n_invocations": 19,
-    "closest_pair_input_cosine": 0.967212,
-    "closest_pair_relative_output_dist": 0.300299,
-    "act_quant_relative_step": 0.032967
+    "n_eligible_pairs": 153,
+    "n_identical_output_pairs": 0
    },
    "41_62_w1": {
     "n_invocations": 20,
-    "closest_pair_input_cosine": 0.973055,
-    "closest_pair_relative_output_dist": 0.152895,
-    "act_quant_relative_step": 0.049689
+    "n_eligible_pairs": 190,
+    "n_identical_output_pairs": 0
    },
    "41_62_w3": {
     "n_invocations": 20,
-    "closest_pair_input_cosine": 0.973055,
-    "closest_pair_relative_output_dist": 0.113584,
-    "act_quant_relative_step": 0.042254
+    "n_eligible_pairs": 190,
+    "n_identical_output_pairs": 0
    },
    "41_62_w2": {
     "n_invocations": 20,
-    "closest_pair_input_cosine": 0.96574,
-    "closest_pair_relative_output_dist": 0.226744,
-    "act_quant_relative_step": 0.044025
+    "n_eligible_pairs": 190,
+    "n_identical_output_pairs": 0
    }
   },
   "n_groups": 6,
-  "best_input_cosine": 0.978667,
-  "min_relative_output_dist": 0.113584,
-  "typical_act_quant_relative_step": 0.038644,
-  "note": "certified reuse needs relative output dist below ~half an act_quant step (cell reuse) or exactly 0 (bitwise reuse)"
+  "total_eligible_pairs": 1029,
+  "total_identical_output_pairs": 0,
+  "note": "direct BF16 output-equality oracle on the PINNED boundary (RoutedLinear returns BF16). Equality means identical output BYTES; a hash locates and torch.equal confirms. Identical outputs from DIFFERENT inputs would be an opportunity upper bound only: discovering equality after execution does not provide a cheap pre-execution certificate.",
+  "boundary_caveat": "this oracle tests reuse of the COMPLETE BF16 output at this boundary only; post-act_quant equality is a DIFFERENT boundary and remains untested"
  },
  "required_byte_avoidance_pct": 86.0,
- "verdict": "PC1 GATE: no exact reuse -> Path A closed as a major lever (avoided 0.0% << required ~86%); PC2: closest-pair output distance is 3x the quantization step -> proximity certificates cannot authorise reuse at this boundary",
- "correction": "result_cache_census.py v1 cleared the op log per trajectory, so it analysed only the last trajectory (1260 ops) while reporting the summed total (5151). This run accumulates across trajectories.",
+ "verdict": "PC1 GATE: no exact reuse -> Path A closed as a major lever (avoided 0.0% << required ~86%); PC2: 0 identical output pairs of 1029 eligible at the pinned BF16 boundary -> no reuse opportunity for complete outputs in this sample; partial-output reuse and residual disclosure remain untested",
+ "correction": "result_cache_census.py v1 cleared the op log per trajectory, so it analysed only the last trajectory (1260 ops) while reporting the summed total (5151). This run accumulates across trajectories. PC2 was also rewritten: the original distance-vs-act_quant-step heuristic compared two different boundaries and is superseded by a direct output-equality oracle.",
  "scope": "L41/L42 of 43 layers; source's own exact reference path; single decode sessions on real captured h40 trajectories. Sim/measurement, not an accelerator."
 }
