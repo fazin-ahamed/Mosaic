@@ -10,6 +10,19 @@ other boundaries or finer granularities is **not established** — neither
 claimed nor closed. The ~86-94% byte avoidance that 30 tok/s requires is not
 delivered by any measured reuse path.
 
+**Update 2026-09-22 — the finer-granularity variant is now also closed.**
+Innovation Execution (`x = Bc + r` at the MXINT K32 integer boundary, the
+"cheap innovation" path that would avoid weight reads even when nothing
+repeats) was measured on the same 4 captured L41/L42 trajectories:
+770,240 exact int64 decompositions, **P(r=0) = 0.0000 exactly**, mean
+residual nnz 31.54 of 32, 77% of calls at full group width. All-calls
+avoidance **0.0939%** against the same 86-94% bar. See
+`artifacts/session_innovation_census.md`. The exact-output-equivalence
+obligation for that boundary is now **moot** — even a bit-exact
+reconstruction would save ~0.1% of expert weight bytes. No reuse path —
+exact input, exact output, or exact innovation — has delivered the
+required avoidance.
+
 ---
 
 ## 0. A correction to my own previous experiment
