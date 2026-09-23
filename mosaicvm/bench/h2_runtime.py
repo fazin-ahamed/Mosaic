@@ -74,6 +74,7 @@ class TierStats:
     woa_h2d_bytes: int = 0
     woa_h2d_ms: float = 0.0
     woa_leases: int = 0
+    evictions: int = 0
 
 
 class TieredStore:
@@ -157,7 +158,6 @@ class TieredStore:
         while (self._ram and self._ram_used() + nb > self.ram_cap):
             ev, _ = self._ram.popitem(last=False)
             self.stats.evictions += 1
-            del self._ram[ev]
         self._ram[name] = blob
 
     def _vram_used(self) -> int:
