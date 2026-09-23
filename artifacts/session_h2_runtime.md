@@ -82,14 +82,21 @@ three-tier store:
 ## Next experiment (next session; does not resume now)
 
 1. Keep the scaffold as **experimental, end-to-end unverified**.
-2. Before prefill: `synchronize()`, `reset_peak_memory_stats()`, record
-   allocated/reserved/`mem_get_info()` free (bytes). Already coded; the
-   remaining gap is surviving the abort — wrap the forward so a hard CUDA
-   abort still writes the pre-failure triple to disk first.
-3. One explicitly labeled short-prompt run: measure prefill separately, then
-   decode long enough to reveal cache churn, route/storage/transfer
-   accounting on. Label throughput by (prompt len, gen len) — a short prompt
-   changes the workload and cannot stand in for the 66-token case.
+2. Memory diagnostic that survives failure. A pre-prefill snapshot
+   (`synchronize()`, `reset_peak_memory_stats()`, allocated/reserved/
+   `mem_get_info()` free in bytes — already coded) preserves only the
+   *start* state; it CANNOT reveal memory at the failing op. So: write a
+   phase checkpoint to disk after each completed step (embed, per-layer or
+   per-N-layers, prefill-done), and catch the CUDA `OutOfMemoryError` when
+   Python can (record its message + requested bytes + failing op). Accept
+   that a hard process abort may still leave the final failing allocation
+   unknown — the last flushed checkpoint bounds it.
+3. One completed baseline is the goal. The 9-token prompt also OOMed, so an
+   even shorter prompt is a diagnostic attempt, not an assured fix. Measure
+   prefill separately from decode, keep tier counters on, decode long enough
+   to reveal cache churn, and label any result with its (prompt len, gen
+   len) — a short prompt changes the workload and cannot stand in for the
+   66-token case.
 4. Compare residency policies only after a baseline completes.
 5. Chunked prefill is a later engineering task (needs its own
    continuation/KV correctness + numerical parity), not a prerequisite for a
