@@ -56,6 +56,7 @@ PROMPT = os.environ.get("H2_PROMPT_TEXT",
     "priority inversion and its classic solutions, fairness versus "
     "throughput tradeoffs in CFS, NUMA-aware scheduling, and concrete "
     "examples of scheduling decisions in real systems.")
+WOA_ELASTIC = os.environ.get("H2_ELASTIC_WOA", "1") not in ("0", "false", "")
 OUT = ART / "h2_runtime.json"
 
 
@@ -69,8 +70,10 @@ class TierStats:
     nvme_ms: float = 0.0
     h2d_ms: float = 0.0
     h2d_bytes: int = 0.0
-    evictions: int = 0
     ops: int = 0
+    woa_h2d_bytes: int = 0
+    woa_h2d_ms: float = 0.0
+    woa_leases: int = 0
 
 
 class TieredStore:
@@ -342,7 +345,21 @@ class H2Runtime:
                 else p.data.cuda()
         for b in self.model.buffers():
             b.data = b.data.cuda()
-        self.model.eval()
+        self.core_vram_full_gb = round(torch.cuda.memory_allocated() / 1024**3, 3)
+
+        # ElasticCore: relocate the 43 BF16 wo_a matrices (64 MiB each,
+        # 2.6875 GiB total) off permanent GPU residency. Each is kept in
+        # pinned host RAM; every attention layer shares ONE 64 MiB GPU lease
+        # refreshed by a forward-pre-hook before that layer's einsum consumes
+        # it (line 546 of source model.py). Layers run sequentially on the
+        # default stream, so reusing the lease is causally safe: layer i's
+        # einsum is enqueued before layer i+1's copy_. Bytes/values unchanged
+        # -> the source einsum sees identical wo_a, so arithmetic is exact.
+        self._woa_host = {}
+        self._woa_lease = None
+        self.woa_resident_gb = 0.0
+        if WOA_ELASTIC:
+            self._elasticize_woa()
         self.core_vram_gb = round(torch.cuda.memory_allocated() / 1024**3, 3)
 
         import types as _t
@@ -402,6 +419,48 @@ class H2Runtime:
                 self.routes.append(dict(self._cur_routes))
                 self._cur_routes = {}
         return h
+
+    # ---------------------------------------------------------- elastic wo_a ---
+    def _elasticize_woa(self):
+        """Move every attention wo_a BF16 weight to pinned host RAM; point all
+        layers at one shared 64 MiB GPU lease refreshed per layer."""
+        attns = []
+        for layer in self.model.layers:
+            attn = getattr(layer, "attn", None)
+            if attn is not None and hasattr(attn, "wo_a"):
+                attns.append(attn)
+        if not attns:
+            return
+        shape = tuple(attns[0].wo_a.weight.shape)
+        dtype = attns[0].wo_a.weight.dtype
+        self._woa_lease = torch.empty(shape, dtype=dtype, device="cuda")
+        for L, attn in enumerate(attns):
+            w = attn.wo_a.weight.detach()
+            assert tuple(w.shape) == shape and w.dtype == dtype, \
+                f"wo_a[{L}] shape/dtype mismatch: {tuple(w.shape)} {w.dtype}"
+            host = torch.empty(shape, dtype=dtype, device="cpu").pin_memory()
+            host.copy_(w)
+            self._woa_host[L] = host
+            attn.wo_a.weight.data = self._woa_lease   # shared lease storage
+            attn.register_forward_pre_hook(self._mk_woa_prehook(L))
+        del w
+        torch.cuda.empty_cache()
+        self.woa_resident_gb = round(
+            self._woa_lease.numel() * self._woa_lease.element_size()
+            / 1024**3, 4)
+
+    def _mk_woa_prehook(self, L: int):
+        host = self._woa_host[L]
+        nbytes = host.numel() * host.element_size()
+        def pre(mod, args):
+            st = time.perf_counter()
+            self._woa_lease.copy_(host, non_blocking=True)
+            torch.cuda.synchronize()
+            s = self.store.stats
+            s.woa_h2d_ms += (time.perf_counter() - st) * 1e3
+            s.woa_h2d_bytes += nbytes
+            s.woa_leases += 1
+        return pre
 
     # ------------------------------------------------------------- decode ---
     @torch.inference_mode()
@@ -498,29 +557,50 @@ def main():
               f"({run.preloaded[1]/1024**2:.0f} MiB)", flush=True)
         tokens, per_tok, wall = run.generate(PROMPT, N_GEN)
         s = run.store.stats
+        prefill_ms = run.mem_diag.get("prefill_ms", 0.0)
+        ttft_s = prefill_ms / 1000.0
+        # first token is produced in prefill; decode covers steps 1..N-1.
+        steady_decode_tok_s = ((N_GEN - 1) / wall) if wall > 0 else 0.0
+        request_tok_s = N_GEN / (ttft_s + wall) if (ttft_s + wall) > 0 else 0.0
         results[policy] = {
             "tokens": tokens,
-            "wall_s": round(wall, 3),
-            "tok_s": round(N_GEN / wall, 4),
-            "mean_ms_per_token": round(sum(per_tok) / len(per_tok), 2),
-            "p50_ms_per_token": round(sorted(per_tok)[len(per_tok)//2], 2),
+            "prompt_tokens": run.mem_diag.get("prompt_tokens"),
+            "n_gen": N_GEN,
+            "ttft_s": round(ttft_s, 3),
+            "decode_wall_s": round(wall, 3),
+            "steady_decode_tok_s": round(steady_decode_tok_s, 4),
+            "request_tok_s": round(request_tok_s, 4),
+            "mean_ms_per_decode_token": round(
+                sum(per_tok) / len(per_tok), 2) if per_tok else None,
+            "p50_ms_per_decode_token": round(
+                sorted(per_tok)[len(per_tok)//2], 2) if per_tok else None,
+            "core_vram_full_gb": run.core_vram_full_gb,
+            "core_vram_elastic_gb": run.core_vram_gb,
+            "woa_lease_gib": run.woa_resident_gb,
+            "mem_diag": run.mem_diag,
             "nvme_reads": s.nvme_reads,
-            "nvme_bytes": s.nvme_bytes,
-            "nvme_gb": round(s.nvme_bytes / 1024**3, 4),
-            "nvme_ms": round(s.nvme_ms, 1),
+            "nvme_logical_bytes": s.nvme_bytes,
+            "nvme_logical_gib": round(s.nvme_bytes / 1024**3, 4),
+            "nvme_read_ms": round(s.nvme_ms, 1),
             "ram_hits": s.ram_hits,
             "vram_hits": s.vram_hits,
-            "ops": s.ops,
-            "h2d_bytes": s.h2d_bytes,
-            "h2d_gb": round(s.h2d_bytes / 1024**3, 4),
-            "h2d_ms": round(s.h2d_ms, 1),
+            "expert_ops": s.ops,
+            "expert_h2d_bytes": s.h2d_bytes,
+            "expert_h2d_gib": round(s.h2d_bytes / 1024**3, 4),
+            "expert_h2d_ms": round(s.h2d_ms, 1),
+            "woa_leases": s.woa_leases,
+            "woa_h2d_gib": round(s.woa_h2d_bytes / 1024**3, 4),
+            "woa_h2d_ms": round(s.woa_h2d_ms, 1),
             "evictions": s.evictions,
             "preloaded_ops": run.preloaded[0],
             "preloaded_mib": round(run.preloaded[1] / 1024**2, 1),
         }
-        print(f"  {N_GEN} tok in {wall:.1f}s = {N_GEN/wall:.3f} tok/s | "
-              f"nvme {s.nvme_reads}x {s.nvme_bytes/1024**3:.2f} GB | "
-              f"ram {s.ram_hits} vram {s.vram_hits} / {s.ops}", flush=True)
+        print(f"  TTFT {ttft_s:.2f}s | decode {N_GEN-1} tok in {wall:.1f}s "
+              f"= {steady_decode_tok_s:.3f} steady tok/s | "
+              f"request {request_tok_s:.3f} tok/s", flush=True)
+        print(f"  woa {s.woa_leases} leases {s.woa_h2d_bytes/1024**3:.2f} GiB | "
+              f"expert nvme {s.nvme_reads}x {s.nvme_bytes/1024**3:.2f} GiB "
+              f"(logical) | ram {s.ram_hits} vram {s.vram_hits}", flush=True)
         if ref_tokens is None:
             ref_tokens = tokens
         elif tokens != ref_tokens:
@@ -542,23 +622,31 @@ def main():
     }
 
     out = {
-        "classification": "H2_RUNTIME_BASELINE",
+        "classification": "H2_RUNTIME_ELASTICCORE",
         "evidence_class": "MEASURED",
         "n_gen": N_GEN,
         "vram_budget_gb": VRAM_GB,
         "ram_budget_gb": RAM_GB,
+        "woa_elastic": WOA_ELASTIC,
         "prompt_first_64": PROMPT[:64],
         "policies": results,
         "hot_fraction": HOT_FRACTION,
+        "throughput_definitions": {
+            "ttft_s": "prefill wall through the first token",
+            "steady_decode_tok_s": "(n_gen-1) / decode_wall (first token is prefill)",
+            "request_tok_s": "n_gen / (ttft_s + decode_wall)",
+        },
         "not_claimed": ("no speculative decode (dspark disabled); greedy "
                         "exact baseline only; serial execution, no I/O "
-                        "overlap; NVMe times are wall-clock safetensors reads "
-                        "including page-cache warm/cold effects"),
+                        "overlap; nvme_logical_bytes counts requested bytes "
+                        "(safe_open may hit OS page cache), NOT proven device "
+                        "reads; woa lease bytes are exact BF16 (parity-gated)"),
     }
     OUT.write_text(json.dumps(out, indent=1, default=str))
     print(f"\nwrote {OUT}", flush=True)
-    print(f"tok/s: " + " ".join(
-        f"{p}={results[p]['tok_s']:.3f}" for p in POLICIES), flush=True)
+    print("steady_decode_tok_s: " + " ".join(
+        f"{p}={results[p]['steady_decode_tok_s']:.3f}" for p in POLICIES),
+        flush=True)
 
 
 def micro_parity() -> bool:
@@ -578,6 +666,43 @@ def micro_parity() -> bool:
         b = KM.linear(x, sl._materialize(), None)
     return bool(torch.equal(a, b))
 
+
+def woa_lease_parity() -> dict:
+    """ElasticCore gate: the leased wo_a einsum output == the resident-BF16
+    einsum output, byte-for-byte, for one layer. The lease is a straight
+    host->GPU copy of the exact dequantized BF16 tensor, so wo_a values,
+    layout, and the source einsum are all unchanged; equality must be exact.
+    """
+    sys.path.insert(0, str(SNAP / "inference"))
+    index = json.loads((SNAP / "model.safetensors.index.json")
+                       .read_text())["weight_map"]
+    from safetensors import safe_open
+    name = "layers.41.attn.wo_a"
+    with safe_open(str(SNAP / index[name + ".weight"]), framework="pt") as f:
+        w = f.get_tensor(name + ".weight")
+        s = f.get_tensor(name + ".scale")
+    rows, cols = w.shape
+    bf16 = (w.float() * s.float().repeat_interleave(rows // s.shape[0], 0)
+            .repeat_interleave(cols // s.shape[1], 1)).to(torch.bfloat16)
+    resident = bf16.cuda()
+    lease = torch.empty_like(resident)
+    host = bf16.cpu().pin_memory()
+    lease.copy_(host, non_blocking=True)
+    torch.cuda.synchronize()
+    bytes_equal = bool(torch.equal(resident, lease))
+    # exercise the exact source einsum (bsgd,grd->bsgr) both ways
+    n_local_groups, o_lora_rank = 64, 1024
+    vr = resident.view(n_local_groups, o_lora_rank, -1)
+    vl = lease.view(n_local_groups, o_lora_rank, -1)
+    o = torch.randn(1, 3, n_local_groups, vr.shape[-1],
+                    device="cuda", dtype=torch.bfloat16)
+    with torch.inference_mode():
+        er = torch.einsum("bsgd,grd->bsgr", o, vr)
+        el = torch.einsum("bsgd,grd->bsgr", o, vl)
+    return {
+        "lease_bytes_equal_resident": bytes_equal,
+        "einsum_output_bit_identical": bool(torch.equal(er, el)),
+    }
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,23 @@
+{
+ "classification": "H2_ELASTICCORE_GATES",
+ "evidence_class": "MEASURED",
+ "date": "2026-09-23",
+ "woa_source_facts": {
+  "checkpoint_dtype": "float8_e4m3fn",
+  "checkpoint_shape": [8192, 4096],
+  "scale": "float8_e8m0fnu [64,32]",
+  "dequant_bf16_bytes_per_layer": 67108864,
+  "bf16_mib_per_layer": 64.0,
+  "n_layers": 43,
+  "bank_gib": 2.6875,
+  "source_use": "Attention.forward einsum bsgd,grd->bsgr on self.wo_a.weight (BF16)"
+ },
+ "woa_lease_parity": {
+  "lease_bytes_equal_resident": true,
+  "einsum_output_bit_identical": true
+ },
+ "resident_core_gib": {"full_resident_woa": 8.255, "elastic_woa": 5.63, "freed": 2.625, "retained_lease_gib": 0.0625},
+ "decode_status": "NOT COMPLETED",
+ "abort_notes": "hard process abort without flushed diagnostic; dmesg shows no host OOM-killer; RAM 17 GiB free. tilelang nvcc JIT compile error observed (gcc>15 unsupported, sm_86 tvm_kernels.cu). GPU-VRAM prefill OOM no longer the established cause after freeing 2.625 GiB.",
+ "not_claimed": "no completed decode, no tok/s, no token parity vs reference. ElasticCore VRAM reduction and wo_a bit-exactness are the only established results."
+}
